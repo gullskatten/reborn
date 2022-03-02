@@ -1,0 +1,23 @@
+{
+	"glossary": [
+		{
+			"extra": "",
+			"id": "1645720656-648",
+			"name": "Celestials",
+			"text": "Bubbles of living holy essence. Their leader, The Oracle, has been empowered to create new Celestials.",
+			"title": "Celestials (Race)",
+			"type": 1
+		},
+		{
+			"extra": "(Friendly)",
+			"id": "1645721100-366",
+			"name": "The Oracle",
+			"text": "Empowered to create new life and material. Leader of the Celestials.",
+			"title": "The Oracle",
+			"type": 1
+		}
+	],
+	"variables": [
+
+	]
+}

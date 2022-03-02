@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/nevis_theme.tres" type="Theme" id=1]
+[ext_resource path="res://target/CurrentTargetPortrait.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Theme" id=3]
+
+[node name="GUI_Instance_PC" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentTarget" parent="." instance=ExtResource( 2 )]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_top = 596.0
+margin_right = 512.0
+margin_bottom = 596.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer2" type="Panel" parent="VBoxContainer"]
+margin_right = 1024.0
+size_flags_horizontal = 3
+theme = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 23.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/HBoxContainer"]
+margin_right = 98.0
+margin_bottom = 16.0
+theme = ExtResource( 1 )
+text = "GUI Element 1"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 4.0
+margin_right = 1024.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 596.0
+margin_right = 1024.0
+margin_bottom = 596.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 600.0
+margin_right = 1024.0
+margin_bottom = 600.0

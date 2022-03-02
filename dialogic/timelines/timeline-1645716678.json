@@ -1,0 +1,88 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1645715754.json",
+			"event_id": "dialogic_002",
+			"mirror": true,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1645715754.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Greetings, traveler! I am The Oracle, the leader of the Celestials."
+		},
+		{
+			"character": "character-1645715754.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "What would you like to do?"
+		},
+		{
+			"choice": "I need a new Celestial.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"emit_signal": "new_worker_dialog",
+			"event_id": "dialogic_040"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		},
+		{
+			"choice": "I need to build something.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"emit_signal": "new_building_dialog",
+			"event_id": "dialogic_040"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		},
+		{
+			"choice": "Nothing. Thanks Oracle.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1645715754.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well then, goodbye."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1645716678.json",
+		"name": "Default_With_Intro"
+	}
+}

@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+resource_local_to_scene = true
+antialiased = false
+font_path = "res://assets/fonts/nevis.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = SubResource( 1 )
+
+[resource]
+default_font = SubResource( 2 )

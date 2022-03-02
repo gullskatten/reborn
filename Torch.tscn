@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/props/torch/effect/white_tinder_2px.png" type="Texture" id=1]
+[ext_resource path="res://assets/props/torch/effect/torch_fire_particle.tres" type="Material" id=2]
+[ext_resource path="res://assets/props/light/Light_Small_Scarce.png" type="Texture" id=3]
+[ext_resource path="res://assets/props/torch/tiny_test_torch.png" type="Texture" id=4]
+
+[node name="Torch" type="Node2D"]
+position = Vector2( 313, 311 )
+
+[node name="Light" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+offset = Vector2( 0, -8 )
+color = Color( 1, 0.8, 0.521569, 0.235294 )
+energy = 1.53
+shadow_enabled = true
+shadow_filter = 1
+
+[node name="Torch" type="Sprite" parent="."]
+position = Vector2( -5, -8 )
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Fire" type="Particles2D" parent="."]
+position = Vector2( 0, -6 )
+amount = 5
+lifetime = 2.2
+preprocess = 0.38
+speed_scale = 0.89
+explosiveness = 0.3
+randomness = 0.64
+visibility_rect = Rect2( -100, -100, 200, 100 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 1 )

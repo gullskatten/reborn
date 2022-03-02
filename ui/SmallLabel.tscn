@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/nevis_theme_tiny.tres" type="Theme" id=1]
+
+[node name="Label" type="Label"]
+margin_left = -27.0
+margin_top = -29.0
+margin_right = 28.0
+margin_bottom = -1.0
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 27, 13 )
+theme = ExtResource( 1 )
+text = "Test"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

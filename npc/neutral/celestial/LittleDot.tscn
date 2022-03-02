@@ -1,0 +1,110 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/npc/neutral/celestial/lesser_dot_hover.png" type="Texture" id=1]
+[ext_resource path="res://assets/props/shadow/SmallShadow.png" type="Texture" id=2]
+[ext_resource path="res://npc/neutral/celestial/LittleDot.gd" type="Script" id=3]
+[ext_resource path="res://ui/buttons/WorkerActionsDialog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/npc/neutral/celestial/little_dot_portrait_x32.png" type="Texture" id=5]
+[ext_resource path="res://ui/TinyLabel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://npc/states/WanderController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://target/TargetButton.tscn" type="PackedScene" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=10]
+height = 14.0
+
+[node name="LittleDot" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 3 )
+
+[node name="TargetButton" parent="." instance=ExtResource( 8 )]
+margin_left = -9.0
+margin_top = -25.0
+margin_right = 10.0
+margin_bottom = 5.0
+
+[node name="TargetInfo" parent="TargetButton" index="0"]
+portrait = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -15, -27 )
+frames = SubResource( 9 )
+frame = 3
+speed_scale = 1.2
+playing = true
+centered = false
+
+[node name="SmallShadow" type="Sprite" parent="."]
+position = Vector2( 0, 3 )
+texture = ExtResource( 2 )
+
+[node name="WanderController" parent="." instance=ExtResource( 7 )]
+wander_range = 10
+
+[node name="AssignedLabel" parent="." instance=ExtResource( 6 )]
+modulate = Color( 0.772549, 0.733333, 0.32549, 1 )
+margin_left = -40.0
+margin_top = -39.0
+margin_right = 78.0
+margin_bottom = -18.0
+rect_scale = Vector2( 0.7, 0.7 )
+text = "?"
+
+[node name="WorkerDialog" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = -34.0
+margin_top = -43.0
+margin_right = -34.0
+margin_bottom = -43.0
+rect_pivot_offset = Vector2( 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -8 )
+shape = SubResource( 10 )
+
+[connection signal="input_event" from="." to="." method="_on_LittleDot_input_event"]
+[connection signal="collect_stone" from="WorkerDialog" to="." method="_on_WorkerDialog_collect_stone"]
+[connection signal="collect_till" from="WorkerDialog" to="." method="_on_WorkerDialog_collect_till"]
+[connection signal="collect_tree" from="WorkerDialog" to="." method="_on_Control_collect_tree"]
+[connection signal="unassign" from="WorkerDialog" to="." method="_on_WorkerDialog_unassign"]
+
+[editable path="TargetButton"]
