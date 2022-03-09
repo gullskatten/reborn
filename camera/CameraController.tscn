@@ -8,9 +8,9 @@ script = ExtResource( 1 )
 [node name="CameraPosition" type="Position2D" parent="."]
 
 [node name="Camera" type="Camera2D" parent="CameraPosition"]
+offset = Vector2( 0, -10 )
 rotating = true
 current = true
 zoom = Vector2( 0.4, 0.4 )
 process_mode = 0
-smoothing_enabled = true
 smoothing_speed = 7.0

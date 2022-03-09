@@ -1,19 +1,22 @@
 extends KinematicBody2D
-onready var workerDialog = $WorkerDialog
 onready var assignedLabel = $AssignedLabel
 onready var sprite = $AnimatedSprite
 enum {
 	IDLE,
 	WANDER,
-	HUNT
+	MOVE,
+	COLLECT
 }
 
-var state = HUNT
+var state = WANDER
 
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
+
+var target_position = null setget set_target_position  # Set this to move.
+var selected = false setget set_selected  # Is this unit selected?
 
 export var CELESTIAL_NAME: String = "Little One"
 onready var wanderController = $WanderController
@@ -27,9 +30,11 @@ func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	sprite.frame = rand_range(0, 4)
 	targetInfo.display_name = CELESTIAL_NAME
-	targetInfo.description = "Celestial"
+	targetInfo.description = "Celestial Worker"
 	targetInfo.level = 1
-	targetInfo.type = "Celestial"
+	targetInfo.type = "Worker"
+	targetInfo.ref_node = self
+	CurrentTarget.connect("cancel_target", self, "remove_selection")
 
 func _physics_process(delta):
 	match state:
@@ -42,11 +47,16 @@ func _physics_process(delta):
 				update_wander()
 			accelerate_to_point(wanderController.target_position, delta)
 			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
-				update_wander()
-			
-		HUNT:
-			pass
+				update_wander()	
+		MOVE:
+			accelerate_to_point(target_position, delta)
+			if global_position.distance_to(target_position) <= WANDER_TARGET_RANGE:
+				update_wander()	
+
 	velocity = move_and_slide(velocity)
+
+func remove_selection():
+	set_selected(false)
 
 func update_wander():
 	state = pick_random_state([IDLE, WANDER])
@@ -61,35 +71,19 @@ func pick_random_state(state_list):
 	state_list.shuffle()
 	return state_list.pop_front()
 
-
-func _on_Area2D_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		workerDialog.visible = !workerDialog.visible
-	  
-func _on_Area2D_mouse_entered():
-	print("Yo!!")
-	pass # Replace with function body.
-
-
-func _on_Area2D_body_exited(body):
-	workerDialog.visible = false
-
-func _on_Control_collect_tree():
-	workerDialog.visible = false
-	assignedLabel.text = "Tree Worker"
-
-func _on_WorkerDialog_collect_stone():
-	workerDialog.visible = false
-	assignedLabel.text = "Stone Worker"
-
-func _on_WorkerDialog_collect_till():
-	workerDialog.visible = false
-	assignedLabel.text = "Tiller"
-
-func _on_WorkerDialog_unassign():
-	workerDialog.visible = false
-	assignedLabel.text = "<Unassigned>"
-
-
 func _on_TargetButton_pressed():
+	CurrentTarget.cancel_targets()
 	CurrentTarget.set_target(targetInfo)
+	set_selected(true)	
+
+func set_target_position(target: Vector2):
+	wanderController.target_position = target
+	wanderController.start_position = target
+	target_position = target
+	state = MOVE
+
+func set_selected(val: bool):
+	if val:
+		get_node("AnimatedSprite").material.set_shader_param("is_active", true)
+	else:
+		get_node("AnimatedSprite").material.set_shader_param("is_active", false)

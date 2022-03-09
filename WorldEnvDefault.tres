@@ -4,13 +4,13 @@
 background_mode = 4
 background_color = Color( 0.14902, 0.443137, 1, 1 )
 tonemap_mode = 1
-tonemap_exposure = 1.69
-tonemap_white = 0.86
-auto_exposure_scale = 0.68
+tonemap_exposure = 1.7
+tonemap_white = 0.8
+auto_exposure_scale = 0.15
 dof_blur_near_distance = 1.41
 glow_enabled = true
 glow_strength = 0.83
-glow_bloom = 0.01
+glow_bloom = 0.05
 glow_blend_mode = 0
 adjustment_brightness = 0.89
 adjustment_contrast = 1.11
