@@ -4,7 +4,7 @@
 background_mode = 4
 background_color = Color( 0.14902, 0.443137, 1, 1 )
 tonemap_mode = 1
-tonemap_exposure = 1.7
+tonemap_exposure = 1.6
 tonemap_white = 0.8
 auto_exposure_scale = 0.15
 dof_blur_near_distance = 1.41

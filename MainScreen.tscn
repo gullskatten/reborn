@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://camera/PlayerCameraNode.gd" type="Script" id=1]
 [ext_resource path="res://scenes/IslandScene.tscn" type="PackedScene" id=2]
@@ -164,14 +164,6 @@ shader_param/color2 = Color( 0.823529, 0.447059, 0.772549, 1 )
 shader_param/direction = Vector2( 0.1, 0.7 )
 shader_param/opacity = 0.409
 
-[sub_resource type="Shader" id=8]
-code = "shader_type canvas_item;"
-
-[sub_resource type="ShaderMaterial" id=9]
-shader = SubResource( 8 )
-shader_param/SAMPLES = 11.0
-shader_param/blur_scale = Vector2( 1, 0 )
-
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -206,7 +198,7 @@ material = SubResource( 5 )
 [node name="AnimationTree" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="14"]
 parameters/playback = SubResource( 2 )
 
-[node name="PlayerFollowNode" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="17"]
+[node name="PlayerFollowNode" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="18"]
 script = ExtResource( 1 )
 
 [node name="TallGrass" parent="ViewportContainer/Viewport/IslandScene/YSort" index="4"]
@@ -238,17 +230,13 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="Ambience" type="ColorRect" parent="Control"]
+visible = false
 material = SubResource( 7 )
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Blur" type="ColorRect" parent="Control"]
-material = SubResource( 9 )
-anchor_bottom = 1.0
-margin_right = 180.0
 
 [connection signal="moving_end" from="ViewportContainer/Viewport/IslandScene/YSort/Player" to="ViewportContainer/Viewport/IslandScene/YSort/Player/PlayerFollowNode" method="_on_Player_moving_end"]
 [connection signal="moving_started" from="ViewportContainer/Viewport/IslandScene/YSort/Player" to="ViewportContainer/Viewport/IslandScene/YSort/Player/PlayerFollowNode" method="_on_Player_moving_started"]

@@ -9,7 +9,7 @@
 [ext_resource path="res://tilemaps/Sand.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/props/grass/grass-hay-64x64.png" type="Texture" id=8]
 [ext_resource path="res://tilemaps/Hay.tscn" type="PackedScene" id=9]
-[ext_resource path="res://npc/neutral/celestial/LittleDot.tscn" type="PackedScene" id=10]
+[ext_resource path="res://npc/neutral/celestial/Worker.tscn" type="PackedScene" id=10]
 [ext_resource path="res://structures/buildings/island/docks/Dock.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/shaders/Sway.tres" type="Material" id=12]
 [ext_resource path="res://assets/props/grass/grass_test.png" type="Texture" id=13]
@@ -246,10 +246,11 @@ parameters/playback = SubResource( 40 )
 
 [node name="PlayerFollowNode" type="RemoteTransform2D" parent="YSort/Player"]
 
-[node name="LittleDot" parent="YSort" instance=ExtResource( 10 )]
+[node name="FirstWorker" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 375, 237 )
+CELESTIAL_NAME = "BoBo"
 
-[node name="LittleDot2" parent="YSort" instance=ExtResource( 10 )]
+[node name="SecondWorker" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 352, 184 )
 CELESTIAL_NAME = "Kyrre"
 

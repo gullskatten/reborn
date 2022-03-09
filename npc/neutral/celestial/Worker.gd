@@ -1,5 +1,5 @@
+class_name Worker
 extends KinematicBody2D
-onready var assignedLabel = $AssignedLabel
 onready var sprite = $AnimatedSprite
 enum {
 	IDLE,
@@ -17,17 +17,18 @@ export var WANDER_TARGET_RANGE = 4
 
 var target_position = null setget set_target_position  # Set this to move.
 var selected = false setget set_selected  # Is this unit selected?
-
+var connected_resource : ResourceStats = null
+var resource_exhaust_connection = null
 export var CELESTIAL_NAME: String = "Little One"
 onready var wanderController = $WanderController
 onready var targetInfo: TargetInfo = $TargetButton/TargetInfo
+onready var stateMachine := $States
+onready var loadCapacity := $WorkerLoadCapacity
 
 var velocity = Vector2.ZERO
 
-
 func _ready():
 	randomize();
-	state = pick_random_state([IDLE, WANDER])
 	sprite.frame = rand_range(0, 4)
 	targetInfo.display_name = CELESTIAL_NAME
 	targetInfo.description = "Celestial Worker"
@@ -37,29 +38,13 @@ func _ready():
 	CurrentTarget.connect("cancel_target", self, "remove_selection")
 
 func _physics_process(delta):
-	match state:
-		IDLE:
-			velocity = velocity.move_toward(Vector2.ZERO, 	200 * delta)
-			if wanderController.get_time_left() == 0:
-				update_wander()
-		WANDER:
-			if wanderController.get_time_left() == 0:
-				update_wander()
-			accelerate_to_point(wanderController.target_position, delta)
-			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
-				update_wander()	
-		MOVE:
-			accelerate_to_point(target_position, delta)
-			if global_position.distance_to(target_position) <= WANDER_TARGET_RANGE:
-				update_wander()	
-
 	velocity = move_and_slide(velocity)
 
 func remove_selection():
 	set_selected(false)
 
 func update_wander():
-	state = pick_random_state([IDLE, WANDER])
+	target_position = null
 	wanderController.set_wander_timer(rand_range(1,3))
 
 func accelerate_to_point(point, delta):
@@ -67,23 +52,46 @@ func accelerate_to_point(point, delta):
 	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 	sprite.flip_h = velocity.x < 0
 
-func pick_random_state(state_list):
-	state_list.shuffle()
-	return state_list.pop_front()
-
 func _on_TargetButton_pressed():
 	CurrentTarget.cancel_targets()
 	CurrentTarget.set_target(targetInfo)
 	set_selected(true)	
 
 func set_target_position(target: Vector2):
-	wanderController.target_position = target
-	wanderController.start_position = target
 	target_position = target
-	state = MOVE
-
+	
+	if target != Vector2.ZERO:
+		wanderController.target_position = target
+		wanderController.start_position = target
+		stateMachine.transition_to("Move")
+	
 func set_selected(val: bool):
 	if val:
 		get_node("AnimatedSprite").material.set_shader_param("is_active", true)
 	else:
 		get_node("AnimatedSprite").material.set_shader_param("is_active", false)
+
+
+func _on_WorkerResourceHitbox_area_entered(area):
+	if area.get_parent() is IslandTree:
+		var currentResource : IslandTree = area.get_parent()
+		var resourceStats : ResourceStats = currentResource.stats
+		if resource_exhaust_connection == null:
+			resource_exhaust_connection = resourceStats.connect("no_resource_left", self, "on_resource_exhaust")
+		connected_resource = resourceStats
+	stateMachine.transition_to("Collect")
+	loadCapacity.start_loading()
+
+func on_resource_exhaust():
+	connected_resource = null
+	resource_exhaust_connection = null
+	stateMachine.transition_to("Seek")
+	loadCapacity.stop_loading()
+
+func _on_WorkerLoadCapacity_is_full(val):
+	stateMachine.transition_to("Return")
+
+func _on_WorkerLoadCapacity_load_changed(val, increment):
+	print("Collected..." + str(val))
+	if connected_resource != null:
+		connected_resource.decrease_resource(increment)

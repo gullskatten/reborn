@@ -1,10 +1,12 @@
+class_name ResourceStats
+
 extends Node
 
 export(int) var max_resource = 100 setget set_max_resource
 var resource = max_resource setget set_resource
 
 signal no_resource_left
-signal resource_changed(value)
+signal resource_changed(decrement, resourceLeft)
 signal max_resource_changed(value)
 
 func set_max_resource(value):

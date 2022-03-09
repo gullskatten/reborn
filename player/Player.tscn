@@ -1,10 +1,13 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/character/character-idle-test.png" type="Texture" id=2]
 [ext_resource path="res://assets/props/shadow/SmallShadow.png" type="Texture" id=3]
 [ext_resource path="res://assets/character/character-8-dir-leaf.png" type="Texture" id=4]
 [ext_resource path="res://assets/character/character-8-dir.png" type="Texture" id=5]
+[ext_resource path="res://player/PlayerStateMachine.gd" type="Script" id=6]
+[ext_resource path="res://player/Move.gd" type="Script" id=7]
+[ext_resource path="res://player/Idle.gd" type="Script" id=8]
 
 [sub_resource type="Gradient" id=35]
 offsets = PoolRealArray( 0, 0.502941, 1 )
@@ -1350,5 +1353,15 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoftCollision"]
 rotation = 1.5708
 shape = SubResource( 37 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 6 )
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
 
 [connection signal="body_entered" from="SoftCollision" to="." method="_on_SoftCollision_body_entered"]

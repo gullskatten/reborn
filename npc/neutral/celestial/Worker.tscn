@@ -1,12 +1,22 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/npc/neutral/celestial/lesser_dot_hover.png" type="Texture" id=1]
 [ext_resource path="res://assets/props/shadow/SmallShadow.png" type="Texture" id=2]
-[ext_resource path="res://npc/neutral/celestial/LittleDot.gd" type="Script" id=3]
+[ext_resource path="res://npc/neutral/celestial/Worker.gd" type="Script" id=3]
+[ext_resource path="res://npc/states/WorkerStateMachine.gd" type="Script" id=4]
 [ext_resource path="res://assets/npc/neutral/celestial/little_dot_portrait_x32.png" type="Texture" id=5]
+[ext_resource path="res://npc/states/worker/Wander.gd" type="Script" id=6]
 [ext_resource path="res://npc/states/WanderController.tscn" type="PackedScene" id=7]
 [ext_resource path="res://target/TargetButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/shaders/Aura_AnimatedSprites.tres" type="Material" id=9]
+[ext_resource path="res://npc/states/worker/Collect.gd" type="Script" id=10]
+[ext_resource path="res://npc/states/worker/Idle.gd" type="Script" id=11]
+[ext_resource path="res://npc/states/worker/Move.gd" type="Script" id=12]
+[ext_resource path="res://npc/worker/WorkerResourceHitbox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://npc/worker/WorkerLoadCapacity.tscn" type="PackedScene" id=14]
+[ext_resource path="res://npc/states/worker/Return.gd" type="Script" id=15]
+[ext_resource path="res://npc/states/worker/Seek.gd" type="Script" id=16]
+[ext_resource path="res://npc/states/worker/Deliver.gd" type="Script" id=17]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -52,7 +62,10 @@ animations = [ {
 radius = 5.99999
 height = 6.00001
 
-[node name="LittleDot" type="KinematicBody2D" groups=["selectable"]]
+[sub_resource type="CircleShape2D" id=11]
+radius = 8.0
+
+[node name="Worker" type="KinematicBody2D" groups=["selectable"]]
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -69,7 +82,7 @@ portrait = ExtResource( 5 )
 material = ExtResource( 9 )
 position = Vector2( -15, -27 )
 frames = SubResource( 9 )
-frame = 4
+frame = 6
 speed_scale = 1.2
 playing = true
 centered = false
@@ -85,7 +98,46 @@ wander_range = 10
 rotation = 1.5708
 shape = SubResource( 10 )
 
+[node name="States" type="Node" parent="."]
+script = ExtResource( 4 )
+initial_state = NodePath("Wander")
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource( 11 )
+
+[node name="Wander" type="Node" parent="States"]
+script = ExtResource( 6 )
+
+[node name="Collect" type="Node" parent="States"]
+script = ExtResource( 10 )
+
+[node name="Move" type="Node" parent="States"]
+script = ExtResource( 12 )
+
+[node name="Return" type="Node" parent="States"]
+script = ExtResource( 15 )
+
+[node name="Seek" type="Node" parent="States"]
+script = ExtResource( 16 )
+
+[node name="Deliver" type="Node" parent="States"]
+script = ExtResource( 17 )
+
+[node name="WorkerResourceHitbox" parent="." instance=ExtResource( 13 )]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" parent="WorkerResourceHitbox" index="0"]
+position = Vector2( 0, -2 )
+shape = SubResource( 11 )
+
+[node name="WorkerLoadCapacity" parent="." instance=ExtResource( 14 )]
+
 [connection signal="input_event" from="." to="." method="_on_LittleDot_input_event"]
 [connection signal="pressed" from="TargetButton" to="." method="_on_TargetButton_pressed"]
+[connection signal="area_entered" from="WorkerResourceHitbox" to="." method="_on_WorkerResourceHitbox_area_entered"]
+[connection signal="is_full" from="WorkerLoadCapacity" to="." method="_on_WorkerLoadCapacity_is_full"]
+[connection signal="load_changed" from="WorkerLoadCapacity" to="." method="_on_WorkerLoadCapacity_load_changed"]
 
 [editable path="TargetButton"]
+[editable path="WorkerResourceHitbox"]

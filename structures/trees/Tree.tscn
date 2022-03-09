@@ -31,7 +31,7 @@ radius = 13.0
 height = 40.0
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 21.095
+radius = 19.0
 
 [node name="Tree" type="Node2D"]
 script = ExtResource( 2 )
@@ -73,7 +73,7 @@ type = "Resource"
 description = "A sturdy tree."
 
 [node name="ResourceStats" parent="." instance=ExtResource( 7 )]
-max_resource = 500
+max_resource = 150
 
 [node name="LabelController" type="Control" parent="."]
 margin_left = -9.0
@@ -87,6 +87,9 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 
 [node name="ResourceCollectArea" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1, 4 )
+collision_layer = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" parent="ResourceCollectArea" index="0"]
 position = Vector2( 0, -5 )
