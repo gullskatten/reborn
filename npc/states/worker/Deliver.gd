@@ -1,8 +1,10 @@
 extends WorkerState
 
 func enter(_msg := {}) -> void:
-	print("Delivering collected resources.")
-	pass
+	print("Delivering!")
+	worker.set_collision_layer_bit(0, true)
+	worker.set_collision_mask_bit(0, true)
+	worker.loadCapacity.reset_load()
 
 func update(delta: float) -> void:
 	pass

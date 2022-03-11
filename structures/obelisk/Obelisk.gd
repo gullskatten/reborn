@@ -20,7 +20,6 @@ func opened_finish():
 #func _process(delta):
 #	pass
 
-
 func _on_Area2D_area_entered(area):
 	animationPlayer.play("Open")
 

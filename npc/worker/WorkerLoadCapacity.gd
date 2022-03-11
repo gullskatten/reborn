@@ -12,6 +12,9 @@ export var loadIncrement := 10 setget set_load_increment
 signal is_full(val)
 signal load_changed(val, increment)
 
+func is_full() -> bool:
+	return currentLoad == maxResourceLoad
+
 func set_load_increment(val):
 	loadIncrement = val
 	

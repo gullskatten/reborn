@@ -11,8 +11,6 @@ script = ExtResource( 3 )
 [node name="ResourceStats" parent="." instance=ExtResource( 1 )]
 
 [node name="ResourceCollectArea" parent="." instance=ExtResource( 2 )]
-collision_layer = 64
-collision_mask = 0
 
 [node name="TargetButton" parent="." instance=ExtResource( 4 )]
 
@@ -25,6 +23,12 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 
 [connection signal="no_resource_left" from="ResourceStats" to="." method="_on_ResourceStats_no_resource_left"]
 [connection signal="resource_changed" from="ResourceStats" to="." method="_on_ResourceStats_resource_changed"]

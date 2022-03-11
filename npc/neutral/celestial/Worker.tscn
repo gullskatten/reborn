@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/npc/neutral/celestial/lesser_dot_hover.png" type="Texture" id=1]
 [ext_resource path="res://assets/props/shadow/SmallShadow.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://npc/states/worker/Return.gd" type="Script" id=15]
 [ext_resource path="res://npc/states/worker/Seek.gd" type="Script" id=16]
 [ext_resource path="res://npc/states/worker/Deliver.gd" type="Script" id=17]
+[ext_resource path="res://npc/worker/WorkerResourceDeliveryHitbox.tscn" type="PackedScene" id=18]
+[ext_resource path="res://npc/states/worker/ReturnCollect.gd" type="Script" id=19]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -59,13 +61,20 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 5.99999
-height = 6.00001
+radius = 3.0
+height = 4.00001
 
 [sub_resource type="CircleShape2D" id=11]
 radius = 8.0
 
-[node name="Worker" type="KinematicBody2D" groups=["selectable"]]
+[sub_resource type="CircleShape2D" id=12]
+radius = 8.06226
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 158.003
+
+[node name="Worker" type="KinematicBody2D" groups=["selectable", "worker"]]
+collision_layer = 512
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -82,7 +91,6 @@ portrait = ExtResource( 5 )
 material = ExtResource( 9 )
 position = Vector2( -15, -27 )
 frames = SubResource( 9 )
-frame = 6
 speed_scale = 1.2
 playing = true
 centered = false
@@ -123,6 +131,9 @@ script = ExtResource( 16 )
 [node name="Deliver" type="Node" parent="States"]
 script = ExtResource( 17 )
 
+[node name="ReturnCollect" type="Node" parent="States"]
+script = ExtResource( 19 )
+
 [node name="WorkerResourceHitbox" parent="." instance=ExtResource( 13 )]
 collision_layer = 0
 collision_mask = 64
@@ -132,12 +143,39 @@ position = Vector2( 0, -2 )
 shape = SubResource( 11 )
 
 [node name="WorkerLoadCapacity" parent="." instance=ExtResource( 14 )]
+maxResourceLoad = 20
+
+[node name="WorkerResourceDeliveryHitbox" parent="." instance=ExtResource( 18 )]
+
+[node name="CollisionShape2D" parent="WorkerResourceDeliveryHitbox" index="0"]
+position = Vector2( 0, -3 )
+shape = SubResource( 12 )
+
+[node name="LoadOutTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ResourceDetectionZone" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResourceDetectionZone"]
+shape = SubResource( 13 )
+
+[node name="SeekTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [connection signal="input_event" from="." to="." method="_on_LittleDot_input_event"]
 [connection signal="pressed" from="TargetButton" to="." method="_on_TargetButton_pressed"]
 [connection signal="area_entered" from="WorkerResourceHitbox" to="." method="_on_WorkerResourceHitbox_area_entered"]
 [connection signal="is_full" from="WorkerLoadCapacity" to="." method="_on_WorkerLoadCapacity_is_full"]
 [connection signal="load_changed" from="WorkerLoadCapacity" to="." method="_on_WorkerLoadCapacity_load_changed"]
+[connection signal="area_entered" from="WorkerResourceDeliveryHitbox" to="." method="_on_WorkerResourceDeliveryHitbox_area_entered"]
+[connection signal="timeout" from="LoadOutTimer" to="." method="_on_LoadOutTimer_timeout"]
+[connection signal="timeout" from="SeekTimer" to="." method="_on_SeekTimer_timeout"]
 
 [editable path="TargetButton"]
 [editable path="WorkerResourceHitbox"]
+[editable path="WorkerResourceDeliveryHitbox"]

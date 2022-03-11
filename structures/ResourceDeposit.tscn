@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://structures/ResourceDeposit.gd" type="Script" id=1]
+[ext_resource path="res://structures/ResourceDepositArea.tscn" type="PackedScene" id=2]
+
+[node name="ResourceDeposit" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="LabelController" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="ResourceDepositArea" parent="." instance=ExtResource( 2 )]
+
+[connection signal="area_entered" from="ResourceDepositArea" to="." method="_on_ResourceDepositArea_area_entered"]
+[connection signal="body_entered" from="ResourceDepositArea" to="." method="_on_ResourceDepositArea_body_entered"]

@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://IslandHay.gd" type="Script" id=1]
 [ext_resource path="res://assets/props/grass/hay-64x64.png" type="Texture" id=2]
 [ext_resource path="res://assets/shaders/Sway.tres" type="Material" id=3]
 [ext_resource path="res://structures/CollectableResource.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui/cursors/cursor_collect_hay.png" type="Texture" id=5]
+[ext_resource path="res://assets/props/grass/hay_portrait.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
-height = 42.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+height = 40.0
 
 [node name="IslandHay" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,10 +24,41 @@ centered = false
 hframes = 4
 
 [node name="CollectableResource" parent="." instance=ExtResource( 4 )]
+resourceType = "Hay"
+onMouseHoverCursor = ExtResource( 5 )
+resourceColor = Color( 0.980392, 0.780392, 0.584314, 1 )
+
+[node name="ResourceStats" parent="CollectableResource" index="0"]
+max_resource = 20
 
 [node name="CollisionShape2D" parent="CollectableResource/ResourceCollectArea" index="0"]
+position = Vector2( 0, -2 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="TargetButton" parent="CollectableResource" index="2"]
+margin_left = -24.0
+margin_top = -14.0
+margin_right = 25.0
+margin_bottom = 12.0
+
+[node name="TargetInfo" parent="CollectableResource/TargetButton" index="0"]
+display_name = "Hay"
+portrait = ExtResource( 6 )
+type = "Resource"
+
+[node name="LabelController" parent="CollectableResource" index="3"]
+margin_left = -3.0
+margin_top = -30.0
+margin_right = 27.0
+margin_bottom = -18.0
+
+[node name="CollisionShape2D" parent="CollectableResource/StaticBody2D" index="0"]
+position = Vector2( 0, -4 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[connection signal="tree_exiting" from="CollectableResource" to="." method="_on_CollectableResource_tree_exiting"]
 
 [editable path="CollectableResource"]
 [editable path="CollectableResource/ResourceCollectArea"]

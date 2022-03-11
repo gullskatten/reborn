@@ -53,12 +53,12 @@ texture = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "hover"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Label" parent="." instance=ExtResource( 3 )]
-margin_left = -32.0
-margin_top = -34.0
-margin_right = 43.0
-margin_bottom = -5.0
+margin_left = -16.0
+margin_top = -27.0
+margin_right = 59.0
+margin_bottom = 2.0
 text = "Oracle"

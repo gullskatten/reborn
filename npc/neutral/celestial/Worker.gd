@@ -21,11 +21,16 @@ var connected_resource : ResourceStats = null
 var resource_exhaust_connection = null
 export var CELESTIAL_NAME: String = "Little One"
 onready var wanderController = $WanderController
-onready var targetInfo: TargetInfo = $TargetButton/TargetInfo
+onready var targetButton := $TargetButton
+onready var targetInfo := $TargetButton/TargetInfo
 onready var stateMachine := $States
 onready var loadCapacity := $WorkerLoadCapacity
+onready var loadOutTimer: Timer = $LoadOutTimer
+onready var seekTimer: Timer = $SeekTimer
+onready var resourceDetectionZone : Area2D = $ResourceDetectionZone
 
 var velocity = Vector2.ZERO
+var lastCollectionPoint = Vector2.ZERO
 
 func _ready():
 	randomize();
@@ -73,25 +78,45 @@ func set_selected(val: bool):
 
 
 func _on_WorkerResourceHitbox_area_entered(area):
-	if area.get_parent() is IslandTree:
-		var currentResource : IslandTree = area.get_parent()
-		var resourceStats : ResourceStats = currentResource.stats
-		if resource_exhaust_connection == null:
-			resource_exhaust_connection = resourceStats.connect("no_resource_left", self, "on_resource_exhaust")
-		connected_resource = resourceStats
-	stateMachine.transition_to("Collect")
-	loadCapacity.start_loading()
+	print("Entered Collection Area!")
+	if !loadCapacity.is_full():
+		if area.get_parent() is CollectableResource:
+			var resource : CollectableResource = area.get_parent()
+			var resourceStats : ResourceStats = resource.stats
+			if resource_exhaust_connection == null:
+				resource_exhaust_connection = resourceStats.connect("no_resource_left", self, "on_resource_exhaust")
+			connected_resource = resourceStats
+		stateMachine.transition_to("Collect")
+		loadCapacity.start_loading()
 
 func on_resource_exhaust():
 	connected_resource = null
 	resource_exhaust_connection = null
-	stateMachine.transition_to("Seek")
+	if not loadCapacity.is_full():
+		stateMachine.transition_to("Seek")
 	loadCapacity.stop_loading()
 
 func _on_WorkerLoadCapacity_is_full(val):
 	stateMachine.transition_to("Return")
 
 func _on_WorkerLoadCapacity_load_changed(val, increment):
-	print("Collected..." + str(val))
+	print("Collected: " + str(val))
 	if connected_resource != null:
-		connected_resource.decrease_resource(increment)
+		connected_resource.call_deferred("decrease_resource", increment)
+
+
+func _on_WorkerResourceDeliveryHitbox_area_entered(area):
+	print("Delivering - " + str(loadCapacity.currentLoad))
+	if loadCapacity.currentLoad > 0:
+		loadOutTimer.start()
+		stateMachine.transition_to("Deliver")
+
+func _on_LoadOutTimer_timeout():
+	stateMachine.transition_to("ReturnCollect")
+
+
+func _on_SeekTimer_timeout():
+	print("Seek timed out!")	
+	if stateMachine.state.name == "Seek":
+		print("Seek was current state, starting to wander..")	
+		stateMachine.pick_random_state()

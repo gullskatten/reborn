@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/props/structures/obelisk/obelisk.png" type="Texture" id=1]
 [ext_resource path="res://structures/obelisk/Obelisk.gd" type="Script" id=2]
 [ext_resource path="res://structures/obelisk/glow_emitter.tres" type="Material" id=3]
 [ext_resource path="res://assets/props/light/Light_Small_Scarce.png" type="Texture" id=4]
 [ext_resource path="res://npc/neutral/celestial/Oracle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://structures/ResourceDeposit.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Close"
@@ -181,7 +182,10 @@ height = 44.0
 radius = 8.0
 height = 42.0
 
-[node name="Oracle" type="Node2D"]
+[sub_resource type="CircleShape2D" id=9]
+radius = 34.0588
+
+[node name="Oracle" type="Node2D" groups=["resource_deposit"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -235,7 +239,16 @@ shadow_filter_smooth = 1.8
 [node name="Dot" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -18 )
 
+[node name="ResourceDeposit" parent="." instance=ExtResource( 6 )]
+resourceColor = Color( 0.8, 0.996078, 0.882353, 1 )
+
+[node name="CollisionShape2D" parent="ResourceDeposit/ResourceDepositArea" index="0"]
+shape = SubResource( 9 )
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+
+[editable path="ResourceDeposit"]
+[editable path="ResourceDeposit/ResourceDepositArea"]

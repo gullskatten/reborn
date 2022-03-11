@@ -210,7 +210,8 @@ combine={
 2d_physics/layer_5="Enemy"
 2d_physics/layer_6="SoftCollisions"
 2d_physics/layer_7="ResourceHurtbox"
-2d_physics/layer_8="Friendly"
+2d_physics/layer_8="ResourceDeliveryHurtbox"
+2d_physics/layer_9="Resource"
 
 [physics]
 
