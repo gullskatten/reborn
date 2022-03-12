@@ -15,9 +15,9 @@ script = ExtResource( 3 )
 [node name="TargetButton" parent="." instance=ExtResource( 4 )]
 
 [node name="LabelController" type="Control" parent="."]
-margin_top = -14.0
-margin_right = 30.0
-margin_bottom = -2.0
+margin_top = -18.0
+margin_right = 29.0
+margin_bottom = -9.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -23,7 +23,6 @@ func _ready() -> void:
 func pick_random_state():
 	var c = ["Wander", "Idle"]
 	c.shuffle()
-	
 	transition_to(c.pop_front())
 	
 # The state machine subscribes to node callbacks and delegates them to the state objects.

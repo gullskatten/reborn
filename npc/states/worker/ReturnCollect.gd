@@ -10,3 +10,4 @@ func update(delta: float) -> void:
 				state_machine.transition_to("Seek")
 	else:
 		state_machine.pick_random_state()
+		worker.update_wander()

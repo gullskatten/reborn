@@ -22,7 +22,8 @@ func enter(_msg := {}) -> void:
 
 	else:
 		print("No deposits found!")
-		state_machine.transition_to("Idle")
+		state_machine.pick_random_state()
+		worker.update_wander()	
 
 func update(delta: float) -> void:
 	if nearestCollectionPoint != null:

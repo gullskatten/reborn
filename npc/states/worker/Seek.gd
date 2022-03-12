@@ -31,7 +31,7 @@ func update(delta: float) -> void:
 			
 		worker.accelerate_to_point(nearestTargetVector, delta)
 	
-		if worker.global_position.distance_to(nearestTargetVector) <= 1:
+		if worker.global_position.distance_to(nearestTargetVector) <= 4:
 			nearestTargetVector = Vector2.ZERO
 			print("Attempting to seek again!")
 			state_machine.transition_to("Seek")

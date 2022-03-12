@@ -68,7 +68,7 @@ shape = SubResource( 3 )
 onMouseHoverCursor = ExtResource( 7 )
 
 [node name="ResourceStats" parent="CollectableResource" index="0"]
-max_resource = 20
+max_resource = 1200
 
 [node name="CollisionShape2D" parent="CollectableResource/ResourceCollectArea" index="0"]
 position = Vector2( 0, -8 )

@@ -19,6 +19,7 @@ var target_position = null setget set_target_position  # Set this to move.
 var selected = false setget set_selected  # Is this unit selected?
 var connected_resource : ResourceStats = null
 var resource_exhaust_connection = null
+var resource_exiting_connection = null
 export var CELESTIAL_NAME: String = "Little One"
 onready var wanderController = $WanderController
 onready var targetButton := $TargetButton
@@ -50,6 +51,7 @@ func remove_selection():
 
 func update_wander():
 	target_position = null
+	wanderController.start_position = global_position
 	wanderController.set_wander_timer(rand_range(1,3))
 
 func accelerate_to_point(point, delta):
@@ -78,13 +80,13 @@ func set_selected(val: bool):
 
 
 func _on_WorkerResourceHitbox_area_entered(area):
-	print("Entered Collection Area!")
 	if !loadCapacity.is_full():
 		if area.get_parent() is CollectableResource:
 			var resource : CollectableResource = area.get_parent()
 			var resourceStats : ResourceStats = resource.stats
 			if resource_exhaust_connection == null:
 				resource_exhaust_connection = resourceStats.connect("no_resource_left", self, "on_resource_exhaust")
+				resource_exiting_connection = resourceStats.connect("tree_exiting", self, "on_resource_exhaust")
 			connected_resource = resourceStats
 		stateMachine.transition_to("Collect")
 		loadCapacity.start_loading()
@@ -92,6 +94,7 @@ func _on_WorkerResourceHitbox_area_entered(area):
 func on_resource_exhaust():
 	connected_resource = null
 	resource_exhaust_connection = null
+	resource_exiting_connection = null
 	if not loadCapacity.is_full():
 		stateMachine.transition_to("Seek")
 	loadCapacity.stop_loading()
@@ -100,13 +103,11 @@ func _on_WorkerLoadCapacity_is_full(val):
 	stateMachine.transition_to("Return")
 
 func _on_WorkerLoadCapacity_load_changed(val, increment):
-	print("Collected: " + str(val))
 	if connected_resource != null:
 		connected_resource.call_deferred("decrease_resource", increment)
 
 
 func _on_WorkerResourceDeliveryHitbox_area_entered(area):
-	print("Delivering - " + str(loadCapacity.currentLoad))
 	if loadCapacity.currentLoad > 0:
 		loadOutTimer.start()
 		stateMachine.transition_to("Deliver")
@@ -118,5 +119,9 @@ func _on_LoadOutTimer_timeout():
 func _on_SeekTimer_timeout():
 	print("Seek timed out!")	
 	if stateMachine.state.name == "Seek":
-		print("Seek was current state, starting to wander..")	
-		stateMachine.pick_random_state()
+		if loadCapacity.currentLoad > 0:
+			stateMachine.transition_to("Return")
+		else:
+			print("Seek was current state, starting to wander..")	
+			stateMachine.pick_random_state()
+			update_wander()
