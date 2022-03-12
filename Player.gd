@@ -9,7 +9,6 @@ onready var footsteps = $Footsteps
 
 var velocity : Vector2 = Vector2.ZERO
 var state = MOVE
-var is_mounted = true
 
 const ACCELERATION = 20
 const RUN_MAX_SPEED = 80

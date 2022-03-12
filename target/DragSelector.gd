@@ -29,6 +29,9 @@ func _input(event):
 			# We only want to start a drag if there's no selection.
 			if CurrentTarget.target != null:
 				move_target_to_position(CurrentTarget.target)
+				var resource_clicked = find_first_resource_clicked()
+				if resource_clicked != null:
+					assign_resource(CurrentTarget.target, resource_clicked.resourceType)
 			if !CurrentTarget.targets.empty():
 				for target in CurrentTarget.targets:
 					move_target_to_position(target)
@@ -68,9 +71,23 @@ func _input(event):
 	if event is InputEventMouseMotion and dragging:
 		update()
 
+func find_first_resource_clicked() -> CollectableResource:
+	var space = get_world_2d().direct_space_state
+	var bodies_at_click = space.intersect_point(get_global_mouse_position(), 1, [], 0x00000100, true, false)
+	if not bodies_at_click.empty():
+		var colliding = bodies_at_click[0].get("collider")
+		if colliding.get_parent() is CollectableResource:
+			return colliding.get_parent()
+	
+	return null
+	
 func move_target_to_position(target):
 	if target.ref_node && target.ref_node.has_method("set_target_position"):
 		target.ref_node.set_target_position(get_global_mouse_position())
+
+func assign_resource(target: TargetInfo, resourceType: String):
+	if target.ref_node && target.ref_node.has_method("set_assigned_resource_type"):
+		target.ref_node.set_assigned_resource_type(resourceType)
 
 func _draw():
 	if dragging:

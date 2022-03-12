@@ -1,15 +1,6 @@
 class_name Worker
 extends KinematicBody2D
 onready var sprite = $AnimatedSprite
-enum {
-	IDLE,
-	WANDER,
-	MOVE,
-	COLLECT
-}
-
-var state = WANDER
-
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
 export var FRICTION = 200
@@ -17,6 +8,7 @@ export var WANDER_TARGET_RANGE = 4
 
 var target_position = null setget set_target_position  # Set this to move.
 var selected = false setget set_selected  # Is this unit selected?
+var assigned_resource_type : String = "" setget set_assigned_resource_type
 var connected_resource : ResourceStats = null
 var resource_exhaust_connection = null
 var resource_exiting_connection = null
@@ -32,6 +24,7 @@ onready var resourceDetectionZone : Area2D = $ResourceDetectionZone
 
 var velocity = Vector2.ZERO
 var lastCollectionPoint = Vector2.ZERO
+var isAssignedWork = false
 
 func _ready():
 	randomize();
@@ -71,7 +64,12 @@ func set_target_position(target: Vector2):
 		wanderController.target_position = target
 		wanderController.start_position = target
 		stateMachine.transition_to("Move")
-	
+
+func set_assigned_resource_type(resource_type):
+	print("Assigned worker:")
+	print(resource_type)
+	assigned_resource_type = resource_type
+
 func set_selected(val: bool):
 	if val:
 		get_node("AnimatedSprite").material.set_shader_param("is_active", true)

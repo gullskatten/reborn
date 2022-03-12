@@ -74,7 +74,6 @@ radius = 8.06226
 radius = 158.003
 
 [node name="Worker" type="KinematicBody2D" groups=["selectable", "worker"]]
-collision_layer = 512
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -91,7 +90,7 @@ portrait = ExtResource( 5 )
 material = ExtResource( 9 )
 position = Vector2( -15, -27 )
 frames = SubResource( 9 )
-frame = 4
+frame = 6
 speed_scale = 1.2
 playing = true
 centered = false

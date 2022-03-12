@@ -13,7 +13,6 @@ export var resourceColor: Color = Color.mediumseagreen
 export var isTargetable: bool = true
 const IncreaseLabel = preload("res://ui/SmallLabel.tscn")
 
-
 func _ready():
 	pass # Replace with function body.
 

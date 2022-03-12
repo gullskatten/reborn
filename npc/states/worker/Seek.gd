@@ -13,11 +13,14 @@ func enter(_msg := {}) -> void:
 		worker.resourceDetectionZone.monitorable = true
 		
 func add_target(body):
-	if nearestTargetVector == Vector2.ZERO:
-		nearestTargetVector = body.global_position
-	else:
-		nearestTargetVector = body.global_position if worker.global_position.distance_to(nearestTargetVector) > worker.global_position.distance_to(body.global_position) else nearestTargetVector
-			
+	if body.get_parent() is CollectableResource:
+		var resource: CollectableResource = body.get_parent()
+		if resource.resourceType == worker.assigned_resource_type:
+			if nearestTargetVector == Vector2.ZERO:
+				nearestTargetVector = body.global_position
+			else:
+				nearestTargetVector = body.global_position if worker.global_position.distance_to(nearestTargetVector) > worker.global_position.distance_to(body.global_position) else nearestTargetVector
+					
 func update(delta: float) -> void:
 	if nearestTargetVector != Vector2.ZERO:
 		if !worker.seekTimer.is_stopped():

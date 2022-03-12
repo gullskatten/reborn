@@ -37,10 +37,9 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="TargetButton" parent="CollectableResource" index="2"]
-margin_left = -24.0
+margin_left = -28.0
 margin_top = -14.0
-margin_right = 25.0
-margin_bottom = 12.0
+margin_right = 27.0
 
 [node name="TargetInfo" parent="CollectableResource/TargetButton" index="0"]
 display_name = "Hay"

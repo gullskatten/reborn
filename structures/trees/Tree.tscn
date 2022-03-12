@@ -34,8 +34,8 @@ radius = 12.0
 height = 16.0
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 8.0
-height = 24.0
+radius = 11.0
+height = 30.0
 
 [node name="IslandTree" type="Node2D"]
 script = ExtResource( 2 )
@@ -75,8 +75,8 @@ position = Vector2( 0, -8 )
 shape = SubResource( 4 )
 
 [node name="TargetButton" parent="CollectableResource" index="2"]
-margin_left = -14.0
-margin_top = -32.0
+margin_left = -12.0
+margin_top = -40.0
 margin_right = 12.0
 margin_bottom = 10.0
 
@@ -90,7 +90,7 @@ margin_top = -27.0
 margin_bottom = -15.0
 
 [node name="CollisionShape2D" parent="CollectableResource/StaticBody2D" index="0"]
-position = Vector2( 0, -10 )
+position = Vector2( 0, -14 )
 shape = SubResource( 5 )
 
 [connection signal="tree_exiting" from="CollectableResource" to="." method="_on_CollectableResource_tree_exiting"]
