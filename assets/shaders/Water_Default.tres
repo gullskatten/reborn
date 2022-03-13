@@ -1,69 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[sub_resource type="Shader" id=3]
-code = "shader_type canvas_item;
-
-uniform vec4 color : hint_color = vec4(0.16, 0.3, 0.58, 1.0);
-uniform float translucency = 0.8;
-uniform vec4 foam_color : hint_color = vec4(1, 1, 1, 0.8);
-
-varying vec2 vert;
-
-void vertex() {
-    vert = VERTEX;
-}
-
-void fragment() {
-    vec4 input = texture(TEXTURE, UV);
-
-    if (input.a == 0.0) {
-        COLOR = input;
-
-    } else {
-        // Waves/rippling
-        vec2 tiled_uvs = UV * 100.0;
-        vec2 displacement = vec2(
-            cos(TIME * 2.0 + tiled_uvs.x + tiled_uvs.y) * 0.002,
-            cos(TIME * 0.1 + tiled_uvs.x + tiled_uvs.y) * 0.002
-        );
-
-        // Below the surface
-        vec4 refraction = texture(SCREEN_TEXTURE, SCREEN_UV + displacement);
-        // Weird stuff happens at the 0,0 seam
-    //    if (vert.x < 1.0 || vert.y < 1.0) {
-    //        refraction = texture(SCREEN_TEXTURE, SCREEN_UV);
-    //    }
-
-        // The actual water color is a mix of the surface and below
-        vec4 water = mix(refraction, color, translucency);
-		
-      	// To simulate waves we alternate between the red pixels
-        // and the green pixels as the white foam
-        bool use_red = int(TIME) % 2 == 0;
-        // NOTE: green is \"on top\", meaning it is closer to the rocks/shore than
-        // red so we need a special case to make sure green is transparent
-        if (use_red) {
-            if (input.r > 0.5) {
-                COLOR = foam_color;
-            } else if (input.b > 0.5) {
-                COLOR = water;
-            } else {
-                COLOR = water;
-            }
-        } else {
-            if (input.g > 0.2 && input.b < 0.3) {
-                COLOR = foam_color;
-            } else if(input.r > 0.5) {
-				COLOR = vec4(0);
-            } else {
-				COLOR = water;
-			}
-        }
-    }
-}"
+[ext_resource path="res://assets/shaders/Water_Default_shader.tres" type="Shader" id=1]
 
 [resource]
-shader = SubResource( 3 )
-shader_param/color = Color( 0.203922, 0.333333, 0.427451, 1 )
-shader_param/translucency = 0.7
+shader = ExtResource( 1 )
+shader_param/color = Color( 0.0156863, 0.0627451, 0.152941, 0.298039 )
+shader_param/translucency = 0.8
 shader_param/foam_color = Color( 1, 1, 1, 0.8 )

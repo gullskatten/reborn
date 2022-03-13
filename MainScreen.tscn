@@ -187,6 +187,9 @@ color = Color( 0.705882, 0.705882, 0.541176, 1 )
 [node name="Straw" parent="ViewportContainer/Viewport/IslandScene" index="0"]
 material = SubResource( 5 )
 
+[node name="Water" parent="ViewportContainer/Viewport/IslandScene/Water" index="0"]
+modulate = Color( 1, 1, 1, 1 )
+
 [node name="AnimationTree" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="14"]
 parameters/playback = SubResource( 2 )
 
