@@ -13,4 +13,5 @@ rotating = true
 current = true
 zoom = Vector2( 0.4, 0.4 )
 process_mode = 0
+smoothing_enabled = true
 smoothing_speed = 7.0

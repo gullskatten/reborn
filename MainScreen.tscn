@@ -167,16 +167,8 @@ shader_param/opacity = 0.409
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_right = 984.0
-margin_bottom = 560.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 size = Vector2( 1024, 600 )
@@ -212,9 +204,6 @@ material = SubResource( 5 )
 [node name="GUI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GUI"]
 
@@ -233,9 +222,6 @@ margin_bottom = 600.0
 material = SubResource( 7 )
 margin_right = 1024.0
 margin_bottom = 600.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="moving_end" from="ViewportContainer/Viewport/IslandScene/YSort/Player" to="ViewportContainer/Viewport/IslandScene/YSort/Player/PlayerFollowNode" method="_on_Player_moving_end"]
 [connection signal="moving_started" from="ViewportContainer/Viewport/IslandScene/YSort/Player" to="ViewportContainer/Viewport/IslandScene/YSort/Player/PlayerFollowNode" method="_on_Player_moving_started"]

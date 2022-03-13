@@ -133,6 +133,7 @@ CurrentTarget="*res://ui/target/CurrentTarget.tscn"
 [display]
 
 mouse_cursor/custom_image="res://cursor.png"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
@@ -219,4 +220,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+batching/precision/uv_contract=true
 environment/default_environment="res://default_env.tres"

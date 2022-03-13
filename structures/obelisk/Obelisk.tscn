@@ -183,7 +183,7 @@ radius = 8.0
 height = 42.0
 
 [sub_resource type="CircleShape2D" id=9]
-radius = 34.0588
+radius = 29.0172
 
 [node name="Oracle" type="Node2D" groups=["resource_deposit"]]
 script = ExtResource( 2 )
@@ -241,6 +241,12 @@ position = Vector2( 0, -18 )
 
 [node name="ResourceDeposit" parent="." instance=ExtResource( 6 )]
 resourceColor = Color( 0.8, 0.996078, 0.882353, 1 )
+
+[node name="LabelController" parent="ResourceDeposit" index="0"]
+margin_left = 1.0
+margin_top = -31.0
+margin_right = 41.0
+margin_bottom = 9.0
 
 [node name="CollisionShape2D" parent="ResourceDeposit/ResourceDepositArea" index="0"]
 shape = SubResource( 9 )

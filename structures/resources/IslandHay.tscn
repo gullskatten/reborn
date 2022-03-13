@@ -29,7 +29,7 @@ onMouseHoverCursor = ExtResource( 5 )
 resourceColor = Color( 0.980392, 0.780392, 0.584314, 1 )
 
 [node name="ResourceStats" parent="CollectableResource" index="0"]
-max_resource = 20
+max_resource = 30
 
 [node name="CollisionShape2D" parent="CollectableResource/ResourceCollectArea" index="0"]
 position = Vector2( 0, -2 )

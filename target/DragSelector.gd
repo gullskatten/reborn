@@ -33,8 +33,11 @@ func _input(event):
 				if resource_clicked != null:
 					assign_resource(CurrentTarget.target, resource_clicked.resourceType)
 			if !CurrentTarget.targets.empty():
+				var resource_clicked = find_first_resource_clicked()
 				for target in CurrentTarget.targets:
 					move_target_to_position(target)
+					if resource_clicked != null:
+						assign_resource(target, resource_clicked.resourceType)
 			elif selected == EMPTY_ARRAY:
 				dragging = true
 				drag_start = get_global_mouse_position()

@@ -66,9 +66,8 @@ func set_target_position(target: Vector2):
 		stateMachine.transition_to("Move")
 
 func set_assigned_resource_type(resource_type):
-	print("Assigned worker:")
-	print(resource_type)
 	assigned_resource_type = resource_type
+	loadCapacity.set_resource_type(resource_type)
 
 func set_selected(val: bool):
 	if val:
@@ -78,16 +77,18 @@ func set_selected(val: bool):
 
 
 func _on_WorkerResourceHitbox_area_entered(area):
-	if !loadCapacity.is_full():
+	if assigned_resource_type != "" && !loadCapacity.is_full():
 		if area.get_parent() is CollectableResource:
 			var resource : CollectableResource = area.get_parent()
-			var resourceStats : ResourceStats = resource.stats
-			if resource_exhaust_connection == null:
-				resource_exhaust_connection = resourceStats.connect("no_resource_left", self, "on_resource_exhaust")
-				resource_exiting_connection = resourceStats.connect("tree_exiting", self, "on_resource_exhaust")
-			connected_resource = resourceStats
-		stateMachine.transition_to("Collect")
-		loadCapacity.start_loading()
+			
+			if assigned_resource_type == resource.resourceType:
+				var resourceStats : ResourceStats = resource.stats
+				if resource_exhaust_connection == null:
+					resource_exhaust_connection = resourceStats.connect("no_resource_left", self, "on_resource_exhaust")
+					resource_exiting_connection = resourceStats.connect("tree_exiting", self, "on_resource_exhaust")
+				connected_resource = resourceStats
+				stateMachine.transition_to("Collect")
+				loadCapacity.start_loading()
 
 func on_resource_exhaust():
 	connected_resource = null
@@ -106,20 +107,24 @@ func _on_WorkerLoadCapacity_load_changed(val, increment):
 
 
 func _on_WorkerResourceDeliveryHitbox_area_entered(area):
-	if loadCapacity.currentLoad > 0:
+	print("hmm..")
+	if stateMachine.state.name == "Return" && loadCapacity.currentLoad > 0:
+		print("Had some load, lets deliver this...")
 		loadOutTimer.start()
 		stateMachine.transition_to("Deliver")
 
 func _on_LoadOutTimer_timeout():
 	stateMachine.transition_to("ReturnCollect")
 
-
 func _on_SeekTimer_timeout():
-	print("Seek timed out!")	
 	if stateMachine.state.name == "Seek":
 		if loadCapacity.currentLoad > 0:
+			print("Seek - Returning goods.")
 			stateMachine.transition_to("Return")
 		else:
-			print("Seek was current state, starting to wander..")	
 			stateMachine.pick_random_state()
 			update_wander()
+
+
+func _on_WorkerResourceHitbox_area_exited(area):
+	loadCapacity.stop_loading()

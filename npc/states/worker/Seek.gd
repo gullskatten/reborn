@@ -4,7 +4,7 @@ var nearestTargetVector = Vector2.ZERO
 var con = null
 
 func enter(_msg := {}) -> void:
-	print("Seeking next target..")
+	print("Seeking..")
 	worker.seekTimer.start(10.0)
 	worker.velocity = Vector2.ZERO
 	if not worker.resourceDetectionZone.is_connected("body_entered", self, "add_target"):

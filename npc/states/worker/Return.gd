@@ -6,12 +6,11 @@ var nearestCollectionPoint: Node = null
 func enter(_msg := {}) -> void:
 	worker.set_collision_layer_bit(0, false)
 	worker.set_collision_mask_bit(0, false)
-	print("Finding nearest deposit..")
 	
 	var deposits = get_tree().get_nodes_in_group("resource_deposit")
 	
 	if deposits != null and not deposits.empty():
-		print("Deposit was found!")
+		print("Returning to deposit")
 		# assume the first spawn node is closest
 		nearestCollectionPoint = deposits[0]
 

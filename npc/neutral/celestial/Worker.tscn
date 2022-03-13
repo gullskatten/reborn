@@ -68,7 +68,7 @@ height = 4.00001
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id=12]
-radius = 8.06226
+radius = 10.0499
 
 [sub_resource type="CircleShape2D" id=13]
 radius = 158.003
@@ -90,7 +90,6 @@ portrait = ExtResource( 5 )
 material = ExtResource( 9 )
 position = Vector2( -15, -27 )
 frames = SubResource( 9 )
-frame = 6
 speed_scale = 1.2
 playing = true
 centered = false
@@ -171,6 +170,7 @@ one_shot = true
 [connection signal="input_event" from="." to="." method="_on_LittleDot_input_event"]
 [connection signal="pressed" from="TargetButton" to="." method="_on_TargetButton_pressed"]
 [connection signal="area_entered" from="WorkerResourceHitbox" to="." method="_on_WorkerResourceHitbox_area_entered"]
+[connection signal="area_exited" from="WorkerResourceHitbox" to="." method="_on_WorkerResourceHitbox_area_exited"]
 [connection signal="is_full" from="WorkerLoadCapacity" to="." method="_on_WorkerLoadCapacity_is_full"]
 [connection signal="load_changed" from="WorkerLoadCapacity" to="." method="_on_WorkerLoadCapacity_load_changed"]
 [connection signal="area_entered" from="WorkerResourceDeliveryHitbox" to="." method="_on_WorkerResourceDeliveryHitbox_area_entered"]
