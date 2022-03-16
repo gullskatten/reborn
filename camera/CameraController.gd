@@ -1,15 +1,16 @@
 extends Node2D
 onready var cameraPosition = $CameraPosition
 onready var camera = $CameraPosition/Camera
+
 var motion = Vector2()
 const still = Vector2(0, 0)
-const rect_pos_initial = Vector2()
-const MAX_ZOOM = Vector2(2,2)
-const MIN_ZOOM = Vector2(0.2, 0.2)
-const DEFAULT_ZOOM = Vector2(0.4, 0.4)
-const DISABLED_ZOOM = Vector2(1.2, 1.2)
-const ZOOM_FACTOR = Vector2(0.4, 0.4)
-const MIN_ZOOM_FACTOR = Vector2(0.2, 0.2)
+
+
+func _ready():
+	GlobalCameraSettings.connect("zoom_level_changed", self, "set_camera_zoom")
+
+func set_camera_zoom(zoom):
+	camera.zoom = zoom
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -18,42 +19,26 @@ func _input(event):
 	if event is InputEventMouse:
 		if event.is_action("action_left"):
 			if event.is_pressed():
+					GlobalCameraSettings.set_camera_position(cameraPosition.global_position)
 				#print("action_left pressed: viewport_entered is ", viewport_entered)
 					Input.action_press("pan_view")
+					
 				#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 			else:
+				
 				Input.action_release("pan_view")
 			#	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				
 
 	if event.is_action_pressed("action_zoom_in"):	
 		# Max allowed Zoom
-		if camera.zoom >= MIN_ZOOM:
-			if camera.zoom == MIN_ZOOM:
-				camera.zoom = ZOOM_FACTOR
-			
-			if camera.zoom == MAX_ZOOM:
-				camera.zoom -= ZOOM_FACTOR
-			else: 
-				if camera.zoom == ZOOM_FACTOR:
-					camera.zoom -= MIN_ZOOM_FACTOR
-				else:
-					camera.zoom -= ZOOM_FACTOR
-		# Removes jitter in tiles
-		if camera.zoom == DISABLED_ZOOM:
-			camera.zoom = Vector2(0.8, 0.8)
+		GlobalCameraSettings.zoom_in()
 		
-		print(camera.zoom)
 	if event.is_action_pressed("action_zoom_out"):
-		if camera.zoom == MIN_ZOOM:
-				camera.zoom = ZOOM_FACTOR
-				
-		elif camera.zoom < MAX_ZOOM:
-				camera.zoom += ZOOM_FACTOR
-		# Removes jitter in tiles
-		if camera.zoom == DISABLED_ZOOM:
-			camera.zoom = Vector2(1.6, 1.6)
+		GlobalCameraSettings.zoom_out()
+		
+		
 		print(camera.zoom)
 func _physics_process(delta):
 	var speed = 100 * delta
@@ -62,6 +47,7 @@ func _physics_process(delta):
 		if motion.abs() != still:
 			cameraPosition.translate(-motion.round() * floor(speed))
 			motion = still #Do not forget to reset your frame-time variables!		
+	
 				
 func _on_Player_initial_position(position):
 	if(cameraPosition != null):	

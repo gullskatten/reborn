@@ -231,6 +231,7 @@ margin_bottom = 600.0
 
 [editable path="ViewportContainer/Viewport/IslandScene"]
 [editable path="ViewportContainer/Viewport/IslandScene/Sand"]
+[editable path="ViewportContainer/Viewport/IslandScene/Water2"]
 [editable path="ViewportContainer/Viewport/IslandScene/Water"]
 [editable path="ViewportContainer/Viewport/IslandScene/Grass"]
 [editable path="ViewportContainer/Viewport/IslandScene/YSort/Player"]
