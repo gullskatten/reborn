@@ -48,7 +48,7 @@ func zoom_in():
 	set_zoom_level(next_zoom)
 
 func set_zoom_level(zoom):
-	if zoom != zoom_level:
+	if zoom != zoom_level && zoom >= MIN_ZOOM && zoom <= MAX_ZOOM:
 		zoom_level = zoom
 		emit_signal("zoom_level_changed", zoom)
 

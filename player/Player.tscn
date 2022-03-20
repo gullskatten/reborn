@@ -8,7 +8,7 @@
 [ext_resource path="res://player/PlayerStateMachine.gd" type="Script" id=6]
 [ext_resource path="res://player/Move.gd" type="Script" id=7]
 [ext_resource path="res://player/Idle.gd" type="Script" id=8]
-[ext_resource path="res://assets/equipment/weapons/short_axe_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/equipment/weapons/short_sword_1.png" type="Texture" id=9]
 [ext_resource path="res://assets/equipment/shields/shield_front_1.png" type="Texture" id=10]
 [ext_resource path="res://assets/equipment/shields/shield_back_1.png" type="Texture" id=11]
 
@@ -155,7 +155,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 48, 49, 50, 51, 52, 53 ]
+"values": [ 0, 1, 2, 3, 4, 5 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("MainHandE:position")
@@ -2616,12 +2616,11 @@ vframes = 72
 frame = 18
 
 [node name="Leaf" type="Sprite" parent="."]
-visible = false
-position = Vector2( -32, -55.1 )
+position = Vector2( -32, -5.98498 )
 texture = ExtResource( 4 )
 centered = false
 hframes = 6
-vframes = 72
+vframes = 48
 frame = 49
 
 [node name="MainHandE" type="Sprite" parent="."]
