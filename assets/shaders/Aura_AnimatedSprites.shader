@@ -30,7 +30,7 @@ void vertex()
 void fragment()
 {
 	if (is_active) {
-		ivec2 t = textureSize(TEXTURE, 0);
+	ivec2 t = textureSize(TEXTURE, 0);
 	vec2 regular_uv;
 	regular_uv.x = UV.x + (f.x - o.x)/float(t.x);
 	regular_uv.y = UV.y + (f.y - o.y)/float(t.y);
