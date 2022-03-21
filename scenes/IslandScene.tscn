@@ -222,8 +222,8 @@ noise = SubResource( 52 )
 
 [sub_resource type="ShaderMaterial" id=44]
 shader = SubResource( 50 )
-shader_param/water_color = Color( 0.529412, 0.92549, 1, 1 )
-shader_param/shadow_color = Color( 0.74902, 0.964706, 0.988235, 1 )
+shader_param/water_color = Color( 0.219608, 0.698039, 0.788235, 1 )
+shader_param/shadow_color = Color( 0.345098, 0.72549, 0.764706, 1 )
 shader_param/uv_offset_scale = Vector2( 0.2, 0.2 )
 shader_param/sine_time_scale = 0.01
 shader_param/sine_offset_scale = Vector2( 0.5, -0.5 )
