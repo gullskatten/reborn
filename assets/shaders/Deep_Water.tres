@@ -1,0 +1,47 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform vec4 color : hint_color = vec4(0.16, 0.3, 0.58, 1.0);
+uniform float translucency = 0.9;
+
+varying vec2 vert;
+
+void vertex() {
+    vert = VERTEX;
+}
+
+void fragment() {
+    vec4 input = texture(TEXTURE, UV);
+
+    if (input.a == 0.0) {
+        COLOR = input;
+
+    } else {
+        // Waves/rippling
+        vec2 tiled_uvs = UV * 100.0;
+        vec2 displacement = vec2(
+            cos(TIME * 2.0 + tiled_uvs.x + tiled_uvs.y) * 0.002,
+            cos(TIME * 0.1 + tiled_uvs.x + tiled_uvs.y) * 0.002
+        );
+
+
+        // Below the surface
+        vec4 refraction = texture(SCREEN_TEXTURE, SCREEN_UV + displacement);
+        // Weird stuff happens at the 0,0 seam
+    //    if (vert.x < 1.0 || vert.y < 1.0) {
+    //        refraction = texture(SCREEN_TEXTURE, SCREEN_UV);
+    //    }
+
+        // The actual water color is a mix of the surface and below
+        vec4 water = mix(refraction, color, translucency);
+		
+      	// To simulate waves we alternate between the red pixels
+        // and the green pixels as the white foam
+        
+        // NOTE: green is \"on top\", meaning it is closer to the rocks/shore than
+        // red so we need a special case to make sure green is transparent
+        COLOR = water;
+    }
+}"

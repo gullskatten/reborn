@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var deepWaterCollision = $DeepWater/DeepWaterCollision 
+onready var deepWaterCollision = $Poly/DeepWaterCollision 
 
 func _ready():
 	for dock in get_tree().get_nodes_in_group("Dock"):

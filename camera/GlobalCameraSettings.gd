@@ -1,7 +1,7 @@
 extends Node
 
 const DEFAULT_ZOOM = Vector2(0.4, 0.4)
-const MAX_ZOOM = Vector2(2,2)
+const MAX_ZOOM = Vector2(4,4)
 const MIN_ZOOM = Vector2(0.2, 0.2)
 const DISABLED_ZOOM = Vector2(1.2, 1.2)
 const ZOOM_FACTOR = Vector2(0.4, 0.4)

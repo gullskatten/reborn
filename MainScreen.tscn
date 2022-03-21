@@ -7,19 +7,6 @@
 [ext_resource path="res://target/CurrentTargetPortrait.tscn" type="PackedScene" id=6]
 [ext_resource path="res://WorldEnvDefault.tres" type="Environment" id=8]
 
-[sub_resource type="ShaderMaterial" id=5]
-resource_local_to_scene = true
-shader = ExtResource( 5 )
-shader_param/speed = 1.0
-shader_param/minStrength = 0.06
-shader_param/maxStrength = 0.1
-shader_param/strengthScale = 10.0
-shader_param/interval = 0.8
-shader_param/detail = 1.0
-shader_param/distortion = 0.438
-shader_param/heightOffset = 0.147
-shader_param/offset = 2.0
-
 [sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [sub_resource type="Shader" id=1]
@@ -72,7 +59,7 @@ void vertex() {
     VERTEX.x += getWind(VERTEX.xy, UV, time);
 }"
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=8]
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/speed = 1.0
@@ -83,6 +70,19 @@ shader_param/interval = 3.5
 shader_param/detail = 0.5
 shader_param/distortion = 0.107
 shader_param/heightOffset = 0.558
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.438
+shader_param/heightOffset = 0.147
 shader_param/offset = 2.0
 
 [sub_resource type="Shader" id=6]
@@ -187,20 +187,14 @@ color = Color( 0.705882, 0.705882, 0.541176, 1 )
 
 [node name="IslandScene" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
 
-[node name="Straw" parent="ViewportContainer/Viewport/IslandScene" index="0"]
-material = SubResource( 5 )
-
-[node name="Water" parent="ViewportContainer/Viewport/IslandScene/Water" index="0"]
-modulate = Color( 1, 1, 1, 1 )
-
 [node name="AnimationTree" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="18"]
 parameters/playback = SubResource( 2 )
 
 [node name="PlayerFollowNode" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="22"]
 script = ExtResource( 1 )
 
-[node name="TallGrass" parent="ViewportContainer/Viewport/IslandScene/YSort" index="6"]
-material = SubResource( 4 )
+[node name="TallGrass2" parent="ViewportContainer/Viewport/IslandScene/YSort" index="6"]
+material = SubResource( 8 )
 
 [node name="Straw2" parent="ViewportContainer/Viewport/IslandScene/YSort" index="7"]
 material = SubResource( 5 )
@@ -233,8 +227,5 @@ margin_bottom = 600.0
 [connection signal="moving_started" from="ViewportContainer/Viewport/IslandScene/YSort/Player" to="ViewportContainer/Viewport/IslandScene/YSort/Player/PlayerFollowNode" method="_on_Player_moving_started"]
 
 [editable path="ViewportContainer/Viewport/IslandScene"]
-[editable path="ViewportContainer/Viewport/IslandScene/Sand"]
-[editable path="ViewportContainer/Viewport/IslandScene/Water2"]
-[editable path="ViewportContainer/Viewport/IslandScene/Water"]
 [editable path="ViewportContainer/Viewport/IslandScene/Grass"]
 [editable path="ViewportContainer/Viewport/IslandScene/YSort/Player"]
