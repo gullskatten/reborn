@@ -8,7 +8,6 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var footsteps = $Footsteps
 
 var velocity : Vector2 = Vector2.ZERO
-var state = MOVE
 
 const ACCELERATION = 20
 const RUN_MAX_SPEED = 80
@@ -22,10 +21,6 @@ signal moving_end
 signal initial_position
 signal collision
 
-enum {
-	MOVE,
-}
-
 func _ready():
 	footsteps.visible = false
 	randomize()
@@ -37,6 +32,3 @@ func _physics_process(delta):
 
 func move():
 	velocity = move_and_slide(velocity)
-
-func _on_SoftCollision_body_entered(body):
-	emit_signal("collision", body, $SoftCollision.global_position)

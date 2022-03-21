@@ -36,8 +36,8 @@ level = 1
 
 [node name="PlayerZone" type="Area2D" parent="."]
 position = Vector2( 6, 49 )
-collision_layer = 64
-collision_mask = 64
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerZone"]
 polygon = PoolVector2Array( -94, -17, -19, 21, -35, 46, -11, 59, 15, 37, 34, 46, 93, 17, 58, -1, -31, -49, -32, -56, -106, -19 )

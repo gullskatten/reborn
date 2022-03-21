@@ -214,6 +214,7 @@ combine={
 2d_physics/layer_7="ResourceHurtbox"
 2d_physics/layer_8="ResourceDeliveryHurtbox"
 2d_physics/layer_9="Resource"
+2d_physics/layer_10="PlayerAreaEntered"
 
 [physics]
 

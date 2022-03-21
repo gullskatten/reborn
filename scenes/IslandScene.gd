@@ -1,7 +1,5 @@
 extends Node2D
 
-onready var playerFollowNode = $YSort/Player/PlayerFollowNode
-onready var tinyGrass = $TinyGrass
 onready var deepWaterCollision = $DeepWater/DeepWaterCollision 
 
 func _ready():
