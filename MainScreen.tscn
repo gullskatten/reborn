@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://camera/PlayerCameraNode.gd" type="Script" id=1]
 [ext_resource path="res://scenes/IslandScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://weather/MaxZoomClouds.tscn" type="PackedScene" id=3]
 [ext_resource path="res://camera/CameraController.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/shaders/Straw_Sway.shader" type="Shader" id=5]
 [ext_resource path="res://target/CurrentTargetPortrait.tscn" type="PackedScene" id=6]
@@ -222,6 +223,12 @@ margin_bottom = 600.0
 material = SubResource( 7 )
 margin_right = 1024.0
 margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxZoomClouds" parent="Control" instance=ExtResource( 3 )]
+visible = true
 
 [connection signal="moving_end" from="ViewportContainer/Viewport/IslandScene/YSort/Player" to="ViewportContainer/Viewport/IslandScene/YSort/Player/PlayerFollowNode" method="_on_Player_moving_end"]
 [connection signal="moving_started" from="ViewportContainer/Viewport/IslandScene/YSort/Player" to="ViewportContainer/Viewport/IslandScene/YSort/Player/PlayerFollowNode" method="_on_Player_moving_started"]

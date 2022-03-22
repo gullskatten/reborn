@@ -38,8 +38,6 @@ func _input(event):
 	if event.is_action_pressed("action_zoom_out"):
 		GlobalCameraSettings.zoom_out()
 		
-		
-		print(camera.zoom)
 func _physics_process(delta):
 	var speed = 100 * delta
 	

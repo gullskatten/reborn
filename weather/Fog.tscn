@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D fog_texture : hint_black;
+uniform sampler2D water_mask;
+
+void fragment() {
+	
+	vec2 uv = -UV + TIME * 0.01;
+	vec4 ccolor = texture(fog_texture,uv);
+	COLOR = ccolor;
+	COLOR.a = ccolor.b * 0.8;
+}"
+
+[sub_resource type="OpenSimplexNoise" id=3]
+
+[sub_resource type="NoiseTexture" id=4]
+seamless = true
+noise = SubResource( 3 )
+
+[sub_resource type="OpenSimplexNoise" id=5]
+
+[sub_resource type="NoiseTexture" id=6]
+seamless = true
+noise = SubResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/fog_texture = SubResource( 4 )
+shader_param/water_mask = SubResource( 6 )
+
+[node name="Fog" type="ColorRect"]
+material = SubResource( 2 )
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
