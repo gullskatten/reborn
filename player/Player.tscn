@@ -2403,7 +2403,7 @@ blend_point_2/pos = Vector2( 0, 1 )
 blend_point_3/node = SubResource( 29 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_point_4/node = SubResource( 30 )
-blend_point_4/pos = Vector2( -0.9, 1 )
+blend_point_4/pos = Vector2( -0.8, 1 )
 blend_point_5/node = SubResource( 31 )
 blend_point_5/pos = Vector2( 0.8, 1 )
 blend_point_6/node = SubResource( 32 )
@@ -2437,8 +2437,7 @@ height = 4.02504
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -3 )
 scale = Vector2( 1, 1.00251 )
-collision_layer = 545
-collision_mask = 2
+collision_layer = 546
 script = ExtResource( 1 )
 
 [node name="Footsteps" type="Particles2D" parent="."]
