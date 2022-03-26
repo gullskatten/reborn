@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/character/character-idle-test.png" type="Texture" id=2]
 [ext_resource path="res://assets/props/shadow/SmallShadow.png" type="Texture" id=3]
+[ext_resource path="res://npc/mounts/Mount.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/character/character-8-dir.png" type="Texture" id=5]
 [ext_resource path="res://player/PlayerStateMachine.gd" type="Script" id=6]
 [ext_resource path="res://player/Move.gd" type="Script" id=7]
@@ -2487,6 +2488,9 @@ hframes = 6
 vframes = 72
 frame = 6
 
+[node name="Mount" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1, 1.99499 )
+
 [node name="LegLeft" type="Sprite" parent="."]
 modulate = Color( 0.956863, 0.956863, 0.956863, 1 )
 position = Vector2( -32, -48 )
@@ -2607,5 +2611,5 @@ initial_state = NodePath("Idle")
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource( 8 )
 
-[node name="Move" type="Node" parent="StateMachine"]
+[node name="Run" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )

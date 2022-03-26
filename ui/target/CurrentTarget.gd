@@ -5,7 +5,6 @@ var targets : Array = []
 signal cancel_target
 signal target_changed(val)
 signal multi_target_changed(dict)
-signal update_target_position(pos)
 
 func has_worker_targets() -> bool:
 	if has_targets():

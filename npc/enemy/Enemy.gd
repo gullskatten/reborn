@@ -18,13 +18,14 @@ onready var state_machine = $States
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var sprite = $Sprite
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var chaseTimer = $Timer
+onready var targetInfo := $TargetButton/TargetInfo
 
+var default = preload("res://assets/ui/cursors/cursor.png")
+var onMouseHoverCursor = preload("res://assets/ui/cursors/cursor_attack.png")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	wanderController.start_position = global_position
 	animationTree.active = true
 	pass
 	
@@ -51,5 +52,21 @@ func accelerate_to_point(point, delta):
 	animationTree.set("parameters/Death/blend_position", direction)
 
 func update_wander():
-	wanderController.start_position = global_position
 	wanderController.set_wander_timer(rand_range(1,3))
+
+
+func _on_Timer_timeout():
+	state_machine.transition_to("Idle")
+
+
+func _on_TargetButton_mouse_entered():
+	Input.set_custom_mouse_cursor(onMouseHoverCursor, 0, Vector2(0,0))
+
+
+func _on_TargetButton_mouse_exited():
+	Input.set_custom_mouse_cursor(default, 0, Vector2(0,0))
+
+
+func _on_TargetButton_pressed():
+	targetInfo.ref_node = self
+	CurrentTarget.set_target(targetInfo)

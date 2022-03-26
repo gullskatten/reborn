@@ -2,18 +2,13 @@ extends Control
 
 const Fog = preload("res://weather/Fog.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var inst := Fog.instance()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	self.visible = true
 	GlobalCameraSettings.connect("max_zoom_level_changed", self, "setVisible")
 
 func setVisible(is_max):
-	
 	if(is_max):
 		inst = Fog.instance()
 		add_child(inst)

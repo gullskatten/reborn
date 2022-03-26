@@ -764,6 +764,7 @@ graph_offset = Vector2( -28, -15 )
 radius = 50.01
 
 [node name="Enemy" type="KinematicBody2D"]
+collision_layer = 16
 script = ExtResource( 2 )
 WANDER_TARGET_RANGE = 10
 
@@ -772,7 +773,7 @@ position = Vector2( 0, -14 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 32
-frame = 103
+frame = 98
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -2 )
@@ -863,6 +864,15 @@ script = ExtResource( 12 )
 
 [node name="Chase" type="Node" parent="States"]
 script = ExtResource( 13 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="mouse_entered" from="TargetButton" to="." method="_on_TargetButton_mouse_entered"]
+[connection signal="mouse_exited" from="TargetButton" to="." method="_on_TargetButton_mouse_exited"]
+[connection signal="pressed" from="TargetButton" to="." method="_on_TargetButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="TargetButton"]
 [editable path="PlayerDetectionZone"]

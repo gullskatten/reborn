@@ -10,7 +10,6 @@ const EMPTY_ARRAY = []
 var drag_start = Vector2.ZERO  # Location where drag began.
 var select_rect = RectangleShape2D.new()  # Collision shape for drag box.
 var stylebox = StyleBoxFlat.new()
-signal deselect
 
 func _ready():
 	set_process_input(true)

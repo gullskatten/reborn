@@ -10,7 +10,8 @@ func _ready():
 	GlobalCameraSettings.connect("zoom_level_changed", self, "set_camera_zoom")
 
 func set_camera_zoom(zoom):
-	camera.zoom = zoom
+	if(!is_zero_approx(zoom.x) && !is_zero_approx(zoom.y)):
+		camera.zoom = zoom
 
 func _input(event):
 	if event is InputEventMouseMotion:

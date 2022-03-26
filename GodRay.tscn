@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/props/light/Light_Small_Scarce.png" type="Texture" id=1]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=55]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/god-rays
@@ -12,7 +12,7 @@ and consider sharing the modified result on godotshaders.com.
 */
 
 shader_type canvas_item;
-
+uniform sampler2D gradient : hint_black;
 uniform float angle = -0.3;
 uniform float position = -0.2;
 uniform float spread : hint_range(0.0, 1.0) = 0.5;
@@ -47,7 +47,6 @@ float noise (in vec2 uv) {
     float c = random(i + vec2(0.0, 1.0));
     float d = random(i + vec2(1.0, 1.0));
 
-
     // Smooth Interpolation
 
     // Cubic Hermine Curve. Same as SmoothStep()
@@ -76,6 +75,7 @@ vec4 soft_light(vec4 base, vec4 blend){
 
 void fragment()
 {
+	float gradient_alpha = texture(gradient, vec2(UV.y, UV.x)).r;
 	
 	// Rotate, skew and move the UVs
 	vec2 transformed_uv = ( rotate(angle) * (UV - position) )  / ( (UV.y + spread) - (UV.y * spread) );
@@ -113,14 +113,21 @@ void fragment()
 	// Try different blending modes for a nicer effect. \"Screen\" is included in the code,
 	// but take a look at https://godotshaders.com/snippet/blending-modes/ for more.
 	// With \"Screen\" blend mode:
-	shine = soft_light(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+	shine = screen(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
 	
-	COLOR = vec4(shine, rays * color.a);
+	COLOR = vec4(shine, rays * color.a * gradient_alpha);
 }
 "
 
+[sub_resource type="Gradient" id=54]
+offsets = PoolRealArray( 0, 0.273292 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 54 )
+
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+resource_local_to_scene = true
+shader = SubResource( 55 )
 shader_param/angle = 0.0
 shader_param/position = 0.1
 shader_param/spread = 0.471
@@ -132,8 +139,9 @@ shader_param/ray1_density = 8.0
 shader_param/ray2_density = 30.0
 shader_param/ray2_intensity = 0.408
 shader_param/color = Color( 1, 0.9, 0.65, 0.8 )
-shader_param/hdr = false
+shader_param/hdr = true
 shader_param/seed = 5.0
+shader_param/gradient = SubResource( 4 )
 
 [node name="LightSmallScarce" type="Sprite"]
 material = SubResource( 2 )

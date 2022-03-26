@@ -35,7 +35,7 @@ func _on_ResourceStats_no_resource_left():
 	queue_free()
 
 
-func _on_ResourceStats_resource_changed(valueChanged, remaining):
+func _on_ResourceStats_resource_changed(valueChanged, _remaining):
 	if stats != null:
 		var increaseLabel = IncreaseLabel.instance()
 		increaseLabel.text = "+" + str(valueChanged)

@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://npc/enemy/EnemyStateMachine.gd"
 }, {
+"base": "Node",
+"class": "EnemyStats",
+"language": "GDScript",
+"path": "res://npc/enemy/EnemyStats.gd"
+}, {
 "base": "Node2D",
 "class": "IslandTree",
 "language": "GDScript",
@@ -125,6 +130,7 @@ _global_script_class_icons={
 "Enemy": "",
 "EnemyState": "",
 "EnemyStateMachine": "",
+"EnemyStats": "",
 "IslandTree": "",
 "Player": "",
 "PlayerState": "",
@@ -151,7 +157,10 @@ GlobalCameraSettings="*res://camera/GlobalCameraSettings.tscn"
 
 [display]
 
+window/size/width=1920
+window/size/height=1080
 mouse_cursor/custom_image="res://cursor.png"
+window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [editor_plugins]

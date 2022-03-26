@@ -6,6 +6,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var footsteps = $Footsteps
+onready var mount = $Mount
 
 var velocity : Vector2 = Vector2.ZERO
 
