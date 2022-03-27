@@ -4,11 +4,17 @@ extends Node2D
 onready var sprite = $Sprite
 
 const DeathEffect = preload("res://structures/effects/GrassEffect.tscn")
+const autumn_texture = preload("res://assets/props/trees/birch_trees_autumn.png")
+const bare_texture = preload("res://assets/props/trees/birch_trees_bare.png")
+const summer_texture = preload("res://assets/props/trees/birch_trees_summer.png")
 
 func _ready():
 	randomize()
-	sprite.set_frame(floor(rand_range(0, 5)))
-
+	var rand = floor(rand_range(0, 5))
+	var texture_list = [autumn_texture, bare_texture, summer_texture,summer_texture]
+	sprite.set_frame(rand)
+	texture_list.shuffle()
+	sprite.texture = texture_list.pop_front()
 
 func _on_CollectableResource_tree_exiting():
 	queue_free()
