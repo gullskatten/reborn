@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://assets/npc/enemy/slime/slime_pink_1.png" type="Texture" id=1]
 [ext_resource path="res://npc/enemy/Enemy.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://npc/enemy/states/Idle.gd" type="Script" id=11]
 [ext_resource path="res://npc/enemy/states/Wander.gd" type="Script" id=12]
 [ext_resource path="res://npc/enemy/states/Chase.gd" type="Script" id=13]
+[ext_resource path="res://ui/healthbar/health_gradient.tres" type="Texture" id=14]
 
 [sub_resource type="CapsuleShape2D" id=81]
 radius = 3.0
@@ -764,7 +765,8 @@ graph_offset = Vector2( -28, -15 )
 radius = 50.01
 
 [node name="Enemy" type="KinematicBody2D"]
-collision_layer = 16
+collision_layer = 48
+collision_mask = 33
 script = ExtResource( 2 )
 WANDER_TARGET_RANGE = 10
 
@@ -773,7 +775,7 @@ position = Vector2( 0, -14 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 32
-frame = 98
+frame = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -2 )
@@ -866,8 +868,25 @@ script = ExtResource( 12 )
 script = ExtResource( 13 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 8.0
 one_shot = true
+
+[node name="Control" type="Control" parent="."]
+margin_left = -11.0
+margin_top = -31.0
+margin_right = 11.0
+
+[node name="TextureProgress" type="TextureProgress" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -12.0
+margin_top = -1.0
+margin_right = 8.0
+margin_bottom = 1.0
+size_flags_vertical = 3
+value = 100.0
+texture_progress = ExtResource( 14 )
+nine_patch_stretch = true
 
 [connection signal="mouse_entered" from="TargetButton" to="." method="_on_TargetButton_mouse_entered"]
 [connection signal="mouse_exited" from="TargetButton" to="." method="_on_TargetButton_mouse_exited"]
