@@ -30,8 +30,8 @@ hue_variation_random = 0.38
 [node name="Node2D" type="Node2D"]
 
 [node name="Particles2D" type="Particles2D" parent="."]
-amount = 6
-lifetime = 4.0
+amount = 4
+lifetime = 53.54
 speed_scale = 0.3
 randomness = 0.36
 process_material = SubResource( 1 )
