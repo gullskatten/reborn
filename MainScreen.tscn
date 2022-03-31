@@ -187,12 +187,6 @@ color = Color( 0.705882, 0.705882, 0.541176, 1 )
 
 [node name="IslandScene" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
 
-[node name="ChestBackArm" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="5"]
-position = Vector2( -6, -9.97496 )
-
-[node name="ChestBody" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="10"]
-position = Vector2( -1, -8.97747 )
-
 [node name="AnimationTree" parent="ViewportContainer/Viewport/IslandScene/YSort/Player" index="21"]
 parameters/playback = SubResource( 2 )
 
