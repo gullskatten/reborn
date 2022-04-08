@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/equipment/chest/chest_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/equipment/chest/chest_2.png" type="Texture" id=2]
 [ext_resource path="res://assets/props/shadow/SmallShadow.png" type="Texture" id=3]
 [ext_resource path="res://npc/mounts/Mount.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/character/character-8-dir.png" type="Texture" id=5]
@@ -1672,6 +1672,18 @@ tracks/33/keys = {
 "update": 1,
 "values": [ 7 ]
 }
+tracks/34/type = "value"
+tracks/34/path = NodePath("ChestBody:frame")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -2153,7 +2165,7 @@ tracks/39/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -6, -9.97496 ) ]
+"values": [ Vector2( -1, -9.975 ) ]
 }
 tracks/40/type = "value"
 tracks/40/path = NodePath("ChestBackArm:visible")
@@ -2873,6 +2885,18 @@ tracks/27/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/28/type = "value"
+tracks/28/path = NodePath("ChestBody:frame")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "SW"
@@ -3233,10 +3257,10 @@ tracks/29/loop_wrap = true
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0.9, 1 ), Vector2( 1, 0.8 ) ]
+"values": [ Vector2( 0.9, 1 ), Vector2( 1, 1.1 ), Vector2( 0.9, 1 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -3699,7 +3723,7 @@ scale = Vector2( 0.95, 0.95 )
 texture = ExtResource( 9 )
 
 [node name="ChestBackArm" type="Sprite" parent="."]
-position = Vector2( -6, -9.97496 )
+position = Vector2( -1, -9.975 )
 scale = Vector2( -0.75, 0.75 )
 texture = ExtResource( 2 )
 hframes = 4
