@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/buildings/village/houses/exterior/stairs_1.png" type="Texture" id=1]
+
+[node name="Stairs" type="Sprite"]
+position = Vector2( 54.4242, 20.8262 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 1 )
+offset = Vector2( -0.589049, 9.21289 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( -2.27579, 19.1638 )
+polygon = PoolVector2Array( 15.3, -15.89, 13.3, -15.89, -2.7, 0.110001, 3.3, 0.110001, 15.3, -5.89 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( -2.27579, 19.1638 )
+polygon = PoolVector2Array( 2.3, -20.89, -12.7, -5.89, -11.7, -3.89, 2.3, -19.89 )

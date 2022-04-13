@@ -8,7 +8,8 @@ const still = Vector2(0, 0)
 
 func _ready():
 	GlobalCameraSettings.connect("zoom_level_changed", self, "set_camera_zoom")
-
+	GlobalCameraSettings.connect("forced_camera_position_changed", self, "_on_force_update_position")
+	
 func set_camera_zoom(zoom):
 	if(!is_zero_approx(zoom.x) && !is_zero_approx(zoom.y)):
 		camera.zoom = zoom
@@ -48,6 +49,6 @@ func _physics_process(delta):
 			motion = still #Do not forget to reset your frame-time variables!		
 	
 				
-func _on_Player_initial_position(position):
+func _on_force_update_position(position):
 	if(cameraPosition != null):	
 		cameraPosition.set_deferred("global_position", position)

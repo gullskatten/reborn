@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/props/structures/obelisk/obelisk.png" type="Texture" id=1]
 [ext_resource path="res://structures/obelisk/Obelisk.gd" type="Script" id=2]
-[ext_resource path="res://structures/obelisk/glow_emitter.tres" type="Material" id=3]
+[ext_resource path="res://assets/particles/glowing_choice_emitter.tres" type="Material" id=3]
 [ext_resource path="res://assets/props/light/Light_Small_Scarce.png" type="Texture" id=4]
 [ext_resource path="res://npc/neutral/celestial/Oracle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://structures/ResourceDeposit.tscn" type="PackedScene" id=6]

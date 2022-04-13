@@ -11,6 +11,10 @@ var camera_position : Vector2 = Vector2(0,0) setget set_camera_position
 signal zoom_level_changed(val)
 signal camera_position_changed(pos)
 signal max_zoom_level_changed(is_max)
+signal forced_camera_position_changed(pos)
+signal disable_movement()
+signal enable_movement()
+
 
 func zoom_out():
 	var next_zoom = zoom_level
@@ -47,7 +51,6 @@ func zoom_in():
 		set_zoom_level(MIN_ZOOM)
 
 func set_zoom_level(zoom):
-
 	if zoom > Vector2.ZERO && !is_zero_approx(zoom.x) && zoom <= MAX_ZOOM && zoom != zoom_level:
 		zoom_level = zoom
 		emit_signal("zoom_level_changed", zoom)
@@ -55,3 +58,6 @@ func set_zoom_level(zoom):
 func set_camera_position(pos):
 	camera_position = pos
 	emit_signal("camera_position_changed", pos)
+
+func force_camera_position(pos):
+	emit_signal("forced_camera_position_changed", pos)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/house_1.png-acd6b5f33148408494e321c57a239b9b.stex"
+path="res://.import/stairs_1.png-60ddb6b7e0cbcf987c10225004e62c64.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buildings/village/house_1.png"
-dest_files=[ "res://.import/house_1.png-acd6b5f33148408494e321c57a239b9b.stex" ]
+source_file="res://assets/buildings/village/houses/exterior/stairs_1.png"
+dest_files=[ "res://.import/stairs_1.png-60ddb6b7e0cbcf987c10225004e62c64.stex" ]
 
 [params]
 

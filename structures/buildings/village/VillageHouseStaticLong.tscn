@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/buildings/village/houses/house_2.png" type="Texture" id=1]
+[ext_resource path="res://effects/ChangeOpacityArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://structures/buildings/village/exterior/WallLight.tscn" type="PackedScene" id=4]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+closed = false
+polygon = PoolVector2Array( 94, 35, 93, -34, 95.8795, -33.6018, 96, -38, 93, -39, 68, -65, 66, -65, -30, -113, -59, -100, -84, -73, -84, -1 )
+
+[node name="House2" type="Node2D"]
+light_mask = 2
+position = Vector2( 680, 520 )
+scale = Vector2( -1, 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+light_mask = 2
+occluder = SubResource( 1 )
+light_mask = 2
+
+[node name="Tavern" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+offset = Vector2( 2, -22 )
+vframes = 4
+frame = 2
+
+[node name="WallLight" parent="." instance=ExtResource( 4 )]
+position = Vector2( 41, 7 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="WallLight3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -84, -56 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( -85, -14, 41, 48, 44, 48, 63, 38, 64, 51, 46, 60, 37, 60, -85, -1 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( 81, 29, 91, 37, 96, 35, 96, 22 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( -85, -14, -31, -33, 96, 22, 89, 25, -31, -23, -85, -6 )
+
+[node name="ChangeOpacityArea" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeOpacityArea"]
+visible = false
+polygon = PoolVector2Array( -86, -2, -88, -17, -88.5736, -55.4297, -89, -84, -34, -118, -4, -108, 107, -48, 99, 34, 96, 35, 75, 7 )

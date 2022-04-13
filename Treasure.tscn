@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/props/chest/chest_1.png" type="Texture" id=1]
-[ext_resource path="res://ui/action_dialog/ButtonPressHint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://overlap/PlayerEnterActionArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Treasure.gd" type="Script" id=3]
 [ext_resource path="res://GodRay.tscn" type="PackedScene" id=4]
 
@@ -29,9 +29,6 @@ radial_accel = -31.81
 radial_accel_random = 0.72
 color = Color( 1, 0.972549, 0.647059, 1 )
 color_ramp = SubResource( 2 )
-
-[sub_resource type="CircleShape2D" id=4]
-radius = 32.0624
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 6.76732
@@ -191,19 +188,7 @@ lifetime = 2.3
 randomness = 0.16
 process_material = SubResource( 3 )
 
-[node name="PlayerHintArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHintArea"]
-shape = SubResource( 4 )
-
-[node name="ButtonPressHint" parent="." instance=ExtResource( 2 )]
-visible = false
-margin_left = -14.0
-margin_top = -28.0
-margin_right = -14.0
-margin_bottom = -28.0
+[node name="PlayerEnterActionArea" parent="." instance=ExtResource( 2 )]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -212,13 +197,10 @@ position = Vector2( -2, 2 )
 rotation = -1.1205
 shape = SubResource( 5 )
 
-[node name="Tween" type="Tween" parent="."]
-
 [node name="LightSmallScarce" parent="." instance=ExtResource( 4 )]
 material = SubResource( 57 )
 position = Vector2( 23, -76 )
 rotation = 3.14159
 scale = Vector2( 0.9, 0.712 )
 
-[connection signal="body_entered" from="PlayerHintArea" to="." method="_on_PlayerHintArea_body_entered"]
-[connection signal="body_exited" from="PlayerHintArea" to="." method="_on_PlayerHintArea_body_exited"]
+[editable path="PlayerEnterActionArea"]

@@ -8,7 +8,7 @@
 [ext_resource path="res://player/PlayerStateMachine.gd" type="Script" id=6]
 [ext_resource path="res://player/Move.gd" type="Script" id=7]
 [ext_resource path="res://player/Idle.gd" type="Script" id=8]
-[ext_resource path="res://assets/equipment/weapons/short_sword_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/equipment/weapons/short_axe_2.png" type="Texture" id=9]
 [ext_resource path="res://assets/equipment/shields/shield_front_1.png" type="Texture" id=10]
 [ext_resource path="res://assets/equipment/shields/shield_back_1.png" type="Texture" id=11]
 
@@ -2153,7 +2153,7 @@ tracks/39/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -6, -9.97496 ) ]
+"values": [ Vector2( -1, -9.97496 ) ]
 }
 tracks/40/type = "value"
 tracks/40/path = NodePath("ChestBackArm:visible")
@@ -3699,7 +3699,7 @@ scale = Vector2( 0.95, 0.95 )
 texture = ExtResource( 9 )
 
 [node name="ChestBackArm" type="Sprite" parent="."]
-position = Vector2( -6, -9.97496 )
+position = Vector2( -1, -9.97496 )
 scale = Vector2( -0.75, 0.75 )
 texture = ExtResource( 2 )
 hframes = 4

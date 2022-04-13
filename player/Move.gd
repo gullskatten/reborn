@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 			player.velocity = player.velocity.move_toward(input_vector * local_speed, player.ACCELERATION).rotated(local_rotation)
 		elif((input_vector.x > 0 && input_vector.y < 0) || (input_vector.x < 0 && input_vector.y > 0)):
 			player.velocity = player.velocity.move_toward(input_vector * local_speed, player.ACCELERATION).rotated(local_rotation * -1)
-		
+		GlobalCameraSettings.force_camera_position(player.global_position)
 	else:
 		if(player.animationState.get_current_node() == "Run"):
 			player.emit_signal("moving_end")

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/buildings/village/houses/house_2.png" type="Texture" id=1]
+[ext_resource path="res://structures/buildings/village/VillageHouseStatic.gd" type="Script" id=2]
+[ext_resource path="res://structures/buildings/village/exterior/WallLight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://effects/ChangeOpacityArea.tscn" type="PackedScene" id=4]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( 72, 25, 73, -40, 74, -46, 46, -75, 46, -81, 46, -74, -25, -109, -25, -116, -25, -109, -52, -54, -52, 16 )
+
+[node name="StaticHouse" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )
+
+[node name="Tavern" type="Sprite" parent="."]
+position = Vector2( -16, -8 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+offset = Vector2( 2, -22 )
+vframes = 4
+frame = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( -54, 1, 17, 37, 43, 27, 74, 12, 74, 26, 23, 51, 12, 49, -53, 16 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( -54, 1, -1, -24, 74, 12, 74, 26, -2, -9, -53, 16 )
+
+[node name="ChangeOpacityArea" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeOpacityArea"]
+visible = false
+polygon = PoolVector2Array( -53, 10, -54, -55, -26, -113, -6, -108, 76, -65, 77, -29, 76, -9, 74, 25 )
+
+[node name="WallLightS" parent="." instance=ExtResource( 3 )]
+position = Vector2( 20, 3 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="WallLightW" parent="." instance=ExtResource( 3 )]
+position = Vector2( -53, -31 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="WallLightE" parent="." instance=ExtResource( 3 )]
+position = Vector2( 75, -23 )
+scale = Vector2( 1.5, 1.5 )
