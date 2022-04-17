@@ -27,3 +27,4 @@ margin_bottom = -28.0
 
 [connection signal="body_entered" from="PlayerHintArea" to="." method="_on_PlayerHintArea_body_entered"]
 [connection signal="body_exited" from="PlayerHintArea" to="." method="_on_PlayerHintArea_body_exited"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

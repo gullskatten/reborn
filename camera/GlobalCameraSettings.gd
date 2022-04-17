@@ -14,7 +14,8 @@ signal max_zoom_level_changed(is_max)
 signal forced_camera_position_changed(pos)
 signal disable_movement()
 signal enable_movement()
-
+signal cutscene_start()
+signal cutscene_end()
 
 func zoom_out():
 	var next_zoom = zoom_level
