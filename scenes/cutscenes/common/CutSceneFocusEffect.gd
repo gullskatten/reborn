@@ -18,7 +18,6 @@ func _ready():
 	
 	positions['top_vis'] = top.rect_global_position
 	positions['bottom_vis'] = bottom.rect_global_position
-	
 
 func show():
 	should_hide = false
@@ -33,8 +32,6 @@ func show():
 		positions['bottom'], positions['bottom_vis'] , 0.25,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
-	
-	
 	
 func hide():
 	should_hide = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://tilemaps/Grass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://structures/buildings/village/VillageHouseStaticLong.tscn" type="PackedScene" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://ui/SmallLabel.tscn" type="PackedScene" id=18]
 [ext_resource path="res://structures/props/village/BarrelStack.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/props/village/horse_saddle.png" type="Texture" id=20]
+[ext_resource path="res://scenes/IntroVillageScene.gd" type="Script" id=21]
+[ext_resource path="res://npc/abstract/RoyalGuardsPosition.tscn" type="PackedScene" id=22]
 
 [sub_resource type="TileSet" id=4]
 0/name = "Grass"
@@ -129,7 +131,73 @@
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="Animation" id=6]
+resource_name = "1.1"
+length = 4.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "1.1" ],
+"method": "start_cutscene"
+}, {
+"args": [ "1.1" ],
+"method": "end_cutscene"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("YSort/GuardsPosition:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 799, 495 ), Vector2( 1013, 604 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("YSort/GuardsPosition")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ Vector2( 1, 1 ) ],
+"method": "animate_moving_guards_start"
+}, {
+"args": [ Vector2( 1, 1 ) ],
+"method": "animate_moving_guards_end"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("YSort/GuardsPosition:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 743, 467 ) ]
+}
+
 [node name="IntroVillageScene" type="Node2D"]
+script = ExtResource( 21 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.0588235, 0.156863, 0.294118, 1 )
@@ -449,6 +517,8 @@ centered_textures = true
 format = 1
 tile_data = PoolIntArray( -1179620, 0, 0, -1179619, 2, 0, -1179618, 0, 0, -1179617, 0, 0, -1179616, 0, 0, -1179615, 0, 0, -1179614, 3, 0, -1114084, 0, 0, -1114083, 3, 0, -1114082, 0, 0, -1114081, 1, 0, -1114080, 0, 0, -1114079, 3, 0, -1114078, 2, 0, -1048548, 0, 0, -1048547, 0, 0, -1048546, 1, 0, -1048545, 3, 0, -1048544, 0, 0, -1048543, 0, 0, -1048542, 3, 0, -983012, 1, 0, -983011, 3, 0, -983010, 2, 0, -983009, 0, 0, -983008, 0, 0, -983007, 1, 0, -917476, 0, 0, -917475, 0, 0, -917474, 2, 0, -917473, 0, 0, -917472, 2, 0, -917471, 1, 0, -851939, 3, 0, -851938, 0, 0, -851937, 3, 0, -655326, 1, 0, -589790, 3, 0, -589785, 3, 0, -589784, 3, 0, -524255, 0, 0, -524254, 1, 0, -524248, 0, 0, -458719, 3, 0, -458712, 1, 0, -458711, 0, 0, -393176, 3, 0, -393175, 0, 0, -327640, 0, 0, -327639, 3, 0, -262110, 2, 0, -262106, 0, 0, -262104, 1, 0, -196574, 1, 0, -131047, 1, 0, -131038, 3, 0, -131034, 1, 0, -131032, 3, 0, -131031, 3, 0, -65511, 1, 0, -65498, 1, 0, -65497, 2, 0, -65496, 2, 0, -65495, 3, 0, 25, 1, 0, 39, 1, 0, 40, 1, 0, 41, 2, 0, 262184, 3, 0, 262185, 0, 0, 327710, 0, 0, 327714, 3, 0, 327721, 2, 0, 393246, 1, 0, 393247, 3, 0, 393248, 2, 0, 393249, 1, 0, 393250, 0, 0, 458782, 1, 0, 458783, 1, 0, 458785, 3, 0, 458786, 1, 0, 524318, 1, 0, 524319, 1, 0, 524322, 3, 0, 589862, 0, 0, 589863, 2, 0, 589864, 3, 0, 589865, 1, 0, 655389, 0, 0, 655398, 1, 0, 655399, 0, 0, 720925, 1, 0, 720926, 3, 0, 720927, 3, 0, 720928, 2, 0, 720929, 1, 0, 720930, 3, 0 )
 
+[node name="GuardsPosition" parent="YSort" instance=ExtResource( 22 )]
+
 [node name="FestiveLines" type="Sprite" parent="."]
 position = Vector2( 955.237, 501.191 )
 scale = Vector2( -1.51358, 1.42017 )
@@ -462,11 +532,13 @@ texture = ExtResource( 4 )
 vframes = 4
 frame = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="CameraController" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1143, 577 )
 scale = Vector2( 1, 1.00251 )
+
+[node name="Camera" parent="CameraController/CameraPosition" index="0"]
+position = Vector2( 0, 0.997467 )
+scale = Vector2( 1, 0.997496 )
 
 [node name="TileMap" type="TileMap" parent="."]
 mode = 1
@@ -486,6 +558,11 @@ margin_right = 41.0
 margin_bottom = 7.0
 text = "Mons"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/1.1 = SubResource( 6 )
+anims/RESET = SubResource( 5 )
+
 [editable path="YSort/Houses/House6"]
 [editable path="YSort/Houses/House5"]
 [editable path="YSort/Houses/House3"]
+[editable path="CameraController"]

@@ -9,7 +9,7 @@ onready var footsteps = $Footsteps
 onready var mount = $Mount
 
 var velocity : Vector2 = Vector2.ZERO
-
+var allowed_movement := true
 const ACCELERATION = 20
 const RUN_MAX_SPEED = 80
 const MOUNTED_MAX_SPEED = RUN_MAX_SPEED * 1.5
@@ -27,7 +27,15 @@ func _ready():
 	randomize()
 	animationTree.active = true
 	emit_signal("initial_position", global_position)
-	
+	GlobalCameraSettings.connect("enable_movement", self, "enable_movement")
+	GlobalCameraSettings.connect("disable_movement", self, "disable_movement")
+
+func enable_movement():
+	allowed_movement = true
+
+func disable_movement():
+	allowed_movement = false
+
 func _physics_process(delta):
 	pass
 

@@ -51,7 +51,7 @@ func zoom_in():
 	else:
 		set_zoom_level(MIN_ZOOM)
 
-func set_zoom_level(zoom):
+func set_zoom_level(zoom : Vector2):
 	if zoom > Vector2.ZERO && !is_zero_approx(zoom.x) && zoom <= MAX_ZOOM && zoom != zoom_level:
 		zoom_level = zoom
 		emit_signal("zoom_level_changed", zoom)
@@ -62,3 +62,11 @@ func set_camera_position(pos):
 
 func force_camera_position(pos):
 	emit_signal("forced_camera_position_changed", pos)
+
+func start_cutscene():
+	emit_signal("cutscene_start")
+	emit_signal("disable_movement")
+	
+func end_cutscene():
+	emit_signal("cutscene_end")
+	emit_signal("enable_movement")
