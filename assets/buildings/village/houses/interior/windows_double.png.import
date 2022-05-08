@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/body.png-e95fb1f234cc5b22ccf21f71baab9b74.stex"
+path="res://.import/windows_double.png-030eb87e3361653e16c7730003d996cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/body.png"
-dest_files=[ "res://.import/body.png-e95fb1f234cc5b22ccf21f71baab9b74.stex" ]
+source_file="res://assets/buildings/village/houses/interior/windows_double.png"
+dest_files=[ "res://.import/windows_double.png-030eb87e3361653e16c7730003d996cb.stex" ]
 
 [params]
 

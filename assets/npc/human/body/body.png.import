@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character-8-dir-leaf.png-8f65e8e287973e11528a3ed4a39551b6.stex"
+path="res://.import/body.png-1e7728e9c16516bc6b167cb5e1b48720.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/character-8-dir-leaf.png"
-dest_files=[ "res://.import/character-8-dir-leaf.png-8f65e8e287973e11528a3ed4a39551b6.stex" ]
+source_file="res://assets/npc/human/body/body.png"
+dest_files=[ "res://.import/body.png-1e7728e9c16516bc6b167cb5e1b48720.stex" ]
 
 [params]
 

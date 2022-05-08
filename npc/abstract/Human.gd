@@ -25,6 +25,8 @@ onready var mainhandS = $MainHandS
 onready var chestBackArm = $ChestBackArm
 onready var chestFrontArm = $ChestFrontArm
 onready var chestBody = $ChestBody
+onready var hair = $Hair
+onready var head_equip = $HeadEquip
 
 
 var velocity : Vector2 = Vector2.ZERO
@@ -52,6 +54,11 @@ func _ready():
 	chestBackArm.texture = chest
 	chestBody.texture = chest
 	chestFrontArm.texture = chest
+	
+	if head != null:
+		head_equip.texture = head
+		hair.visible = false
+	
 	animationTree.active = true
 	
 func animate_move(direction : Vector2):

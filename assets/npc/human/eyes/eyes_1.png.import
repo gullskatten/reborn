@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character-idle-test.png-fb66e0338ebc486d110c96c7afb4669b.stex"
+path="res://.import/eyes_1.png-542855366db98870ff5977596f92f7ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/character-idle-test.png"
-dest_files=[ "res://.import/character-idle-test.png-fb66e0338ebc486d110c96c7afb4669b.stex" ]
+source_file="res://assets/npc/human/eyes/eyes_1.png"
+dest_files=[ "res://.import/eyes_1.png-542855366db98870ff5977596f92f7ff.stex" ]
 
 [params]
 

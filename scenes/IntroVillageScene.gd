@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var animationPlayer = $AnimationPlayer
-onready var guardPos = $YSort/GuardsPosition
+onready var guardPos = $OutsideYSort/GuardsPosition
 onready var cameraPosition = $CameraController/CameraPosition
 
 var cameraFollowNode : RemoteTransform2D = RemoteTransform2D.new()

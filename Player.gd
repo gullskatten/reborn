@@ -38,6 +38,16 @@ func disable_movement():
 
 func _physics_process(delta):
 	pass
-
+	
+func blink():
+	var t = rand_range(1,8)
+	yield(get_tree().create_timer(t/16),"timeout")
+	$Eyes.visible = true
+	$Timer.wait_time = t
 func move():
 	velocity = move_and_slide(velocity)
+
+
+func _on_Timer_timeout():
+	$Eyes.visible = false
+	blink()
