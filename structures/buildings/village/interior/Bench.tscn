@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/buildings/village/houses/interior/tavern/long-table-benches.png" type="Texture" id=1]
+
+[node name="Bench" type="YSort"]
+
+[node name="Long-table-bench" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( -31, 11 )
+hframes = 4
+
+[node name="Long-table-bench3" type="Sprite" parent="."]
+position = Vector2( 58, 13 )
+texture = ExtResource( 1 )
+offset = Vector2( -25, -2 )
+hframes = 4
+frame = 1

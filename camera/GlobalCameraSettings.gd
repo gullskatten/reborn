@@ -16,6 +16,8 @@ signal disable_movement()
 signal enable_movement()
 signal cutscene_start()
 signal cutscene_end()
+signal loading_transition_start()
+signal loading_transition_end()
 
 func zoom_out():
 	var next_zoom = zoom_level
@@ -69,4 +71,12 @@ func start_cutscene():
 	
 func end_cutscene():
 	emit_signal("cutscene_end")
+	emit_signal("enable_movement")
+
+func start_loading_transition():
+	emit_signal("loading_transition_start")
+	emit_signal("disable_movement")
+	
+func end_loading_transition():
+	emit_signal("loading_transition_end")
 	emit_signal("enable_movement")

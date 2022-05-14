@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://tilemaps/Grass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://structures/buildings/village/VillageHouseStaticLong.tscn" type="PackedScene" id=2]
@@ -26,6 +26,8 @@
 [ext_resource path="res://structures/props/light/AnimatedLight.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/village/TavernGroundFloor.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/props/light/light_1024x1024.png" type="Texture" id=26]
+[ext_resource path="res://scenes/SceneLocalTeleportPoint.tscn" type="PackedScene" id=27]
+[ext_resource path="res://npc/neutral/critter/Mouse.tscn" type="PackedScene" id=28]
 
 [sub_resource type="OccluderPolygon2D" id=20]
 polygon = PoolVector2Array( 1.1708, 1.25464, 6.41972, 1.92758, 9.78442, 5.0231, 16.5138, 6.63815, 22.3011, 9.59909, 27.9538, 14.0405, 32.799, 14.4442, 33.8757, 16.4631, 35, 20.5007 )
@@ -398,6 +400,10 @@ street_sign_SE = true
 [node name="Player" parent="OutsideYSort" instance=ExtResource( 7 )]
 position = Vector2( 1158, 551 )
 
+[node name="SceneLocalTeleportPoint" parent="OutsideYSort" instance=ExtResource( 27 )]
+position = Vector2( 1136, 563 )
+id = "TavernEntrance"
+
 [node name="Houses" type="YSort" parent="OutsideYSort"]
 
 [node name="VillageTavern" parent="OutsideYSort/Houses" instance=ExtResource( 3 )]
@@ -657,6 +663,18 @@ position = Vector2( 1126, 757 )
 [node name="TreasureNode2" parent="OutsideYSort" instance=ExtResource( 23 )]
 position = Vector2( 1391, 623 )
 
+[node name="Mouse" parent="OutsideYSort" instance=ExtResource( 28 )]
+position = Vector2( 1014, 624 )
+
+[node name="Mouse2" parent="OutsideYSort" instance=ExtResource( 28 )]
+position = Vector2( 928, 650 )
+
+[node name="Mouse3" parent="OutsideYSort" instance=ExtResource( 28 )]
+position = Vector2( 1026, 562 )
+
+[node name="Mouse4" parent="OutsideYSort" instance=ExtResource( 28 )]
+position = Vector2( 1232, 633 )
+
 [node name="InsideYSort" type="YSort" parent="."]
 
 [node name="AnimatedLight" parent="InsideYSort" instance=ExtResource( 24 )]
@@ -665,6 +683,9 @@ texture = ExtResource( 26 )
 texture_scale = 0.8
 color = Color( 0.866667, 0.631373, 0.423529, 1 )
 energy = 1.47
+
+[node name="TavernGroundFloor" parent="InsideYSort" instance=ExtResource( 25 )]
+position = Vector2( 2631, 2571 )
 
 [node name="FestiveLines" type="Sprite" parent="."]
 position = Vector2( 955.237, 501.191 )
@@ -693,9 +714,6 @@ anims/RESET = SubResource( 5 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1186, 555 )
-
-[node name="TavernGroundFloor" parent="." instance=ExtResource( 25 )]
-position = Vector2( 2631, 2571 )
 
 [editable path="OutsideYSort/Houses/House6"]
 [editable path="OutsideYSort/Houses/House5"]

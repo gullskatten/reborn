@@ -9,6 +9,7 @@ var cameraFollowNode : RemoteTransform2D = RemoteTransform2D.new()
 func _ready():
 	CutSceneManager.connect("trigger", self, "start_animation")
 	animationPlayer.connect("animation_finished", self, "animation_ended")
+	SceneTransitionManager.connect("request_move_node", self, "move_node_to_teleport_point")
 	cameraFollowNode.remote_path = cameraPosition.get_path()
 
 func start_animation(triggerId: String):
@@ -31,3 +32,12 @@ func end_cutscene(name: String):
 # It will however come back if we scene transition, so this is just a temp solution!
 func animation_ended(name): 
 	animationPlayer.remove_animation(name)
+	
+func move_node_to_teleport_point(id, node):
+	print("Moving node:" + node.name + " to " + id)
+	for point in get_tree().get_nodes_in_group("teleportation_point"):
+		if point is SceneLocalTeleportPoint and point.id == id:
+			var new_node = load(node.filename).instance()
+			node.queue_free()
+			new_node.position = point.position
+			point.get_parent().add_child(new_node)

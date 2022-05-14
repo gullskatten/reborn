@@ -29,6 +29,11 @@ func _ready():
 	emit_signal("initial_position", global_position)
 	GlobalCameraSettings.connect("enable_movement", self, "enable_movement")
 	GlobalCameraSettings.connect("disable_movement", self, "disable_movement")
+	SceneTransitionManager.connect("teleport", self, "teleport")
+	blink()
+	
+func teleport(position: Vector2):
+	global_position = position
 
 func enable_movement():
 	allowed_movement = true
@@ -44,9 +49,9 @@ func blink():
 	yield(get_tree().create_timer(t/16),"timeout")
 	$Eyes.visible = true
 	$Timer.wait_time = t
+	
 func move():
 	velocity = move_and_slide(velocity)
-
 
 func _on_Timer_timeout():
 	$Eyes.visible = false

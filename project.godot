@@ -14,6 +14,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://structures/CollectableResource.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Critter",
+"language": "GDScript",
+"path": "res://npc/neutral/critter/Mouse.gd"
+}, {
+"base": "State",
+"class": "CritterState",
+"language": "GDScript",
+"path": "res://npc/neutral/critter/CritterState.gd"
+}, {
+"base": "Node",
+"class": "CritterStateMachine",
+"language": "GDScript",
+"path": "res://npc/neutral/critter/CritterStateMachine.gd"
+}, {
 "base": "Reference",
 "class": "DTS",
 "language": "GDScript",
@@ -89,6 +104,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://structures/ResourceStats.gd"
 }, {
+"base": "Node2D",
+"class": "SceneLocalTeleportPoint",
+"language": "GDScript",
+"path": "res://scenes/SceneTeleportationPoint.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -126,6 +146,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CollectableResource": "",
+"Critter": "",
+"CritterState": "",
+"CritterStateMachine": "",
 "DTS": "",
 "Dialogic": "",
 "DialogicBackgroundMusic": "",
@@ -141,6 +164,7 @@ _global_script_class_icons={
 "Player": "",
 "PlayerState": "",
 "ResourceStats": "",
+"SceneLocalTeleportPoint": "",
 "State": "",
 "StateMachine": "",
 "TargetInfo": "res://target/icon.svg",
@@ -161,6 +185,7 @@ config/icon="res://icon.png"
 CurrentTarget="*res://ui/target/CurrentTarget.tscn"
 GlobalCameraSettings="*res://camera/GlobalCameraSettings.tscn"
 CutSceneManager="*res://scenes/cutscenes/CutSceneManager.tscn"
+SceneTransitionManager="*res://scenes/SceneTransitionManager.tscn"
 
 [display]
 
