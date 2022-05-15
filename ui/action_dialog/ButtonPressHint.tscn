@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/TinyLabel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/action_dialog/ButtonPressHint.gd" type="Script" id=2]
@@ -10,6 +10,20 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 anti_aliasing = false
+
+[sub_resource type="DynamicFontData" id=42]
+antialiased = false
+font_path = "res://assets/fonts/nevis.ttf"
+
+[sub_resource type="DynamicFont" id=45]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 42 )
+
+[sub_resource type="Theme" id=44]
+resource_local_to_scene = true
+default_font = SubResource( 45 )
 
 [node name="ButtonPressHint" type="Control"]
 modulate = Color( 1, 1, 1, 0.831373 )
@@ -34,4 +48,5 @@ margin_top = 1.0
 margin_right = 12.0
 margin_bottom = 11.0
 rect_scale = Vector2( 1, 1 )
+theme = SubResource( 44 )
 text = "E"

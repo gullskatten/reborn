@@ -5,10 +5,11 @@ antialiased = false
 font_path = "res://assets/fonts/nevis.ttf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 8
+size = 20
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 1 )
 
 [resource]
+resource_local_to_scene = true
 default_font = SubResource( 2 )

@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://ui/tiny_new_theme.tres" type="Theme" id=1]
+[sub_resource type="DynamicFontData" id=42]
+antialiased = false
+font_path = "res://assets/fonts/nevis.ttf"
+
+[sub_resource type="DynamicFont" id=43]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 42 )
+
+[sub_resource type="Theme" id=44]
+resource_local_to_scene = true
+default_font = SubResource( 43 )
 
 [node name="TinyLabel" type="Label"]
 margin_left = -19.0
@@ -8,9 +20,6 @@ margin_top = -17.0
 margin_right = 59.0
 margin_bottom = -1.0
 rect_scale = Vector2( 0.5, 0.5 )
-theme = ExtResource( 1 )
+theme = SubResource( 44 )
 text = "<Unassigned>"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}

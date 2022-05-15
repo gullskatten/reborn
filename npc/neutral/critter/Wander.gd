@@ -2,7 +2,7 @@ extends CritterState
 
 func enter(_msg := {}) -> void:
 	critter.animationState.travel("Run")
-
+	critter.emoteLabel.visible = false
 
 func update(delta: float) -> void:
 	critter.seek_player()
