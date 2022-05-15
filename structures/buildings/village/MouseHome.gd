@@ -8,7 +8,6 @@ var can_load_mouse = true
 
 func _on_MouseDetection_body_entered(body):
 	if body is Critter and can_load_mouse:
-		print("Critter found!")
 		body.visible = false
 		housed_mice.append(body)
 		blink()

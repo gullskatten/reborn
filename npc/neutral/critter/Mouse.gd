@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 export var ACCELERATION = 300
 export var MAX_SPEED = 35
-export var MAX_SPEED_FLEE = 50
+export var MAX_SPEED_FLEE = 70
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
 
@@ -37,8 +37,11 @@ func _physics_process(delta):
 
 
 func accelerate_to_point(point, delta):
-	var direction = global_position.direction_to(point)
-	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+	var direction = global_position.direction_to(point).normalized()
+	if state_machine.state.name == "Flee":
+		velocity = velocity.move_toward(direction * MAX_SPEED_FLEE, ACCELERATION * delta)
+	else:
+		velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 	animationTree.set("parameters/Idle/blend_position", direction)
 	animationTree.set("parameters/Run/blend_position", direction)
 
