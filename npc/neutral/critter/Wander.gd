@@ -5,7 +5,6 @@ func enter(_msg := {}) -> void:
 	critter.emoteLabel.visible = false
 
 func update(delta: float) -> void:
-	critter.seek_player()
 	if critter.wanderController.get_time_left() == 0:
 		state_machine.pick_random_state()
 		critter.update_wander()

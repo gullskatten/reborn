@@ -8,7 +8,6 @@ func enter(_msg := {}) -> void:
 
 func update(delta: float) -> void:
 	critter.velocity = critter.velocity.move_toward(Vector2.ZERO, 	200 * delta)
-	critter.seek_player()
 	if critter.wanderController.get_time_left() == 0:
 		state_machine.pick_random_state()
 		critter.update_wander()

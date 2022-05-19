@@ -35,9 +35,11 @@ func _physics_process(delta):
 	if(velocity != Vector2.ZERO):	
 		velocity = move_and_slide(velocity)
 
-
+func harmonic_velocity_x(x):
+	return sin((PI * x) / 30) * 20 / 2 * PI
+	
 func accelerate_to_point(point, delta):
-	var direction = global_position.direction_to(point).normalized()
+	var direction = global_position.direction_to(point)
 	if state_machine.state.name == "Flee":
 		velocity = velocity.move_toward(direction * MAX_SPEED_FLEE, ACCELERATION * delta)
 	else:
@@ -64,14 +66,9 @@ func accelerate_away(point, delta):
 		velocity = velocity.move_toward(direction * MAX_SPEED_FLEE, ACCELERATION * delta)
 		animationTree.set("parameters/Idle/blend_position", direction)
 		animationTree.set("parameters/Run/blend_position", direction)
-	
-func seek_player():
-	if playerDetectionZone.can_see_player():
-		state_machine.transition_to("Flee")
 
 func update_wander():
 	wanderController.set_wander_timer(rand_range(1,3))
-
 
 func _on_HomeDetectionZone_area_entered(area):
 	print(area)
@@ -83,3 +80,6 @@ func _on_HomeDetectionZone_body_entered(body):
 	print(body)
 	if body.is_in_group("mouse_home"):
 		nearest_home = body
+
+func _on_PlayerDetectionZone_body_entered(_body):
+	state_machine.transition_to("Flee")

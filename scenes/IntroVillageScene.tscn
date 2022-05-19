@@ -674,18 +674,17 @@ position = Vector2( 928, 650 )
 MAX_SPEED = 50
 MAX_SPEED_FLEE = 100
 
-[node name="Mouse3" parent="OutsideYSort" instance=ExtResource( 28 )]
-position = Vector2( 1026, 562 )
-MAX_SPEED = 50
-MAX_SPEED_FLEE = 100
-
 [node name="Mouse4" parent="OutsideYSort" instance=ExtResource( 28 )]
-position = Vector2( 1232, 633 )
+position = Vector2( 1059, 820 )
 MAX_SPEED = 50
 MAX_SPEED_FLEE = 100
 
 [node name="MouseHome" parent="OutsideYSort" instance=ExtResource( 29 )]
 position = Vector2( 995, 525 )
+
+[node name="MouseHome3" parent="OutsideYSort" instance=ExtResource( 29 )]
+position = Vector2( 1022, 799 )
+scale = Vector2( -1, 1 )
 
 [node name="MouseHome2" parent="OutsideYSort" instance=ExtResource( 29 )]
 position = Vector2( 928, 635 )

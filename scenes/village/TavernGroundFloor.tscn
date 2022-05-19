@@ -72,13 +72,13 @@ frame = 1
 position = Vector2( 217, 26 )
 
 [node name="PlayerTemplate" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 148, 7 )
+position = Vector2( 174, -3 )
 
 [node name="PlayerTemplate2" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 284, 11 )
+position = Vector2( 203, 26 )
 
 [node name="PlayerTemplate3" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 139, -3 )
+position = Vector2( 115, -24 )
 
 [node name="WindowsDouble" type="Sprite" parent="YSort"]
 position = Vector2( 177, -132 )

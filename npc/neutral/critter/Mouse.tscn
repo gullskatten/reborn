@@ -483,6 +483,7 @@ shape = SubResource( 45 )
 wait_time = 4.0
 one_shot = true
 
+[connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="area_entered" from="HomeDetectionZone" to="." method="_on_HomeDetectionZone_area_entered"]
 [connection signal="body_entered" from="HomeDetectionZone" to="." method="_on_HomeDetectionZone_body_entered"]
 
