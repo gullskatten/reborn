@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/npc/human/arms/arms.png" type="Texture" id=1]
 [ext_resource path="res://assets/npc/human/head/head.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/equipment/weapons/short_sword_1.png" type="Texture" id=8]
 [ext_resource path="res://assets/equipment/shields/shield_front_1.png" type="Texture" id=9]
 [ext_resource path="res://assets/equipment/chest/chest_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/textures/masks/32_rect_iso_mask.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=6]
 resource_name = "Death_E_1"
@@ -8973,6 +8974,7 @@ vframes = 8
 frame = 6
 
 [node name="LegBack" type="Sprite" parent="."]
+light_mask = 513
 position = Vector2( -1, -15 )
 texture = ExtResource( 4 )
 centered = false
@@ -8982,6 +8984,7 @@ vframes = 3
 frame = 16
 
 [node name="FeetBack" type="Sprite" parent="."]
+light_mask = 513
 position = Vector2( -1, -14 )
 texture = ExtResource( 4 )
 centered = false
@@ -8990,6 +8993,7 @@ hframes = 8
 vframes = 3
 
 [node name="LegFront" type="Sprite" parent="."]
+light_mask = 513
 position = Vector2( -1, -15 )
 texture = ExtResource( 4 )
 centered = false
@@ -8999,6 +9003,7 @@ vframes = 3
 frame = 16
 
 [node name="FeetFront" type="Sprite" parent="."]
+light_mask = 513
 position = Vector2( -11, -11 )
 texture = ExtResource( 4 )
 centered = false
@@ -9101,3 +9106,10 @@ anims/Stance_E = SubResource( 9 )
 position = Vector2( -1, -2 )
 rotation = 1.5708
 shape = SubResource( 12 )
+
+[node name="LegsSittingMask" type="Light2D" parent="."]
+light_mask = 512
+position = Vector2( -1, -21 )
+texture = ExtResource( 11 )
+mode = 3
+range_item_cull_mask = 512
