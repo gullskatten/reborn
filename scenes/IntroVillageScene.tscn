@@ -742,9 +742,6 @@ scale = Vector2( 1, 0.997496 )
 anims/1.1 = SubResource( 6 )
 anims/RESET = SubResource( 5 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 16 )]
-position = Vector2( 1186, 555 )
-
 [node name="Raven" parent="." instance=ExtResource( 30 )]
 position = Vector2( 915, 376 )
 
@@ -760,6 +757,9 @@ cubic_interp = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
 remote_path = NodePath("../../../Raven")
+
+[node name="PlayerTemplate" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1183, 550 )
 
 [editable path="OutsideYSort/Houses/House6"]
 [editable path="OutsideYSort/Houses/House5"]

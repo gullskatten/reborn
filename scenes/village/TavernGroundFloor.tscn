@@ -75,7 +75,7 @@ position = Vector2( 217, 26 )
 position = Vector2( 174, -3 )
 
 [node name="PlayerTemplate2" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 203, 26 )
+position = Vector2( 255, 45 )
 
 [node name="PlayerTemplate3" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 115, -24 )
