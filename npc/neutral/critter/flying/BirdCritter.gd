@@ -1,15 +1,17 @@
 extends KinematicBody2D
+onready var animationPlayer = $AnimationPlayer
+onready var animationTree = $AnimationTree
+onready var animationState = animationTree.get("parameters/playback")
+onready var remote_transform : PathFollow2D = get_node("../Path2D/PathFollow2D")
+export var speed = 90
+var velocity = Vector2.ZERO
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _physics_process(delta):
+	if remote_transform != null:
+		remote_transform.set_offset(remote_transform.get_offset() + speed * delta)
+		var direction = global_position.direction_to(remote_transform.get_global_position())
+		animationTree.set("parameters/Land/blend_position", direction)
+		animationTree.set("parameters/Fly/blend_position", direction)
+	else:
+		print("Remote transform not found!")
+	

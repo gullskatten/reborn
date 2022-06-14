@@ -757,6 +757,8 @@ cubic_interp = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
 remote_path = NodePath("../../../Raven")
+update_rotation = false
+update_scale = false
 
 [node name="PlayerTemplate" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1183, 550 )

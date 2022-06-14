@@ -34,7 +34,6 @@ func animation_ended(name):
 	animationPlayer.remove_animation(name)
 	
 func move_node_to_teleport_point(id, node):
-	print("Moving node:" + node.name + " to " + id)
 	for point in get_tree().get_nodes_in_group("teleportation_point"):
 		if point is SceneLocalTeleportPoint and point.id == id:
 			var new_node = load(node.filename).instance()

@@ -12,10 +12,10 @@ func _ready():
 
 
 func _on_PlayerZone_body_entered(body):
-	print("Entered!")
+
 	emit_signal("deep_water_collision_off")
 
 
 func _on_PlayerZone_body_exited(body):
-	print("Left!")
+
 	emit_signal("deep_water_collision_on")
