@@ -66,19 +66,24 @@ position = Vector2( 160, -32 )
 texture = ExtResource( 10 )
 offset = Vector2( 1, -1 )
 hframes = 2
-frame = 1
 
 [node name="Bench2" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 217, 26 )
 
 [node name="PlayerTemplate" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 174, -3 )
+position = Vector2( 161, -3 )
 
 [node name="PlayerTemplate2" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 255, 45 )
+position = Vector2( 255, 44 )
+
+[node name="PlayerTemplate4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 237, 35 )
+
+[node name="PlayerTemplate5" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 209, 21 )
 
 [node name="PlayerTemplate3" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 115, -24 )
+position = Vector2( 119, -24 )
 
 [node name="WindowsDouble" type="Sprite" parent="YSort"]
 position = Vector2( 177, -132 )
