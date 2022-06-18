@@ -89,6 +89,9 @@ shader_param/opacity = 0.409
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_right = 1920.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://tilemaps/Grass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://structures/buildings/village/VillageHouseStaticLong.tscn" type="PackedScene" id=2]
@@ -30,6 +30,8 @@
 [ext_resource path="res://npc/neutral/critter/Mouse.tscn" type="PackedScene" id=28]
 [ext_resource path="res://structures/buildings/village/MouseHome.tscn" type="PackedScene" id=29]
 [ext_resource path="res://npc/neutral/critter/flying/BirdCritter.tscn" type="PackedScene" id=30]
+[ext_resource path="res://npc/neutral/critter/flying/BirdRestLocation.tscn" type="PackedScene" id=31]
+[ext_resource path="res://GodRay.tscn" type="PackedScene" id=32]
 
 [sub_resource type="OccluderPolygon2D" id=20]
 polygon = PoolVector2Array( 1.1708, 1.25464, 6.41972, 1.92758, 9.78442, 5.0231, 16.5138, 6.63815, 22.3011, 9.59909, 27.9538, 14.0405, 32.799, 14.4442, 33.8757, 16.4631, 35, 20.5007 )
@@ -319,11 +321,152 @@ _data = {
 "points": PoolVector2Array( 12.4726, 7.12719, -12.4726, -7.12719, 915, 376, 42.6732, 6.32196, -42.6732, -6.32196, 845, 340, -82.1855, -84.082, 82.1855, 84.082, 630, 571, -49.6274, 3.16098, 49.6274, -3.16098, 755, 606, -47.0986, -5.37366, 47.0986, 5.37366, 987, 678, -43.3054, 13.9083, 43.3054, -13.9083, 1230, 676, -25.536, 30.5871, 25.536, -30.5871, 1506, 434, -7.57662, 47.9852, 7.57662, -47.9852, 1593, 305, 14.0308, 19.0819, -14.0308, -19.0819, 1564, 177, 35.9188, 3.92862, -35.9188, -3.92862, 1491, 143, 44.6179, -12.0665, -44.6179, 12.0665, 1396, 147, 22.7299, -24.6942, -22.7299, 24.6942, 1327, 185, 0, 0, 0, 0, 1307, 311, 14.5676, -26.7514, -14.5676, 26.7514, 1312, 384, 36.0814, -0.445449, -36.0814, 0.445449, 1116, 491, 21.4084, 5.91564, -21.4084, -5.91564, 990, 479, 31.4042, 31.6269, -31.4042, -31.6269, 915, 376 )
 }
 
+[sub_resource type="Shader" id=55]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/god-rays
+
+Feel free to use, improve and change this shader according to your needs
+and consider sharing the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+uniform sampler2D gradient : hint_black;
+uniform float angle = -0.3;
+uniform float position = -0.2;
+uniform float spread : hint_range(0.0, 1.0) = 0.5;
+uniform float cutoff : hint_range(-1.0, 1.0) = 0.1;
+uniform float falloff : hint_range(0.0, 1.0) = 0.2;
+uniform float edge_fade : hint_range(0.0, 1.0) = 0.15;
+
+uniform float speed = 1.0;
+uniform float ray1_density = 8.0;
+uniform float ray2_density = 30.0;
+uniform float ray2_intensity : hint_range(0.0, 1.0) = 0.3;
+
+uniform vec4 color : hint_color = vec4(1.0, 0.9, 0.65, 0.8);
+
+uniform bool hdr = false;
+uniform float seed = 5.0;
+
+// Random and noise functions from Book of Shader's chapter on Noise.
+float random(vec2 _uv) {
+    return fract(sin(dot(_uv.xy,
+                         vec2(12.9898, 78.233))) *
+        43758.5453123);
+}
+
+float noise (in vec2 uv) {
+    vec2 i = floor(uv);
+    vec2 f = fract(uv);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve. Same as SmoothStep()
+    vec2 u = f * f * (3.0-2.0 * f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+mat2 rotate(float _angle){
+    return mat2(vec2(cos(_angle), -sin(_angle)),
+                vec2(sin(_angle), cos(_angle)));
+}
+
+vec4 screen(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) * (1.0 - blend);
+}
+
+
+vec4 soft_light(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, blend);
+	return mix(2.0 * base * blend + base * base * (1.0 - 2.0 * blend), sqrt(base) * (2.0 * blend - 1.0) + (2.0 * base) * (1.0 - blend), limit);
+}
+
+void fragment()
+{
+	float gradient_alpha = texture(gradient, vec2(UV.y, UV.x)).r;
+	
+	// Rotate, skew and move the UVs
+	vec2 transformed_uv = ( rotate(angle) * (UV - position) )  / ( (UV.y + spread) - (UV.y * spread) );
+	
+	// Animate the ray according the the new transformed UVs
+	vec2 ray1 = vec2(transformed_uv.x * ray1_density + sin(TIME * 0.1 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	vec2 ray2 = vec2(transformed_uv.x * ray2_density + sin(TIME * 0.2 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	
+	// Cut off the ray's edges
+	float cut = step(cutoff, transformed_uv.x) * step(cutoff, 1.0 - transformed_uv.x);
+	ray1 *= cut;
+	ray2 *= cut;
+	
+	// Apply the noise pattern (i.e. create the rays)
+	float rays;
+	
+	if (hdr){
+		// This is not really HDR, but check this to not clamp the two merged rays making 
+		// their values go over 1.0. Can make for some nice effect
+		rays = noise(ray1) + (noise(ray2) * ray2_intensity);
+	}
+	else{
+		 rays = clamp(noise(ray1) + (noise(ray2) * ray2_intensity), 0., 1.);
+	}
+	
+	// Fade out edges
+	rays *= smoothstep(0.0 , falloff, (1.0 - UV.y)); // Top
+	rays *= smoothstep(0.0, falloff, (1.0 - UV.y)); // Bottom
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, transformed_uv.x); // Left
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, 1.0 - transformed_uv.x); // Right
+	
+	// Color to the rays
+	vec3 shine = vec3(rays) * color.rgb;
+
+	// Try different blending modes for a nicer effect. \"Screen\" is included in the code,
+	// but take a look at https://godotshaders.com/snippet/blending-modes/ for more.
+	// With \"Screen\" blend mode:
+	shine = screen(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+	
+	COLOR = vec4(shine, rays * color.a * gradient_alpha);
+}
+"
+
+[sub_resource type="Gradient" id=54]
+offsets = PoolRealArray( 0, 0.273292 )
+
+[sub_resource type="GradientTexture" id=56]
+gradient = SubResource( 54 )
+
+[sub_resource type="ShaderMaterial" id=57]
+resource_local_to_scene = true
+shader = SubResource( 55 )
+shader_param/angle = 0.0
+shader_param/position = 0.1
+shader_param/spread = 0.471
+shader_param/cutoff = -0.116
+shader_param/falloff = 0.916
+shader_param/edge_fade = 0.208
+shader_param/speed = 1.0
+shader_param/ray1_density = 8.0
+shader_param/ray2_density = 30.0
+shader_param/ray2_intensity = 0.408
+shader_param/color = Color( 1, 0.9, 0.65, 0.8 )
+shader_param/hdr = true
+shader_param/seed = 5.0
+shader_param/gradient = SubResource( 56 )
+
 [node name="IntroVillageScene" type="Node2D"]
 script = ExtResource( 21 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0588235, 0.156863, 0.294118, 1 )
+color = Color( 0.0980392, 0.0313726, 0.156863, 1 )
 
 [node name="Road" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.541176, 0.937255, 1, 1 )
@@ -488,6 +631,12 @@ position = Vector2( 960, 800 )
 
 [node name="IslandTree11" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
 position = Vector2( 976, 816 )
+
+[node name="IslandTree46" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
+position = Vector2( 1040, 821 )
+
+[node name="IslandTree47" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
+position = Vector2( 1022, 815 )
 
 [node name="IslandTree12" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
 position = Vector2( 928, 808 )
@@ -723,7 +872,15 @@ scale = Vector2( -1.51358, 1.42017 )
 texture = ExtResource( 4 )
 vframes = 4
 
+[node name="FestiveLines3" type="Sprite" parent="."]
+position = Vector2( 1178, 446 )
+scale = Vector2( -1.51358, 1.42017 )
+texture = ExtResource( 4 )
+vframes = 4
+frame = 1
+
 [node name="FestiveLines2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1304, 368 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
@@ -745,6 +902,9 @@ anims/RESET = SubResource( 5 )
 [node name="Raven" parent="." instance=ExtResource( 30 )]
 position = Vector2( 915, 376 )
 
+[node name="Raven2" parent="." instance=ExtResource( 30 )]
+position = Vector2( 915, 376 )
+
 [node name="Path2D" type="Path2D" parent="."]
 visible = false
 curve = SubResource( 27 )
@@ -762,6 +922,56 @@ update_scale = false
 
 [node name="PlayerTemplate" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1183, 550 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 910, 527 )
+
+[node name="BirdRestLocation" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( -106, -162 )
+
+[node name="BirdRestLocation2" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( -66, -187 )
+
+[node name="BirdRestLocation3" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 64, -119 )
+
+[node name="BirdRestLocation4" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 84, -53 )
+
+[node name="BirdRestLocation5" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 197, -122 )
+
+[node name="BirdRestLocation6" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 395, -216 )
+
+[node name="BirdRestLocation7" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 470, -57 )
+
+[node name="BirdRestLocation8" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 300, 20 )
+
+[node name="BirdRestLocation9" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 306, 123 )
+
+[node name="BirdRestLocation10" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 345, 172 )
+
+[node name="BirdRestLocation11" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 175, 102 )
+
+[node name="BirdRestLocation12" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( -154, 80 )
+
+[node name="BirdRestLocation13" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 56, 26 )
+
+[node name="BirdRestLocation14" parent="Node2D" instance=ExtResource( 31 )]
+
+[node name="LightSmallScarce" parent="." instance=ExtResource( 32 )]
+material = SubResource( 57 )
+position = Vector2( 1010, 509 )
+rotation = 1.64061
+scale = Vector2( 0.175585, 0.345535 )
 
 [editable path="OutsideYSort/Houses/House6"]
 [editable path="OutsideYSort/Houses/House5"]
