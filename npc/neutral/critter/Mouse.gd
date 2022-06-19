@@ -35,9 +35,7 @@ func _physics_process(delta):
 	if(velocity != Vector2.ZERO):	
 		velocity = move_and_slide(velocity)
 
-func harmonic_velocity_x(x):
-	return sin((PI * x) / 30) * 20 / 2 * PI
-	
+
 func accelerate_to_point(point, delta):
 	var direction = global_position.direction_to(point)
 	if state_machine.state.name == "Flee":
@@ -76,8 +74,6 @@ func _on_HomeDetectionZone_area_entered(area):
 		nearest_home = area
 
 func _on_HomeDetectionZone_body_entered(body):
-	print("Body home found!")
-	print(body)
 	if body.is_in_group("mouse_home"):
 		nearest_home = body
 
