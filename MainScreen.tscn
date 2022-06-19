@@ -82,31 +82,28 @@ shader = SubResource( 6 )
 shader_param/mode = 5
 shader_param/linearColorSpace = false
 shader_param/color1 = Color( 0.0980392, 0.172549, 0.203922, 1 )
-shader_param/color2 = Color( 0.835294, 0.109804, 0.682353, 1 )
+shader_param/color2 = Color( 0.419608, 0.145098, 0.662745, 1 )
 shader_param/direction = Vector2( 0.1, 0.7 )
 shader_param/opacity = 0.409
 
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 1920, 1080 )
+[node name="Viewport2" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 3840, 2160 )
 transparent_bg = true
 handle_input_locally = false
+usage = 0
+render_target_v_flip = true
 render_target_update_mode = 3
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
-environment = ExtResource( 8 )
+[node name="IntroVillageScene" parent="ViewportContainer/Viewport2" instance=ExtResource( 7 )]
 
-[node name="IntroVillageScene" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport2"]
+environment = ExtResource( 8 )
 
 [node name="GUI" type="Control" parent="."]
 anchor_right = 1.0
@@ -129,8 +126,8 @@ margin_bottom = 1080.0
 
 [node name="Ambience" type="ColorRect" parent="Effects"]
 material = SubResource( 7 )
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_right = 3840.0
+margin_bottom = 2160.0
 
 [node name="MaxZoomClouds" parent="Effects" instance=ExtResource( 3 )]
 visible = true
