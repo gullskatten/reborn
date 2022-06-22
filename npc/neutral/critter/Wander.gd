@@ -9,7 +9,8 @@ func update(delta: float) -> void:
 		state_machine.pick_random_state()
 		critter.update_wander()
 		
-	critter.accelerate_to_point(critter.wanderController.target_position, delta)
+	critter.set_interest(critter.wanderController.target_position)
+	critter.steer(delta)
 	
 	if critter.global_position.distance_to(critter.wanderController.target_position) <= critter.WANDER_TARGET_RANGE:
 		state_machine.pick_random_state()

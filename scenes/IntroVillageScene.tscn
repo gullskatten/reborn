@@ -32,6 +32,7 @@
 [ext_resource path="res://tilemaps/Hay.tscn" type="PackedScene" id=30]
 [ext_resource path="res://npc/neutral/critter/flying/BirdRestLocation.tscn" type="PackedScene" id=31]
 [ext_resource path="res://GodRay.tscn" type="PackedScene" id=32]
+[ext_resource path="res://npc/neutral/critter/flying/BirdCritter.tscn" type="PackedScene" id=33]
 
 [sub_resource type="OccluderPolygon2D" id=20]
 polygon = PoolVector2Array( 1.1708, 1.25464, 6.41972, 1.92758, 9.78442, 5.0231, 16.5138, 6.63815, 22.3011, 9.59909, 27.9538, 14.0405, 32.799, 14.4442, 33.8757, 16.4631, 35, 20.5007 )
@@ -314,11 +315,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 743, 467 ) ]
-}
-
-[sub_resource type="Curve2D" id=27]
-_data = {
-"points": PoolVector2Array( 12.4726, 7.12719, -12.4726, -7.12719, 915, 376, 42.6732, 6.32196, -42.6732, -6.32196, 845, 340, -82.1855, -84.082, 82.1855, 84.082, 630, 571, -49.6274, 3.16098, 49.6274, -3.16098, 755, 606, -47.0986, -5.37366, 47.0986, 5.37366, 987, 678, -43.3054, 13.9083, 43.3054, -13.9083, 1230, 676, -25.536, 30.5871, 25.536, -30.5871, 1506, 434, -7.57662, 47.9852, 7.57662, -47.9852, 1593, 305, 14.0308, 19.0819, -14.0308, -19.0819, 1564, 177, 35.9188, 3.92862, -35.9188, -3.92862, 1491, 143, 44.6179, -12.0665, -44.6179, 12.0665, 1396, 147, 22.7299, -24.6942, -22.7299, 24.6942, 1327, 185, 0, 0, 0, 0, 1307, 311, 14.5676, -26.7514, -14.5676, 26.7514, 1312, 384, 36.0814, -0.445449, -36.0814, 0.445449, 1116, 491, 21.4084, 5.91564, -21.4084, -5.91564, 990, 479, 31.4042, 31.6269, -31.4042, -31.6269, 915, 376 )
 }
 
 [sub_resource type="Shader" id=55]
@@ -853,7 +849,7 @@ MAX_SPEED_FLEE = 100
 position = Vector2( 995, 525 )
 
 [node name="MouseHome3" parent="OutsideYSort" instance=ExtResource( 29 )]
-position = Vector2( 1022, 799 )
+position = Vector2( 1061, 779 )
 scale = Vector2( -1, 1 )
 
 [node name="MouseHome2" parent="OutsideYSort" instance=ExtResource( 29 )]
@@ -900,20 +896,6 @@ scale = Vector2( 1, 0.997496 )
 anims/1.1 = SubResource( 6 )
 anims/RESET = SubResource( 5 )
 
-[node name="Path2D" type="Path2D" parent="."]
-visible = false
-curve = SubResource( 27 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 915, 376 )
-rotation = -2.5542
-rotate = false
-cubic_interp = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
-update_rotation = false
-update_scale = false
-
 [node name="PlayerTemplate" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1183, 550 )
 
@@ -927,19 +909,52 @@ position = Vector2( -106, -162 )
 position = Vector2( -66, -187 )
 
 [node name="BirdRestLocation3" parent="Node2D" instance=ExtResource( 31 )]
-position = Vector2( 64, -119 )
+position = Vector2( 67, -120 )
 
 [node name="BirdRestLocation4" parent="Node2D" instance=ExtResource( 31 )]
 position = Vector2( 84, -53 )
 
 [node name="BirdRestLocation5" parent="Node2D" instance=ExtResource( 31 )]
-position = Vector2( 197, -122 )
+position = Vector2( 202, -120 )
+
+[node name="BirdRestLocation15" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 219, -129 )
+
+[node name="BirdRestLocation16" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 214, -124 )
+
+[node name="BirdRestLocation17" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 226, -131 )
 
 [node name="BirdRestLocation6" parent="Node2D" instance=ExtResource( 31 )]
-position = Vector2( 395, -216 )
+position = Vector2( 398, -213 )
+
+[node name="BirdRestLocation18" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 405, -215 )
+
+[node name="BirdRestLocation19" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 460, -242 )
+
+[node name="BirdRestLocation20" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 450, -238 )
+
+[node name="BirdRestLocation21" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 365, -162 )
+
+[node name="BirdRestLocation22" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 368, -162 )
 
 [node name="BirdRestLocation7" parent="Node2D" instance=ExtResource( 31 )]
-position = Vector2( 470, -57 )
+position = Vector2( 473, -55 )
+
+[node name="BirdRestLocation23" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 478, -56 )
+
+[node name="BirdRestLocation24" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 594, -91 )
+
+[node name="BirdRestLocation25" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 570, -103 )
 
 [node name="BirdRestLocation8" parent="Node2D" instance=ExtResource( 31 )]
 position = Vector2( 300, 20 )
@@ -948,24 +963,109 @@ position = Vector2( 300, 20 )
 position = Vector2( 306, 123 )
 
 [node name="BirdRestLocation10" parent="Node2D" instance=ExtResource( 31 )]
-position = Vector2( 345, 172 )
+position = Vector2( 347, 176 )
+
+[node name="BirdRestLocation30" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 353, 182 )
+
+[node name="BirdRestLocation31" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 410, 210 )
+
+[node name="BirdRestLocation32" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 317, 152 )
+
+[node name="BirdRestLocation33" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 324, 152 )
+
+[node name="BirdRestLocation34" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 314, 129 )
 
 [node name="BirdRestLocation11" parent="Node2D" instance=ExtResource( 31 )]
-position = Vector2( 175, 102 )
+position = Vector2( 178, 104 )
+
+[node name="BirdRestLocation26" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 173, 105 )
+
+[node name="BirdRestLocation27" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 180, 106 )
+
+[node name="BirdRestLocation28" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 204, 118 )
+
+[node name="BirdRestLocation29" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( 198, 114 )
 
 [node name="BirdRestLocation12" parent="Node2D" instance=ExtResource( 31 )]
-position = Vector2( -154, 80 )
+position = Vector2( -158, 79 )
 
 [node name="BirdRestLocation13" parent="Node2D" instance=ExtResource( 31 )]
 position = Vector2( 56, 26 )
 
 [node name="BirdRestLocation14" parent="Node2D" instance=ExtResource( 31 )]
+position = Vector2( -2, 4 )
 
 [node name="LightSmallScarce" parent="." instance=ExtResource( 32 )]
 material = SubResource( 57 )
 position = Vector2( 1010, 509 )
 rotation = 1.64061
 scale = Vector2( 0.175585, 0.345535 )
+
+[node name="BirdCritter" parent="." instance=ExtResource( 33 )]
+position = Vector2( 629, 574 )
+
+[node name="BirdCritter2" parent="." instance=ExtResource( 33 )]
+position = Vector2( 632, 595 )
+
+[node name="BirdCritter3" parent="." instance=ExtResource( 33 )]
+position = Vector2( 604, 583 )
+
+[node name="BirdCritter4" parent="." instance=ExtResource( 33 )]
+position = Vector2( 620, 583 )
+
+[node name="BirdCritter5" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1272, 722 )
+
+[node name="BirdCritter6" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1075, 674 )
+
+[node name="BirdCritter7" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1108, 651 )
+
+[node name="BirdCritter8" parent="." instance=ExtResource( 33 )]
+position = Vector2( 940, 821 )
+
+[node name="BirdCritter9" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1069, 831 )
+
+[node name="BirdCritter10" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1512, 1003 )
+
+[node name="BirdCritter11" parent="." instance=ExtResource( 33 )]
+position = Vector2( 487, 990 )
+
+[node name="BirdCritter12" parent="." instance=ExtResource( 33 )]
+position = Vector2( 229, 730 )
+
+[node name="BirdCritter13" parent="." instance=ExtResource( 33 )]
+position = Vector2( 261, 517 )
+
+[node name="BirdCritter14" parent="." instance=ExtResource( 33 )]
+position = Vector2( 445, 454 )
+
+[node name="BirdCritter15" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1885, 384 )
+
+[node name="BirdCritter16" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1612, 240 )
+
+[node name="BirdCritter17" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1349, 237 )
+
+[node name="BirdCritter18" parent="." instance=ExtResource( 33 )]
+position = Vector2( 1121, 224 )
+
+[node name="BirdCritter19" parent="." instance=ExtResource( 33 )]
+position = Vector2( 869, 221 )
 
 [editable path="OutsideYSort/Houses/House6"]
 [editable path="OutsideYSort/Houses/House5"]

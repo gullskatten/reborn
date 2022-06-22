@@ -1,0 +1,7 @@
+{
+ "1": {
+	"name": "Short Sword",
+	"slot": "MAIN_HAND",
+	"icon": "equipment/short_sword_1.png"
+      }
+}
