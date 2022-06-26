@@ -1,6 +1,6 @@
 extends CritterState
 
-func enter(msg := {}) -> void:
+func enter(_msg := {}) -> void:
 	var mouseSqueels = ["Eeeeeek!", "Meep!", "Squeel!"]
 	critter.animationState.travel("Run")
 	critter.emoteLabel.visible = true

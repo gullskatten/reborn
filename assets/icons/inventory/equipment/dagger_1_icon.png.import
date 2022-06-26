@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/short_sword_1_icon.png-0940f3953cfdeddded2ddb527b53d81b.stex"
+path="res://.import/dagger_1_icon.png-246f3e543a034422865b15d64080e12e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/inventory/short_sword_1_icon.png"
-dest_files=[ "res://.import/short_sword_1_icon.png-0940f3953cfdeddded2ddb527b53d81b.stex" ]
+source_file="res://assets/icons/inventory/equipment/dagger_1_icon.png"
+dest_files=[ "res://.import/dagger_1_icon.png-246f3e543a034422865b15d64080e12e.stex" ]
 
 [params]
 

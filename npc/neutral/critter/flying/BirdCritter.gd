@@ -65,14 +65,13 @@ func seek_landing():
 		animationState.travel(next_state)
 
 func on_take_off_end():
-	print("Flying called")
 	animationState.travel("Fly")
 	
 func _on_Timer_timeout():
 	seek_landing()
 
 
-func _on_PlayerDetectionZone_body_entered(body):
+func _on_PlayerDetectionZone_body_entered(_body):
 	if currentState != states.FLYING:
 		currentState = states.FLYING
 		seek_landing()

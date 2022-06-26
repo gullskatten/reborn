@@ -2,6 +2,26 @@
  "1": {
 	"name": "Short Sword",
 	"slot": "MAIN_HAND",
-	"icon": "equipment/short_sword_1.png"
+	"icon": "equipment/short_sword_1.png",
+	"rarity": "Common",
+	"item_level": 1,
+	"req_level": 1,
+	"stats": {
+		"speed": 1.5,
+		"damage_min": 1,
+		"damage_max": 5
+	},
+	"stacksize": 1
+      },
+
+ "2": {
+	"name": "Hay",
+	"slot": null,
+	"icon": "resources/hay.png",
+	"rarity": "Common",
+	"item_level": 1,
+	"req_level": 1,
+	"stats": null,
+	"stacksize": 500
       }
 }

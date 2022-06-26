@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/head_1_icon.png-4b1c0930f50b937c3b5e0a6f136afda3.stex"
+path="res://.import/polearm_1_icon.png-d161f9268ef9d97b15931af2ff3e7302.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/inventory/head_1_icon.png"
-dest_files=[ "res://.import/head_1_icon.png-4b1c0930f50b937c3b5e0a6f136afda3.stex" ]
+source_file="res://assets/icons/inventory/equipment/polearm_1_icon.png"
+dest_files=[ "res://.import/polearm_1_icon.png-d161f9268ef9d97b15931af2ff3e7302.stex" ]
 
 [params]
 

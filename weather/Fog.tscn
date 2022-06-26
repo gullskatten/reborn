@@ -33,5 +33,5 @@ shader_param/water_mask = SubResource( 6 )
 
 [node name="Fog" type="ColorRect"]
 material = SubResource( 2 )
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_right = 3840.0
+margin_bottom = 2160.0

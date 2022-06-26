@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/cutscenes/common/CutSceneFocusEffect.tscn" type="PackedScene" id=1]
 [ext_resource path="res://camera/ScreenTransition.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://target/CurrentTargetPortrait.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/IntroVillageScene.tscn" type="PackedScene" id=7]
 [ext_resource path="res://WorldEnvDefault.tres" type="Environment" id=8]
+[ext_resource path="res://ui/character/CharacterInspect.tscn" type="PackedScene" id=9]
+[ext_resource path="res://MainScreen.gd" type="Script" id=10]
+[ext_resource path="res://assets/shaders/parchment.jpg" type="Texture" id=11]
 
 [sub_resource type="Shader" id=6]
 code = "shader_type canvas_item;
@@ -88,24 +91,174 @@ shader_param/color2 = Color( 0.419608, 0.145098, 0.662745, 1 )
 shader_param/direction = Vector2( 0.1, 0.7 )
 shader_param/opacity = 0.409
 
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+uniform int radius = 5;
+uniform vec3 offset=vec3(0.0);
+void fragment() 
+ {
+     vec2 src_size = vec2 ( SCREEN_PIXEL_SIZE.x,  SCREEN_PIXEL_SIZE.y);
+     vec2 uv = UV.xy;
+     float n = float((radius + 1) * (radius + 1));
+     vec3 m0 = offset; vec3 m1 = offset; vec3 m2 = offset; vec3 m3 = offset;
+     vec3 s0 = offset; vec3 s1 = offset; vec3 s2 = offset; vec3 s3 = offset;
+     vec3 c;
+
+     for (int j = -radius; j <= 0; ++j)  {
+         for (int i = -radius; i <= 0; ++i)  {
+             c = texture(TEXTURE, uv + vec2(float(i),float(j)) * src_size).rgb;
+             m0 += c;
+             s0 += c * c;
+         }
+     }
+
+     for (int j = -radius; j <= 0; ++j)  {
+         for (int i = 0; i <= radius; ++i)  {
+             c = texture(TEXTURE, uv + vec2(float(i),float(j)) * src_size).rgb;
+             m1 += c;
+             s1 += c * c;
+         }
+     }
+
+     for (int j = 0; j <= radius; ++j)  {
+         for (int i = 0; i <= radius; ++i)  {
+             c = texture(TEXTURE, uv + vec2(float(i),float(j)) * src_size).rgb;
+             m2 += c;
+             s2 += c * c;
+         }
+     }
+
+     for (int j = 0; j <= radius; ++j)  {
+         for (int i = -radius; i <= 0; ++i)  {
+             c = texture(TEXTURE, uv + vec2(float(i),float(j)) * src_size).rgb;
+             m3 += c;
+             s3 += c * c;
+         }
+     }
+
+
+     float min_sigma2 = 1e+2;
+     m0 /= n;
+     s0 = abs(s0 / n - m0 * m0);
+
+     float sigma2 = s0.r + s0.g + s0.b;
+     if (sigma2 < min_sigma2) {
+         min_sigma2 = sigma2;
+         COLOR = vec4(m0, 1.0);
+     }
+
+     m1 /= n;
+     s1 = abs(s1 / n - m1 * m1);
+
+     sigma2 = s1.r + s1.g + s1.b;
+     if (sigma2 < min_sigma2) {
+         min_sigma2 = sigma2;
+         COLOR = vec4(m1, 1.0);
+     }
+
+     m2 /= n;
+     s2 = abs(s2 / n - m2 * m2);
+
+     sigma2 = s2.r + s2.g + s2.b;
+     if (sigma2 < min_sigma2) {
+         min_sigma2 = sigma2;
+         COLOR = vec4(m2, 1.0);
+     }
+
+     m3 /= n;
+     s3 = abs(s3 / n - m3 * m3);
+
+     sigma2 = s3.r + s3.g + s3.b;
+     if (sigma2 < min_sigma2) {
+         min_sigma2 = sigma2;
+         COLOR = vec4(m3, 1.0);
+     }
+ }"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
+shader_param/radius = 5
+shader_param/offset = Vector3( 0, 0, 0 )
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+uniform vec4 u_bgColor: hint_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform float u_bgColorFactor: hint_range(0.0, 1.0) = 0.4;
+uniform vec4 u_patternColor: hint_color = vec4(0.0, 0.0, 0.0, 1.0);
+
+uniform float u_threshold1: hint_range(0.0, 1.0) = 0.75;
+uniform float u_threshold2: hint_range(0.0, 1.0) = 0.50;
+uniform float u_threshold3: hint_range(0.0, 1.0) = 0.25;
+uniform float u_threshold4: hint_range(0.0, 1.0) = 0.05;
+
+uniform vec2 u_bgTiling = vec2(1.0, 1.0);
+uniform vec2 u_patternTiling = vec2(1.0, 1.0);
+
+uniform sampler2D u_bgTexture;
+uniform sampler2D u_patternTexture;
+
+const float C2_SQRT2 = 0.707106781;
+const mat2 ROT_45 = mat2(vec2(C2_SQRT2, -C2_SQRT2), vec2(C2_SQRT2, C2_SQRT2));
+const vec4 COLOR_WHITE = vec4(1.0, 1.0, 1.0, 1.0);
+
+float getIntensity(vec3 color)
+{
+	return 0.299*color.r + 0.587*color.g + 0.114*color.b;
+}
+
+vec4 getPatternColor(vec2 uv, float intensity)
+{
+	vec2 patternUV1 = vec2(-uv.x, uv.y) * u_patternTiling;
+	vec2 patternUV2 = uv * u_patternTiling;
+	vec2 patternUV3 = ROT_45*(uv + vec2(0.2358, 0.9123)) * u_patternTiling;
+	vec2 patternUV4 = (vec2(uv.x, -uv.y) + vec2(0.4123, 0.7218)) * u_patternTiling;
+	vec4 pCol1 = texture(u_patternTexture, patternUV1);
+	vec4 pCol2 = texture(u_patternTexture, patternUV2);
+	vec4 pCol3 = texture(u_patternTexture, patternUV3);
+	vec4 pCol4 = texture(u_patternTexture, patternUV4);
+	
+	if(intensity > u_threshold1)
+		return vec4(1.0, 1.0, 1.0, 1.0);
+	if(intensity > u_threshold2)
+		return mix(pCol1, COLOR_WHITE, 0.5);
+	if(intensity > u_threshold3)
+		return mix(pCol1*pCol2, COLOR_WHITE, 0.3);
+	if(intensity > u_threshold4)
+		return mix(pCol1*pCol2*pCol3, COLOR_WHITE, 0.1);
+	return pCol1*pCol2*pCol3*pCol4*0.8;
+}
+
+void fragment()
+{
+	vec4 origColor = texture(SCREEN_TEXTURE, SCREEN_UV);
+	float intensity = getIntensity(origColor.rgb);
+	vec4 bgColor = mix(texture(u_bgTexture, UV*u_bgTiling), u_bgColor, u_bgColorFactor);
+	vec4 patternColor = getPatternColor(UV, intensity);
+	vec4 color = mix(u_patternColor, bgColor, getIntensity(patternColor.rgb));
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
+shader_param/u_bgColor = Color( 0.847059, 0.635294, 0.180392, 1 )
+shader_param/u_bgColorFactor = 0.174
+shader_param/u_patternColor = Color( 0.164706, 0.0941176, 0.0117647, 1 )
+shader_param/u_threshold1 = 0.75
+shader_param/u_threshold2 = 0.5
+shader_param/u_threshold3 = 0.215
+shader_param/u_threshold4 = 0.165
+shader_param/u_bgTiling = Vector2( 1, 1 )
+shader_param/u_patternTiling = Vector2( 1, 1 )
+shader_param/u_patternTexture = ExtResource( 11 )
+
+[sub_resource type="ViewportTexture" id=12]
+viewport_path = NodePath("ViewportContainer/Viewport")
+
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
-
-[node name="Viewport2" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 3840, 2160 )
-transparent_bg = true
-handle_input_locally = false
-usage = 0
-render_target_v_flip = true
-render_target_update_mode = 3
-
-[node name="IntroVillageScene" parent="ViewportContainer/Viewport2" instance=ExtResource( 7 )]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport2"]
-environment = ExtResource( 8 )
+script = ExtResource( 10 )
 
 [node name="GUI" type="Control" parent="."]
 anchor_right = 1.0
@@ -125,6 +278,33 @@ margin_bottom = 0.0
 
 [node name="Inventory" parent="GUI/Interface" instance=ExtResource( 4 )]
 visible = false
+margin_left = 1230.0
+margin_top = 724.0
+margin_right = -5.0
+margin_bottom = 6.0
+
+[node name="CharacterInspect" parent="GUI/Interface" instance=ExtResource( 9 )]
+visible = false
+margin_left = 10.0
+margin_top = -3.0
+margin_right = -1375.0
+margin_bottom = -3.0
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+mouse_filter = 1
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 3840, 2160 )
+transparent_bg = true
+handle_input_locally = false
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="IntroVillageScene" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
+environment = ExtResource( 8 )
 
 [node name="Effects" type="Control" parent="."]
 margin_right = 1920.0
@@ -139,3 +319,16 @@ margin_bottom = 2160.0
 visible = true
 
 [node name="ScreenTransition" parent="Effects" instance=ExtResource( 2 )]
+
+[node name="Sprite" type="Sprite" parent="Effects"]
+visible = false
+material = SubResource( 11 )
+centered = false
+flip_v = true
+
+[node name="Sprite2" type="Sprite" parent="Effects"]
+visible = false
+material = SubResource( 14 )
+texture = SubResource( 12 )
+centered = false
+flip_v = true

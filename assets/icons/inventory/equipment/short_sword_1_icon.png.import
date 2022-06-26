@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chest_1_icon.png-9aa2c4a347fe0fec2d10e6d3fc11ec2f.stex"
+path="res://.import/short_sword_1_icon.png-09bfcd96e10cbcd128a0f8251f6626c8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/inventory/chest_1_icon.png"
-dest_files=[ "res://.import/chest_1_icon.png-9aa2c4a347fe0fec2d10e6d3fc11ec2f.stex" ]
+source_file="res://assets/icons/inventory/equipment/short_sword_1_icon.png"
+dest_files=[ "res://.import/short_sword_1_icon.png-09bfcd96e10cbcd128a0f8251f6626c8.stex" ]
 
 [params]
 

@@ -84,9 +84,6 @@ func choose_direction():
 		chosen_dir += ray_directions[i] * interest[i]
 	chosen_dir = chosen_dir.normalized()
 
-func _physics_process(delta):
-	pass
-
 func steer(delta):
 	set_danger()
 	choose_direction()

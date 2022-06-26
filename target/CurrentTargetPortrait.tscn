@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/ui/portraits/portrait-64x64.png" type="Texture" id=1]
 [ext_resource path="res://assets/props/torch/tiny_test_torch.png" type="Texture" id=2]
@@ -8,6 +8,28 @@
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0901961, 0.12549, 0.219608, 1 )
+
+[sub_resource type="DynamicFontData" id=42]
+antialiased = false
+font_path = "res://assets/fonts/nevis.ttf"
+
+[sub_resource type="DynamicFont" id=43]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 42 )
+
+[sub_resource type="Theme" id=44]
+resource_local_to_scene = true
+default_font = SubResource( 43 )
+
+[sub_resource type="Theme" id=45]
+resource_local_to_scene = true
+default_font = SubResource( 43 )
+
+[sub_resource type="Theme" id=46]
+resource_local_to_scene = true
+default_font = SubResource( 43 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0901961, 0.12549, 0.219608, 1 )
@@ -96,6 +118,7 @@ margin_top = 36.0
 margin_right = 114.0
 margin_bottom = 46.0
 rect_scale = Vector2( 1, 1 )
+theme = SubResource( 44 )
 custom_colors/font_color = Color( 0.501961, 0.443137, 1, 1 )
 text = "Beast"
 align = 0
@@ -111,6 +134,7 @@ margin_top = 0.0
 margin_right = 25.0
 margin_bottom = 10.0
 rect_scale = Vector2( 1, 1 )
+theme = SubResource( 45 )
 text = "Level"
 align = 0
 
@@ -120,6 +144,7 @@ margin_top = 0.0
 margin_right = 36.0
 margin_bottom = 10.0
 rect_scale = Vector2( 1, 1 )
+theme = SubResource( 46 )
 text = "4"
 align = 0
 

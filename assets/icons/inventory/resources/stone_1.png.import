@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dagger_1_icon.png-68657ca082bab04e5bd1c5d8d689ba6f.stex"
+path="res://.import/stone_1.png-1413881fdb7cd4903e503c04565045f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/inventory/dagger_1_icon.png"
-dest_files=[ "res://.import/dagger_1_icon.png-68657ca082bab04e5bd1c5d8d689ba6f.stex" ]
+source_file="res://assets/icons/inventory/resources/stone_1.png"
+dest_files=[ "res://.import/stone_1.png-1413881fdb7cd4903e503c04565045f7.stex" ]
 
 [params]
 
