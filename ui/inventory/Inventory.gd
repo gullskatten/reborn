@@ -24,7 +24,6 @@ func initialize_inventory():
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 		if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT && event.pressed:
-				print("Wowow")
 				get_tree().set_input_as_handled()
 				var holding_item = root_interface_node.holding_item
 				if holding_item != null:

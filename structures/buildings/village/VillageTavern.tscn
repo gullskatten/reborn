@@ -398,6 +398,7 @@ anims/RESET = SubResource( 3 )
 [node name="PlayerEnterActionArea" parent="." instance=ExtResource( 8 )]
 position = Vector2( 70, 16 )
 is_scene_trigger = true
+is_single_trigger = false
 scene_triggers = [ "1.1" ]
 
 [node name="CollisionShape2D" parent="PlayerEnterActionArea/PlayerHintArea" index="0"]

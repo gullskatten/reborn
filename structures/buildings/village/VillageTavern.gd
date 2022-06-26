@@ -18,5 +18,4 @@ func _on_PlayerHintArea_body_exited(body):
 
 func _on_PlayerEnterActionArea_action_pressed():
 	if colliding_player != null:
-		print("Teleporting player to TavernInside")
 		SceneTransitionManager.teleport_player_to("TavernGroundFloor", colliding_player)

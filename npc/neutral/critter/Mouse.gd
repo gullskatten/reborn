@@ -20,8 +20,8 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var emoteLabel = $EmoteLabel
 onready var flee_timer = $FleeTimer
 
-export var steer_force = 1
-export var look_ahead = 16
+export var steer_force = 0.2
+export var look_ahead = 20
 export var num_rays = 16
 
 var inner_rotation = 0
@@ -84,10 +84,10 @@ func choose_direction():
 		chosen_dir += ray_directions[i] * interest[i]
 	chosen_dir = chosen_dir.normalized()
 
-func steer(delta):
+func steer(delta, speed):
 	set_danger()
 	choose_direction()
-	var desired_velocity = chosen_dir.rotated(inner_rotation) * MAX_SPEED
+	var desired_velocity = chosen_dir.rotated(inner_rotation) * speed
 	velocity = velocity.linear_interpolate(desired_velocity, steer_force)
 	inner_rotation = velocity.angle()
 	animationTree.set("parameters/Idle/blend_position", velocity.normalized())

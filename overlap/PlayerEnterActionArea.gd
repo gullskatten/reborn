@@ -2,20 +2,23 @@ extends Node2D
 
 onready var tween = $Tween
 onready var hint = $ButtonPressHint
-onready var hintLabel = $ButtonPressHint/PanelContainer/CenterContainer/TinyLabel
+onready var hintLabel = $ButtonPressHint/PanelContainer/CenterContainer/Label
 
 export(bool) var is_scene_trigger := false
+export(bool) var is_single_trigger := true
 export(Array, String) var scene_triggers := []
 
 var should_hide := true
+var is_active := true
 
 signal action_pressed
 
-
-
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept") && hint.visible == true:
+	if is_active && Input.is_action_just_pressed("ui_accept") && hint.visible == true:
 		should_hide = true
+		if is_single_trigger:
+			is_active = false
+			
 		hide_hint_button()
 		emit_signal("action_pressed")
 
@@ -37,11 +40,12 @@ func _on_PlayerHintArea_body_exited(body):
 
 func hide_hint_button():
 	if hint.visible == true:
-		tween.interpolate_property(hint, "modulate",
+		if tween.is_inside_tree():
+			tween.interpolate_property(hint, "modulate",
 			Color(2,2,1, 0.9), Color(1,1,1, 0), .5,
 			Tween.TRANS_LINEAR, Tween.EASE_OUT)
 		
-		tween.start()
+			tween.start()
 
 func _on_Tween_tween_all_completed():
 	if should_hide:

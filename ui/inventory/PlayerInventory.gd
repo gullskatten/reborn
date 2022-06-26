@@ -4,7 +4,7 @@ signal active_item_updated
 
 const SlotClass = preload("res://ui/inventory/Slot.gd")
 const ItemClass = preload("res://ui/inventory/InventoryItem.gd")
-const NUM_INVENTORY_SLOTS = 20
+const NUM_INVENTORY_SLOTS = 36
 const NUM_HOTBAR_SLOTS = 8
 
 var active_item_slot = 0
@@ -90,32 +90,35 @@ var equips = {
 }
 
 # TODO: First try to add to hotbar
-func add_item(item_id, item_quantity):
+func add_item(new_item, item_quantity):
+	if new_item == null:
+		return
+
 	var slot_indices: Array = inventory.keys()
 	slot_indices.sort()
-	for item in slot_indices:
-		if inventory[item][0]["id"] == item_id:
-			var stack_size = int(inventory[item][0]["stacksize"])
-			var able_to_add = stack_size - inventory[item][1]
+	for index in slot_indices:
+		if inventory[index][0]["id"] == new_item.id:
+			var stack_size = int(inventory[index][0]["stacksize"])
+			var able_to_add = stack_size - inventory[index][1]
 			if able_to_add >= item_quantity:
-				inventory[item][1] += item_quantity
-				update_slot_visual(item, inventory[item][0], inventory[item][1])
+				inventory[index][1] += item_quantity
+				update_slot_visual(index, inventory[index][0], inventory[index][1])
 				return
 			else:
-				inventory[item][1] += able_to_add
-				update_slot_visual(item, inventory[item][0], inventory[item][1])
+				inventory[index][1] += able_to_add
+				update_slot_visual(index, inventory[index][0], inventory[index][1])
 				item_quantity = item_quantity - able_to_add
 	
 	# item doesn't exist in inventory yet, so add it to an empty slot
 	for i in range(NUM_INVENTORY_SLOTS):
 		if inventory.has(i) == false:
-			inventory[i] = [ItemsDataCache.item_data[item_id], item_quantity]
+			inventory[i] = [new_item, item_quantity]
 			update_slot_visual(i, inventory[i][0], inventory[i][1])
 			return
 
 # TODO: Make compatible with hotbar as well
-func update_slot_visual(slot_index, item, new_quantity):
-	var slot = get_tree().root.get_node("/root/World/Main/Viewport/GUI/Interface/Inventory/MarginContainer/CenterContainer/GridContainer/Slot" + str(slot_index + 1))
+func update_slot_visual(slot_index, item, new_quantity): 
+	var slot = get_node("/root/World/Main/GUI/Interface/Inventory/MarginContainer/CenterContainer/GridContainer/Slot" + str(slot_index + 1))
 	if slot.item != null:
 		# Updates the internal item in the item class
 		slot.item.set_item(item, new_quantity)

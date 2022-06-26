@@ -16,7 +16,7 @@ func update(delta: float) -> void:
 			critter.set_interest(critter.nearest_home.global_position)
 		else:
 			critter.set_interest(-player.global_position)
-		critter.steer(delta)
+		critter.steer(delta, critter.MAX_SPEED_FLEE)
 	else:
 		critter.wanderController.update_target_position()
 		state_machine.transition_to("Wander")
