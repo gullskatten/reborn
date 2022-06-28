@@ -6,7 +6,6 @@ var colliding_player = null
 
 func _on_PlayerHintArea_body_entered(body):
 	animationPlayer.play("OpenDoor")
-	
 	if body is Player:
 		colliding_player = body
 	elif body.is_in_group("teleportable"):

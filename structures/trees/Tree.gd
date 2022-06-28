@@ -11,7 +11,7 @@ const summer_texture = preload("res://assets/props/trees/birch_trees_summer.png"
 func _ready():
 	randomize()
 	var rand = floor(rand_range(0, 5))
-	var texture_list = [autumn_texture, bare_texture, summer_texture,summer_texture]
+	var texture_list = [autumn_texture, bare_texture, summer_texture, summer_texture]
 	sprite.set_frame(rand)
 	texture_list.shuffle()
 	sprite.texture = texture_list.pop_front()

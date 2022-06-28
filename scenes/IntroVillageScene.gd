@@ -7,6 +7,8 @@ onready var cameraPosition = $CameraController/CameraPosition
 var cameraFollowNode : RemoteTransform2D = RemoteTransform2D.new()
 
 func _ready():
+	
+	$AudioStreamPlayer.play()
 	CutSceneManager.connect("trigger", self, "start_animation")
 	animationPlayer.connect("animation_finished", self, "animation_ended")
 	SceneTransitionManager.connect("request_move_node", self, "move_node_to_teleport_point")

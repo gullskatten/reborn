@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Tavern_door_open.ogg-48c5b6eeed7882283021e727192166af.oggstr"
+
+[deps]
+
+source_file="res://assets/music/props/tavern/Tavern_door_open.ogg"
+dest_files=[ "res://.import/Tavern_door_open.ogg-48c5b6eeed7882283021e727192166af.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

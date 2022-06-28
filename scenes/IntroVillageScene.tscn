@@ -22,7 +22,7 @@
 [ext_resource path="res://assets/props/village/horse_saddle.png" type="Texture" id=20]
 [ext_resource path="res://scenes/IntroVillageScene.gd" type="Script" id=21]
 [ext_resource path="res://npc/abstract/RoyalGuardsPosition.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Treasure.tscn" type="PackedScene" id=23]
+[ext_resource path="res://player_items/Treasure.tscn" type="PackedScene" id=23]
 [ext_resource path="res://structures/props/light/AnimatedLight.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/village/TavernGroundFloor.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/props/light/light_1024x1024.png" type="Texture" id=26]
@@ -39,7 +39,7 @@
 [ext_resource path="res://assets/tiles/64x32-brickroad.png" type="Texture" id=37]
 [ext_resource path="res://assets/tiles/64x32-grass-iso.png" type="Texture" id=38]
 [ext_resource path="res://assets/tiles/64x32-noenter-area.png" type="Texture" id=39]
-[ext_resource path="res://player_items/ItemDrop.tscn" type="PackedScene" id=41]
+[ext_resource path="res://assets/music/Reborn - Track 1 (Nightsounds).ogg" type="AudioStream" id=40]
 
 [sub_resource type="ShaderMaterial" id=60]
 
@@ -1456,6 +1456,18 @@ position = Vector2( 1126, 757 )
 [node name="TreasureNode2" parent="OutsideYSort" instance=ExtResource( 23 )]
 position = Vector2( 1391, 623 )
 
+[node name="TreasureNode3" parent="OutsideYSort" instance=ExtResource( 23 )]
+position = Vector2( 1173, 609 )
+
+[node name="TreasureNode4" parent="OutsideYSort" instance=ExtResource( 23 )]
+position = Vector2( 1154, 594 )
+
+[node name="TreasureNode5" parent="OutsideYSort" instance=ExtResource( 23 )]
+position = Vector2( 1189, 581 )
+
+[node name="TreasureNode6" parent="OutsideYSort" instance=ExtResource( 23 )]
+position = Vector2( 1069, 601 )
+
 [node name="Mouse" parent="OutsideYSort" instance=ExtResource( 28 )]
 position = Vector2( 993, 529 )
 MAX_SPEED = 50
@@ -1693,40 +1705,8 @@ position = Vector2( 1121, 224 )
 [node name="BirdCritter19" parent="." instance=ExtResource( 33 )]
 position = Vector2( 869, 221 )
 
-[node name="ItemDrop" parent="." instance=ExtResource( 41 )]
-position = Vector2( 1034, 602 )
-item_id = "2"
-quantity = 4
-
-[node name="ItemDrop4" parent="." instance=ExtResource( 41 )]
-position = Vector2( 995, 574 )
-item_id = "1"
-quantity = 4
-
-[node name="ItemDrop5" parent="." instance=ExtResource( 41 )]
-position = Vector2( 984, 584 )
-item_id = "5"
-quantity = 4
-
-[node name="ItemDrop6" parent="." instance=ExtResource( 41 )]
-position = Vector2( 995, 584 )
-item_id = "7"
-quantity = 4
-
-[node name="ItemDrop7" parent="." instance=ExtResource( 41 )]
-position = Vector2( 984, 654 )
-item_id = "9"
-quantity = 20
-
-[node name="ItemDrop2" parent="." instance=ExtResource( 41 )]
-position = Vector2( 1059, 595 )
-item_id = "9"
-quantity = 25
-
-[node name="ItemDrop3" parent="." instance=ExtResource( 41 )]
-position = Vector2( 1051, 585 )
-item_id = "10"
-quantity = 30
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 40 )
 
 [editable path="OutsideYSort/Houses/House6"]
 [editable path="OutsideYSort/Houses/House5"]

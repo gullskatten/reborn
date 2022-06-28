@@ -107,9 +107,8 @@ func _on_WorkerLoadCapacity_load_changed(val, increment):
 
 
 func _on_WorkerResourceDeliveryHitbox_area_entered(area):
-	print("hmm..")
 	if stateMachine.state.name == "Return" && loadCapacity.currentLoad > 0:
-		print("Had some load, lets deliver this...")
+	
 		loadOutTimer.start()
 		stateMachine.transition_to("Deliver")
 
@@ -119,7 +118,6 @@ func _on_LoadOutTimer_timeout():
 func _on_SeekTimer_timeout():
 	if stateMachine.state.name == "Seek":
 		if loadCapacity.currentLoad > 0:
-			print("Seek - Returning goods.")
 			stateMachine.transition_to("Return")
 		else:
 			stateMachine.pick_random_state()
