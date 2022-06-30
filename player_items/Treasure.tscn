@@ -331,7 +331,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("AudioStreamPlayer")
+tracks/7/path = NodePath("Success")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -496,7 +496,7 @@ tracks/4/keys = {
 "values": [ 0.0, -15.0, 15.0, 0.0 ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/path = NodePath("Success")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -547,8 +547,9 @@ anims/Open = SubResource( 58 )
 anims/RESET = SubResource( 59 )
 anims/Unlock = SubResource( 60 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+[node name="Success" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+attenuation = 3.13834
 
 [connection signal="action_pressed" from="PlayerEnterActionArea" to="." method="_on_PlayerEnterActionArea_action_pressed"]
 [connection signal="body_entered" from="PlayerEnterActionArea/PlayerHintArea" to="." method="_on_PlayerHintArea_body_entered"]

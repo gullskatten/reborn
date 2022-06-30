@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/shaders/SwayWild.shader" type="Shader" id=1]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/speed = 10.0
+shader_param/minStrength = 0.043
+shader_param/maxStrength = 0.09
+shader_param/strengthScale = 100.0
+shader_param/interval = 1.5
+shader_param/detail = 0.5
+shader_param/distortion = 0.114
+shader_param/heightOffset = 0.528
+shader_param/offset = 2.0

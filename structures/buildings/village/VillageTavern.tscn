@@ -444,7 +444,7 @@ shape = SubResource( 57 )
 visible = false
 polygon = PoolVector2Array( -86, -2, -88, -17, -89, -84, -34, -118, -4, -108, 107, -48, 99, 34, 96, 35, 75, 7 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
 
 [connection signal="action_pressed" from="PlayerEnterActionArea" to="." method="_on_PlayerEnterActionArea_action_pressed"]

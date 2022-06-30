@@ -16,6 +16,8 @@ var landing_spots = []
 
 func _ready():
 	randomize()
+	$CrowScream2D.pitch_scale = rand_range(1.0, 1.3)
+	
 	animationState.start("Idle")
 	timer.wait_time = rand_range(2.0, 20.0)
 	timer.start()
@@ -73,6 +75,8 @@ func _on_Timer_timeout():
 
 func _on_PlayerDetectionZone_body_entered(_body):
 	if currentState != states.FLYING:
+		$CrowScream2D.play()
+		$CrowTakeoff.play()
 		currentState = states.FLYING
 		seek_landing()
 		animationState.travel("Takeoff")

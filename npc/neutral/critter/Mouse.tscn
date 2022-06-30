@@ -395,7 +395,6 @@ radius = 132.197
 
 [node name="Mouse" type="KinematicBody2D"]
 collision_layer = 48
-collision_mask = 33
 script = ExtResource( 2 )
 ACCELERATION = 360
 MAX_SPEED = 80

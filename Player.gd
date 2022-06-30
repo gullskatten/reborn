@@ -8,6 +8,8 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var footsteps = $Footsteps
 onready var mount = $Mount
 
+var select_rect = RectangleShape2D.new()
+
 var velocity : Vector2 = Vector2.ZERO
 var allowed_movement := true
 const ACCELERATION = 20
@@ -20,7 +22,6 @@ const FRICTION = 15
 signal moving_started
 signal moving_end
 signal initial_position
-signal collision
 
 func _ready():
 	footsteps.visible = false

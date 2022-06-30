@@ -54,11 +54,11 @@ void vertex() {
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/speed = 1.0
-shader_param/minStrength = 0.05
-shader_param/maxStrength = 0.01
+shader_param/minStrength = 0.072
+shader_param/maxStrength = 0.032
 shader_param/strengthScale = 100.0
 shader_param/interval = 3.5
 shader_param/detail = 0.5
 shader_param/distortion = 0.107
-shader_param/heightOffset = 0.558
+shader_param/heightOffset = 0.782
 shader_param/offset = 2.0
