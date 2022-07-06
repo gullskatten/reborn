@@ -1,7 +1,8 @@
+extends Resource
 class_name Item
-extends Node
 
 var id := ""
+var name := ""
 var item_name := ""
 var description := ""
 var slot := ""
@@ -11,7 +12,7 @@ var item_level := 0
 var req_level := 1
 var stats : Dictionary = {
 	
-}   
+}
 var stacksize := 1
 var sell_price := 0
 

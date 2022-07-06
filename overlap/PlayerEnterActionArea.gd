@@ -13,6 +13,11 @@ var is_active := true
 
 signal action_pressed
 
+func on_retry():
+	is_active = true
+	hint.visible = true
+	
+
 func _physics_process(delta):
 	if is_active && Input.is_action_just_pressed("ui_accept") && hint.visible == true:
 		should_hide = true

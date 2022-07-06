@@ -89,7 +89,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://structures/trees/Tree.gd"
 }, {
-"base": "Node",
+"base": "Resource",
 "class": "Item",
 "language": "GDScript",
 "path": "res://data/Item.gd"
@@ -200,6 +200,7 @@ CutSceneManager="*res://scenes/cutscenes/CutSceneManager.tscn"
 SceneTransitionManager="*res://scenes/SceneTransitionManager.tscn"
 ItemsDataCache="*res://data/ItemsDataCache.gd"
 PlayerInventory="*res://ui/inventory/PlayerInventory.gd"
+Logger="*res://system/Logger.tscn"
 
 [display]
 

@@ -14,7 +14,6 @@ func _ready():
 		slots[i].slotType = SlotClass.SlotType.INVENTORY
 	initialize_inventory()
 	
-
 func initialize_inventory():
 	var slots = inventory_slots.get_children()
 	for i in range(slots.size()):

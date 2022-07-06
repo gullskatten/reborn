@@ -39,7 +39,7 @@
 [ext_resource path="res://assets/tiles/64x32-brickroad.png" type="Texture" id=37]
 [ext_resource path="res://assets/tiles/64x32-grass-iso.png" type="Texture" id=38]
 [ext_resource path="res://assets/tiles/64x32-noenter-area.png" type="Texture" id=39]
-[ext_resource path="res://assets/music/Reborn - Track 2 (Nightsounds - Town).ogg" type="AudioStream" id=40]
+[ext_resource path="res://assets/music/Reborn - Track 3 (Day).ogg" type="AudioStream" id=40]
 [ext_resource path="res://structures/props/vegetation/SingleStraw.tscn" type="PackedScene" id=41]
 
 [sub_resource type="ShaderMaterial" id=60]
@@ -1086,6 +1086,10 @@ script = ExtResource( 21 )
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.329412, 0.227451, 0.443137, 1 )
 
+[node name="CanvasModulate2" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.431373, 0.411765, 0.32549, 1 )
+
 [node name="Road" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.541176, 0.937255, 1, 1 )
 position = Vector2( 0, 0 )
@@ -1504,19 +1508,40 @@ tile_data = PoolIntArray( -458710, 0, 0, -458709, 0, 0, -458708, 0, 0, -458707, 
 [node name="Straws" type="YSort" parent="OutsideYSort"]
 
 [node name="SingleStraw" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
-position = Vector2( 1051, 618 )
+position = Vector2( 1103, 816 )
 
 [node name="SingleStraw2" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
-position = Vector2( 1046, 621 )
+position = Vector2( 1088, 808 )
 
 [node name="SingleStraw3" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
-position = Vector2( 1040, 615 )
+position = Vector2( 1101, 831 )
 
 [node name="SingleStraw4" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
-position = Vector2( 1032, 620 )
+position = Vector2( 1094, 818 )
 
 [node name="SingleStraw5" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
-position = Vector2( 1022, 632 )
+position = Vector2( 1111, 796 )
+
+[node name="SingleStraw27" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+position = Vector2( 1093, 802 )
+
+[node name="SingleStraw28" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+position = Vector2( 1101, 807 )
+
+[node name="SingleStraw29" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+position = Vector2( 1115, 771 )
+
+[node name="SingleStraw30" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+position = Vector2( 1178, 766 )
+
+[node name="SingleStraw31" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+position = Vector2( 1189, 766 )
+
+[node name="SingleStraw32" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+position = Vector2( 1162, 787 )
+
+[node name="SingleStraw33" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+position = Vector2( 1162, 781 )
 
 [node name="SingleStraw10" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
 position = Vector2( 1059, 574 )
@@ -1579,7 +1604,7 @@ position = Vector2( 960, 649 )
 position = Vector2( 944, 635 )
 
 [node name="SingleStraw6" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
-position = Vector2( 1016, 628 )
+position = Vector2( 1154, 725 )
 
 [node name="InsideYSort" type="YSort" parent="."]
 

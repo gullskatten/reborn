@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Reborn - Track 3 (Day).ogg-5156b41d483240a9b5e9e66d814e3ede.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Reborn - Track 3 (Day).ogg"
+dest_files=[ "res://.import/Reborn - Track 3 (Day).ogg-5156b41d483240a9b5e9e66d814e3ede.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

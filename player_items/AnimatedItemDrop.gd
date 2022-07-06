@@ -17,8 +17,8 @@ func _ready():
 	jump_decrease = rand_range(0.3, 0.7)
 	max_jumps = int(rand_range(1, 3))
 	jump_time = rand_range(0.2, 0.6)
-	end_pos = starting_pos + Vector2(rand_range(-20, 20), rand_range(-20, 20))
-	
+	end_pos = starting_pos + Vector2(rand_range(-20, 20), rand_range(-20, 20))	
+
 func drop(item_id):
 	global_position = starting_pos
 	show()

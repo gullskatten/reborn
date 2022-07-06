@@ -1,6 +1,10 @@
 extends Node2D
 
 var AnimatedLoot = preload("res://player_items/AnimatedItemDrop.tscn")
+const item = preload("res://data/Item.gd")
+
+export(Array, String) var chest_item_ids = []
+export(Array, int) var chest_item_quantities = []
 
 onready var animationPlayer = $AnimationPlayer
 var is_opened := false
