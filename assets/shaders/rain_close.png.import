@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rain_texture.png-2d2ce04bc91696b9c55e8f58d6d61255.stex"
+path="res://.import/rain_close.png-74619d1145cb9612b4cdbcc1ded00e1d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shaders/rain_texture.png"
-dest_files=[ "res://.import/rain_texture.png-2d2ce04bc91696b9c55e8f58d6d61255.stex" ]
+source_file="res://assets/shaders/rain_close.png"
+dest_files=[ "res://.import/rain_close.png-74619d1145cb9612b4cdbcc1ded00e1d.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

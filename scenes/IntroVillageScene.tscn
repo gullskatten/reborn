@@ -1084,11 +1084,11 @@ shader_param/gradient = SubResource( 56 )
 script = ExtResource( 21 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.329412, 0.227451, 0.443137, 1 )
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0.431373, 0.411765, 0.32549, 1 )
+color = Color( 0.372549, 0.54902, 0.572549, 1 )
 
 [node name="Road" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.541176, 0.937255, 1, 1 )
@@ -1772,7 +1772,7 @@ position = Vector2( 620, 583 )
 position = Vector2( 1272, 722 )
 
 [node name="BirdCritter6" parent="." instance=ExtResource( 33 )]
-position = Vector2( 1075, 674 )
+position = Vector2( 1061, 660 )
 
 [node name="BirdCritter7" parent="." instance=ExtResource( 33 )]
 position = Vector2( 1108, 651 )
