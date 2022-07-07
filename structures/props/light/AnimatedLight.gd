@@ -5,7 +5,6 @@ var value = 0.0
 const MAX_VALUE = 10000000
 
 func _ready():
-
 	randomize()
 	value = randi() % MAX_VALUE
 	noise.period = 16

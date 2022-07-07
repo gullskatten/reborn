@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Localization/translation_service.gd"
 }, {
+"base": "CanvasModulate",
+"class": "DayNightCycle",
+"language": "GDScript",
+"path": "res://time/day_night_cycle.gd"
+}, {
 "base": "Node",
 "class": "Dialogic",
 "language": "GDScript",
@@ -93,6 +98,11 @@ _global_script_classes=[ {
 "class": "Item",
 "language": "GDScript",
 "path": "res://data/Item.gd"
+}, {
+"base": "Light2D",
+"class": "MoonLight",
+"language": "GDScript",
+"path": "res://weather/moon_light.gd"
 }, {
 "base": "Node2D",
 "class": "MouseHome",
@@ -160,6 +170,7 @@ _global_script_class_icons={
 "CritterState": "",
 "CritterStateMachine": "",
 "DTS": "",
+"DayNightCycle": "",
 "Dialogic": "",
 "DialogicBackgroundMusic": "",
 "DialogicDefinitionsUtil": "",
@@ -172,6 +183,7 @@ _global_script_class_icons={
 "Human": "",
 "IslandTree": "",
 "Item": "",
+"MoonLight": "",
 "MouseHome": "",
 "Player": "",
 "PlayerState": "",
@@ -201,6 +213,7 @@ SceneTransitionManager="*res://scenes/SceneTransitionManager.tscn"
 ItemsDataCache="*res://data/ItemsDataCache.gd"
 PlayerInventory="*res://ui/inventory/PlayerInventory.gd"
 Logger="*res://system/Logger.tscn"
+Time="*res://time/time.gd"
 
 [display]
 

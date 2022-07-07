@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/props/torch/effect/white_tinder_2px.png" type="Texture" id=1]
 [ext_resource path="res://assets/particles/torch_fire_particle.tres" type="Material" id=2]
 [ext_resource path="res://structures/props/light/AnimatedLight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/props/torch/tiny_test_torch.png" type="Texture" id=4]
+[ext_resource path="res://Torch.gd" type="Script" id=5]
 
 [node name="Torch" type="Node2D"]
 position = Vector2( 3, -4 )
+script = ExtResource( 5 )
 
 [node name="Torch" type="Sprite" parent="."]
 position = Vector2( -5, -8 )
