@@ -20,12 +20,16 @@ func start_animation(triggerId: String):
 func start_cutscene(name: String):
 	GlobalCameraSettings.start_cutscene()
 	GlobalCameraSettings.set_zoom_level(Vector2(0.1, 0.1))
+	GlobalCameraSettings.is_locked = true
+	
 	if name == "1.1":
 		guardPos.add_child(cameraFollowNode) 
 	
 func end_cutscene(name: String):
 	GlobalCameraSettings.end_cutscene()
 	GlobalCameraSettings.set_zoom_level(GlobalCameraSettings.MIN_ZOOM)
+	GlobalCameraSettings.is_locked = false
+	
 	if name == "1.1":
 		guardPos.remove_child(cameraFollowNode)
 

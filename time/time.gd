@@ -76,7 +76,6 @@ var changing_time_manually: bool = false setget _set_changing_time_manually
 ## Stops the time.
 var freeze_time: bool = true setget _set_freeze_time
 
-
 func _ready():
 	if IN_GAME_SECONDS_PER_REAL_TIME_SECONDS < 60:
 		printerr("--------------------")

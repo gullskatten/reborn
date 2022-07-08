@@ -323,6 +323,9 @@ character={
 2d_physics/layer_10="PlayerAreaEntered"
 2d_physics/layer_11="CritterWayPoint"
 2d_physics/layer_12="ItemDrop"
+2d_physics/layer_13="NPC"
+2d_physics/layer_14="NPCHurtbox"
+2d_physics/layer_15="NPCHitbox"
 
 [physics]
 
