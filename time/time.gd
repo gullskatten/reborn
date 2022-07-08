@@ -29,7 +29,7 @@ const SECONDS_IN_A_YEAR: int = SECONDS_IN_A_MONTH * MONTHS_IN_A_YEAR
 ## It has to be at least `60` so that `seconds_elapsed` can be stored as an `int`.
 ##
 ## > 90 minutes (5400 seconds) in game == 1 second in real time.
-const IN_GAME_SECONDS_PER_REAL_TIME_SECONDS: int = 5400 #/ 10
+const IN_GAME_SECONDS_PER_REAL_TIME_SECONDS: int = 3600 / 4 #/ 10
 
 ## The hour of the day at which the game starts (0-23).
 var game_start_hour: int = 12
@@ -38,12 +38,12 @@ var game_start_day: int = 1
 ## The month at which the game starts (1-12).
 var game_start_month: int = 1
 ## The year at which the game starts (0-INF).
-var game_start_year: int = 2022
+var game_start_year: int = 1
 
 ## The starting hour of the dawn cycle state (0-23).
-var state_dawn_start_hour: int = 5
+var state_dawn_start_hour: int = 6
 ## The starting hour of the day cycle state (0-23).
-var state_day_start_hour: int = 12
+var state_day_start_hour: int = 11
 ## The starting hour of the dusk cycle state (0-23).
 var state_dusk_start_hour: int = 17
 ## The starting hour of the night cycle state (0-23).
@@ -51,7 +51,8 @@ var state_night_start_hour: int = 22
 
 ## The duration, in in-game seconds,
 ## of the time it takes to transition from one state to another.
-var state_transition_seconds: int = 3600
+var state_transition_seconds: int = 16600
+
 var state_transition_duration: float = (
 	state_transition_seconds
 	/ float(IN_GAME_SECONDS_PER_REAL_TIME_SECONDS)

@@ -11,6 +11,7 @@ export(Color) var color2_day = Color("#fff")
 
 func _ready():
 	Time.connect("current_cycle_changed", self, "_set_color_fx")
+	_set_color_fx(Time.current_cycle)
 
 func _transition_colors(color1_from, color1_to, color2_from, color2_to):
 		$TweenColor1.interpolate_property(

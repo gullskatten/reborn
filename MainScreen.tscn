@@ -357,24 +357,42 @@ color_dusk = Color( 0.384314, 0.254902, 0.298039, 1 )
 environment = ExtResource( 8 )
 
 [node name="Effects" type="Control" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_right = 3840.0
+margin_bottom = 2160.0
 
 [node name="FPS" parent="Effects" instance=ExtResource( 15 )]
 anchor_left = 0.031
 anchor_top = 0.038
 anchor_right = 0.031
 anchor_bottom = 0.038
-margin_left = 734.48
-margin_top = 344.96
-margin_right = 1009.48
-margin_bottom = 484.96
+margin_left = 536.96
+margin_top = 213.92
+margin_right = 654.96
+margin_bottom = 276.92
 rect_scale = Vector2( 1, 1 )
 text = "FPS: "
 
-[node name="Rain" type="ColorRect" parent="Effects"]
+[node name="Time" parent="Effects" instance=ExtResource( 15 )]
+anchor_left = 0.031
+anchor_top = 0.038
+anchor_right = 0.031
+anchor_bottom = 0.038
+margin_left = 1988.96
+margin_top = 205.92
+margin_right = 2106.96
+margin_bottom = 268.92
+rect_scale = Vector2( 1, 1 )
+text = "Time"
+
+[node name="WeatherEffects" type="Control" parent="Effects"]
+margin_right = 3840.0
+margin_bottom = 2160.0
+
+[node name="Rain" type="ColorRect" parent="Effects/WeatherEffects"]
 visible = false
 material = SubResource( 17 )
+margin_right = 3840.0
+margin_bottom = 2160.0
 rect_min_size = Vector2( 3840, 2160 )
 script = ExtResource( 13 )
 
