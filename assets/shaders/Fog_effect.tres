@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://assets/shaders/Fog_effect.shader" type="Shader" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=3]
+octaves = 6
+period = 136.8
+persistence = 0.422
+lacunarity = 3.08
+
+[sub_resource type="NoiseTexture" id=4]
+width = 300
+height = 300
+seamless = true
+noise = SubResource( 3 )
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/fog_texture = SubResource( 4 )
