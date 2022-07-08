@@ -12,16 +12,35 @@ export(Color) var color2_day = Color("#fff")
 func _ready():
 	Time.connect("current_cycle_changed", self, "_set_color_fx")
 
+func _transition_colors(color1_from, color1_to, color2_from, color2_to):
+		$TweenColor1.interpolate_property(
+					material,
+					"shader_param/color1",
+					color1_from,
+					color1_to,
+					Time.state_transition_duration,
+					Tween.TRANS_SINE,
+					Tween.EASE_OUT
+				)
+		$TweenColor1.start()
+		
+		$TweenColor2.interpolate_property(
+					material,
+					"shader_param/color2",
+					color2_from,
+					color2_to,
+					Time.state_transition_duration,
+					Tween.TRANS_SINE,
+					Tween.EASE_OUT
+				)
+		$TweenColor2.start()
+
 func _set_color_fx(cycle):
 	if cycle == Time.CycleState.DAWN:
-		material.set_shader_param("color1", color1_dawn)
-		material.set_shader_param("color2", color2_dawn)
+		_transition_colors(color1_night, color1_dawn, color2_night, color2_dawn)
 	elif cycle == Time.CycleState.DUSK:
-		material.set_shader_param("color1", color1_dusk)
-		material.set_shader_param("color2", color2_dusk)
+		_transition_colors(color1_day, color1_dusk, color2_day, color2_dusk)
 	elif cycle == Time.CycleState.NIGHT:
-		material.set_shader_param("color1", color1_night)
-		material.set_shader_param("color2", color2_night)
+		_transition_colors(color1_dusk, color1_night, color2_dusk, color2_night)
 	elif cycle == Time.CycleState.DAY:
-		material.set_shader_param("color1", color1_day)
-		material.set_shader_param("color2", color2_day)
+		_transition_colors(color1_dawn, color1_day, color2_dawn, color2_day)

@@ -22,7 +22,8 @@ func _ready():
 	
 	if !always_on:
 		Time.connect("current_cycle_changed", self, "_set_light_enabled")
-	
+		_set_light_enabled(Time.current_cycle)
+		
 func _set_light(zoom_level):
 	if GlobalCameraSettings.MAX_ZOOM - GlobalCameraSettings.ZOOM_FACTOR * 4 <= zoom_level:	
 		$Light2D.texture = light_far

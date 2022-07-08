@@ -120,12 +120,12 @@ void fragment(){
 [sub_resource type="ShaderMaterial" id=7]
 resource_local_to_scene = true
 shader = SubResource( 18 )
-shader_param/mode = 1
+shader_param/mode = 3
 shader_param/linearColorSpace = false
 shader_param/color1 = Color( 0.188235, 0.243137, 0.321569, 1 )
 shader_param/color2 = Color( 0.423529, 0.101961, 0.780392, 1 )
 shader_param/direction = Vector2( 0.1, 0.7 )
-shader_param/opacity = 0.589
+shader_param/opacity = 0.588
 
 [sub_resource type="Shader" id=10]
 code = "shader_type canvas_item;
@@ -346,10 +346,10 @@ render_target_update_mode = 3
 audio_listener_enable_2d = true
 
 [node name="DayNightCycle" parent="ViewportContainer/Viewport" instance=ExtResource( 16 )]
-color_night = Color( 0.360784, 0.105882, 0.72549, 1 )
-color_dawn = Color( 0.796078, 0.372549, 0.117647, 1 )
-color_day = Color( 0.576471, 0.643137, 0.698039, 1 )
-color_dusk = Color( 0.529412, 0.227451, 0.317647, 1 )
+color_night = Color( 0.180392, 0.0745098, 0.341176, 1 )
+color_dawn = Color( 0.709804, 0.403922, 0.403922, 1 )
+color_day = Color( 0.588235, 0.537255, 0.486275, 1 )
+color_dusk = Color( 0.384314, 0.254902, 0.298039, 1 )
 
 [node name="IntroVillageScene" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
 
@@ -383,14 +383,18 @@ material = SubResource( 7 )
 margin_right = 3840.0
 margin_bottom = 2160.0
 script = ExtResource( 17 )
-color1_dusk = Color( 0.270588, 0.333333, 0.427451, 1 )
-color2_dusk = Color( 0.466667, 0.258824, 0.694118, 1 )
-color1_dawn = Color( 0.27451, 0.431373, 0.654902, 1 )
-color2_dawn = Color( 0.768627, 0.317647, 0.454902, 1 )
-color1_night = Color( 0.211765, 0.137255, 0.298039, 1 )
-color2_night = Color( 0.235294, 0.117647, 0.517647, 1 )
-color1_day = Color( 0.784314, 0.419608, 0.815686, 1 )
-color2_day = Color( 0.909804, 0.572549, 0.243137, 1 )
+color1_dusk = Color( 0.627451, 0.411765, 0.572549, 1 )
+color2_dusk = Color( 0.619608, 0.219608, 0.32549, 1 )
+color1_dawn = Color( 0.419608, 0.239216, 0.4, 1 )
+color2_dawn = Color( 0.741176, 0.45098, 0.219608, 1 )
+color1_night = Color( 0.211765, 0.243137, 0.431373, 1 )
+color2_night = Color( 0.364706, 0.180392, 0.490196, 1 )
+color1_day = Color( 0.27451, 0.278431, 0.407843, 1 )
+color2_day = Color( 0.745098, 0.615686, 0.560784, 1 )
+
+[node name="TweenColor1" type="Tween" parent="Effects/PostFX"]
+
+[node name="TweenColor2" type="Tween" parent="Effects/PostFX"]
 
 [node name="MaxZoomClouds" parent="Effects" instance=ExtResource( 3 )]
 visible = true
