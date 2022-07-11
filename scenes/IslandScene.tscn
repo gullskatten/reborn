@@ -139,7 +139,7 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="Shader" id=50]
+[sub_resource type="Shader" id=62]
 code = "shader_type canvas_item;
 
 uniform vec4 water_color : hint_color; 
@@ -226,12 +226,12 @@ period = 51.3
 persistence = 0.577
 lacunarity = 2.04
 
-[sub_resource type="NoiseTexture" id=53]
+[sub_resource type="NoiseTexture" id=63]
 seamless = true
 noise = SubResource( 52 )
 
 [sub_resource type="ShaderMaterial" id=44]
-shader = SubResource( 50 )
+shader = SubResource( 62 )
 shader_param/water_color = Color( 0.529412, 0.92549, 1, 1 )
 shader_param/shadow_color = Color( 0.74902, 0.964706, 0.988235, 1 )
 shader_param/uv_offset_scale = Vector2( 0.2, 0.2 )
@@ -245,7 +245,7 @@ shader_param/PulseRate = 0.7
 shader_param/PulseIntensity = 0.1
 shader_param/Opacity = 1.0
 shader_param/uv_offset_texture = ExtResource( 21 )
-shader_param/uv_texture_crossing = SubResource( 53 )
+shader_param/uv_texture_crossing = SubResource( 63 )
 
 [sub_resource type="ShaderMaterial" id=60]
 
@@ -445,6 +445,7 @@ resource_local_to_scene = true
 script = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.705882, 0.705882, 0.541176, 1 )
 
 [node name="WaterProps" type="YSort" parent="."]

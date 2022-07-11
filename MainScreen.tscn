@@ -13,9 +13,9 @@
 [ext_resource path="res://assets/shaders/parchment.jpg" type="Texture" id=11]
 [ext_resource path="res://ui/errorhandling/ErrorMessages.tscn" type="PackedScene" id=12]
 [ext_resource path="res://weather/WeatherEffects.tscn" type="PackedScene" id=13]
+[ext_resource path="res://effects/PostFX.tscn" type="PackedScene" id=14]
 [ext_resource path="res://ui/SmallLabel.tscn" type="PackedScene" id=15]
 [ext_resource path="res://time/day_night_cycle.tscn" type="PackedScene" id=16]
-[ext_resource path="res://effects/PostFX.gd" type="Script" id=17]
 
 [sub_resource type="Shader" id=18]
 code = "shader_type canvas_item;
@@ -87,7 +87,7 @@ void fragment(){
 	COLOR = vec4(c_f, opacity);
     }"
 
-[sub_resource type="ShaderMaterial" id=7]
+[sub_resource type="ShaderMaterial" id=19]
 resource_local_to_scene = true
 shader = SubResource( 18 )
 shader_param/mode = 3
@@ -356,23 +356,8 @@ text = "Time"
 
 [node name="WeatherEffects" parent="Effects" instance=ExtResource( 13 )]
 
-[node name="PostFX" type="ColorRect" parent="Effects"]
-material = SubResource( 7 )
-margin_right = 3840.0
-margin_bottom = 2160.0
-script = ExtResource( 17 )
-color1_dusk = Color( 0.627451, 0.411765, 0.572549, 1 )
-color2_dusk = Color( 0.619608, 0.219608, 0.32549, 1 )
-color1_dawn = Color( 0.419608, 0.239216, 0.4, 1 )
-color2_dawn = Color( 0.741176, 0.45098, 0.219608, 1 )
-color1_night = Color( 0.211765, 0.243137, 0.431373, 1 )
-color2_night = Color( 0.364706, 0.180392, 0.490196, 1 )
-color1_day = Color( 0.27451, 0.278431, 0.407843, 1 )
-color2_day = Color( 0.745098, 0.615686, 0.560784, 1 )
-
-[node name="TweenColor1" type="Tween" parent="Effects/PostFX"]
-
-[node name="TweenColor2" type="Tween" parent="Effects/PostFX"]
+[node name="PostFX" parent="Effects" instance=ExtResource( 14 )]
+material = SubResource( 19 )
 
 [node name="MaxZoomClouds" parent="Effects" instance=ExtResource( 3 )]
 visible = true

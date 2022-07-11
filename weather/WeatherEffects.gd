@@ -3,7 +3,8 @@ extends Control
 enum WeatherType {
 	SUN,
 	RAIN,
-	FOG
+	FOG,
+	RAIN_FOG
 }
 
 var current_weather = WeatherType.SUN
@@ -43,7 +44,11 @@ func update_weather(cycle):
 			$Rain.should_show = false
 			$Rain.visible = false
 			$Fog.visible = true
-	
+		WeatherType.RAIN_FOG:
+			$Rain.should_show = true
+			$Rain.visible = true
+			$Fog.visible = true
+			
 	match cycle:
 		Time.CycleState.DAWN:
 			pass
