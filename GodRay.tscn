@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/props/light/Light_Small_Scarce.png" type="Texture" id=1]
+[ext_resource path="res://assets/props/torch/effect/white_tinder_2px.png" type="Texture" id=1]
 [ext_resource path="res://GodRay.gd" type="Script" id=2]
 
-[sub_resource type="Shader" id=61]
+[sub_resource type="Shader" id=64]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/god-rays
@@ -128,7 +128,7 @@ gradient = SubResource( 62 )
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 61 )
+shader = SubResource( 64 )
 shader_param/angle = 0.0
 shader_param/position = 0.1
 shader_param/spread = 0.471
@@ -146,6 +146,7 @@ shader_param/gradient = SubResource( 63 )
 
 [node name="GodRay" type="Sprite"]
 material = SubResource( 2 )
-position = Vector2( -4, -1 )
+position = Vector2( 4.5, 7.5 )
+scale = Vector2( 49.5, 43.5 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

@@ -2594,6 +2594,7 @@ wait_time = 10.0
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 3 )]
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+visible = false
 shape = SubResource( 91 )
 
 [node name="CrowScream2D" type="AudioStreamPlayer2D" parent="."]
@@ -2607,6 +2608,9 @@ stream = ExtResource( 4 )
 pitch_scale = 0.94
 max_distance = 200.0
 attenuation = 2.07053
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -3, 0 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]

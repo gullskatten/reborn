@@ -24,7 +24,10 @@ func _ready():
 	landing_spots = get_tree().get_nodes_in_group("bird_rest_location")
 	
 	
+	
+	
 func _physics_process(delta):
+	
 	if currentState == states.FLYING:
 		if destination != null: 
 			var direction = global_position.direction_to(destination.get_global_position())

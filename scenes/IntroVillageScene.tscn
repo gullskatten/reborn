@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://tilemaps/Grass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://structures/buildings/village/VillageHouseStaticLong.tscn" type="PackedScene" id=2]
@@ -23,9 +23,7 @@
 [ext_resource path="res://scenes/IntroVillageScene.gd" type="Script" id=21]
 [ext_resource path="res://npc/abstract/RoyalGuardsPosition.tscn" type="PackedScene" id=22]
 [ext_resource path="res://player_items/Treasure.tscn" type="PackedScene" id=23]
-[ext_resource path="res://structures/props/light/AnimatedLight.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/village/TavernGroundFloor.tscn" type="PackedScene" id=25]
-[ext_resource path="res://assets/props/light/light_1024x1024.png" type="Texture" id=26]
 [ext_resource path="res://scenes/SceneLocalTeleportPoint.tscn" type="PackedScene" id=27]
 [ext_resource path="res://npc/neutral/critter/Mouse.tscn" type="PackedScene" id=28]
 [ext_resource path="res://structures/buildings/village/MouseHome.tscn" type="PackedScene" id=29]
@@ -1169,10 +1167,6 @@ street_sign_SW = true
 [node name="StreetLight2" parent="OutsideYSort" instance=ExtResource( 6 )]
 position = Vector2( 807, 447 )
 
-[node name="StreetLight5" parent="OutsideYSort" instance=ExtResource( 6 )]
-position = Vector2( 1016, 557 )
-street_sign_NW = true
-
 [node name="StreetLight3" parent="OutsideYSort" instance=ExtResource( 6 )]
 position = Vector2( 966, 637 )
 street_sign_NE = true
@@ -2274,13 +2268,6 @@ rotation = 1.5708
 
 [node name="InsideYSort" type="YSort" parent="."]
 
-[node name="AnimatedLight" parent="InsideYSort" instance=ExtResource( 24 )]
-position = Vector2( 5259, 1951 )
-texture = ExtResource( 26 )
-texture_scale = 0.8
-color = Color( 0.866667, 0.631373, 0.423529, 1 )
-energy = 1.47
-
 [node name="TavernGroundFloor" parent="InsideYSort" instance=ExtResource( 25 )]
 position = Vector2( 4721, 5254 )
 
@@ -2540,6 +2527,7 @@ position = Vector2( 1121, 224 )
 position = Vector2( 869, 221 )
 
 [node name="Clouds" parent="." instance=ExtResource( 32 )]
+visible = false
 material = ExtResource( 42 )
 margin_left = -960.0
 margin_top = -25.0
