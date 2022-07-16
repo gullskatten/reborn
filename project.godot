@@ -219,6 +219,7 @@ Time="*res://time/time.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/dpi/allow_hidpi=true
 mouse_cursor/custom_image="res://cursor.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"

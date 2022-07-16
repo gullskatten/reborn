@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=250 format=2]
 
 [ext_resource path="res://tilemaps/Grass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://structures/buildings/village/VillageHouseStaticLong.tscn" type="PackedScene" id=2]
@@ -23,7 +23,9 @@
 [ext_resource path="res://scenes/IntroVillageScene.gd" type="Script" id=21]
 [ext_resource path="res://npc/abstract/RoyalGuardsPosition.tscn" type="PackedScene" id=22]
 [ext_resource path="res://player_items/Treasure.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/shaders/Straw_Sway.shader" type="Shader" id=24]
 [ext_resource path="res://scenes/village/TavernGroundFloor.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/props/grass/high_grass-1.png" type="Texture" id=26]
 [ext_resource path="res://scenes/SceneLocalTeleportPoint.tscn" type="PackedScene" id=27]
 [ext_resource path="res://npc/neutral/critter/Mouse.tscn" type="PackedScene" id=28]
 [ext_resource path="res://structures/buildings/village/MouseHome.tscn" type="PackedScene" id=29]
@@ -942,6 +944,2281 @@ points = PoolVector2Array( 34.414, 12.1834, 34.5755, 14.1215, 35, 17.1901, 3.727
 } ]
 0/z_index = 0
 
+[sub_resource type="ShaderMaterial" id=67]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=68]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=69]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=70]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=71]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=72]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=73]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=74]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=75]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=76]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=77]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=78]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=79]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=80]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=81]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=82]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=83]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=84]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=85]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=86]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=87]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=88]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=89]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=90]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=91]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=92]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=93]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=94]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=95]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=96]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=97]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=98]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=99]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=100]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=101]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=102]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=103]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=104]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=105]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=106]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=107]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=108]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=109]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=110]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=111]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=112]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=113]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=114]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=115]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=116]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=117]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=118]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=119]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=120]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=121]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=122]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=123]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=124]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=125]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=126]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=127]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=128]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=129]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=130]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=131]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=132]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=133]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=134]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=135]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=136]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=137]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=138]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=139]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=140]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=141]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=142]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=143]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=144]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=145]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=146]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=147]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=148]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=149]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=150]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=151]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=152]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=153]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=154]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=155]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=156]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=157]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=158]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=159]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=160]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=161]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=162]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=163]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=164]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=165]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=166]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=167]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=168]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=169]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=170]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=171]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=172]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=173]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=174]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=175]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=176]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=177]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=178]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=179]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=180]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=181]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=182]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=183]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=184]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=185]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=186]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=187]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=188]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=189]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=190]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=191]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=192]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=193]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=194]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=195]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=196]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=197]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=198]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=199]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=200]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=201]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=202]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=203]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=204]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=205]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=206]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=207]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=208]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=209]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=210]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=211]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=212]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=213]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=214]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=215]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=216]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=217]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=218]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=219]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=220]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=221]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=222]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=223]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=224]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=225]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=226]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=227]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=228]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=229]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=230]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=231]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=232]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=233]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=234]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=235]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=236]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=237]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=238]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=240]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=241]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[sub_resource type="ShaderMaterial" id=242]
+resource_local_to_scene = true
+shader = ExtResource( 24 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
 [sub_resource type="Animation" id=6]
 resource_name = "1.1"
 length = 4.0
@@ -1105,7 +3382,7 @@ cell_tile_origin = 2
 cell_y_sort = true
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( -3342205, 0, 0, -3342200, 0, 0, -3211135, 0, 393216, -3080063, 0, 393216, -2817919, 0, 458752, -2424691, 0, 458752, -2424680, 0, 393216, -2293606, 0, 0, -2293603, 0, 0, -2293598, 0, 0, -2162547, 0, 393216, -2097000, 0, 393216, -2096987, 0, 393216, -1900403, 0, 524288, -1834856, 0, 458752, -1834841, 0, 131072, -1834837, 0, 131072, -1834833, 0, 131072, -1834829, 0, 131072, -1834827, 0, 131072, -1834825, 0, 131072, -1834821, 0, 131072, -1834817, 0, 131072, -1703795, 0, 524288, -1703767, 0, 524288, -1703743, 0, 458752, -1638248, 0, 458752, -1572802, 0, 131072, -1572799, 0, 262144, -1572796, 0, 196608, -1572792, 0, 262144, -1572791, 0, 327680, -1572787, 0, 327680, -1572783, 0, 196608, -1572779, 0, 196608, -1572775, 0, 327680, -1572773, 0, 262144, -1572695, 0, 524288, -1441732, 0, 458752, -1441699, 0, 655360, -1376115, 0, 393216, -1376104, 0, 458752, -1376087, 0, 393216, -1310627, 0, 524288, -1179588, 0, 458752, -1179479, 0, 458752, -1114019, 0, 589824, -1113919, 0, 458752, -982980, 0, 458752, -917411, 0, 524288, -917352, 0, 524288, -851908, 0, 393216, -851775, 0, 458752, -786339, 0, 589824, -786263, 0, 524288, -720755, 0, 458752, -720744, 0, 524288, -655167, 0, 393216, -589764, 0, 393216, -589731, 0, 655360, -589655, 0, 524288, -524195, 0, 720896, -524147, 0, 524288, -458600, 0, 524288, -458583, 0, 458752, -458559, 0, 393216, -393156, 0, 393216, -393075, 0, 524288, -327587, 0, 655360, -327511, 0, 393216, -261992, 0, 524288, -261975, 0, 458752, -196548, 0, 393216, -196515, 0, 655360, -196439, 0, 393216, -196415, 0, 458752, -65476, 0, 393216, -65443, 0, 589824, -65367, 0, 458752, -65343, 0, 458752, 152, 0, 458752, 65596, 0, 393216, 196668, 0, 393216, 196701, 0, 589824, 196777, 0, 524288, 196801, 0, 393216, 327742, 0, 0, 327751, 0, 131072, 327755, 0, 131072, 327758, 0, 0, 327765, 0, 0, 327766, 0, 131072, 327768, 0, 131072, 327770, 0, 131072, 327772, 0, 0, 327778, 0, 0, 327782, 0, 131072, 327784, 0, 131072, 327787, 0, 65536, 327790, 0, 0, 327793, 0, 131072, 327798, 0, 0, 327801, 0, 131072, 327805, 0, 131072, 327838, 0, 0, 327842, 0, 0, 327846, 0, 65536, 327850, 0, 131072, 327854, 0, 65536, 327858, 0, 0, 327865, 0, 0, 327867, 0, 131072, 327869, 0, 0, 327870, 0, 0, 327873, 0, 262144, 1048735, 0, 0, 1048739, 0, 0, 1048743, 0, 0, 1048747, 0, 0, 1114197, 0, 131072, 1114201, 0, 0, 1114202, 0, 131072, 1114205, 0, 0, 1114209, 0, 0, 1114213, 0, 131072, 1114217, 0, 65536, 1114221, 0, 65536, 1114225, 0, 131072, 1114229, 0, 0, 1114232, 0, 0, 1114238, 0, 131072, 1114241, 0, 131072, 1114244, 0, 0, 1114297, 0, 0, 1114301, 0, 0, 1114305, 0, 131072, 1114309, 0, 196608, 1376409, 0, 393216, 1507469, 0, 393216, 1638553, 0, 589824, 1769613, 0, 393216, 1900697, 0, 589824, 2097293, 0, 393216, 2097305, 0, 655360, 2228365, 0, 393216, 2359437, 0, 393216, 2359449, 0, 655360, 2556057, 0, 524288, 2818201, 0, 524288, 2949261, 0, 393216, 3080345, 0, 589824, 3211405, 0, 393216, 3342489, 0, 655360, 3408013, 0, 589824, 3539097, 0, 655360, 3604621, 0, 655360, 3801229, 0, 393216, 3866777, 0, 524288, 4063373, 0, 589824, 4325517, 0, 720896 )
+tile_data = PoolIntArray( -3342205, 0, 0, -3342200, 0, 0, -3211135, 0, 393216, -3080063, 0, 393216, -2817919, 0, 458752, -2424691, 0, 458752, -2424680, 0, 393216, -2293606, 0, 0, -2293603, 0, 0, -2293598, 0, 0, -2162547, 0, 393216, -2097000, 0, 393216, -2096987, 0, 393216, -1900403, 0, 524288, -1834856, 0, 458752, -1834841, 0, 131072, -1834837, 0, 131072, -1834833, 0, 131072, -1834829, 0, 131072, -1834827, 0, 131072, -1834825, 0, 131072, -1834821, 0, 131072, -1834817, 0, 131072, -1703795, 0, 524288, -1703767, 0, 524288, -1703743, 0, 458752, -1638248, 0, 458752, -1572802, 0, 131072, -1572799, 0, 262144, -1572796, 0, 196608, -1572792, 0, 262144, -1572791, 0, 327680, -1572787, 0, 327680, -1572783, 0, 196608, -1572779, 0, 196608, -1572775, 0, 327680, -1572773, 0, 262144, -1572695, 0, 524288, -1441732, 0, 458752, -1441699, 0, 655360, -1376115, 0, 393216, -1376104, 0, 458752, -1376087, 0, 393216, -1310627, 0, 524288, -1179588, 0, 458752, -1179479, 0, 458752, -1114019, 0, 589824, -1113919, 0, 458752, -982980, 0, 458752, -917411, 0, 524288, -917352, 0, 524288, -851908, 0, 393216, -851775, 0, 458752, -786339, 0, 589824, -786263, 0, 524288, -720755, 0, 458752, -720744, 0, 524288, -655167, 0, 393216, -589764, 0, 393216, -589731, 0, 655360, -589655, 0, 524288, -524195, 0, 720896, -524147, 0, 524288, -458600, 0, 524288, -458583, 0, 458752, -458559, 0, 393216, -393156, 0, 393216, -393075, 0, 524288, -327587, 0, 655360, -327511, 0, 393216, -261992, 0, 524288, -261975, 0, 458752, -196548, 0, 393216, -196515, 0, 655360, -196439, 0, 393216, -196415, 0, 458752, -65476, 0, 393216, -65443, 0, 589824, -65367, 0, 458752, -65343, 0, 458752, 152, 0, 458752, 65596, 0, 393216, 196668, 0, 393216, 196701, 0, 589824, 196777, 0, 524288, 196801, 0, 393216, 327742, 0, 0, 327751, 0, 131072, 327755, 0, 131072, 327758, 0, 0, 327765, 0, 0, 327766, 0, 131072, 327768, 0, 131072, 327770, 0, 131072, 327772, 0, 0, 327778, 0, 0, 327782, 0, 131072, 327784, 0, 131072, 327787, 0, 65536, 327790, 0, 0, 327793, 0, 131072, 327798, 0, 0, 327801, 0, 131072, 327805, 0, 131072, 327838, 0, 0, 327842, 0, 0, 327846, 0, 65536, 327850, 0, 131072, 327854, 0, 65536, 327858, 0, 0, 327865, 0, 0, 327867, 0, 131072, 327869, 0, 0, 327870, 0, 0, 327873, 0, 262144, 1048735, 0, 0, 1048739, 0, 0, 1048743, 0, 0, 1048747, 0, 0, 1114197, 0, 131072, 1114201, 0, 0, 1114202, 0, 131072, 1114205, 0, 0, 1114209, 0, 0, 1114213, 0, 131072, 1114217, 0, 65536, 1114221, 0, 65536, 1114225, 0, 131072, 1114229, 0, 0, 1114232, 0, 0, 1114238, 0, 131072, 1114241, 0, 131072, 1114244, 0, 0, 1114297, 0, 0, 1114301, 0, 0, 1114305, 0, 131072, 1114309, 0, 196608, 1376409, 0, 393216, 1507469, 0, 393216, 1638553, 0, 589824, 1769613, 0, 393216, 1835161, 0, 524288, 1900697, 0, 589824, 2031769, 0, 524288, 2097293, 0, 393216, 2228365, 0, 393216, 2293913, 0, 524288, 2359437, 0, 393216, 2359449, 0, 655360, 2556057, 0, 524288, 2818201, 0, 524288, 2883725, 0, 524288, 3014797, 0, 524288, 3080345, 0, 589824, 3145869, 0, 524288, 3342489, 0, 655360, 3408013, 0, 589824, 3539097, 0, 655360, 3604621, 0, 655360, 3801229, 0, 393216, 3866777, 0, 524288, 4063373, 0, 589824, 4325517, 0, 720896 )
 
 [node name="HorseSaddle" type="Sprite" parent="OutsideYSort"]
 position = Vector2( 1230, 489 )
@@ -1440,18 +3717,23 @@ position = Vector2( 1180, 1472 )
 position = Vector2( 1196, 1456 )
 
 [node name="IslandTree10" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 960, 800 )
 
 [node name="IslandTree11" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 976, 816 )
 
 [node name="IslandTree46" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 1040, 821 )
 
 [node name="IslandTree47" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 1022, 815 )
 
 [node name="IslandTree12" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 928, 808 )
 
 [node name="IslandTree43" parent="OutsideYSort/Trees" instance=ExtResource( 10 )]
@@ -1618,7 +3900,7 @@ centered_textures = true
 collision_layer = 32
 collision_mask = 32
 format = 1
-tile_data = PoolIntArray( -4783990, 0, 5, -4783989, 0, 0, -4718455, 0, 5, -4718454, 0, 131074, -4718453, 0, 196609, -4718452, 0, 0, -4652919, 0, 3, -4652918, 0, 196610, -4652917, 0, 196610, -4652916, 0, 4, -4587409, 0, 5, -4587408, 0, 0, -4587383, 0, 0, -4587382, 0, 196611, -4587381, 0, 2, -4587380, 0, 0, -4521873, 0, 3, -4521872, 0, 0, -4521871, 0, 0, -4521853, 0, 5, -4521852, 0, 0, -4456337, 0, 3, -4456336, 0, 4, -4456317, 0, 3, -4456316, 0, 131076, -4456315, 0, 0, -4456312, 0, 5, -4456311, 0, 0, -4390801, 0, 0, -4390800, 0, 0, -4390781, 0, 3, -4390780, 0, 65542, -4390779, 0, 196609, -4390778, 0, 0, -4390777, 0, 0, -4390776, 0, 0, -4390775, 0, 131076, -4390774, 0, 0, -4325265, 0, 0, -4325246, 0, 0, -4325245, 0, 0, -4325244, 0, 196610, -4325243, 0, 65542, -4325242, 0, 196613, -4325240, 0, 0, -4325239, 0, 2, -4325238, 0, 0, -4259733, 0, 5, -4259732, 0, 1, -4259731, 0, 0, -4259709, 0, 0, -4259708, 0, 0, -4259707, 0, 65543, -4259706, 0, 131075, -4259704, 0, 0, -4194197, 0, 3, -4194196, 0, 65542, -4194195, 0, 196609, -4194194, 0, 0, -4194172, 0, 0, -4194171, 0, 131075, -4128661, 0, 3, -4128660, 0, 131072, -4128659, 0, 196611, -4128658, 0, 131075, -4063125, 0, 0, -4063124, 0, 131075, -3932022, 0, 5, -3932021, 0, 0, -3866486, 0, 3, -3866485, 0, 4, -3800952, 0, 5, -3800951, 0, 1, -3800950, 0, 65540, -3800949, 0, 131078, -3800948, 0, 0, -3735416, 0, 3, -3735415, 0, 65542, -3735414, 0, 196610, -3735413, 0, 196610, -3735412, 0, 4, -3669880, 0, 3, -3669879, 0, 196610, -3669878, 0, 196610, -3669877, 0, 196610, -3669876, 0, 196613, -3604344, 0, 3, -3604343, 0, 65542, -3604342, 0, 65542, -3604341, 0, 65542, -3604340, 0, 4, -3538810, 0, 0, -3538809, 0, 0, -3538808, 0, 131073, -3538807, 0, 65542, -3538806, 0, 196610, -3538805, 0, 131072, -3538804, 0, 131075, -3473293, 0, 5, -3473292, 0, 1, -3473291, 0, 0, -3473281, 0, 5, -3473280, 0, 0, -3473273, 0, 0, -3473272, 0, 2, -3473271, 0, 0, -3473270, 0, 65541, -3473269, 0, 0, -3407757, 0, 3, -3407756, 0, 65542, -3407755, 0, 4, -3407746, 0, 5, -3407745, 0, 65540, -3407744, 0, 131078, -3407743, 0, 0, -3407735, 0, 0, -3407734, 0, 0, -3342221, 0, 3, -3342220, 0, 196610, -3342219, 0, 196613, -3342210, 0, 3, -3342209, 0, 65542, -3342208, 0, 131072, -3342207, 0, 131075, -3276685, 0, 0, -3276684, 0, 0, -3276683, 0, 196613, -3276674, 0, 3, -3276673, 0, 196610, -3276672, 0, 196613, -3211148, 0, 0, -3211147, 0, 131075, -3211138, 0, 0, -3211137, 0, 2, -3211136, 0, 0, -3145612, 0, 0, -3145600, 0, 0, -2752374, 0, 5, -2752373, 0, 0, -2686839, 0, 5, -2686838, 0, 131073, -2686837, 0, 131078, -2686836, 0, 0, -2621304, 0, 0, -2621303, 0, 0, -2621302, 0, 2, -2621301, 0, 2, -2621300, 0, 0, -2555764, 0, 0, -2424675, 0, 5, -2424674, 0, 0, -2359139, 0, 3, -2359138, 0, 131078, -2359137, 0, 0, -2293603, 0, 0, -2293602, 0, 196611, -2293601, 0, 0, -2228065, 0, 0, -2162529, 0, 0, -2162528, 0, 0, -2096993, 0, 0, -2096992, 0, 131075, -1965917, 0, 5, -1965916, 0, 1, -1965915, 0, 0, -1900381, 0, 3, -1900380, 0, 65542, -1900379, 0, 131078, -1900378, 0, 0, -1834845, 0, 3, -1834844, 0, 65542, -1834843, 0, 65542, -1834842, 0, 4, -1769335, 0, 5, -1769334, 0, 196612, -1769333, 0, 196612, -1769332, 0, 0, -1769309, 0, 0, -1769308, 0, 196611, -1769307, 0, 2, -1769306, 0, 0, -1703799, 0, 3, -1703798, 0, 65542, -1703797, 0, 65541, -1703796, 0, 0, -1638263, 0, 3, -1638262, 0, 65542, -1638261, 0, 196613, -1572727, 0, 3, -1572726, 0, 196610, -1572725, 0, 196613, -1507191, 0, 0, -1507190, 0, 196611, -1507189, 0, 131075, -1376117, 0, 5, -1376116, 0, 0, -1310581, 0, 3, -1310580, 0, 196613, -1245045, 0, 0, -1245044, 0, 0, -982881, 0, 5, -982880, 0, 0, -917346, 0, 5, -917345, 0, 65539, -917344, 0, 131076, -917343, 0, 1, -917342, 0, 1, -917341, 0, 0, -851810, 0, 3, -851809, 0, 196610, -851808, 0, 196610, -851807, 0, 65542, -851806, 0, 65542, -851805, 0, 131076, -851804, 0, 0, -786274, 0, 3, -786273, 0, 196610, -786272, 0, 65542, -786271, 0, 65542, -786270, 0, 65542, -786269, 0, 196610, -786268, 0, 131078, -786267, 0, 1, -786266, 0, 0, -720738, 0, 3, -720737, 0, 65542, -720736, 0, 65542, -720735, 0, 65542, -720734, 0, 65542, -720733, 0, 196610, -720732, 0, 65542, -720731, 0, 196610, -720730, 0, 131076, -720729, 0, 196612, -720728, 0, 0, -655202, 0, 0, -655201, 0, 0, -655200, 0, 65542, -655199, 0, 65542, -655198, 0, 196610, -655197, 0, 65542, -655196, 0, 196610, -655195, 0, 196610, -655194, 0, 196610, -655193, 0, 65542, -655192, 0, 0, -655191, 0, 0, -589665, 0, 3, -589664, 0, 196610, -589663, 0, 65542, -589662, 0, 196610, -589661, 0, 196610, -589660, 0, 65542, -589659, 0, 65542, -589658, 0, 196610, -589657, 0, 196610, -589656, 0, 4, -589654, 0, 5, -589653, 0, 0, -524129, 0, 0, -524128, 0, 0, -524127, 0, 196610, -524126, 0, 196610, -524125, 0, 65542, -524124, 0, 65542, -524123, 0, 196610, -524122, 0, 65542, -524121, 0, 196610, -524120, 0, 0, -524119, 0, 0, -524118, 0, 0, -524117, 0, 196613, -458592, 0, 0, -458591, 0, 2, -458590, 0, 196611, -458589, 0, 196611, -458588, 0, 196611, -458587, 0, 196611, -458586, 0, 196611, -458585, 0, 0, -458584, 0, 196613, -458582, 0, 3, -458581, 0, 196613, -393049, 0, 0, -393048, 0, 196615, -393047, 0, 1, -393046, 0, 196614, -393045, 0, 131075, -327542, 0, 5, -327541, 0, 0, -327512, 0, 3, -327511, 0, 65541, -327510, 0, 0, -262006, 0, 0, -262005, 0, 131075, -261976, 0, 0, -261975, 0, 0, -196451, 0, 5, -196450, 0, 0, -130915, 0, 0, -130914, 0, 0, 164, 0, 5, 165, 0, 1, 166, 0, 0, 65689, 0, 5, 65690, 0, 0, 65700, 0, 3, 65701, 0, 65542, 65702, 0, 196613, 131208, 0, 5, 131209, 0, 1, 131210, 0, 0, 131225, 0, 0, 131226, 0, 0, 131236, 0, 0, 131237, 0, 2, 131238, 0, 0, 196733, 0, 5, 196734, 0, 0, 196737, 0, 5, 196738, 0, 196612, 196739, 0, 0, 196743, 0, 0, 196744, 0, 0, 196745, 0, 196610, 196746, 0, 196613, 262269, 0, 0, 262270, 0, 0, 262271, 0, 0, 262273, 0, 0, 262274, 0, 2, 262275, 0, 0, 262280, 0, 0, 262281, 0, 2, 262282, 0, 131075, 1179785, 0, 5, 1179786, 0, 196612, 1179787, 0, 0, 1245321, 0, 3, 1245322, 0, 65542, 1245323, 0, 4, 1245349, 0, 0, 1245350, 0, 0, 1310857, 0, 0, 1310858, 0, 196611, 1310859, 0, 131075, 1310884, 0, 0, 1310886, 0, 0, 1310887, 0, 196612, 1310888, 0, 0, 1310891, 0, 0, 1310893, 0, 0, 1376420, 0, 0, 1376421, 0, 196612, 1376422, 0, 196614, 1376423, 0, 196611, 1376424, 0, 196615, 1376425, 0, 0, 1376427, 0, 0, 1376428, 0, 1, 1376429, 0, 0, 1441956, 0, 0, 1441957, 0, 0, 1441958, 0, 131075, 1441960, 0, 3, 1441961, 0, 196609, 1441962, 0, 196612, 1441963, 0, 131073, 1441964, 0, 65542, 1441965, 0, 196613, 1507493, 0, 0, 1507496, 0, 0, 1507497, 0, 0, 1507498, 0, 65542, 1507499, 0, 196610, 1507500, 0, 196610, 1507501, 0, 4, 1573033, 0, 3, 1573034, 0, 65542, 1573035, 0, 65541, 1573036, 0, 196611, 1573037, 0, 131075, 1638564, 0, 5, 1638565, 0, 196612, 1638566, 0, 196612, 1638567, 0, 196612, 1638568, 0, 1, 1638569, 0, 65538, 1638570, 0, 196610, 1638571, 0, 4, 1704100, 0, 3, 1704101, 0, 65542, 1704102, 0, 65542, 1704103, 0, 65542, 1704104, 0, 196610, 1704105, 0, 65542, 1704106, 0, 65542, 1704107, 0, 4, 1769636, 0, 3, 1769637, 0, 65542, 1769638, 0, 196610, 1769639, 0, 196610, 1769640, 0, 196610, 1769641, 0, 65542, 1769642, 0, 65542, 1769643, 0, 196613, 1835172, 0, 3, 1835173, 0, 65542, 1835174, 0, 196610, 1835175, 0, 196610, 1835176, 0, 196610, 1835177, 0, 65542, 1835178, 0, 65542, 1835179, 0, 196613, 1900708, 0, 3, 1900709, 0, 65542, 1900710, 0, 65542, 1900711, 0, 196610, 1900712, 0, 65542, 1900713, 0, 196610, 1900714, 0, 65542, 1900715, 0, 4, 1966213, 0, 0, 1966244, 0, 3, 1966245, 0, 196610, 1966246, 0, 65542, 1966247, 0, 196610, 1966248, 0, 196610, 1966249, 0, 196610, 1966250, 0, 196610, 1966251, 0, 4, 2031748, 0, 5, 2031749, 0, 0, 2031750, 0, 1, 2031751, 0, 0, 2031780, 0, 3, 2031781, 0, 196610, 2031782, 0, 196610, 2031783, 0, 196610, 2031784, 0, 196610, 2031785, 0, 196610, 2031786, 0, 65542, 2031787, 0, 196613, 2097284, 0, 0, 2097285, 0, 0, 2097286, 0, 196610, 2097287, 0, 131076, 2097288, 0, 0, 2097316, 0, 3, 2097317, 0, 196610, 2097318, 0, 196610, 2097319, 0, 196610, 2097320, 0, 196610, 2097321, 0, 65542, 2097322, 0, 196610, 2097323, 0, 196613, 2162821, 0, 0, 2162822, 0, 0, 2162823, 0, 196611, 2162824, 0, 131075, 2162852, 0, 3, 2162853, 0, 65542, 2162854, 0, 65542, 2162855, 0, 65542, 2162856, 0, 196610, 2162857, 0, 65542, 2162858, 0, 65542, 2162859, 0, 4, 2228358, 0, 0, 2228362, 0, 5, 2228363, 0, 1, 2228364, 0, 0, 2228388, 0, 3, 2228389, 0, 196610, 2228390, 0, 65542, 2228391, 0, 65542, 2228392, 0, 65543, 2228393, 0, 2, 2228394, 0, 2, 2228395, 0, 131075, 2293898, 0, 3, 2293899, 0, 65542, 2293900, 0, 4, 2293924, 0, 3, 2293925, 0, 196610, 2293926, 0, 65542, 2293927, 0, 196610, 2293928, 0, 4, 2359434, 0, 0, 2359435, 0, 0, 2359436, 0, 196613, 2359460, 0, 3, 2359461, 0, 196610, 2359462, 0, 196610, 2359463, 0, 65542, 2359464, 0, 131078, 2359465, 0, 0, 2424971, 0, 0, 2424972, 0, 0, 2424996, 0, 3, 2424997, 0, 196610, 2424998, 0, 196610, 2424999, 0, 65542, 2425000, 0, 65542, 2425001, 0, 196609, 2425002, 0, 0, 2490532, 0, 0, 2490533, 0, 2, 2490534, 0, 0, 2490535, 0, 65542, 2490536, 0, 196610, 2490537, 0, 65541, 2490538, 0, 131075, 2556070, 0, 0, 2556071, 0, 0, 2556072, 0, 65542, 2556073, 0, 4, 2621607, 0, 0, 2621608, 0, 196611, 2621609, 0, 131075, 2949257, 0, 5, 2949258, 0, 0, 3014791, 0, 5, 3014792, 0, 1, 3014793, 0, 131073, 3014794, 0, 196613, 3080326, 0, 5, 3080327, 0, 65538, 3080328, 0, 196610, 3080329, 0, 196610, 3080330, 0, 4, 3145862, 0, 0, 3145863, 0, 2, 3145864, 0, 2, 3145865, 0, 196611, 3145866, 0, 131075, 4128964, 0, 65536, 4128965, 0, 0, 4128996, 0, 65536, 4128997, 0, 196612, 4128998, 0, 0, 4194499, 0, 65536, 4194500, 0, 65540, 4194501, 0, 131076, 4194502, 0, 0, 4194532, 0, 0, 4194533, 0, 0, 4194534, 0, 0, 4194535, 0, 0, 4260035, 0, 0, 4260036, 0, 0, 4260037, 0, 65543, 4260038, 0, 196608, 4260049, 0, 65536, 4260050, 0, 7, 4260051, 0, 1, 4260052, 0, 1, 4260053, 0, 196612, 4260054, 0, 1, 4260055, 0, 0, 4260069, 0, 0, 4260070, 0, 131075, 4325572, 0, 0, 4325573, 0, 196608, 4325585, 0, 3, 4325586, 0, 65542, 4325587, 0, 65542, 4325588, 0, 65542, 4325589, 0, 196610, 4325590, 0, 65542, 4325591, 0, 131078, 4325592, 0, 0, 4325599, 0, 5, 4325600, 0, 196612, 4325601, 0, 0, 4391121, 0, 3, 4391122, 0, 196610, 4391123, 0, 196610, 4391124, 0, 196610, 4391125, 0, 65542, 4391126, 0, 65542, 4391127, 0, 65542, 4391128, 0, 4, 4391135, 0, 0, 4391136, 0, 2, 4391137, 0, 0, 4456655, 0, 65536, 4456656, 0, 0, 4456657, 0, 0, 4456658, 0, 2, 4456659, 0, 196611, 4456660, 0, 196611, 4456661, 0, 196611, 4456662, 0, 2, 4456663, 0, 196611, 4456664, 0, 196608, 4522180, 0, 0, 4522181, 0, 0, 4522182, 0, 0, 4522191, 0, 3, 4522192, 0, 4, 4587717, 0, 0, 4587718, 0, 196608, 4587727, 0, 3, 4587728, 0, 131078, 4587729, 0, 0, 4653263, 0, 0, 4653264, 0, 0, 4653265, 0, 131076, 4653266, 0, 196612, 4653267, 0, 7, 4653268, 0, 1, 4653269, 0, 0, 4653289, 0, 65536, 4653290, 0, 0, 4718800, 0, 0, 4718801, 0, 2, 4718802, 0, 0, 4718803, 0, 65542, 4718804, 0, 196610, 4718805, 0, 196613, 4718823, 0, 0, 4718824, 0, 0, 4718825, 0, 131073, 4718826, 0, 196613, 4784338, 0, 0, 4784339, 0, 0, 4784340, 0, 65542, 4784341, 0, 196613, 4784345, 0, 0, 4784346, 0, 0, 4784349, 0, 65536, 4784350, 0, 1, 4784351, 0, 0, 4784352, 0, 0, 4784353, 0, 0, 4784360, 0, 0, 4784361, 0, 0, 4784362, 0, 0, 4849875, 0, 0, 4849876, 0, 2, 4849877, 0, 0, 4849880, 0, 65536, 4849881, 0, 0, 4849883, 0, 5, 4849884, 0, 7, 4849885, 0, 196614, 4849886, 0, 2, 4849887, 0, 196608, 4849897, 0, 0, 4849900, 0, 5, 4849901, 0, 0, 4915399, 0, 5, 4915400, 0, 0, 4915416, 0, 3, 4915417, 0, 131078, 4915418, 0, 196612, 4915419, 0, 196614, 4915420, 0, 196611, 4915421, 0, 0, 4915436, 0, 3, 4915437, 0, 4, 4980935, 0, 3, 4980936, 0, 131076, 4980937, 0, 0, 4980951, 0, 5, 4980952, 0, 65540, 4980953, 0, 65542, 4980954, 0, 65542, 4980955, 0, 4, 4980971, 0, 0, 4980972, 0, 0, 4980973, 0, 0, 4980974, 0, 0, 5046470, 0, 5, 5046471, 0, 65539, 5046472, 0, 65542, 5046473, 0, 4, 5046487, 0, 3, 5046488, 0, 65542, 5046489, 0, 196610, 5046490, 0, 65541, 5046491, 0, 0, 5046508, 0, 0, 5046509, 0, 0, 5112001, 0, 65536, 5112002, 0, 196612, 5112003, 0, 0, 5112006, 0, 0, 5112007, 0, 0, 5112008, 0, 65543, 5112009, 0, 0, 5112023, 0, 3, 5112024, 0, 65542, 5112025, 0, 65541, 5112026, 0, 131075, 5177537, 0, 3, 5177538, 0, 65542, 5177539, 0, 196609, 5177540, 0, 0, 5177543, 0, 0, 5177544, 0, 196608, 5177559, 0, 3, 5177560, 0, 196610, 5177561, 0, 196613, 5177575, 0, 5, 5177576, 0, 1, 5177577, 0, 0, 5243073, 0, 3, 5243074, 0, 65542, 5243075, 0, 65542, 5243076, 0, 196609, 5243077, 0, 0, 5243093, 0, 65536, 5243094, 0, 0, 5243095, 0, 0, 5243096, 0, 2, 5243097, 0, 131075, 5243111, 0, 3, 5243112, 0, 196610, 5243113, 0, 196613, 5308609, 0, 0, 5308610, 0, 196611, 5308611, 0, 196611, 5308612, 0, 2, 5308613, 0, 0, 5308614, 0, 0, 5308629, 0, 0, 5308630, 0, 131075, 5308647, 0, 0, 5308648, 0, 0, 5308649, 0, 196613, 5374141, 0, 5, 5374142, 0, 0, 5374184, 0, 0, 5374185, 0, 196608, 5439675, 0, 5, 5439676, 0, 1, 5439677, 0, 131073, 5439678, 0, 4, 5439728, 0, 0, 5505211, 0, 3, 5505212, 0, 65542, 5505213, 0, 131072, 5505214, 0, 0, 5505243, 0, 5, 5505244, 0, 0, 5505264, 0, 0, 5505265, 0, 196612, 5505266, 0, 0, 5505283, 0, 0, 5505284, 0, 0, 5505285, 0, 0, 5570747, 0, 0, 5570748, 0, 2, 5570749, 0, 131075, 5570779, 0, 3, 5570780, 0, 131076, 5570781, 0, 0, 5570799, 0, 5, 5570800, 0, 196614, 5570801, 0, 196611, 5570802, 0, 196608, 5570820, 0, 3, 5570821, 0, 196609, 5570822, 0, 0, 5636315, 0, 3, 5636316, 0, 65542, 5636317, 0, 131076, 5636318, 0, 0, 5636335, 0, 0, 5636336, 0, 196608, 5636356, 0, 0, 5636357, 0, 0, 5636358, 0, 196613, 5636360, 0, 65536, 5636361, 0, 1, 5636362, 0, 0, 5701824, 0, 0, 5701851, 0, 3, 5701852, 0, 65542, 5701853, 0, 65542, 5701854, 0, 4, 5701893, 0, 3, 5701894, 0, 4, 5701896, 0, 3, 5701897, 0, 65542, 5701898, 0, 131078, 5701899, 0, 0, 5767360, 0, 0, 5767363, 0, 0, 5767387, 0, 3, 5767388, 0, 196610, 5767389, 0, 65542, 5767390, 0, 196613, 5767429, 0, 3, 5767430, 0, 4, 5767432, 0, 0, 5767433, 0, 2, 5767434, 0, 196611, 5767435, 0, 0, 5832896, 0, 0, 5832897, 0, 1, 5832898, 0, 7, 5832899, 0, 0, 5832900, 0, 0, 5832923, 0, 3, 5832924, 0, 65542, 5832925, 0, 196610, 5832926, 0, 196613, 5832965, 0, 0, 5832966, 0, 0, 5832971, 0, 0, 5832972, 0, 0, 5898432, 0, 3, 5898433, 0, 131072, 5898434, 0, 196611, 5898435, 0, 0, 5898436, 0, 196609, 5898437, 0, 0, 5898458, 0, 0, 5898459, 0, 0, 5898460, 0, 65542, 5898461, 0, 196610, 5898462, 0, 131076, 5898463, 0, 0, 5898500, 0, 65536, 5898501, 0, 0, 5898503, 0, 5, 5898504, 0, 1, 5898505, 0, 0, 5898507, 0, 3, 5898508, 0, 4, 5963967, 0, 5, 5963968, 0, 131074, 5963969, 0, 196613, 5963971, 0, 3, 5963972, 0, 131072, 5963973, 0, 0, 5963995, 0, 0, 5963996, 0, 2, 5963997, 0, 0, 5963998, 0, 196610, 5963999, 0, 4, 5964036, 0, 3, 5964037, 0, 196613, 5964039, 0, 0, 5964040, 0, 196611, 5964041, 0, 0, 5964042, 0, 0, 5964043, 0, 0, 5964044, 0, 196608, 6029502, 0, 65536, 6029503, 0, 65539, 6029504, 0, 65542, 6029505, 0, 196609, 6029506, 0, 196612, 6029507, 0, 131074, 6029508, 0, 196613, 6029526, 0, 65536, 6029527, 0, 0, 6029529, 0, 0, 6029531, 0, 0, 6029533, 0, 3, 6029534, 0, 65542, 6029535, 0, 196613, 6029572, 0, 3, 6029573, 0, 131078, 6029574, 0, 0, 6095038, 0, 3, 6095039, 0, 196610, 6095040, 0, 65542, 6095041, 0, 196610, 6095042, 0, 65543, 6095043, 0, 2, 6095044, 0, 0, 6095062, 0, 0, 6095063, 0, 196615, 6095064, 0, 196612, 6095065, 0, 0, 6095067, 0, 0, 6095068, 0, 0, 6095069, 0, 131073, 6095070, 0, 196610, 6095071, 0, 4, 6095105, 0, 0, 6095108, 0, 0, 6095109, 0, 0, 6095110, 0, 196608, 6160573, 0, 0, 6160574, 0, 0, 6160575, 0, 0, 6160576, 0, 65542, 6160577, 0, 65541, 6160578, 0, 196608, 6160580, 0, 0, 6160599, 0, 0, 6160600, 0, 0, 6160601, 0, 196608, 6160604, 0, 3, 6160605, 0, 65542, 6160606, 0, 65542, 6160607, 0, 4, 6160641, 0, 0, 6160642, 0, 196612, 6160643, 0, 0, 6160645, 0, 0, 6226109, 0, 0, 6226111, 0, 3, 6226112, 0, 65542, 6226113, 0, 4, 6226115, 0, 0, 6226120, 0, 65536, 6226121, 0, 0, 6226136, 0, 0, 6226140, 0, 0, 6226141, 0, 0, 6226142, 0, 65543, 6226143, 0, 196608, 6226176, 0, 5, 6226177, 0, 196614, 6226178, 0, 2, 6226179, 0, 196608, 6226186, 0, 0, 6291647, 0, 0, 6291648, 0, 2, 6291649, 0, 0, 6291650, 0, 0, 6291656, 0, 0, 6291657, 0, 196608, 6291677, 0, 0, 6291678, 0, 0, 6291712, 0, 0, 6291713, 0, 0, 6291716, 0, 65536, 6291717, 0, 0, 6291720, 0, 5, 6291721, 0, 7, 6291722, 0, 0, 6357213, 0, 0, 6357251, 0, 0, 6357252, 0, 0, 6357253, 0, 196608, 6357255, 0, 5, 6357256, 0, 131073, 6357257, 0, 196610, 6357258, 0, 4, 6422733, 0, 5, 6422734, 0, 1, 6422735, 0, 0, 6422791, 0, 0, 6422792, 0, 0, 6422793, 0, 196610, 6422794, 0, 131078, 6422795, 0, 0, 6488237, 0, 0, 6488238, 0, 0, 6488239, 0, 0, 6488240, 0, 0, 6488268, 0, 0, 6488269, 0, 0, 6488270, 0, 196610, 6488271, 0, 131076, 6488272, 0, 196612, 6488273, 0, 0, 6488328, 0, 0, 6488329, 0, 0, 6488330, 0, 65542, 6488331, 0, 196613, 6553772, 0, 65536, 6553773, 0, 0, 6553776, 0, 0, 6553777, 0, 0, 6553805, 0, 3, 6553806, 0, 65542, 6553807, 0, 65542, 6553808, 0, 65542, 6553809, 0, 0, 6553810, 0, 0, 6553824, 0, 5, 6553825, 0, 0, 6553865, 0, 0, 6553866, 0, 196611, 6553867, 0, 196608, 6619308, 0, 3, 6619309, 0, 131078, 6619310, 0, 196612, 6619311, 0, 7, 6619312, 0, 65539, 6619313, 0, 4, 6619325, 0, 0, 6619340, 0, 0, 6619341, 0, 0, 6619342, 0, 65543, 6619343, 0, 2, 6619344, 0, 2, 6619345, 0, 131075, 6619359, 0, 65536, 6619360, 0, 65539, 6619361, 0, 196609, 6619362, 0, 0, 6684844, 0, 3, 6684845, 0, 65542, 6684846, 0, 65542, 6684847, 0, 196610, 6684848, 0, 65542, 6684849, 0, 4, 6684855, 0, 65536, 6684856, 0, 0, 6684858, 0, 0, 6684860, 0, 0, 6684861, 0, 0, 6684877, 0, 0, 6684878, 0, 0, 6684895, 0, 3, 6684896, 0, 196610, 6684897, 0, 196610, 6684898, 0, 196613, 6684929, 0, 5, 6684930, 0, 0, 6750380, 0, 3, 6750381, 0, 131072, 6750382, 0, 2, 6750383, 0, 0, 6750384, 0, 131072, 6750385, 0, 131075, 6750389, 0, 65536, 6750390, 0, 0, 6750391, 0, 0, 6750392, 0, 0, 6750394, 0, 0, 6750395, 0, 0, 6750396, 0, 0, 6750414, 0, 0, 6750431, 0, 0, 6750432, 0, 0, 6750433, 0, 196610, 6750434, 0, 4, 6750465, 0, 3, 6750466, 0, 4, 6815915, 0, 5, 6815916, 0, 131074, 6815917, 0, 4, 6815919, 0, 0, 6815920, 0, 196608, 6815924, 0, 65536, 6815925, 0, 65540, 6815926, 0, 196613, 6815928, 0, 0, 6815929, 0, 1, 6815930, 0, 196614, 6815931, 0, 196608, 6815968, 0, 3, 6815969, 0, 65543, 6815970, 0, 0, 6815971, 0, 0, 6816001, 0, 0, 6816002, 0, 196608, 6881450, 0, 65536, 6881451, 0, 65540, 6881452, 0, 196610, 6881453, 0, 131076, 6881454, 0, 0, 6881455, 0, 0, 6881459, 0, 5, 6881460, 0, 65539, 6881461, 0, 196610, 6881462, 0, 131078, 6881463, 0, 7, 6881464, 0, 196614, 6881465, 0, 196611, 6881466, 0, 0, 6881504, 0, 0, 6881505, 0, 131075, 6881535, 0, 5, 6881536, 0, 1, 6881537, 0, 0, 6946986, 0, 0, 6946987, 0, 2, 6946988, 0, 196611, 6946989, 0, 2, 6946990, 0, 196608, 6946995, 0, 0, 6946996, 0, 2, 6946997, 0, 2, 6946998, 0, 0, 6946999, 0, 196610, 6947000, 0, 4, 6947002, 0, 0, 6947037, 0, 65536, 6947038, 0, 7, 6947039, 0, 0, 6947071, 0, 3, 6947072, 0, 65542, 6947073, 0, 131078, 6947074, 0, 0, 7012522, 0, 0, 7012531, 0, 0, 7012534, 0, 3, 7012535, 0, 65543, 7012536, 0, 131075, 7012538, 0, 0, 7012572, 0, 65536, 7012573, 0, 65540, 7012574, 0, 65542, 7012575, 0, 131076, 7012576, 0, 0, 7012607, 0, 3, 7012608, 0, 65542, 7012609, 0, 65541, 7012610, 0, 0, 7078066, 0, 5, 7078067, 0, 0, 7078068, 0, 1, 7078069, 0, 1, 7078070, 0, 196614, 7078071, 0, 196608, 7078108, 0, 3, 7078109, 0, 65542, 7078110, 0, 196610, 7078111, 0, 65542, 7078112, 0, 196613, 7078141, 0, 5, 7078142, 0, 1, 7078143, 0, 65538, 7078144, 0, 65542, 7078145, 0, 4, 7143602, 0, 3, 7143603, 0, 196610, 7143604, 0, 196610, 7143605, 0, 65542, 7143606, 0, 196613, 7143640, 0, 5, 7143641, 0, 0, 7143644, 0, 3, 7143645, 0, 65542, 7143646, 0, 196610, 7143647, 0, 196610, 7143648, 0, 196613, 7143677, 0, 0, 7143678, 0, 196611, 7143679, 0, 0, 7143680, 0, 65542, 7143681, 0, 4, 7209134, 0, 65536, 7209135, 0, 196612, 7209136, 0, 0, 7209138, 0, 3, 7209139, 0, 65542, 7209140, 0, 65541, 7209141, 0, 196611, 7209142, 0, 0, 7209176, 0, 3, 7209177, 0, 4, 7209180, 0, 0, 7209181, 0, 0, 7209182, 0, 196610, 7209183, 0, 65541, 7209184, 0, 131075, 7209215, 0, 0, 7209216, 0, 196611, 7209217, 0, 0, 7274667, 0, 0, 7274670, 0, 3, 7274671, 0, 65542, 7274672, 0, 4, 7274674, 0, 3, 7274675, 0, 65542, 7274676, 0, 4, 7274678, 0, 0, 7274712, 0, 0, 7274713, 0, 0, 7274717, 0, 0, 7274718, 0, 196611, 7274719, 0, 196608, 7274748, 0, 5, 7274749, 0, 1, 7274750, 0, 0, 7340203, 0, 0, 7340205, 0, 0, 7340206, 0, 0, 7340207, 0, 0, 7340208, 0, 196608, 7340210, 0, 3, 7340211, 0, 196610, 7340212, 0, 4, 7340214, 0, 0, 7340220, 0, 65536, 7340221, 0, 0, 7340283, 0, 5, 7340284, 0, 131074, 7340285, 0, 196610, 7340286, 0, 196613, 7405739, 0, 0, 7405740, 0, 196612, 7405741, 0, 0, 7405743, 0, 0, 7405746, 0, 0, 7405747, 0, 0, 7405748, 0, 196609, 7405749, 0, 0, 7405750, 0, 0, 7405756, 0, 0, 7405757, 0, 0, 7405819, 0, 3, 7405820, 0, 65542, 7405821, 0, 196610, 7405822, 0, 196613, 7471274, 0, 65536, 7471275, 0, 65540, 7471276, 0, 65542, 7471277, 0, 131076, 7471278, 0, 0, 7471280, 0, 0, 7471281, 0, 0, 7471283, 0, 3, 7471284, 0, 196610, 7471285, 0, 196613, 7471330, 0, 0, 7471355, 0, 0, 7471356, 0, 196611, 7471357, 0, 196611, 7471358, 0, 131075, 7536810, 0, 3, 7536811, 0, 196610, 7536812, 0, 65542, 7536813, 0, 65542, 7536814, 0, 131076, 7536815, 0, 0, 7536818, 0, 5, 7536819, 0, 196614, 7536820, 0, 196611, 7536821, 0, 0, 7536866, 0, 0, 7602346, 0, 3, 7602347, 0, 65542, 7602348, 0, 196610, 7602349, 0, 196610, 7602350, 0, 65542, 7602351, 0, 4, 7602354, 0, 0, 7602355, 0, 196608, 7602400, 0, 65536, 7602401, 0, 1, 7602402, 0, 0, 7667882, 0, 0, 7667883, 0, 196611, 7667884, 0, 0, 7667885, 0, 131072, 7667886, 0, 196611, 7667887, 0, 0, 7667888, 0, 0, 7667909, 0, 0, 7667910, 0, 0, 7667936, 0, 0, 7667937, 0, 0, 7667938, 0, 196613, 7733420, 0, 0, 7733421, 0, 0, 7733430, 0, 0, 7733443, 0, 65536, 7733444, 0, 7, 7733445, 0, 0, 7733447, 0, 0, 7733473, 0, 3, 7733474, 0, 196609, 7733475, 0, 1, 7733476, 0, 0, 7798962, 0, 0, 7798964, 0, 65536, 7798965, 0, 196612, 7798966, 0, 0, 7798979, 0, 3, 7798980, 0, 196610, 7798981, 0, 131076, 7798982, 0, 0, 7798984, 0, 0, 7799009, 0, 3, 7799010, 0, 65542, 7799011, 0, 131072, 7799012, 0, 196608, 7864498, 0, 0, 7864499, 0, 196612, 7864500, 0, 65540, 7864501, 0, 65542, 7864502, 0, 4, 7864514, 0, 0, 7864515, 0, 0, 7864516, 0, 196610, 7864517, 0, 65542, 7864518, 0, 196609, 7864519, 0, 1, 7864520, 0, 0, 7864521, 0, 0, 7864545, 0, 0, 7864546, 0, 2, 7864547, 0, 131075, 7930033, 0, 5, 7930034, 0, 131074, 7930035, 0, 65542, 7930036, 0, 196610, 7930037, 0, 65542, 7930038, 0, 4, 7930051, 0, 0, 7930052, 0, 196611, 7930053, 0, 0, 7930054, 0, 65542, 7930055, 0, 65542, 7930056, 0, 65542, 7930057, 0, 4, 7995568, 0, 0, 7995569, 0, 0, 7995570, 0, 0, 7995571, 0, 65542, 7995572, 0, 196610, 7995573, 0, 65541, 7995574, 0, 0, 7995589, 0, 3, 7995590, 0, 196610, 7995591, 0, 65542, 7995592, 0, 131072, 7995593, 0, 131075, 8061106, 0, 0, 8061107, 0, 0, 8061108, 0, 196610, 8061109, 0, 196613, 8061124, 0, 0, 8061125, 0, 0, 8061126, 0, 196611, 8061127, 0, 196611, 8061128, 0, 196608, 8061180, 0, 5, 8061181, 0, 196612, 8061182, 0, 0, 8126643, 0, 0, 8126644, 0, 2, 8126645, 0, 0, 8126716, 0, 3, 8126717, 0, 196610, 8126718, 0, 4, 8192181, 0, 0, 8192222, 0, 5, 8192223, 0, 196612, 8192224, 0, 0, 8192244, 0, 5, 8192245, 0, 7, 8192246, 0, 0, 8192252, 0, 3, 8192253, 0, 196610, 8192254, 0, 196609, 8192255, 0, 0, 8257758, 0, 0, 8257759, 0, 0, 8257760, 0, 196609, 8257761, 0, 0, 8257780, 0, 3, 8257781, 0, 196610, 8257782, 0, 196613, 8257787, 0, 65536, 8257788, 0, 131074, 8257789, 0, 196610, 8257790, 0, 65542, 8257791, 0, 4, 8323295, 0, 0, 8323296, 0, 2, 8323297, 0, 0, 8323316, 0, 3, 8323317, 0, 196610, 8323318, 0, 196613, 8323322, 0, 65536, 8323323, 0, 65540, 8323324, 0, 65542, 8323325, 0, 65543, 8323326, 0, 2, 8323327, 0, 131075, 8388852, 0, 0, 8388853, 0, 0, 8388854, 0, 0, 8388855, 0, 0, 8388858, 0, 0, 8388859, 0, 0, 8388860, 0, 65542, 8388861, 0, 196613, 8454389, 0, 0, 8454390, 0, 196608, 8454395, 0, 0, 8454396, 0, 196611, 8454397, 0, 196608, 9568465, 0, 5, 9568466, 0, 196612, 9568467, 0, 0, 9634001, 0, 3, 9634002, 0, 65543, 9634003, 0, 196608, 9699537, 0, 0, 9699538, 0, 0, 9765062, 0, 65536, 9765063, 0, 0, 9765064, 0, 0, 9765074, 0, 0, 9830576, 0, 0, 9830583, 0, 65536, 9830584, 0, 1, 9830585, 0, 0, 9830597, 0, 5, 9830598, 0, 131073, 9830599, 0, 4, 9896110, 0, 5, 9896111, 0, 196612, 9896112, 0, 0, 9896118, 0, 5, 9896119, 0, 131074, 9896120, 0, 196610, 9896121, 0, 196609, 9896122, 0, 0, 9896132, 0, 5, 9896133, 0, 131074, 9896134, 0, 65541, 9896135, 0, 196608, 9896147, 0, 0, 9896148, 0, 0, 9961644, 0, 5, 9961645, 0, 1, 9961646, 0, 65539, 9961647, 0, 65542, 9961648, 0, 131076, 9961649, 0, 196612, 9961650, 0, 0, 9961653, 0, 0, 9961654, 0, 0, 9961655, 0, 0, 9961656, 0, 196610, 9961657, 0, 65543, 9961658, 0, 131075, 9961668, 0, 0, 9961669, 0, 2, 9961670, 0, 196608, 9961682, 0, 0, 9961683, 0, 0, 10027180, 0, 0, 10027181, 0, 0, 10027182, 0, 196610, 10027183, 0, 65542, 10027184, 0, 65542, 10027185, 0, 65543, 10027186, 0, 196608, 10027191, 0, 3, 10027192, 0, 65543, 10027193, 0, 0, 10027212, 0, 0, 10027216, 0, 65536, 10027217, 0, 196612, 10027218, 0, 0, 10027220, 0, 65536, 10027221, 0, 196612, 10027222, 0, 0, 10092717, 0, 3, 10092718, 0, 65542, 10092719, 0, 196610, 10092720, 0, 65543, 10092721, 0, 196608, 10092727, 0, 0, 10092728, 0, 131075, 10092748, 0, 0, 10092749, 0, 196612, 10092750, 0, 196612, 10092751, 0, 196612, 10092752, 0, 131074, 10092753, 0, 65542, 10092754, 0, 131078, 10092755, 0, 7, 10092756, 0, 65539, 10092757, 0, 65542, 10092758, 0, 4, 10158251, 0, 0, 10158252, 0, 0, 10158253, 0, 0, 10158254, 0, 0, 10158255, 0, 131072, 10158256, 0, 0, 10158283, 0, 0, 10158284, 0, 0, 10158285, 0, 196611, 10158286, 0, 2, 10158287, 0, 2, 10158288, 0, 0, 10158289, 0, 65541, 10158290, 0, 2, 10158291, 0, 0, 10158292, 0, 196610, 10158293, 0, 131072, 10158294, 0, 131075, 10223782, 0, 5, 10223783, 0, 0, 10223790, 0, 0, 10223791, 0, 131075, 10223820, 0, 0, 10223824, 0, 0, 10223825, 0, 131075, 10223827, 0, 0, 10223828, 0, 196611, 10223829, 0, 196608, 10289318, 0, 3, 10289319, 0, 196613, 10289324, 0, 5, 10289325, 0, 1, 10289326, 0, 0, 10354853, 0, 5, 10354854, 0, 65538, 10354855, 0, 4, 10354858, 0, 65536, 10354859, 0, 1, 10354860, 0, 131073, 10354861, 0, 65542, 10354862, 0, 196613, 10354888, 0, 5, 10354889, 0, 0, 10420388, 0, 0, 10420389, 0, 0, 10420390, 0, 196611, 10420391, 0, 0, 10420392, 0, 0, 10420393, 0, 0, 10420394, 0, 131073, 10420395, 0, 196610, 10420396, 0, 196610, 10420397, 0, 131072, 10420398, 0, 131075, 10420424, 0, 0, 10420425, 0, 196608, 10485923, 0, 0, 10485924, 0, 0, 10485929, 0, 0, 10485930, 0, 196611, 10485931, 0, 2, 10485932, 0, 0, 10485933, 0, 196613, 10485958, 0, 5, 10485959, 0, 196612, 10485960, 0, 0, 10551468, 0, 0, 10551469, 0, 0, 10551494, 0, 0, 10551495, 0, 2, 10551496, 0, 0 )
+tile_data = PoolIntArray( -4783990, 0, 5, -4783989, 0, 0, -4718455, 0, 5, -4718454, 0, 131074, -4718453, 0, 196609, -4718452, 0, 0, -4652919, 0, 3, -4652918, 0, 196610, -4652917, 0, 196610, -4652916, 0, 4, -4587409, 0, 5, -4587408, 0, 0, -4587383, 0, 0, -4587382, 0, 196611, -4587381, 0, 2, -4587380, 0, 0, -4521873, 0, 3, -4521872, 0, 0, -4521871, 0, 0, -4521853, 0, 5, -4521852, 0, 0, -4456337, 0, 3, -4456336, 0, 4, -4456317, 0, 3, -4456316, 0, 131076, -4456315, 0, 0, -4456312, 0, 5, -4456311, 0, 0, -4390801, 0, 0, -4390800, 0, 0, -4390781, 0, 3, -4390780, 0, 65542, -4390779, 0, 196609, -4390778, 0, 0, -4390777, 0, 0, -4390776, 0, 0, -4390775, 0, 131076, -4390774, 0, 0, -4325265, 0, 0, -4325246, 0, 0, -4325245, 0, 0, -4325244, 0, 196610, -4325243, 0, 65542, -4325242, 0, 196613, -4325240, 0, 0, -4325239, 0, 2, -4325238, 0, 0, -4259733, 0, 5, -4259732, 0, 1, -4259731, 0, 0, -4259709, 0, 0, -4259708, 0, 0, -4259707, 0, 65543, -4259706, 0, 131075, -4259704, 0, 0, -4194197, 0, 3, -4194196, 0, 65542, -4194195, 0, 196609, -4194194, 0, 0, -4194172, 0, 0, -4194171, 0, 131075, -4128661, 0, 3, -4128660, 0, 131072, -4128659, 0, 196611, -4128658, 0, 131075, -4063125, 0, 0, -4063124, 0, 131075, -3932022, 0, 5, -3932021, 0, 0, -3866486, 0, 3, -3866485, 0, 4, -3800952, 0, 5, -3800951, 0, 1, -3800950, 0, 65540, -3800949, 0, 131078, -3800948, 0, 0, -3735416, 0, 3, -3735415, 0, 65542, -3735414, 0, 196610, -3735413, 0, 196610, -3735412, 0, 4, -3669880, 0, 3, -3669879, 0, 196610, -3669878, 0, 196610, -3669877, 0, 196610, -3669876, 0, 196613, -3604344, 0, 3, -3604343, 0, 65542, -3604342, 0, 65542, -3604341, 0, 65542, -3604340, 0, 4, -3538810, 0, 0, -3538809, 0, 0, -3538808, 0, 131073, -3538807, 0, 65542, -3538806, 0, 196610, -3538805, 0, 131072, -3538804, 0, 131075, -3473293, 0, 5, -3473292, 0, 1, -3473291, 0, 0, -3473281, 0, 5, -3473280, 0, 0, -3473273, 0, 0, -3473272, 0, 2, -3473271, 0, 0, -3473270, 0, 65541, -3473269, 0, 0, -3407757, 0, 3, -3407756, 0, 65542, -3407755, 0, 4, -3407746, 0, 5, -3407745, 0, 65540, -3407744, 0, 131078, -3407743, 0, 0, -3407735, 0, 0, -3407734, 0, 0, -3342221, 0, 3, -3342220, 0, 196610, -3342219, 0, 196613, -3342210, 0, 3, -3342209, 0, 65542, -3342208, 0, 131072, -3342207, 0, 131075, -3276685, 0, 0, -3276684, 0, 0, -3276683, 0, 196613, -3276674, 0, 3, -3276673, 0, 196610, -3276672, 0, 196613, -3211148, 0, 0, -3211147, 0, 131075, -3211138, 0, 0, -3211137, 0, 2, -3211136, 0, 0, -3145612, 0, 0, -3145600, 0, 0, -2752374, 0, 5, -2752373, 0, 0, -2686839, 0, 5, -2686838, 0, 131073, -2686837, 0, 131078, -2686836, 0, 0, -2621304, 0, 0, -2621303, 0, 0, -2621302, 0, 2, -2621301, 0, 2, -2621300, 0, 0, -2555764, 0, 0, -2424675, 0, 5, -2424674, 0, 0, -2359139, 0, 3, -2359138, 0, 131078, -2359137, 0, 0, -2293603, 0, 0, -2293602, 0, 196611, -2293601, 0, 0, -2228065, 0, 0, -2162529, 0, 0, -2162528, 0, 0, -2096993, 0, 0, -2096992, 0, 131075, -1965917, 0, 5, -1965916, 0, 1, -1965915, 0, 0, -1900381, 0, 3, -1900380, 0, 65542, -1900379, 0, 131078, -1900378, 0, 0, -1834845, 0, 3, -1834844, 0, 65542, -1834843, 0, 65542, -1834842, 0, 4, -1769335, 0, 5, -1769334, 0, 196612, -1769333, 0, 196612, -1769332, 0, 0, -1769309, 0, 0, -1769308, 0, 196611, -1769307, 0, 2, -1769306, 0, 0, -1703799, 0, 3, -1703798, 0, 65542, -1703797, 0, 65541, -1703796, 0, 0, -1638263, 0, 3, -1638262, 0, 65542, -1638261, 0, 196613, -1572727, 0, 3, -1572726, 0, 196610, -1572725, 0, 196613, -1507191, 0, 0, -1507190, 0, 196611, -1507189, 0, 131075, -1376117, 0, 5, -1376116, 0, 0, -1310581, 0, 3, -1310580, 0, 196613, -1245045, 0, 0, -1245044, 0, 0, -982881, 0, 5, -982880, 0, 0, -917346, 0, 5, -917345, 0, 65539, -917344, 0, 131076, -917343, 0, 1, -917342, 0, 1, -917341, 0, 0, -851810, 0, 3, -851809, 0, 196610, -851808, 0, 196610, -851807, 0, 65542, -851806, 0, 65542, -851805, 0, 131076, -851804, 0, 0, -786274, 0, 3, -786273, 0, 196610, -786272, 0, 65542, -786271, 0, 65542, -786270, 0, 65542, -786269, 0, 196610, -786268, 0, 131078, -786267, 0, 1, -786266, 0, 0, -720738, 0, 3, -720737, 0, 65542, -720736, 0, 65542, -720735, 0, 65542, -720734, 0, 65542, -720733, 0, 196610, -720732, 0, 65542, -720731, 0, 196610, -720730, 0, 131076, -720729, 0, 196612, -720728, 0, 0, -655202, 0, 0, -655201, 0, 0, -655200, 0, 65542, -655199, 0, 65542, -655198, 0, 196610, -655197, 0, 65542, -655196, 0, 196610, -655195, 0, 196610, -655194, 0, 196610, -655193, 0, 65542, -655192, 0, 0, -655191, 0, 0, -589665, 0, 3, -589664, 0, 196610, -589663, 0, 65542, -589662, 0, 196610, -589661, 0, 196610, -589660, 0, 65542, -589659, 0, 65542, -589658, 0, 196610, -589657, 0, 196610, -589656, 0, 4, -589654, 0, 5, -589653, 0, 0, -524129, 0, 0, -524128, 0, 0, -524127, 0, 196610, -524126, 0, 196610, -524125, 0, 65542, -524124, 0, 65542, -524123, 0, 196610, -524122, 0, 65542, -524121, 0, 196610, -524120, 0, 0, -524119, 0, 0, -524118, 0, 0, -524117, 0, 196613, -458592, 0, 0, -458591, 0, 2, -458590, 0, 196611, -458589, 0, 196611, -458588, 0, 196611, -458587, 0, 196611, -458586, 0, 196611, -458585, 0, 0, -458584, 0, 196613, -458582, 0, 3, -458581, 0, 196613, -393049, 0, 0, -393048, 0, 196615, -393047, 0, 1, -393046, 0, 196614, -393045, 0, 131075, -327542, 0, 5, -327541, 0, 0, -327512, 0, 3, -327511, 0, 65541, -327510, 0, 0, -262006, 0, 0, -262005, 0, 131075, -261976, 0, 0, -261975, 0, 0, -196451, 0, 5, -196450, 0, 0, -130915, 0, 0, -130914, 0, 0, 164, 0, 5, 165, 0, 1, 166, 0, 0, 65689, 0, 5, 65690, 0, 0, 65700, 0, 3, 65701, 0, 65542, 65702, 0, 196613, 131208, 0, 5, 131209, 0, 1, 131210, 0, 0, 131225, 0, 0, 131226, 0, 0, 131236, 0, 0, 131237, 0, 2, 131238, 0, 0, 196733, 0, 5, 196734, 0, 0, 196737, 0, 5, 196738, 0, 196612, 196739, 0, 0, 196743, 0, 0, 196744, 0, 0, 196745, 0, 196610, 196746, 0, 196613, 262269, 0, 0, 262270, 0, 0, 262271, 0, 0, 262273, 0, 0, 262274, 0, 2, 262275, 0, 0, 262280, 0, 0, 262281, 0, 2, 262282, 0, 131075, 1179785, 0, 5, 1179786, 0, 196612, 1179787, 0, 0, 1245321, 0, 3, 1245322, 0, 65542, 1245323, 0, 4, 1245349, 0, 0, 1245350, 0, 0, 1310857, 0, 0, 1310858, 0, 196611, 1310859, 0, 131075, 1310884, 0, 0, 1310886, 0, 0, 1310887, 0, 196612, 1310888, 0, 0, 1310891, 0, 0, 1310893, 0, 0, 1376420, 0, 0, 1376421, 0, 196612, 1376422, 0, 196614, 1376423, 0, 196611, 1376424, 0, 196615, 1376425, 0, 0, 1376427, 0, 0, 1376428, 0, 1, 1376429, 0, 0, 1441956, 0, 0, 1441957, 0, 0, 1441958, 0, 131075, 1441960, 0, 3, 1441961, 0, 196609, 1441962, 0, 196612, 1441963, 0, 131073, 1441964, 0, 65542, 1441965, 0, 196613, 1507493, 0, 0, 1507496, 0, 0, 1507497, 0, 0, 1507498, 0, 65542, 1507499, 0, 196610, 1507500, 0, 196610, 1507501, 0, 4, 1573033, 0, 3, 1573034, 0, 65542, 1573035, 0, 65541, 1573036, 0, 196611, 1573037, 0, 131075, 1638564, 0, 5, 1638565, 0, 196612, 1638566, 0, 196612, 1638567, 0, 196612, 1638568, 0, 1, 1638569, 0, 65538, 1638570, 0, 196610, 1638571, 0, 4, 1704100, 0, 3, 1704101, 0, 65542, 1704102, 0, 65542, 1704103, 0, 65542, 1704104, 0, 196610, 1704105, 0, 65542, 1704106, 0, 65542, 1704107, 0, 4, 1769636, 0, 3, 1769637, 0, 65542, 1769638, 0, 196610, 1769639, 0, 196610, 1769640, 0, 196610, 1769641, 0, 65542, 1769642, 0, 65542, 1769643, 0, 196613, 1835172, 0, 3, 1835173, 0, 65542, 1835174, 0, 196610, 1835175, 0, 196610, 1835176, 0, 196610, 1835177, 0, 65542, 1835178, 0, 65542, 1835179, 0, 196613, 1900708, 0, 3, 1900709, 0, 65542, 1900710, 0, 65542, 1900711, 0, 196610, 1900712, 0, 65542, 1900713, 0, 196610, 1900714, 0, 65542, 1900715, 0, 4, 1966213, 0, 0, 1966244, 0, 3, 1966245, 0, 196610, 1966246, 0, 65542, 1966247, 0, 196610, 1966248, 0, 196610, 1966249, 0, 196610, 1966250, 0, 196610, 1966251, 0, 4, 2031748, 0, 5, 2031749, 0, 0, 2031750, 0, 1, 2031751, 0, 0, 2031780, 0, 3, 2031781, 0, 196610, 2031782, 0, 196610, 2031783, 0, 196610, 2031784, 0, 196610, 2031785, 0, 196610, 2031786, 0, 65542, 2031787, 0, 196613, 2097284, 0, 0, 2097285, 0, 0, 2097286, 0, 196610, 2097287, 0, 131076, 2097288, 0, 0, 2097316, 0, 3, 2097317, 0, 196610, 2097318, 0, 196610, 2097319, 0, 196610, 2097320, 0, 196610, 2097321, 0, 65542, 2097322, 0, 196610, 2097323, 0, 196613, 2162821, 0, 0, 2162822, 0, 0, 2162823, 0, 196611, 2162824, 0, 131075, 2162852, 0, 3, 2162853, 0, 65542, 2162854, 0, 65542, 2162855, 0, 65542, 2162856, 0, 196610, 2162857, 0, 65542, 2162858, 0, 65542, 2162859, 0, 4, 2228358, 0, 0, 2228362, 0, 5, 2228363, 0, 1, 2228364, 0, 0, 2228388, 0, 3, 2228389, 0, 196610, 2228390, 0, 65542, 2228391, 0, 65542, 2228392, 0, 65543, 2228393, 0, 2, 2228394, 0, 2, 2228395, 0, 131075, 2293898, 0, 3, 2293899, 0, 65542, 2293900, 0, 4, 2293924, 0, 3, 2293925, 0, 196610, 2293926, 0, 65542, 2293927, 0, 196610, 2293928, 0, 4, 2359434, 0, 0, 2359435, 0, 0, 2359436, 0, 196608, 2359451, 0, 0, 2359460, 0, 3, 2359461, 0, 196610, 2359462, 0, 196610, 2359463, 0, 65542, 2359464, 0, 131078, 2359465, 0, 0, 2424971, 0, 0, 2424986, 0, 0, 2424987, 0, 0, 2424988, 0, 0, 2424996, 0, 3, 2424997, 0, 196610, 2424998, 0, 196610, 2424999, 0, 65542, 2425000, 0, 65542, 2425001, 0, 196609, 2425002, 0, 0, 2490523, 0, 3, 2490524, 0, 4, 2490526, 0, 0, 2490532, 0, 0, 2490533, 0, 2, 2490534, 0, 0, 2490535, 0, 65542, 2490536, 0, 196610, 2490537, 0, 65541, 2490538, 0, 131075, 2556059, 0, 0, 2556060, 0, 0, 2556061, 0, 0, 2556062, 0, 0, 2556070, 0, 0, 2556071, 0, 0, 2556072, 0, 65542, 2556073, 0, 4, 2621594, 0, 65536, 2621595, 0, 0, 2621597, 0, 3, 2621598, 0, 4, 2621607, 0, 0, 2621608, 0, 196611, 2621609, 0, 131075, 2687130, 0, 3, 2687131, 0, 4, 2687133, 0, 3, 2687134, 0, 196613, 2752666, 0, 0, 2752667, 0, 196615, 2752668, 0, 1, 2752669, 0, 196614, 2752670, 0, 0, 2818203, 0, 0, 2818204, 0, 0, 2818205, 0, 196613, 2883740, 0, 0, 2883741, 0, 196615, 2883742, 0, 0, 2949257, 0, 5, 2949258, 0, 0, 2949274, 0, 65536, 2949275, 0, 0, 2949277, 0, 3, 2949278, 0, 4, 3014791, 0, 5, 3014792, 0, 1, 3014793, 0, 131073, 3014794, 0, 196613, 3014810, 0, 3, 3014811, 0, 196613, 3014813, 0, 3, 3014814, 0, 131076, 3014815, 0, 0, 3080326, 0, 5, 3080327, 0, 65538, 3080328, 0, 196610, 3080329, 0, 196610, 3080330, 0, 4, 3080346, 0, 0, 3080347, 0, 0, 3080349, 0, 3, 3080350, 0, 131072, 3080351, 0, 196608, 3145862, 0, 0, 3145863, 0, 2, 3145864, 0, 2, 3145865, 0, 196611, 3145866, 0, 131075, 3145885, 0, 0, 3145886, 0, 196608, 3211418, 0, 5, 3211419, 0, 196612, 3211420, 0, 0, 3276954, 0, 0, 3276955, 0, 0, 3276956, 0, 196609, 3276957, 0, 0, 3342491, 0, 3, 3342492, 0, 196610, 3342493, 0, 196613, 3408026, 0, 5, 3408027, 0, 65538, 3408028, 0, 65541, 3408029, 0, 196608, 3473562, 0, 0, 3473563, 0, 196611, 3473564, 0, 196608, 3801242, 0, 65536, 3801243, 0, 0, 3866778, 0, 3, 3866779, 0, 4, 3932314, 0, 0, 3932315, 0, 0, 4128964, 0, 65536, 4128965, 0, 0, 4128996, 0, 65536, 4128997, 0, 196612, 4128998, 0, 0, 4194499, 0, 65536, 4194500, 0, 65540, 4194501, 0, 131076, 4194502, 0, 0, 4194532, 0, 0, 4194533, 0, 0, 4194534, 0, 0, 4194535, 0, 0, 4260035, 0, 0, 4260036, 0, 0, 4260037, 0, 65543, 4260038, 0, 196608, 4260049, 0, 65536, 4260050, 0, 7, 4260051, 0, 1, 4260052, 0, 1, 4260053, 0, 196612, 4260054, 0, 1, 4260055, 0, 0, 4260069, 0, 0, 4260070, 0, 131075, 4325572, 0, 0, 4325573, 0, 196608, 4325585, 0, 3, 4325586, 0, 65542, 4325587, 0, 65542, 4325588, 0, 65542, 4325589, 0, 196610, 4325590, 0, 65542, 4325591, 0, 131078, 4325592, 0, 0, 4325599, 0, 5, 4325600, 0, 196612, 4325601, 0, 0, 4391121, 0, 3, 4391122, 0, 196610, 4391123, 0, 196610, 4391124, 0, 196610, 4391125, 0, 65542, 4391126, 0, 65542, 4391127, 0, 65542, 4391128, 0, 4, 4391135, 0, 0, 4391136, 0, 2, 4391137, 0, 0, 4456655, 0, 65536, 4456656, 0, 0, 4456657, 0, 0, 4456658, 0, 2, 4456659, 0, 196611, 4456660, 0, 196611, 4456661, 0, 196611, 4456662, 0, 2, 4456663, 0, 196611, 4456664, 0, 196608, 4522180, 0, 0, 4522181, 0, 0, 4522182, 0, 0, 4522191, 0, 3, 4522192, 0, 4, 4587717, 0, 0, 4587718, 0, 196608, 4587727, 0, 3, 4587728, 0, 131078, 4587729, 0, 0, 4653263, 0, 0, 4653264, 0, 0, 4653265, 0, 131076, 4653266, 0, 196612, 4653267, 0, 7, 4653268, 0, 1, 4653269, 0, 0, 4653289, 0, 65536, 4653290, 0, 0, 4718800, 0, 0, 4718801, 0, 2, 4718802, 0, 0, 4718803, 0, 65542, 4718804, 0, 196610, 4718805, 0, 196613, 4718823, 0, 0, 4718824, 0, 0, 4718825, 0, 131073, 4718826, 0, 196613, 4784338, 0, 0, 4784339, 0, 0, 4784340, 0, 65542, 4784341, 0, 196613, 4784345, 0, 0, 4784346, 0, 0, 4784349, 0, 65536, 4784350, 0, 1, 4784351, 0, 0, 4784352, 0, 0, 4784353, 0, 0, 4784360, 0, 0, 4784361, 0, 0, 4784362, 0, 0, 4849875, 0, 0, 4849876, 0, 2, 4849877, 0, 0, 4849880, 0, 65536, 4849881, 0, 0, 4849883, 0, 5, 4849884, 0, 7, 4849885, 0, 196614, 4849886, 0, 2, 4849887, 0, 196608, 4849897, 0, 0, 4849900, 0, 5, 4849901, 0, 0, 4915399, 0, 5, 4915400, 0, 0, 4915416, 0, 3, 4915417, 0, 131078, 4915418, 0, 196612, 4915419, 0, 196614, 4915420, 0, 196611, 4915421, 0, 0, 4915436, 0, 3, 4915437, 0, 4, 4980935, 0, 3, 4980936, 0, 131076, 4980937, 0, 0, 4980951, 0, 5, 4980952, 0, 65540, 4980953, 0, 65542, 4980954, 0, 65542, 4980955, 0, 4, 4980971, 0, 0, 4980972, 0, 0, 4980973, 0, 0, 4980974, 0, 0, 5046470, 0, 5, 5046471, 0, 65539, 5046472, 0, 65542, 5046473, 0, 4, 5046487, 0, 3, 5046488, 0, 65542, 5046489, 0, 196610, 5046490, 0, 65541, 5046491, 0, 0, 5046508, 0, 0, 5046509, 0, 0, 5112001, 0, 65536, 5112002, 0, 196612, 5112003, 0, 0, 5112006, 0, 0, 5112007, 0, 0, 5112008, 0, 65543, 5112009, 0, 0, 5112023, 0, 3, 5112024, 0, 65542, 5112025, 0, 65541, 5112026, 0, 131075, 5177537, 0, 3, 5177538, 0, 65542, 5177539, 0, 196609, 5177540, 0, 0, 5177543, 0, 0, 5177544, 0, 196608, 5177559, 0, 3, 5177560, 0, 196610, 5177561, 0, 196613, 5177575, 0, 5, 5177576, 0, 1, 5177577, 0, 0, 5243073, 0, 3, 5243074, 0, 65542, 5243075, 0, 65542, 5243076, 0, 196609, 5243077, 0, 0, 5243093, 0, 65536, 5243094, 0, 0, 5243095, 0, 0, 5243096, 0, 2, 5243097, 0, 131075, 5243111, 0, 3, 5243112, 0, 196610, 5243113, 0, 196613, 5308609, 0, 0, 5308610, 0, 196611, 5308611, 0, 196611, 5308612, 0, 2, 5308613, 0, 0, 5308614, 0, 0, 5308629, 0, 0, 5308630, 0, 131075, 5308647, 0, 0, 5308648, 0, 0, 5308649, 0, 196613, 5374141, 0, 5, 5374142, 0, 0, 5374184, 0, 0, 5374185, 0, 196608, 5439675, 0, 5, 5439676, 0, 1, 5439677, 0, 131073, 5439678, 0, 4, 5439728, 0, 0, 5505211, 0, 3, 5505212, 0, 65542, 5505213, 0, 131072, 5505214, 0, 0, 5505243, 0, 5, 5505244, 0, 0, 5505264, 0, 0, 5505265, 0, 196612, 5505266, 0, 0, 5505283, 0, 0, 5505284, 0, 0, 5505285, 0, 0, 5570747, 0, 0, 5570748, 0, 2, 5570749, 0, 131075, 5570779, 0, 3, 5570780, 0, 131076, 5570781, 0, 0, 5570799, 0, 5, 5570800, 0, 196614, 5570801, 0, 196611, 5570802, 0, 196608, 5570820, 0, 3, 5570821, 0, 196609, 5570822, 0, 0, 5636315, 0, 3, 5636316, 0, 65542, 5636317, 0, 131076, 5636318, 0, 0, 5636335, 0, 0, 5636336, 0, 196608, 5636356, 0, 0, 5636357, 0, 0, 5636358, 0, 196613, 5636360, 0, 65536, 5636361, 0, 1, 5636362, 0, 0, 5701824, 0, 0, 5701851, 0, 3, 5701852, 0, 65542, 5701853, 0, 65542, 5701854, 0, 4, 5701893, 0, 3, 5701894, 0, 4, 5701896, 0, 3, 5701897, 0, 65542, 5701898, 0, 131078, 5701899, 0, 0, 5767360, 0, 0, 5767363, 0, 0, 5767387, 0, 3, 5767388, 0, 196610, 5767389, 0, 65542, 5767390, 0, 196613, 5767429, 0, 3, 5767430, 0, 4, 5767432, 0, 0, 5767433, 0, 2, 5767434, 0, 196611, 5767435, 0, 0, 5832896, 0, 0, 5832897, 0, 1, 5832898, 0, 7, 5832899, 0, 0, 5832900, 0, 0, 5832923, 0, 3, 5832924, 0, 65542, 5832925, 0, 196610, 5832926, 0, 196613, 5832965, 0, 0, 5832966, 0, 0, 5832971, 0, 0, 5832972, 0, 0, 5898432, 0, 3, 5898433, 0, 131072, 5898434, 0, 196611, 5898435, 0, 0, 5898436, 0, 196609, 5898437, 0, 0, 5898458, 0, 0, 5898459, 0, 0, 5898460, 0, 65542, 5898461, 0, 196610, 5898462, 0, 131076, 5898463, 0, 0, 5898500, 0, 65536, 5898501, 0, 0, 5898503, 0, 5, 5898504, 0, 1, 5898505, 0, 0, 5898507, 0, 3, 5898508, 0, 4, 5963967, 0, 5, 5963968, 0, 131074, 5963969, 0, 196613, 5963971, 0, 3, 5963972, 0, 131072, 5963973, 0, 0, 5963995, 0, 0, 5963996, 0, 2, 5963997, 0, 0, 5963998, 0, 196610, 5963999, 0, 4, 5964036, 0, 3, 5964037, 0, 196613, 5964039, 0, 0, 5964040, 0, 196611, 5964041, 0, 0, 5964042, 0, 0, 5964043, 0, 0, 5964044, 0, 196608, 6029502, 0, 65536, 6029503, 0, 65539, 6029504, 0, 65542, 6029505, 0, 196609, 6029506, 0, 196612, 6029507, 0, 131074, 6029508, 0, 196613, 6029526, 0, 65536, 6029527, 0, 0, 6029529, 0, 0, 6029531, 0, 0, 6029533, 0, 3, 6029534, 0, 65542, 6029535, 0, 196613, 6029572, 0, 3, 6029573, 0, 131078, 6029574, 0, 0, 6095038, 0, 3, 6095039, 0, 196610, 6095040, 0, 65542, 6095041, 0, 196610, 6095042, 0, 65543, 6095043, 0, 2, 6095044, 0, 0, 6095062, 0, 0, 6095063, 0, 196615, 6095064, 0, 196612, 6095065, 0, 0, 6095067, 0, 0, 6095068, 0, 0, 6095069, 0, 131073, 6095070, 0, 196610, 6095071, 0, 4, 6095105, 0, 0, 6095108, 0, 0, 6095109, 0, 0, 6095110, 0, 196608, 6160573, 0, 0, 6160574, 0, 0, 6160575, 0, 0, 6160576, 0, 65542, 6160577, 0, 65541, 6160578, 0, 196608, 6160580, 0, 0, 6160599, 0, 0, 6160600, 0, 0, 6160601, 0, 196608, 6160604, 0, 3, 6160605, 0, 65542, 6160606, 0, 65542, 6160607, 0, 4, 6160641, 0, 0, 6160642, 0, 196612, 6160643, 0, 0, 6160645, 0, 0, 6226109, 0, 0, 6226111, 0, 3, 6226112, 0, 65542, 6226113, 0, 4, 6226115, 0, 0, 6226120, 0, 65536, 6226121, 0, 0, 6226136, 0, 0, 6226140, 0, 0, 6226141, 0, 0, 6226142, 0, 65543, 6226143, 0, 196608, 6226176, 0, 5, 6226177, 0, 196614, 6226178, 0, 2, 6226179, 0, 196608, 6226186, 0, 0, 6291647, 0, 0, 6291648, 0, 2, 6291649, 0, 0, 6291650, 0, 0, 6291656, 0, 0, 6291657, 0, 196608, 6291677, 0, 0, 6291678, 0, 0, 6291712, 0, 0, 6291713, 0, 0, 6291716, 0, 65536, 6291717, 0, 0, 6291720, 0, 5, 6291721, 0, 7, 6291722, 0, 0, 6357213, 0, 0, 6357251, 0, 0, 6357252, 0, 0, 6357253, 0, 196608, 6357255, 0, 5, 6357256, 0, 131073, 6357257, 0, 196610, 6357258, 0, 4, 6422733, 0, 5, 6422734, 0, 1, 6422735, 0, 0, 6422791, 0, 0, 6422792, 0, 0, 6422793, 0, 196610, 6422794, 0, 131078, 6422795, 0, 0, 6488237, 0, 0, 6488238, 0, 0, 6488239, 0, 0, 6488240, 0, 0, 6488268, 0, 0, 6488269, 0, 0, 6488270, 0, 196610, 6488271, 0, 131076, 6488272, 0, 196612, 6488273, 0, 0, 6488328, 0, 0, 6488329, 0, 0, 6488330, 0, 65542, 6488331, 0, 196613, 6553772, 0, 65536, 6553773, 0, 0, 6553776, 0, 0, 6553777, 0, 0, 6553805, 0, 3, 6553806, 0, 65542, 6553807, 0, 65542, 6553808, 0, 65542, 6553809, 0, 0, 6553810, 0, 0, 6553824, 0, 5, 6553825, 0, 0, 6553865, 0, 0, 6553866, 0, 196611, 6553867, 0, 196608, 6619308, 0, 3, 6619309, 0, 131078, 6619310, 0, 196612, 6619311, 0, 7, 6619312, 0, 65539, 6619313, 0, 4, 6619325, 0, 0, 6619340, 0, 0, 6619341, 0, 0, 6619342, 0, 65543, 6619343, 0, 2, 6619344, 0, 2, 6619345, 0, 131075, 6619359, 0, 65536, 6619360, 0, 65539, 6619361, 0, 196609, 6619362, 0, 0, 6684844, 0, 3, 6684845, 0, 65542, 6684846, 0, 65542, 6684847, 0, 196610, 6684848, 0, 65542, 6684849, 0, 4, 6684855, 0, 65536, 6684856, 0, 0, 6684858, 0, 0, 6684860, 0, 0, 6684861, 0, 0, 6684877, 0, 0, 6684878, 0, 0, 6684895, 0, 3, 6684896, 0, 196610, 6684897, 0, 196610, 6684898, 0, 196613, 6684929, 0, 5, 6684930, 0, 0, 6750380, 0, 3, 6750381, 0, 131072, 6750382, 0, 2, 6750383, 0, 0, 6750384, 0, 131072, 6750385, 0, 131075, 6750389, 0, 65536, 6750390, 0, 0, 6750391, 0, 0, 6750392, 0, 0, 6750394, 0, 0, 6750395, 0, 0, 6750396, 0, 0, 6750414, 0, 0, 6750431, 0, 0, 6750432, 0, 0, 6750433, 0, 196610, 6750434, 0, 4, 6750465, 0, 3, 6750466, 0, 4, 6815915, 0, 5, 6815916, 0, 131074, 6815917, 0, 4, 6815919, 0, 0, 6815920, 0, 196608, 6815924, 0, 65536, 6815925, 0, 65540, 6815926, 0, 196613, 6815928, 0, 0, 6815929, 0, 1, 6815930, 0, 196614, 6815931, 0, 196608, 6815968, 0, 3, 6815969, 0, 65543, 6815970, 0, 0, 6815971, 0, 0, 6816001, 0, 0, 6816002, 0, 196608, 6881450, 0, 65536, 6881451, 0, 65540, 6881452, 0, 196610, 6881453, 0, 131076, 6881454, 0, 0, 6881455, 0, 0, 6881459, 0, 5, 6881460, 0, 65539, 6881461, 0, 196610, 6881462, 0, 131078, 6881463, 0, 7, 6881464, 0, 196614, 6881465, 0, 196611, 6881466, 0, 0, 6881504, 0, 0, 6881505, 0, 131075, 6881535, 0, 5, 6881536, 0, 1, 6881537, 0, 0, 6946986, 0, 0, 6946987, 0, 2, 6946988, 0, 196611, 6946989, 0, 2, 6946990, 0, 196608, 6946995, 0, 0, 6946996, 0, 2, 6946997, 0, 2, 6946998, 0, 0, 6946999, 0, 196610, 6947000, 0, 4, 6947002, 0, 0, 6947037, 0, 65536, 6947038, 0, 7, 6947039, 0, 0, 6947071, 0, 3, 6947072, 0, 65542, 6947073, 0, 131078, 6947074, 0, 0, 7012522, 0, 0, 7012531, 0, 0, 7012534, 0, 3, 7012535, 0, 65543, 7012536, 0, 131075, 7012538, 0, 0, 7012572, 0, 65536, 7012573, 0, 65540, 7012574, 0, 65542, 7012575, 0, 131076, 7012576, 0, 0, 7012607, 0, 3, 7012608, 0, 65542, 7012609, 0, 65541, 7012610, 0, 0, 7078066, 0, 5, 7078067, 0, 0, 7078068, 0, 1, 7078069, 0, 1, 7078070, 0, 196614, 7078071, 0, 196608, 7078108, 0, 3, 7078109, 0, 65542, 7078110, 0, 196610, 7078111, 0, 65542, 7078112, 0, 196613, 7078141, 0, 5, 7078142, 0, 1, 7078143, 0, 65538, 7078144, 0, 65542, 7078145, 0, 4, 7143602, 0, 3, 7143603, 0, 196610, 7143604, 0, 196610, 7143605, 0, 65542, 7143606, 0, 196613, 7143640, 0, 5, 7143641, 0, 0, 7143644, 0, 3, 7143645, 0, 65542, 7143646, 0, 196610, 7143647, 0, 196610, 7143648, 0, 196613, 7143677, 0, 0, 7143678, 0, 196611, 7143679, 0, 0, 7143680, 0, 65542, 7143681, 0, 4, 7209134, 0, 65536, 7209135, 0, 196612, 7209136, 0, 0, 7209138, 0, 3, 7209139, 0, 65542, 7209140, 0, 65541, 7209141, 0, 196611, 7209142, 0, 0, 7209176, 0, 3, 7209177, 0, 4, 7209180, 0, 0, 7209181, 0, 0, 7209182, 0, 196610, 7209183, 0, 65541, 7209184, 0, 131075, 7209215, 0, 0, 7209216, 0, 196611, 7209217, 0, 0, 7274667, 0, 0, 7274670, 0, 3, 7274671, 0, 65542, 7274672, 0, 4, 7274674, 0, 3, 7274675, 0, 65542, 7274676, 0, 4, 7274678, 0, 0, 7274712, 0, 0, 7274713, 0, 0, 7274717, 0, 0, 7274718, 0, 196611, 7274719, 0, 196608, 7274748, 0, 5, 7274749, 0, 1, 7274750, 0, 0, 7340203, 0, 0, 7340205, 0, 0, 7340206, 0, 0, 7340207, 0, 0, 7340208, 0, 196608, 7340210, 0, 3, 7340211, 0, 196610, 7340212, 0, 4, 7340214, 0, 0, 7340220, 0, 65536, 7340221, 0, 0, 7340283, 0, 5, 7340284, 0, 131074, 7340285, 0, 196610, 7340286, 0, 196613, 7405739, 0, 0, 7405740, 0, 196612, 7405741, 0, 0, 7405743, 0, 0, 7405746, 0, 0, 7405747, 0, 0, 7405748, 0, 196609, 7405749, 0, 0, 7405750, 0, 0, 7405756, 0, 0, 7405757, 0, 0, 7405819, 0, 3, 7405820, 0, 65542, 7405821, 0, 196610, 7405822, 0, 196613, 7471274, 0, 65536, 7471275, 0, 65540, 7471276, 0, 65542, 7471277, 0, 131076, 7471278, 0, 0, 7471280, 0, 0, 7471281, 0, 0, 7471283, 0, 3, 7471284, 0, 196610, 7471285, 0, 196613, 7471330, 0, 0, 7471355, 0, 0, 7471356, 0, 196611, 7471357, 0, 196611, 7471358, 0, 131075, 7536810, 0, 3, 7536811, 0, 196610, 7536812, 0, 65542, 7536813, 0, 65542, 7536814, 0, 131076, 7536815, 0, 0, 7536818, 0, 5, 7536819, 0, 196614, 7536820, 0, 196611, 7536821, 0, 0, 7536866, 0, 0, 7602346, 0, 3, 7602347, 0, 65542, 7602348, 0, 196610, 7602349, 0, 196610, 7602350, 0, 65542, 7602351, 0, 4, 7602354, 0, 0, 7602355, 0, 196608, 7602400, 0, 65536, 7602401, 0, 1, 7602402, 0, 0, 7667882, 0, 0, 7667883, 0, 196611, 7667884, 0, 0, 7667885, 0, 131072, 7667886, 0, 196611, 7667887, 0, 0, 7667888, 0, 0, 7667909, 0, 0, 7667910, 0, 0, 7667936, 0, 0, 7667937, 0, 0, 7667938, 0, 196613, 7733420, 0, 0, 7733421, 0, 0, 7733430, 0, 0, 7733443, 0, 65536, 7733444, 0, 7, 7733445, 0, 0, 7733447, 0, 0, 7733473, 0, 3, 7733474, 0, 196609, 7733475, 0, 1, 7733476, 0, 0, 7798962, 0, 0, 7798964, 0, 65536, 7798965, 0, 196612, 7798966, 0, 0, 7798979, 0, 3, 7798980, 0, 196610, 7798981, 0, 131076, 7798982, 0, 0, 7798984, 0, 0, 7799009, 0, 3, 7799010, 0, 65542, 7799011, 0, 131072, 7799012, 0, 196608, 7864498, 0, 0, 7864499, 0, 196612, 7864500, 0, 65540, 7864501, 0, 65542, 7864502, 0, 4, 7864514, 0, 0, 7864515, 0, 0, 7864516, 0, 196610, 7864517, 0, 65542, 7864518, 0, 196609, 7864519, 0, 1, 7864520, 0, 0, 7864521, 0, 0, 7864545, 0, 0, 7864546, 0, 2, 7864547, 0, 131075, 7930033, 0, 5, 7930034, 0, 131074, 7930035, 0, 65542, 7930036, 0, 196610, 7930037, 0, 65542, 7930038, 0, 4, 7930051, 0, 0, 7930052, 0, 196611, 7930053, 0, 0, 7930054, 0, 65542, 7930055, 0, 65542, 7930056, 0, 65542, 7930057, 0, 4, 7995568, 0, 0, 7995569, 0, 0, 7995570, 0, 0, 7995571, 0, 65542, 7995572, 0, 196610, 7995573, 0, 65541, 7995574, 0, 0, 7995589, 0, 3, 7995590, 0, 196610, 7995591, 0, 65542, 7995592, 0, 131072, 7995593, 0, 131075, 8061106, 0, 0, 8061107, 0, 0, 8061108, 0, 196610, 8061109, 0, 196613, 8061124, 0, 0, 8061125, 0, 0, 8061126, 0, 196611, 8061127, 0, 196611, 8061128, 0, 196608, 8061180, 0, 5, 8061181, 0, 196612, 8061182, 0, 0, 8126643, 0, 0, 8126644, 0, 2, 8126645, 0, 0, 8126716, 0, 3, 8126717, 0, 196610, 8126718, 0, 4, 8192181, 0, 0, 8192222, 0, 5, 8192223, 0, 196612, 8192224, 0, 0, 8192244, 0, 5, 8192245, 0, 7, 8192246, 0, 0, 8192252, 0, 3, 8192253, 0, 196610, 8192254, 0, 196609, 8192255, 0, 0, 8257758, 0, 0, 8257759, 0, 0, 8257760, 0, 196609, 8257761, 0, 0, 8257780, 0, 3, 8257781, 0, 196610, 8257782, 0, 196613, 8257787, 0, 65536, 8257788, 0, 131074, 8257789, 0, 196610, 8257790, 0, 65542, 8257791, 0, 4, 8323295, 0, 0, 8323296, 0, 2, 8323297, 0, 0, 8323316, 0, 3, 8323317, 0, 196610, 8323318, 0, 196613, 8323322, 0, 65536, 8323323, 0, 65540, 8323324, 0, 65542, 8323325, 0, 65543, 8323326, 0, 2, 8323327, 0, 131075, 8388852, 0, 0, 8388853, 0, 0, 8388854, 0, 0, 8388855, 0, 0, 8388858, 0, 0, 8388859, 0, 0, 8388860, 0, 65542, 8388861, 0, 196613, 8454389, 0, 0, 8454390, 0, 196608, 8454395, 0, 0, 8454396, 0, 196611, 8454397, 0, 196608, 9568465, 0, 5, 9568466, 0, 196612, 9568467, 0, 0, 9634001, 0, 3, 9634002, 0, 65543, 9634003, 0, 196608, 9699537, 0, 0, 9699538, 0, 0, 9765062, 0, 65536, 9765063, 0, 0, 9765064, 0, 0, 9765074, 0, 0, 9830576, 0, 0, 9830583, 0, 65536, 9830584, 0, 1, 9830585, 0, 0, 9830597, 0, 5, 9830598, 0, 131073, 9830599, 0, 4, 9896110, 0, 5, 9896111, 0, 196612, 9896112, 0, 0, 9896118, 0, 5, 9896119, 0, 131074, 9896120, 0, 196610, 9896121, 0, 196609, 9896122, 0, 0, 9896132, 0, 5, 9896133, 0, 131074, 9896134, 0, 65541, 9896135, 0, 196608, 9896147, 0, 0, 9896148, 0, 0, 9961644, 0, 5, 9961645, 0, 1, 9961646, 0, 65539, 9961647, 0, 65542, 9961648, 0, 131076, 9961649, 0, 196612, 9961650, 0, 0, 9961653, 0, 0, 9961654, 0, 0, 9961655, 0, 0, 9961656, 0, 196610, 9961657, 0, 65543, 9961658, 0, 131075, 9961668, 0, 0, 9961669, 0, 2, 9961670, 0, 196608, 9961682, 0, 0, 9961683, 0, 0, 10027180, 0, 0, 10027181, 0, 0, 10027182, 0, 196610, 10027183, 0, 65542, 10027184, 0, 65542, 10027185, 0, 65543, 10027186, 0, 196608, 10027191, 0, 3, 10027192, 0, 65543, 10027193, 0, 0, 10027212, 0, 0, 10027216, 0, 65536, 10027217, 0, 196612, 10027218, 0, 0, 10027220, 0, 65536, 10027221, 0, 196612, 10027222, 0, 0, 10092717, 0, 3, 10092718, 0, 65542, 10092719, 0, 196610, 10092720, 0, 65543, 10092721, 0, 196608, 10092727, 0, 0, 10092728, 0, 131075, 10092748, 0, 0, 10092749, 0, 196612, 10092750, 0, 196612, 10092751, 0, 196612, 10092752, 0, 131074, 10092753, 0, 65542, 10092754, 0, 131078, 10092755, 0, 7, 10092756, 0, 65539, 10092757, 0, 65542, 10092758, 0, 4, 10158251, 0, 0, 10158252, 0, 0, 10158253, 0, 0, 10158254, 0, 0, 10158255, 0, 131072, 10158256, 0, 0, 10158283, 0, 0, 10158284, 0, 0, 10158285, 0, 196611, 10158286, 0, 2, 10158287, 0, 2, 10158288, 0, 0, 10158289, 0, 65541, 10158290, 0, 2, 10158291, 0, 0, 10158292, 0, 196610, 10158293, 0, 131072, 10158294, 0, 131075, 10223782, 0, 5, 10223783, 0, 0, 10223790, 0, 0, 10223791, 0, 131075, 10223820, 0, 0, 10223824, 0, 0, 10223825, 0, 131075, 10223827, 0, 0, 10223828, 0, 196611, 10223829, 0, 196608, 10289318, 0, 3, 10289319, 0, 196613, 10289324, 0, 5, 10289325, 0, 1, 10289326, 0, 0, 10354853, 0, 5, 10354854, 0, 65538, 10354855, 0, 4, 10354858, 0, 65536, 10354859, 0, 1, 10354860, 0, 131073, 10354861, 0, 65542, 10354862, 0, 196613, 10354888, 0, 5, 10354889, 0, 0, 10420388, 0, 0, 10420389, 0, 0, 10420390, 0, 196611, 10420391, 0, 0, 10420392, 0, 0, 10420393, 0, 0, 10420394, 0, 131073, 10420395, 0, 196610, 10420396, 0, 196610, 10420397, 0, 131072, 10420398, 0, 131075, 10420424, 0, 0, 10420425, 0, 196608, 10485923, 0, 0, 10485924, 0, 0, 10485929, 0, 0, 10485930, 0, 196611, 10485931, 0, 2, 10485932, 0, 0, 10485933, 0, 196613, 10485958, 0, 5, 10485959, 0, 196612, 10485960, 0, 0, 10551468, 0, 0, 10551469, 0, 0, 10551494, 0, 0, 10551495, 0, 2, 10551496, 0, 0 )
 
 [node name="TallGrass" type="TileMap" parent="OutsideYSort"]
 material = ExtResource( 12 )
@@ -1633,7 +3915,7 @@ centered_textures = true
 collision_layer = 32
 collision_mask = 32
 format = 1
-tile_data = PoolIntArray( -1179620, 0, 0, -1179619, 2, 0, -1179618, 0, 0, -1179617, 0, 0, -1179616, 0, 0, -1179615, 0, 0, -1179614, 3, 0, -1114084, 0, 0, -1114083, 3, 0, -1114082, 0, 0, -1114081, 1, 0, -1114080, 0, 0, -1114079, 3, 0, -1114078, 2, 0, -1048548, 0, 0, -1048547, 0, 0, -1048546, 1, 0, -1048545, 3, 0, -1048544, 0, 0, -1048543, 0, 0, -1048542, 3, 0, -983012, 1, 0, -983011, 3, 0, -983010, 2, 0, -983009, 0, 0, -983008, 0, 0, -983007, 1, 0, -917476, 0, 0, -917475, 0, 0, -917474, 2, 0, -917473, 0, 0, -917472, 2, 0, -917471, 1, 0, -851939, 3, 0, -851938, 0, 0, -851937, 3, 0, -655326, 1, 0, -589790, 3, 0, -589785, 3, 0, -589784, 3, 0, -524255, 0, 0, -524254, 1, 0, -524248, 0, 0, -458719, 3, 0, -458712, 1, 0, -458711, 0, 0, -393176, 3, 0, -393175, 0, 0, -327640, 0, 0, -327639, 3, 0, -262110, 2, 0, -262106, 0, 0, -262104, 1, 0, -262103, 0, 0, -196574, 1, 0, -131047, 1, 0, -131038, 3, 0, -131034, 1, 0, -131032, 3, 0, -131031, 3, 0, -65511, 1, 0, -65498, 1, 0, -65497, 2, 0, -65496, 2, 0, -65495, 3, 0, 25, 1, 0, 39, 1, 0, 40, 1, 0, 41, 2, 0, 262184, 3, 0, 262185, 0, 0, 327710, 0, 0, 327714, 3, 0, 327721, 2, 0, 393246, 1, 0, 393247, 3, 0, 393248, 2, 0, 393249, 1, 0, 393250, 0, 0, 393258, 2, 0, 458782, 1, 0, 458783, 1, 0, 458785, 3, 0, 458786, 1, 0, 458793, 2, 0, 524318, 1, 0, 524319, 1, 0, 524322, 3, 0, 589862, 0, 0, 589863, 2, 0, 589864, 3, 0, 589865, 1, 0, 655389, 0, 0, 655398, 1, 0, 655399, 0, 0, 720925, 1, 0, 720926, 3, 0, 720927, 3, 0, 720928, 2, 0, 720929, 1, 0, 720930, 3, 0, 917554, 0, 0, 983090, 0, 0, 983092, 0, 0, 983093, 0, 0, 983096, 0, 0, 983097, 3, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048631, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1114160, 0, 0, 1114161, 0, 0, 1114164, 0, 0, 1114165, 0, 0, 1114166, 0, 0, 1114168, 0, 0, 1114169, 3, 0, 1179696, 0, 0, 1179698, 0, 0, 1179699, 0, 0, 1179700, 3, 0, 1179701, 2, 0, 1179702, 3, 0, 1179703, 0, 0, 1179705, 0, 0, 1179706, 0, 0, 1245231, 0, 0, 1245232, 0, 0, 1245233, 0, 0, 1245234, 0, 0, 1245236, 3, 0, 1245237, 0, 0, 1245241, 1, 0, 1245242, 1, 0, 1245243, 1, 0, 1310767, 0, 0, 1310768, 0, 0, 1310769, 0, 0, 1310770, 0, 0, 1310772, 3, 0, 1310773, 2, 0, 1310778, 1, 0, 1310779, 1, 0, 1376302, 0, 0, 1376303, 0, 0, 1376304, 0, 0, 1376305, 2, 0, 1376306, 0, 0, 1376307, 0, 0, 1376308, 1, 0, 1376309, 1, 0, 1376310, 0, 0, 1376315, 1, 0, 1376316, 1, 0, 1376319, 0, 0, 1376320, 0, 0, 1441838, 0, 0, 1441839, 0, 0, 1441840, 0, 0, 1441841, 3, 0, 1441842, 1, 0, 1441844, 1, 0, 1441846, 0, 0, 1441856, 0, 0, 1507374, 0, 0, 1507375, 0, 0, 1507376, 3, 0, 1507377, 3, 0, 1507378, 1, 0, 1507380, 1, 0, 1507382, 2, 0, 1507391, 2, 0, 1507392, 3, 0, 1572906, 1, 0, 1572907, 1, 0, 1572908, 1, 0, 1572909, 1, 0, 1572910, 3, 0, 1572911, 0, 0, 1572913, 1, 0, 1572914, 1, 0, 1572916, 1, 0, 1572917, 0, 0, 1572918, 2, 0, 1572919, 0, 0, 1572928, 3, 0, 1638442, 1, 0, 1638443, 1, 0, 1638444, 2, 0, 1638445, 3, 0, 1638446, 3, 0, 1638447, 2, 0, 1638449, 1, 0, 1638450, 1, 0, 1638451, 1, 0, 1638452, 1, 0, 1638454, 2, 0, 1638455, 1, 0, 1638463, 0, 0, 1638464, 3, 0, 1703977, 1, 0, 1703978, 1, 0, 1703979, 2, 0, 1703980, 3, 0, 1703981, 3, 0, 1703982, 3, 0, 1703985, 1, 0, 1703986, 1, 0, 1703987, 1, 0, 1703989, 3, 0, 1703990, 2, 0, 1703991, 0, 0, 1703992, 0, 0, 1703999, 2, 0, 1704000, 2, 0, 1769513, 1, 0, 1769514, 3, 0, 1769515, 2, 0, 1769516, 1, 0, 1769517, 1, 0, 1769519, 3, 0, 1769521, 1, 0, 1769522, 2, 0, 1769523, 2, 0, 1769527, 0, 0, 1769528, 0, 0, 1769534, 0, 0, 1769535, 0, 0, 1769536, 0, 0, 1835049, 1, 0, 1835050, 2, 0, 1835051, 2, 0, 1835052, 2, 0, 1835053, 1, 0, 1835054, 1, 0, 1835055, 1, 0, 1835056, 1, 0, 1835057, 1, 0, 1835058, 0, 0, 1835063, 1, 0, 1835064, 1, 0, 1835070, 0, 0, 1900587, 1, 0, 1900588, 3, 0, 1900589, 1, 0, 1900592, 1, 0, 1900593, 1, 0, 1900599, 2, 0, 1900600, 1, 0, 1900604, 0, 0, 1900605, 2, 0, 1900606, 0, 0, 1966123, 1, 0, 1966124, 1, 0, 1966125, 1, 0, 1966126, 1, 0, 1966127, 1, 0, 1966128, 1, 0, 1966129, 1, 0, 1966130, 1, 0, 1966135, 2, 0, 1966136, 1, 0, 1966140, 0, 0, 1966141, 2, 0, 1966142, 0, 0, 2031660, 1, 0, 2031661, 1, 0, 2031662, 1, 0, 2031672, 1, 0, 2031676, 0, 0, 2031677, 2, 0, 2031678, 2, 0, 2031679, 3, 0, 2359338, 3, 0, 2359339, 3, 0, 2359340, 3, 0, 2359347, 0, 0, 2359348, 2, 0, 2424872, 3, 0, 2424873, 3, 0, 2424874, 3, 0, 2424876, 3, 0, 2424877, 3, 0, 2424880, 0, 0, 2424881, 2, 0, 2424882, 2, 0, 2424883, 2, 0, 2424884, 2, 0, 2490408, 3, 0, 2490409, 3, 0, 2490410, 3, 0, 2490411, 3, 0, 2490412, 2, 0, 2490417, 2, 0, 2490418, 3, 0, 2490419, 0, 0, 2555943, 3, 0, 2555944, 3, 0, 2555945, 3, 0, 2555946, 2, 0, 2555953, 0, 0 )
+tile_data = PoolIntArray( -1179620, 0, 0, -1179619, 2, 0, -1179618, 0, 0, -1179617, 0, 0, -1179616, 0, 0, -1179615, 0, 0, -1179614, 3, 0, -1114084, 0, 0, -1114083, 3, 0, -1114082, 0, 0, -1114081, 1, 0, -1114080, 0, 0, -1114079, 3, 0, -1114078, 2, 0, -1048548, 0, 0, -1048547, 0, 0, -1048546, 1, 0, -1048545, 3, 0, -1048544, 0, 0, -1048543, 0, 0, -1048542, 3, 0, -983012, 1, 0, -983011, 3, 0, -983010, 2, 0, -983009, 0, 0, -983008, 0, 0, -983007, 1, 0, -917476, 0, 0, -917475, 0, 0, -917474, 2, 0, -917473, 0, 0, -917472, 2, 0, -917471, 1, 0, -851939, 3, 0, -851938, 0, 0, -851937, 3, 0, -655326, 1, 0, -589790, 3, 0, -589785, 3, 0, -589784, 3, 0, -524255, 0, 0, -524254, 1, 0, -524248, 0, 0, -458719, 3, 0, -458712, 1, 0, -458711, 0, 0, -393176, 3, 0, -393175, 0, 0, -327640, 0, 0, -327639, 3, 0, -262110, 2, 0, -262106, 0, 0, -262104, 1, 0, -262103, 0, 0, -196574, 1, 0, -131047, 1, 0, -131038, 3, 0, -131034, 1, 0, -131032, 3, 0, -131031, 3, 0, -65511, 1, 0, -65498, 1, 0, -65497, 2, 0, -65496, 2, 0, -65495, 3, 0, 25, 1, 0, 39, 1, 0, 40, 1, 0, 41, 2, 0, 262184, 3, 0, 262185, 0, 0, 327710, 0, 0, 327714, 3, 0, 327721, 2, 0, 393246, 1, 0, 393247, 3, 0, 393248, 2, 0, 393249, 1, 0, 393250, 0, 0, 393258, 2, 0, 458782, 1, 0, 458783, 1, 0, 458785, 3, 0, 458786, 1, 0, 458793, 2, 0, 524318, 1, 0, 524319, 1, 0, 524322, 3, 0, 589863, 2, 0, 589864, 3, 0, 589865, 1, 0, 655389, 0, 0, 655399, 3, 0, 720925, 1, 0, 720926, 3, 0, 720927, 3, 0, 720928, 2, 0, 720929, 1, 0, 720930, 3, 0, 720934, 2, 0, 852006, 3, 0, 917542, 2, 0, 917554, 0, 0, 983090, 0, 0, 983092, 0, 0, 983093, 0, 0, 983096, 0, 0, 983097, 3, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048631, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1114160, 0, 0, 1114161, 0, 0, 1114164, 0, 0, 1114165, 0, 0, 1114166, 0, 0, 1114168, 0, 0, 1114169, 3, 0, 1179696, 0, 0, 1179698, 0, 0, 1179699, 0, 0, 1179700, 3, 0, 1179701, 2, 0, 1179702, 3, 0, 1179703, 0, 0, 1179705, 0, 0, 1179706, 0, 0, 1245231, 0, 0, 1245232, 0, 0, 1245233, 0, 0, 1245234, 0, 0, 1245236, 3, 0, 1245237, 0, 0, 1245241, 1, 0, 1245242, 1, 0, 1245243, 1, 0, 1310767, 0, 0, 1310768, 0, 0, 1310769, 0, 0, 1310770, 0, 0, 1310772, 3, 0, 1310773, 2, 0, 1310778, 1, 0, 1310779, 1, 0, 1376302, 0, 0, 1376303, 0, 0, 1376304, 0, 0, 1376305, 2, 0, 1376306, 0, 0, 1376307, 0, 0, 1376308, 1, 0, 1376309, 1, 0, 1376310, 0, 0, 1376315, 1, 0, 1376316, 1, 0, 1376319, 0, 0, 1376320, 0, 0, 1441838, 0, 0, 1441839, 0, 0, 1441840, 0, 0, 1441841, 3, 0, 1441842, 1, 0, 1441844, 1, 0, 1441846, 0, 0, 1441856, 0, 0, 1507374, 0, 0, 1507375, 0, 0, 1507376, 3, 0, 1507377, 3, 0, 1507378, 1, 0, 1507380, 1, 0, 1507382, 2, 0, 1507391, 2, 0, 1507392, 3, 0, 1572906, 1, 0, 1572907, 1, 0, 1572908, 1, 0, 1572909, 1, 0, 1572910, 3, 0, 1572911, 0, 0, 1572913, 1, 0, 1572914, 1, 0, 1572916, 1, 0, 1572917, 0, 0, 1572918, 2, 0, 1572919, 0, 0, 1572928, 3, 0, 1638442, 1, 0, 1638443, 1, 0, 1638444, 2, 0, 1638445, 3, 0, 1638446, 3, 0, 1638447, 2, 0, 1638449, 1, 0, 1638450, 1, 0, 1638451, 1, 0, 1638452, 1, 0, 1638454, 2, 0, 1638455, 1, 0, 1638463, 0, 0, 1638464, 3, 0, 1703977, 1, 0, 1703978, 1, 0, 1703979, 2, 0, 1703980, 3, 0, 1703981, 3, 0, 1703982, 3, 0, 1703985, 1, 0, 1703986, 1, 0, 1703987, 1, 0, 1703989, 3, 0, 1703990, 2, 0, 1703991, 0, 0, 1703992, 0, 0, 1703999, 2, 0, 1704000, 2, 0, 1769513, 1, 0, 1769514, 3, 0, 1769515, 2, 0, 1769516, 1, 0, 1769517, 1, 0, 1769519, 3, 0, 1769521, 1, 0, 1769522, 2, 0, 1769523, 2, 0, 1769527, 0, 0, 1769528, 0, 0, 1769534, 0, 0, 1769535, 0, 0, 1769536, 0, 0, 1835049, 1, 0, 1835050, 2, 0, 1835051, 2, 0, 1835052, 2, 0, 1835053, 1, 0, 1835054, 1, 0, 1835055, 1, 0, 1835056, 1, 0, 1835057, 1, 0, 1835058, 0, 0, 1835063, 1, 0, 1835064, 1, 0, 1835070, 0, 0, 1900587, 1, 0, 1900588, 3, 0, 1900589, 1, 0, 1900592, 1, 0, 1900593, 1, 0, 1900599, 2, 0, 1900600, 1, 0, 1900604, 0, 0, 1900605, 2, 0, 1900606, 0, 0, 1966123, 1, 0, 1966124, 1, 0, 1966125, 1, 0, 1966126, 1, 0, 1966127, 1, 0, 1966128, 1, 0, 1966129, 1, 0, 1966130, 1, 0, 1966135, 2, 0, 1966136, 1, 0, 1966140, 0, 0, 1966141, 2, 0, 1966142, 0, 0, 2031660, 1, 0, 2031661, 1, 0, 2031662, 1, 0, 2031672, 1, 0, 2031676, 0, 0, 2031677, 2, 0, 2031678, 2, 0, 2031679, 3, 0, 2359338, 3, 0, 2359339, 3, 0, 2359340, 3, 0, 2359347, 0, 0, 2359348, 2, 0, 2424872, 3, 0, 2424873, 3, 0, 2424874, 3, 0, 2424876, 3, 0, 2424877, 3, 0, 2424880, 0, 0, 2424881, 2, 0, 2424882, 2, 0, 2424883, 2, 0, 2424884, 2, 0, 2490408, 3, 0, 2490409, 3, 0, 2490410, 3, 0, 2490411, 3, 0, 2490412, 2, 0, 2490417, 2, 0, 2490418, 3, 0, 2490419, 0, 0, 2555943, 3, 0, 2555944, 3, 0, 2555945, 3, 0, 2555946, 2, 0, 2555953, 0, 0 )
 
 [node name="GuardsPosition" parent="OutsideYSort" instance=ExtResource( 22 )]
 
@@ -1691,529 +3973,856 @@ position = Vector2( 1074, 1602 )
 [node name="Straws" type="YSort" parent="OutsideYSort"]
 
 [node name="SingleStraw" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 67 )
 position = Vector2( 1103, 816 )
 
 [node name="SingleStraw34" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 68 )
 position = Vector2( 591, 1195 )
 
 [node name="SingleStraw35" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 69 )
 position = Vector2( 599, 1167 )
 
 [node name="SingleStraw36" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 70 )
 position = Vector2( 549, 1145 )
 
 [node name="SingleStraw37" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 71 )
 position = Vector2( 576, 1124 )
 
 [node name="SingleStraw38" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 72 )
 position = Vector2( 487, 1169 )
 
 [node name="SingleStraw39" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 73 )
 position = Vector2( 469, 1157 )
 
 [node name="SingleStraw40" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 74 )
 position = Vector2( 487, 1145 )
 
 [node name="SingleStraw41" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 75 )
 position = Vector2( 987, 1197 )
 
 [node name="SingleStraw42" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 76 )
 position = Vector2( 999, 1197 )
 
 [node name="SingleStraw43" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 77 )
 position = Vector2( 1022, 1197 )
 
 [node name="SingleStraw44" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 78 )
 position = Vector2( 1077, 1186 )
 
 [node name="SingleStraw45" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 79 )
 position = Vector2( 1134, 1162 )
 
 [node name="SingleStraw46" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 80 )
 position = Vector2( 1170, 1140 )
 
 [node name="SingleStraw47" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 81 )
 position = Vector2( 1144, 1125 )
 
 [node name="SingleStraw48" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 82 )
 position = Vector2( 1108, 1146 )
 
 [node name="SingleStraw49" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 83 )
 position = Vector2( 1144, 1191 )
 
 [node name="SingleStraw50" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 84 )
 position = Vector2( 1227, 1226 )
 
 [node name="SingleStraw51" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 85 )
 position = Vector2( 1201, 1212 )
 
 [node name="SingleStraw52" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 86 )
 position = Vector2( 1104, 1197 )
 
 [node name="SingleStraw53" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 87 )
 position = Vector2( 1072, 1194 )
 
 [node name="SingleStraw54" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 88 )
 position = Vector2( 894, 1334 )
 
 [node name="SingleStraw55" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 89 )
 position = Vector2( 869, 1319 )
 
 [node name="SingleStraw56" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 90 )
 position = Vector2( 932, 1312 )
 
 [node name="SingleStraw57" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 91 )
 position = Vector2( 811, 1440 )
 
 [node name="SingleStraw58" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 92 )
 position = Vector2( 828, 1426 )
 
 [node name="SingleStraw59" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 93 )
 position = Vector2( 811, 1429 )
 
 [node name="SingleStraw60" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 94 )
 position = Vector2( 771, 1424 )
 
 [node name="SingleStraw61" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 95 )
 position = Vector2( 755, 1414 )
 
 [node name="SingleStraw69" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 96 )
 position = Vector2( 767, 1414 )
 
 [node name="SingleStraw70" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 97 )
 position = Vector2( 883, 1388 )
 
 [node name="SingleStraw71" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 98 )
 position = Vector2( 836, 1400 )
 
 [node name="SingleStraw72" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 99 )
 position = Vector2( 904, 1337 )
 
 [node name="SingleStraw73" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 100 )
 position = Vector2( 936, 1316 )
 
 [node name="SingleStraw74" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 101 )
 position = Vector2( 981, 1322 )
 
 [node name="SingleStraw75" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 102 )
 position = Vector2( 1001, 1314 )
 
 [node name="SingleStraw76" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 103 )
 position = Vector2( 960, 1322 )
 
 [node name="SingleStraw77" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 104 )
 position = Vector2( 1003, 1277 )
 
 [node name="SingleStraw78" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 105 )
 position = Vector2( 1018, 1264 )
 
 [node name="SingleStraw79" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 106 )
 position = Vector2( 1050, 1258 )
 
 [node name="SingleStraw80" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 107 )
 position = Vector2( 998, 1254 )
 
 [node name="SingleStraw81" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 108 )
 position = Vector2( 1082, 1226 )
 
 [node name="SingleStraw82" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 109 )
 position = Vector2( 1038, 1205 )
 
 [node name="SingleStraw83" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 110 )
 position = Vector2( 1209, 1264 )
 
 [node name="SingleStraw84" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 111 )
 position = Vector2( 1225, 1251 )
 
 [node name="SingleStraw85" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 112 )
 position = Vector2( 1197, 1252 )
 
 [node name="SingleStraw86" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 113 )
 position = Vector2( 1203, 1319 )
 
 [node name="SingleStraw87" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 114 )
 position = Vector2( 1222, 1319 )
 
 [node name="SingleStraw88" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 115 )
 position = Vector2( 1251, 1304 )
 
 [node name="SingleStraw89" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 116 )
 position = Vector2( 1263, 1313 )
 
 [node name="SingleStraw90" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 117 )
 position = Vector2( 1251, 1341 )
 
 [node name="SingleStraw91" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 118 )
 position = Vector2( 1263, 1337 )
 
 [node name="SingleStraw92" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 119 )
 position = Vector2( 1309, 1437 )
 
 [node name="SingleStraw93" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 120 )
 position = Vector2( 1334, 1424 )
 
 [node name="SingleStraw94" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 121 )
 position = Vector2( 1360, 1414 )
 
 [node name="SingleStraw95" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 122 )
 position = Vector2( 1384, 1402 )
 
 [node name="SingleStraw96" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 123 )
 position = Vector2( 1400, 1393 )
 
 [node name="SingleStraw97" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 124 )
 position = Vector2( 1400, 1385 )
 
 [node name="SingleStraw98" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 125 )
 position = Vector2( 1416, 1388 )
 
 [node name="SingleStraw99" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 126 )
 position = Vector2( 1340, 1429 )
 
 [node name="SingleStraw100" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 127 )
 position = Vector2( 1365, 1425 )
 
 [node name="SingleStraw101" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 128 )
 position = Vector2( 1373, 1411 )
 
 [node name="SingleStraw102" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 129 )
 position = Vector2( 1385, 1421 )
 
 [node name="SingleStraw103" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 130 )
 position = Vector2( 1428, 1419 )
 
 [node name="SingleStraw104" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 131 )
 position = Vector2( 1336, 1469 )
 
 [node name="SingleStraw105" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 132 )
 position = Vector2( 1360, 1461 )
 
 [node name="SingleStraw106" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 133 )
 position = Vector2( 1320, 1469 )
 
 [node name="SingleStraw107" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 134 )
 position = Vector2( 1338, 1455 )
 
 [node name="SingleStraw108" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 135 )
 position = Vector2( 1321, 1449 )
 
 [node name="SingleStraw109" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 136 )
 position = Vector2( 1134, 1482 )
 
 [node name="SingleStraw110" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 137 )
 position = Vector2( 1109, 1476 )
 
 [node name="SingleStraw111" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 138 )
 position = Vector2( 1126, 1458 )
 
 [node name="SingleStraw112" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 139 )
 position = Vector2( 1206, 1468 )
 
 [node name="SingleStraw113" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 140 )
 position = Vector2( 1224, 1455 )
 
 [node name="SingleStraw114" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 141 )
 position = Vector2( 1210, 1445 )
 
 [node name="SingleStraw115" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 142 )
 position = Vector2( 1178, 1463 )
 
 [node name="SingleStraw116" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 143 )
 position = Vector2( 465, 1482 )
 
 [node name="SingleStraw117" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 144 )
 position = Vector2( 487, 1455 )
 
 [node name="SingleStraw118" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 145 )
 position = Vector2( 501, 1431 )
 
 [node name="SingleStraw119" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 146 )
 position = Vector2( 522, 1432 )
 
 [node name="SingleStraw120" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 147 )
 position = Vector2( 305, 1445 )
 
 [node name="SingleStraw121" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 148 )
 position = Vector2( 356, 1440 )
 
 [node name="SingleStraw122" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 149 )
 position = Vector2( 392, 1445 )
 
 [node name="SingleStraw123" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 150 )
 position = Vector2( 424, 1460 )
 
 [node name="SingleStraw124" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 151 )
 position = Vector2( 343, 1404 )
 
 [node name="SingleStraw125" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 152 )
 position = Vector2( 514, 1421 )
 
 [node name="SingleStraw126" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 153 )
 position = Vector2( 414, 1407 )
 
 [node name="SingleStraw127" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 154 )
 position = Vector2( 424, 1409 )
 
 [node name="SingleStraw128" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 155 )
 position = Vector2( 427, 1402 )
 
 [node name="SingleStraw129" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 156 )
 position = Vector2( 419, 1398 )
 
 [node name="SingleStraw130" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 157 )
 position = Vector2( 277, 1357 )
 
 [node name="SingleStraw131" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 158 )
 position = Vector2( 245, 1365 )
 
 [node name="SingleStraw132" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 159 )
 position = Vector2( 261, 1354 )
 
 [node name="SingleStraw133" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 160 )
 position = Vector2( 149, 1330 )
 
 [node name="SingleStraw134" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 161 )
 position = Vector2( 185, 1320 )
 
 [node name="SingleStraw135" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 162 )
 position = Vector2( 218, 1317 )
 
 [node name="SingleStraw136" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 163 )
 position = Vector2( 285, 1318 )
 
 [node name="SingleStraw137" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 164 )
 position = Vector2( 277, 1307 )
 
 [node name="SingleStraw138" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 165 )
 position = Vector2( 93, 1316 )
 
 [node name="SingleStraw139" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 166 )
 position = Vector2( 101, 1326 )
 
 [node name="SingleStraw140" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 167 )
 position = Vector2( 123, 1319 )
 
 [node name="SingleStraw141" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 168 )
 position = Vector2( 93, 1335 )
 
 [node name="SingleStraw142" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 169 )
 position = Vector2( 78, 1318 )
 
 [node name="SingleStraw143" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 170 )
 position = Vector2( 445, 1216 )
 
 [node name="SingleStraw144" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 171 )
 position = Vector2( 457, 1221 )
 
 [node name="SingleStraw145" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 172 )
 position = Vector2( 432, 1222 )
 
 [node name="SingleStraw146" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 173 )
 position = Vector2( 8, 1294 )
 
 [node name="SingleStraw147" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 174 )
 position = Vector2( 8, 1304 )
 
 [node name="SingleStraw148" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 175 )
 position = Vector2( 32, 1302 )
 
 [node name="SingleStraw149" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 176 )
 position = Vector2( 93, 1254 )
 
 [node name="SingleStraw150" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 177 )
 position = Vector2( 101, 1253 )
 
 [node name="SingleStraw151" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 178 )
 position = Vector2( 85, 1261 )
 
 [node name="SingleStraw152" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 179 )
 position = Vector2( 167, 1251 )
 
 [node name="SingleStraw153" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 180 )
 position = Vector2( 159, 1258 )
 
 [node name="SingleStraw154" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 181 )
 position = Vector2( 167, 1256 )
 
 [node name="SingleStraw155" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 182 )
 position = Vector2( 157, 1246 )
 
 [node name="SingleStraw156" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 183 )
 position = Vector2( 149, 1250 )
 
 [node name="SingleStraw157" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 184 )
 position = Vector2( 123, 1268 )
 
 [node name="SingleStraw158" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 185 )
 position = Vector2( 131, 1285 )
 
 [node name="SingleStraw159" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 186 )
 position = Vector2( 229, 1301 )
 
 [node name="SingleStraw160" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 187 )
 position = Vector2( 63, 1285 )
 
 [node name="SingleStraw161" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 188 )
 position = Vector2( 821, 1145 )
 
 [node name="SingleStraw162" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 189 )
 position = Vector2( 779, 1137 )
 
 [node name="SingleStraw163" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 190 )
 position = Vector2( 905, 1088 )
 
 [node name="SingleStraw164" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 191 )
 position = Vector2( 864, 1103 )
 
 [node name="SingleStraw165" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 192 )
 position = Vector2( 779, 1115 )
 
 [node name="SingleStraw166" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 193 )
 position = Vector2( 710, 1150 )
 
 [node name="SingleStraw167" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 194 )
 position = Vector2( 868, 1156 )
 
 [node name="SingleStraw168" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 195 )
 position = Vector2( 917, 1132 )
 
 [node name="SingleStraw169" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 196 )
 position = Vector2( 951, 1139 )
 
 [node name="SingleStraw170" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 197 )
 position = Vector2( 637, 1127 )
 
 [node name="SingleStraw171" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 198 )
 position = Vector2( 671, 1141 )
 
 [node name="SingleStraw172" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 199 )
 position = Vector2( 1124, 1067 )
 
 [node name="SingleStraw173" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 200 )
 position = Vector2( 1186, 1100 )
 
 [node name="SingleStraw174" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 201 )
 position = Vector2( 445, 1115 )
 
 [node name="SingleStraw175" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 202 )
 position = Vector2( 509, 1111 )
 
 [node name="SingleStraw62" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 203 )
 position = Vector2( 928, 1499 )
 
 [node name="SingleStraw63" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 204 )
 position = Vector2( 1007, 1572 )
 
 [node name="SingleStraw64" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 205 )
 position = Vector2( 1007, 1572 )
 
 [node name="SingleStraw65" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 206 )
 position = Vector2( 1015, 1565 )
 
 [node name="SingleStraw66" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 207 )
 position = Vector2( 1015, 1573 )
 
 [node name="SingleStraw67" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 208 )
 position = Vector2( 1026, 1566 )
 
 [node name="SingleStraw68" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 209 )
 position = Vector2( 1004, 1563 )
 
 [node name="SingleStraw2" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 210 )
 position = Vector2( 1088, 808 )
 
 [node name="SingleStraw3" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 211 )
 position = Vector2( 1101, 831 )
 
 [node name="SingleStraw4" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 212 )
 position = Vector2( 1094, 818 )
 
 [node name="SingleStraw5" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 213 )
 position = Vector2( 1111, 796 )
 
 [node name="SingleStraw27" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 214 )
 position = Vector2( 1093, 802 )
 
 [node name="SingleStraw28" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 215 )
 position = Vector2( 1101, 807 )
 
 [node name="SingleStraw29" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 216 )
 position = Vector2( 1115, 771 )
 
 [node name="SingleStraw30" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 217 )
 position = Vector2( 1178, 766 )
 
 [node name="SingleStraw31" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 218 )
 position = Vector2( 1189, 766 )
 
 [node name="SingleStraw32" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 219 )
 position = Vector2( 1162, 787 )
 
 [node name="SingleStraw33" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 220 )
 position = Vector2( 1162, 781 )
 
 [node name="SingleStraw10" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
-position = Vector2( 1059, 574 )
+material = SubResource( 221 )
+position = Vector2( 1057, 569 )
+
+[node name="SingleStraw186" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 899, 685 )
+
+[node name="SingleStraw187" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 953, 764 )
+
+[node name="SingleStraw189" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 830, 824 )
+
+[node name="SingleStraw191" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 870, 830 )
+
+[node name="SingleStraw192" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 900, 828 )
+
+[node name="SingleStraw193" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 962, 817 )
+
+[node name="SingleStraw194" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1021, 841 )
+
+[node name="SingleStraw195" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1073, 818 )
+
+[node name="SingleStraw196" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 904, 792 )
+
+[node name="SingleStraw197" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 953, 785 )
+
+[node name="SingleStraw190" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 740, 865 )
+
+[node name="SingleStraw198" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 792, 865 )
+
+[node name="SingleStraw199" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 807, 854 )
+
+[node name="SingleStraw200" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 757, 869 )
+
+[node name="SingleStraw188" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 943, 766 )
+
+[node name="SingleStraw176" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1222, 660 )
+
+[node name="SingleStraw177" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1264, 680 )
+
+[node name="SingleStraw178" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1479, 788 )
+
+[node name="SingleStraw179" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1505, 800 )
+
+[node name="SingleStraw180" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1380, 835 )
+
+[node name="SingleStraw181" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1370, 837 )
+
+[node name="SingleStraw182" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1396, 850 )
+
+[node name="SingleStraw183" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1444, 869 )
+
+[node name="SingleStraw184" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1434, 865 )
+
+[node name="SingleStraw185" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 221 )
+position = Vector2( 1154, 713 )
 
 [node name="SingleStraw11" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 222 )
 position = Vector2( 1069, 567 )
 
 [node name="SingleStraw12" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 223 )
 position = Vector2( 1077, 571 )
 
 [node name="SingleStraw13" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 224 )
 position = Vector2( 1002, 544 )
 
 [node name="SingleStraw14" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 225 )
 position = Vector2( 1013, 542 )
 
 [node name="SingleStraw15" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 226 )
 position = Vector2( 995, 539 )
 
 [node name="SingleStraw16" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 227 )
 position = Vector2( 970, 521 )
 
 [node name="SingleStraw17" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 228 )
 position = Vector2( 1228, 634 )
 
 [node name="SingleStraw18" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 229 )
 position = Vector2( 1220, 634 )
 
 [node name="SingleStraw19" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 230 )
 position = Vector2( 1206, 649 )
 
 [node name="SingleStraw20" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 231 )
 position = Vector2( 1214, 649 )
 
 [node name="SingleStraw21" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 232 )
 position = Vector2( 1208, 631 )
 
 [node name="SingleStraw22" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 233 )
 position = Vector2( 1204, 640 )
 
 [node name="SingleStraw23" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 234 )
 position = Vector2( 1214, 640 )
 
 [node name="SingleStraw24" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 235 )
 position = Vector2( 1220, 646 )
 
 [node name="SingleStraw25" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 236 )
 position = Vector2( 1216, 641 )
 
 [node name="SingleStraw26" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 237 )
 position = Vector2( 1224, 635 )
 
 [node name="SingleStraw7" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 238 )
 position = Vector2( 945, 643 )
 
-[node name="SingleStraw8" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
-position = Vector2( 960, 649 )
-
 [node name="SingleStraw9" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 240 )
 position = Vector2( 944, 635 )
 
 [node name="SingleStraw6" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 241 )
 position = Vector2( 1154, 725 )
+
+[node name="Straw" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 242 )
+position = Vector2( 760, 411 )
+texture = ExtResource( 26 )
+hframes = 1
+vframes = 1
+
+[node name="Straw7" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 242 )
+position = Vector2( 959, 529 )
+texture = ExtResource( 26 )
+hframes = 1
+vframes = 1
+
+[node name="Straw8" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 242 )
+position = Vector2( 932, 670 )
+texture = ExtResource( 26 )
+hframes = 1
+vframes = 1
+
+[node name="Straw2" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 242 )
+position = Vector2( 1038, 549 )
+texture = ExtResource( 26 )
+hframes = 1
+vframes = 1
+
+[node name="Straw3" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 242 )
+position = Vector2( 1104, 560 )
+texture = ExtResource( 26 )
+hframes = 1
+vframes = 1
+
+[node name="Straw4" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 242 )
+position = Vector2( 1237, 665 )
+texture = ExtResource( 26 )
+hframes = 1
+vframes = 1
+
+[node name="Straw5" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 242 )
+position = Vector2( 1515, 804 )
+texture = ExtResource( 26 )
+hframes = 1
+vframes = 1
+
+[node name="Straw6" parent="OutsideYSort/Straws" instance=ExtResource( 41 )]
+material = SubResource( 242 )
+position = Vector2( 1411, 851 )
+texture = ExtResource( 26 )
+hframes = 1
+vframes = 1
 
 [node name="Barrels" type="YSort" parent="OutsideYSort"]
 

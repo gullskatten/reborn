@@ -304,10 +304,16 @@ margin_right = -1870.0
 margin_bottom = -1039.0
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_right = 3840.0
+margin_bottom = 2160.0
 mouse_filter = 1
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 3840, 2160 )
+size = Vector2( 1920, 1080 )
 transparent_bg = true
 handle_input_locally = false
 usage = 0
@@ -327,8 +333,8 @@ environment = ExtResource( 8 )
 [node name="IntroVillageScene" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
 
 [node name="Effects" type="Control" parent="."]
-margin_right = 3840.0
-margin_bottom = 2160.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 
 [node name="FPS" parent="Effects" instance=ExtResource( 15 )]
 anchor_left = 0.031
@@ -364,10 +370,8 @@ material = SubResource( 19 )
 visible = true
 
 [node name="ScreenTransition" parent="Effects" instance=ExtResource( 2 )]
-margin_left = -5.0
-margin_top = -5.0
-margin_right = 3835.0
-margin_bottom = 2155.0
+margin_right = 3840.0
+margin_bottom = 2160.0
 
 [node name="Mosaic" type="Sprite" parent="Effects"]
 visible = false

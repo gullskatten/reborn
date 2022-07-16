@@ -37,7 +37,6 @@ func zoom_out():
 		if next_zoom == MAX_ZOOM:
 			print("Max zoom reached")
 			emit_signal("max_zoom_level_changed", true)
-		print(next_zoom)
 		set_zoom_level(next_zoom)
 	
 func zoom_in():
@@ -51,9 +50,9 @@ func zoom_in():
 			set_zoom_level(next_zoom)
 		else: 
 			next_zoom -= ZOOM_FACTOR
-			print(next_zoom)
 			if is_zero_approx(next_zoom.x) || next_zoom < Vector2.ZERO:
 				set_zoom_level(MIN_ZOOM)
+				print("Min zoom reached")
 			else: 
 				set_zoom_level(next_zoom)
 	else:

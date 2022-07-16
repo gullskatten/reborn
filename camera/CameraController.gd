@@ -11,6 +11,11 @@ func _ready():
 	GlobalCameraSettings.connect("forced_camera_position_changed", self, "_on_force_update_position")
 	
 func set_camera_zoom(zoom):
+	
+	if zoom == GlobalCameraSettings.MIN_ZOOM:
+		camera.offset = Vector2(-20, -40)
+	else:
+		camera.offset = Vector2(-10, -10)
 	if(!is_zero_approx(zoom.x) && !is_zero_approx(zoom.y)):
 		camera.zoom = zoom
 
