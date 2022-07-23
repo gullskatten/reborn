@@ -6,8 +6,6 @@ onready var cameraPosition = $CameraController/CameraPosition
 onready var deepWaterCollision = $Water/DeepWater
 
 var cameraFollowNode : RemoteTransform2D = RemoteTransform2D.new()
-		
-
 	
 func _ready():
 	for dock in get_tree().get_nodes_in_group("Dock"):

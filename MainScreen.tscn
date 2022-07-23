@@ -308,12 +308,9 @@ margin_right = 3840.0
 margin_bottom = 2160.0
 mouse_filter = 1
 stretch = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 1920, 1080 )
+size = Vector2( 3840, 2160 )
 transparent_bg = true
 handle_input_locally = false
 usage = 0

@@ -1,12 +1,8 @@
 extends Node
 
-signal teleport(position)
 signal request_move_node(id, node)
 
 var registered_points : Dictionary = {}
-
-func _ready():
-	pass # Replace with function body.
 
 func register_local_point(id: String, position: Vector2):
 	registered_points[id] = position

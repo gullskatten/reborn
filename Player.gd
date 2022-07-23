@@ -30,11 +30,7 @@ func _ready():
 	emit_signal("initial_position", global_position)
 	GlobalCameraSettings.connect("enable_movement", self, "enable_movement")
 	GlobalCameraSettings.connect("disable_movement", self, "disable_movement")
-	SceneTransitionManager.connect("teleport", self, "teleport")
 	blink()
-	
-func teleport(position: Vector2):
-	global_position = position
 
 func enable_movement():
 	allowed_movement = true

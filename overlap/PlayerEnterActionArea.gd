@@ -27,7 +27,7 @@ func _physics_process(delta):
 		hide_hint_button()
 		emit_signal("action_pressed")
 
-func _on_PlayerHintArea_body_entered(body):
+func _on_PlayerHintArea_body_entered(_body):
 	if is_scene_trigger:
 		for trigger in scene_triggers:
 			CutSceneManager.attemptTrigger(trigger)
@@ -39,7 +39,7 @@ func _on_PlayerHintArea_body_entered(body):
 	tween.start()
 	hint.visible = true
 
-func _on_PlayerHintArea_body_exited(body):
+func _on_PlayerHintArea_body_exited(_body):
 	should_hide = true
 	hide_hint_button()
 

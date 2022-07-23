@@ -14,7 +14,7 @@ var stats : Dictionary = {
 	
 }
 var stacksize := 1
-var sell_price := 0
+var sell_price := 1
 
 # Declare member variables here. Examples:
 # var a = 2

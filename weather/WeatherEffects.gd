@@ -30,7 +30,7 @@ func update_weather(cycle):
 	current_iteration = 0
 	wanted_iterations = int(rand_range(1, MAX_ITERATIONS))
 	
-	var current_weather = get_random_weather()
+	current_weather = get_random_weather()
 	
 	match current_weather:
 		WeatherType.SUN:

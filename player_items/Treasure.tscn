@@ -528,9 +528,6 @@ process_material = SubResource( 3 )
 
 [node name="PlayerEnterActionArea" parent="." instance=ExtResource( 4 )]
 
-[node name="CollisionShape2D" parent="PlayerEnterActionArea/PlayerHintArea" index="0"]
-visible = false
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

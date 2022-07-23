@@ -14,6 +14,7 @@ func _on_PlayerEnterActionArea_action_pressed():
 	if !is_opened:
 		animationPlayer.play("Open")
 		is_opened = true
+		
 		var chest_items = [
 		"1", "3", "5", "9",
 		"2", "6", "10", "9",

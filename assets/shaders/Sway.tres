@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=243]
 code = "// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
 // original script modified by HungryProton so that the assets are moving differently : https://pastebin.com/VL3AfV8D
 //
@@ -52,13 +52,13 @@ void vertex() {
 
 [resource]
 resource_local_to_scene = true
-shader = SubResource( 1 )
+shader = SubResource( 243 )
 shader_param/speed = 1.0
-shader_param/minStrength = 0.072
-shader_param/maxStrength = 0.032
-shader_param/strengthScale = 100.0
-shader_param/interval = 3.5
-shader_param/detail = 0.5
-shader_param/distortion = 0.107
-shader_param/heightOffset = 0.782
+shader_param/minStrength = 0.03
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 80.0
+shader_param/interval = 10.0
+shader_param/detail = 1.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = 0.0
 shader_param/offset = 2.0
