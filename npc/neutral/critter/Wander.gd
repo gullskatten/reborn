@@ -2,7 +2,6 @@ extends CritterState
 
 func enter(_msg := {}) -> void:
 	critter.animationState.travel("Run")
-	critter.emoteLabel.visible = false
 
 func update(delta: float) -> void:
 	if critter.wanderController.get_time_left() == 0:

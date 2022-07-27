@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/props/village/blacksmith/stove.png" type="Texture" id=1]
+[ext_resource path="res://environment/Smoke.tscn" type="PackedScene" id=2]
+[ext_resource path="res://structures/props/light/AnimatedLight.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 33, 43 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 33, 0, 33, 43 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 66, 0, 33, 43 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 99, 0, 33, 43 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 5.59951
+
+[node name="Stove" type="StaticBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+playing = true
+
+[node name="Smoke" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4, -12 )
+
+[node name="AnimatedLight" parent="." instance=ExtResource( 3 )]
+position = Vector2( -3, 8 )
+color = Color( 0.980392, 0.74902, 0.623529, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 8 )
+rotation = -1.24093
+shape = SubResource( 6 )

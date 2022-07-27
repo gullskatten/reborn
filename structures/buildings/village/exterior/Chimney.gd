@@ -5,7 +5,7 @@ export(bool) var emitting := true
 
 
 func _ready():
-	$Particles2D.visible = emitting
-	$Particles2D.emitting = emitting
-	$Particles2D2.visible = emitting
-	$Particles2D2.emitting = emitting
+	$Smoke/Particles2D.visible = emitting
+	$Smoke/Particles2D.emitting = emitting
+	$Smoke/Particles2D2.visible = emitting
+	$Smoke/Particles2D2.emitting = emitting

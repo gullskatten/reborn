@@ -4,7 +4,7 @@
 [ext_resource path="res://ui/action_dialog/ButtonPressHint.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 26.0
+radius = 15.0
 
 [node name="PlayerEnterActionArea" type="Node2D"]
 script = ExtResource( 1 )

@@ -17,8 +17,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var state_machine = $States
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-onready var emoteLabel = $EmoteLabel
-onready var flee_timer = $FleeTimer
+onready var flee_timer := $FleeTimer
 
 export var steer_force = 0.2
 export var look_ahead = 20

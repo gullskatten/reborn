@@ -4,7 +4,6 @@ extends CritterState
 func enter(_msg := {}) -> void:
 	critter.velocity = Vector2.ZERO
 	critter.animationState.travel("Idle")
-	critter.emoteLabel.visible = false
 
 func update(delta: float) -> void:
 	critter.velocity = critter.velocity.move_toward(Vector2.ZERO, 	200 * delta)
