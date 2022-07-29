@@ -26,6 +26,10 @@ height = 13.799
 [node name="TavernGroundFloor" type="Node2D"]
 script = ExtResource( 16 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 191.5, -29.5 )
+scale = Vector2( 24.95, 18.05 )
+
 [node name="NoEnter" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
 cell_y_sort = true
@@ -147,6 +151,8 @@ position = Vector2( 423, 112 )
 rotation = 1.1973
 shape = SubResource( 2 )
 
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="action_pressed" from="YSort/PlayerEnterActionArea" to="." method="_on_PlayerEnterActionArea_action_pressed"]
 [connection signal="body_entered" from="YSort/PlayerEnterActionArea/PlayerHintArea" to="." method="_on_PlayerHintArea_body_entered"]
 [connection signal="body_exited" from="YSort/PlayerEnterActionArea/PlayerHintArea" to="." method="_on_PlayerHintArea_body_exited"]

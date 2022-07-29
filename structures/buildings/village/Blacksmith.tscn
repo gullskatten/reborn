@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://structures/buildings/village/VillageTent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://structures/props/village/BlacksmithAnvil.tscn" type="PackedScene" id=2]
+[ext_resource path="res://structures/props/village/BlacksmithStove.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Torch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/buildings/village/houses/props/festive_lines.png" type="Texture" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.96105
+height = 1.96124
+
+[node name="Blacksmith" type="YSort"]
+
+[node name="Torch6" parent="." instance=ExtResource( 4 )]
+position = Vector2( -59.9999, 10.9999 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="FestiveLines7" type="Sprite" parent="."]
+position = Vector2( 35.0001, 7.9999 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+z_index = 1
+texture = ExtResource( 6 )
+offset = Vector2( 0, -19.9276 )
+vframes = 4
+frame = 3
+
+[node name="FestiveLines4" type="Sprite" parent="."]
+position = Vector2( -29.9999, 17.9999 )
+z_index = 1
+texture = ExtResource( 6 )
+offset = Vector2( -0.00012207, -29.9999 )
+vframes = 4
+frame = 1
+
+[node name="Torch5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 6.00012, 38.9999 )
+
+[node name="Anvil" parent="." instance=ExtResource( 2 )]
+position = Vector2( 47.0001, 40.9999 )
+
+[node name="Tent2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56.0001, -9.91821e-05 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Tent" parent="." instance=ExtResource( 1 )]
+position = Vector2( -45.9999, -9.91821e-05 )
+
+[node name="Stove" parent="." instance=ExtResource( 3 )]
+position = Vector2( 73.0001, 17.9999 )
+
+[node name="HideOffScreen" parent="." instance=ExtResource( 5 )]
+position = Vector2( 5, 7 )
+scale = Vector2( 4, 1.3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 5, 39 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -53, 16 )
+rotation = -1.5516
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 60, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 4, 0 )
+rotation = -1.5516
+shape = SubResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 36, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 4, 0 )
+rotation = -1.5516
+shape = SubResource( 2 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2( -32, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2( 4, 0 )
+rotation = -1.5516
+shape = SubResource( 2 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2( 1, 20 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( 4, 0 )
+rotation = -1.5516
+shape = SubResource( 2 )

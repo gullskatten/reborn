@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/buildings/village/houses/house_2.png" type="Texture" id=1]
 [ext_resource path="res://assets/buildings/village/houses/props/beer_sign.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://structures/props/light/AnimatedLight.tscn" type="PackedScene" id=11]
 [ext_resource path="res://structures/buildings/village/exterior/Chimney.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/music/props/tavern/Tavern_door_open.wav" type="AudioStream" id=13]
+[ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=14]
 
 [sub_resource type="OccluderPolygon2D" id=60]
 closed = false
@@ -334,7 +335,6 @@ radius = 9.0
 [sub_resource type="ConvexPolygonShape2D" id=57]
 
 [node name="VillageTavern" type="Node2D"]
-position = Vector2( -1, 0 )
 z_as_relative = false
 script = ExtResource( 7 )
 
@@ -467,6 +467,8 @@ polygon = PoolVector2Array( -86, -2, -88, -17, -89, -84, -34, -118, -4, -108, 10
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
+
+[node name="HideOffScreen" parent="." instance=ExtResource( 14 )]
 
 [connection signal="action_pressed" from="PlayerEnterActionArea" to="." method="_on_PlayerEnterActionArea_action_pressed"]
 [connection signal="body_entered" from="PlayerEnterActionArea/PlayerHintArea" to="." method="_on_PlayerHintArea_body_entered"]

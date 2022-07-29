@@ -120,6 +120,11 @@ _global_script_classes=[ {
 "path": "res://player/PlayerState.gd"
 }, {
 "base": "Node",
+"class": "Quest",
+"language": "GDScript",
+"path": "res://quest/Quest.gd"
+}, {
+"base": "Node",
 "class": "ResourceStats",
 "language": "GDScript",
 "path": "res://structures/ResourceStats.gd"
@@ -187,6 +192,7 @@ _global_script_class_icons={
 "MouseHome": "",
 "Player": "",
 "PlayerState": "",
+"Quest": "",
 "ResourceStats": "",
 "SceneLocalTeleportPoint": "",
 "State": "",

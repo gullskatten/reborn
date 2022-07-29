@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/buildings/village/houses/house_2.png" type="Texture" id=1]
 [ext_resource path="res://structures/buildings/village/exterior/Chimney.tscn" type="PackedScene" id=2]
 [ext_resource path="res://effects/ChangeOpacityArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://structures/buildings/village/exterior/WallLight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://structures/buildings/village/VillageHouseStaticLong.gd" type="Script" id=5]
+[ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 closed = false
@@ -12,7 +13,6 @@ polygon = PoolVector2Array( 94, 35, 93, -34, 95.8795, -33.6018, 96, -38, 93, -39
 
 [node name="House2" type="Node2D"]
 light_mask = 2
-position = Vector2( 680, 520 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 5 )
 
@@ -59,3 +59,7 @@ polygon = PoolVector2Array( -86, -2, -88, -17, -88.5736, -55.4297, -89, -84, -34
 
 [node name="Chimney" parent="." instance=ExtResource( 2 )]
 position = Vector2( -17, -63 )
+
+[node name="HideOffScreen" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1.99998, -9.99996 )
+scale = Vector2( 1.20002, 1.025 )

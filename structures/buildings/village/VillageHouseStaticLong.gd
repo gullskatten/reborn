@@ -10,8 +10,3 @@ extends Node2D
 func _ready():
 	randomize()
 	$Chimney.emitting = randi() % 2 == 0
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

@@ -42,7 +42,13 @@ collision_mask = 512
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerZone"]
 polygon = PoolVector2Array( -94, -17, -19, 21, -35, 46, -11, 59, 15, 37, 34, 46, 93, 17, 58, -1, -31, -49, -32, -56, -106, -19 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 2, 53.5 )
+scale = Vector2( 10.4, 6.35 )
+
 [connection signal="body_entered" from="PlayerZone" to="." method="_on_PlayerZone_body_entered"]
 [connection signal="body_exited" from="PlayerZone" to="." method="_on_PlayerZone_body_exited"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 [editable path="TargetButton"]

@@ -34,8 +34,11 @@ radius = 5.59951
 [node name="Stove" type="StaticBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -2 )
 frames = SubResource( 5 )
+frame = 3
 playing = true
+offset = Vector2( 0, 2 )
 
 [node name="Smoke" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4, -12 )
