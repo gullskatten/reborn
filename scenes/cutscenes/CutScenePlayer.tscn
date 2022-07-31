@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/cutscenes/CutScenePlayer.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=6]
+resource_name = "1.1"
+length = 4.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "1.1" ],
+"method": "start_cutscene"
+}, {
+"args": [ "1.1" ],
+"method": "end_cutscene"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+
+[node name="CutScene" type="AnimationPlayer"]
+root_node = NodePath("")
+anims/1.1 = SubResource( 6 )
+anims/RESET = SubResource( 5 )
+script = ExtResource( 1 )
+
+[connection signal="animation_finished" from="." to="." method="_on_CutScene_animation_finished"]
+[connection signal="animation_started" from="." to="." method="_on_CutScene_animation_started"]

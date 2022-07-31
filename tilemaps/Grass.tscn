@@ -148,8 +148,8 @@
 5/z_index = 0
 
 [node name="Ground" type="TileMap"]
-position = Vector2( -352, -184 )
 mode = 1
 tile_set = SubResource( 6 )
 cell_size = Vector2( 64, 32 )
+cell_y_sort = true
 format = 1

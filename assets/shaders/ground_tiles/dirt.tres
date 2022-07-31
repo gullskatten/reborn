@@ -18,5 +18,5 @@ noise = SubResource( 65 )
 [resource]
 shader = ExtResource( 1 )
 shader_param/pixelSize = 2
-shader_param/tint_color = Color( 0.270588, 0.137255, 0.0705882, 1 )
+shader_param/tint_color = Color( 0.686275, 0.694118, 0.521569, 1 )
 shader_param/noise = SubResource( 66 )

@@ -3,19 +3,18 @@
 [ext_resource path="res://assets/buildings/village/houses/exterior/stairs_1.png" type="Texture" id=1]
 
 [node name="Stairs" type="Sprite"]
-position = Vector2( 54.4242, 20.8262 )
+position = Vector2( -16, 18.5 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 1 )
-offset = Vector2( -0.589049, 9.21289 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 position = Vector2( -2.27579, 19.1638 )
-polygon = PoolVector2Array( 15.3, -15.89, 13.3, -15.89, -2.7, 0.110001, 3.3, 0.110001, 15.3, -5.89 )
+polygon = PoolVector2Array( 29.2758, -29.6638, 25.2758, -29.6638, -6.72421, 1.3362, 4.27579, 2.3362, 29.2758, -10.6638 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 position = Vector2( -2.27579, 19.1638 )
-polygon = PoolVector2Array( 2.3, -20.89, -12.7, -5.89, -11.7, -3.89, 2.3, -19.89 )
+polygon = PoolVector2Array( 3.27579, -41.6638, -24.7242, -11.6638, -24.7242, -6.6638, 5.27579, -39.6638 )

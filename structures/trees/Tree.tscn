@@ -24,7 +24,7 @@ height = 16.0
 radius = 11.0
 height = 22.0
 
-[node name="IslandTree" type="Node2D"]
+[node name="BirchTree" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

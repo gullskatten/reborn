@@ -23,5 +23,6 @@ func loadData(file_path):
 		
 		for attr in json_data.result[key]:
 			item[attr] = json_data.result[key][attr]
-			 
-	return json_data.result
+			items[item.id] = item
+			
+	return items

@@ -8,7 +8,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
+	fps_label.text = "FPS: " + str(Engine.get_frames_per_second()).pad_zeros(4)
 
 func _update_time_text():
 	time_label.text = Time.current_cycle_to_string() + " " + Time.current_time_string()

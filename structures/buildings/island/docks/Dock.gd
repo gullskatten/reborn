@@ -19,11 +19,3 @@ func _on_PlayerZone_body_entered(body):
 func _on_PlayerZone_body_exited(body):
 
 	emit_signal("deep_water_collision_on")
-
-
-func _on_VisibilityNotifier2D_screen_entered():
-	visible = true
-
-
-func _on_VisibilityNotifier2D_screen_exited():
-	visible = false

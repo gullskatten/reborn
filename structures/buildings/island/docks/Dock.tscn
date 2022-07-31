@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/buildings/avalon/dock/dock-level-1.png" type="Texture" id=1]
+[ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://structures/buildings/island/docks/Dock.gd" type="Script" id=3]
 [ext_resource path="res://target/TargetButton.tscn" type="PackedScene" id=4]
 
@@ -8,13 +9,13 @@
 script = ExtResource( 3 )
 
 [node name="Dock-level-1" type="Sprite" parent="."]
-position = Vector2( -123, 117 )
+position = Vector2( -129, 68 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( 0, -144 )
 
 [node name="Area2D" type="StaticBody2D" parent="."]
-position = Vector2( 1, 5 )
+position = Vector2( -5, -44 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -91, 27, -16, 64, -32, 88, -8, 102, 18, 80, 36, 89, 101, 58, 100, 79, 37, 111, 28, 107, 28, 91, 18, 87, -8, 112, -40, 96, -40, 86, -32, 82, -32, 77, -35.6079, 74.2482, -36, 59, -91, 32 )
@@ -23,10 +24,10 @@ polygon = PoolVector2Array( -91, 27, -16, 64, -32, 88, -8, 102, 18, 80, 36, 89, 
 polygon = PoolVector2Array( -26, -7, 100, 58, 96, 60, -29, -6 )
 
 [node name="TargetButton" parent="." instance=ExtResource( 4 )]
-margin_left = -86.0
-margin_top = 14.0
-margin_right = 94.0
-margin_bottom = 107.0
+margin_left = -92.0
+margin_top = -35.0
+margin_right = 88.0
+margin_bottom = 58.0
 
 [node name="TargetInfo" parent="TargetButton" index="0"]
 display_name = "Dock"
@@ -35,20 +36,17 @@ type = "Building"
 level = 1
 
 [node name="PlayerZone" type="Area2D" parent="."]
-position = Vector2( 6, 49 )
 collision_layer = 512
 collision_mask = 512
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerZone"]
 polygon = PoolVector2Array( -94, -17, -19, 21, -35, 46, -11, 59, 15, 37, 34, 46, 93, 17, 58, -1, -31, -49, -32, -56, -106, -19 )
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 2, 53.5 )
-scale = Vector2( 10.4, 6.35 )
+[node name="HideOffScreen" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, 4.76837e-07 )
+scale = Vector2( 2.9, 1.7 )
 
 [connection signal="body_entered" from="PlayerZone" to="." method="_on_PlayerZone_body_entered"]
 [connection signal="body_exited" from="PlayerZone" to="." method="_on_PlayerZone_body_exited"]
-[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 [editable path="TargetButton"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://structures/props/vegetation/SingleStraw.tscn" type="PackedScene" id=2]
+
+[node name="GrassClusterA" type="YSort"]
+
+[node name="Straw" parent="." instance=ExtResource( 2 )]
+
+[node name="Straw2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 10, -7 )
+
+[node name="Straw3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -28, -8 )
+
+[node name="Straw4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 17, 10 )
+
+[node name="HideOffScreen" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2.38419e-07, 0 )
+scale = Vector2( 0.7, 0.5 )

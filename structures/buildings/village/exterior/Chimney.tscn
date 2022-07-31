@@ -19,4 +19,4 @@ vframes = 3
 frame = 2
 
 [node name="Smoke" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, -1 )
+position = Vector2( 0, -8 )

@@ -1,0 +1,148 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/buildings/village/street/stone_fence.png" type="Texture" id=1]
+
+[sub_resource type="OccluderPolygon2D" id=20]
+polygon = PoolVector2Array( 1.1708, 1.25464, 6.41972, 1.92758, 9.78442, 5.0231, 16.5138, 6.63815, 22.3011, 9.59909, 27.9538, 14.0405, 32.799, 14.4442, 33.8757, 16.4631, 35, 20.5007 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 34.2525, 28.9228, 34.414, 31.0224, 32.9605, 33.6065, 0.0133362, 16.8099, 0.659363, 13.2568 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 33.122, 28.516, 34.414, 30.2925, 32.476, 33.0381, 0.0133362, 16.8711, 0.0133362, 14.6265, 0.820862, 13.173 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 0.174835, 12.7496, 33.768, 27.7696, 34.091, 31.6458, 30.5379, 32.6148, 0.174835, 16.4642 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 1.03621, 16.905, 0.767036, 9.50268, 33.3373, 24.9803, 34.1448, 30.633, 31.9914, 31.9789 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 0.767036, 16.9558, 1.03621, 8.88049, 33.4719, 26.1077, 33.6065, 29.3379, 31.5877, 31.3567 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 34.2794, 25.2164, 34.0103, 32.8879, 0.632446, 16.4682, 1.30539, 10.2771 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+points = PoolVector2Array( 33.768, 13.3622, 34.8985, 17.0768, 4.53549, 32.9044, 1.7899, 33.3889, 0.497849, 30.3203 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+points = PoolVector2Array( 31.9914, 13.2784, 32.476, 13.7628, 34.5755, 13.2784, 34.414, 17.639, 4.69699, 32.4975, 1.7899, 31.69, 0.982361, 29.1059 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+points = PoolVector2Array( 0.659363, 27.9924, 5.34302, 28.6385, 34.2525, 13.1339, 34.737, 16.8486, 4.85851, 32.0301, 1.30537, 31.5456 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+points = PoolVector2Array( 34.2525, 12.6277, 35, 17.7959, 4.53549, 32.9774, 1.9514, 32.9774, 0.497849, 32.1699, 0.336349, 27.1632 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+points = PoolVector2Array( 33.445, 11.7363, 34.5755, 13.3514, 34.5755, 17.2275, 3.72797, 32.2476, 1.46689, 30.471, 0.982361, 27.4024 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 34.414, 12.1834, 34.5755, 14.1215, 35, 17.1901, 3.72797, 33.0176, 1.14388, 32.3716, 0.0133362, 29.303 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "StoneFence"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 35, 408 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 35, 34 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [ Vector2( 0, 5 ), SubResource( 20 ) ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 14 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 5 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 6 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 21 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 7 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 22 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 8 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 23 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 9 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 24 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 10 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 25 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 11 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Fences" type="TileMap"]
+mode = 1
+tile_set = SubResource( 7 )
+cell_size = Vector2( 16, 8 )
+cell_quadrant_size = 8
+cell_tile_origin = 2
+cell_y_sort = true
+centered_textures = true
+format = 1

@@ -84,7 +84,7 @@ func add_item(new_item, item_quantity) -> bool:
 	slot_indices.sort()
 	
 	var has_added_to_quantity = false
-	var is_holding_left_overs = false
+	
 	for index in slot_indices:
 		if inventory[index][0]["id"] == new_item.id:
 			var stack_size = int(inventory[index][0]["stacksize"])
