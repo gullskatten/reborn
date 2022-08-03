@@ -352,6 +352,18 @@ centered = false
 offset = Vector2( -111, -188 )
 vframes = 4
 
+[node name="Shadow" type="Sprite" parent="Tavern"]
+modulate = Color( 0, 0, 0, 0.317647 )
+self_modulate = Color( 0.054902, 0.054902, 0.054902, 1 )
+show_behind_parent = true
+position = Vector2( 21.3856, 119.827 )
+rotation = 2.65814
+scale = Vector2( 0.8264, 1.18472 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -206.275, -37.8038 )
+vframes = 4
+
 [node name="Entrance" type="Sprite" parent="."]
 position = Vector2( 98.7801, 23 )
 rotation = -3.14159

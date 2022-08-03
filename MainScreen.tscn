@@ -365,6 +365,7 @@ visible = false
 
 [node name="PostFX" parent="Effects" instance=ExtResource( 14 )]
 material = SubResource( 19 )
+color2_day = Color( 0.67451, 0.552941, 0.498039, 1 )
 
 [node name="MaxZoomClouds" parent="Effects" instance=ExtResource( 3 )]
 visible = true

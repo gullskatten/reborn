@@ -19,7 +19,7 @@
 offsets = PoolRealArray( 0, 0.502941, 1 )
 colors = PoolColorArray( 0, 0, 0, 0.560784, 0.501961, 0.501961, 0.501961, 0.745098, 1, 1, 1, 0.0588235 )
 
-[sub_resource type="GradientTexture" id=56]
+[sub_resource type="GradientTexture" id=62]
 gradient = SubResource( 35 )
 
 [sub_resource type="ParticlesMaterial" id=34]
@@ -34,7 +34,7 @@ orbit_velocity_random = 0.0
 angle = -194.8
 scale = 2.0
 color = Color( 0.0862745, 0.0745098, 0.0352941, 0.658824 )
-color_ramp = SubResource( 56 )
+color_ramp = SubResource( 62 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "E"
@@ -5106,7 +5106,7 @@ anims/W = SubResource( 10 )
 tree_root = SubResource( 24 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 25 )
-parameters/Idle/blend_position = Vector2( 0, -0.00254452 )
+parameters/Idle/blend_position = Vector2( -0.000960588, 0 )
 parameters/Run/blend_position = Vector2( 0.00167227, -0.0127226 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

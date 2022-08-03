@@ -2,7 +2,6 @@ extends PlayerState
 
 func enter(_msg := {}) -> void:
 	player.animationState.travel("Run")
-	player.mount.animationState.travel("Run")
 	
 func _physics_process(_delta: float) -> void:
 	if !player.allowed_movement:
@@ -20,8 +19,6 @@ func _physics_process(_delta: float) -> void:
 			player.footsteps.visible = true
 			player.animationTree.set("parameters/Idle/blend_position", input_vector)
 			player.animationTree.set("parameters/Run/blend_position", input_vector)
-			player.mount.animationTree.set("parameters/Idle/blend_position", input_vector)
-			player.mount.animationTree.set("parameters/Run/blend_position", input_vector)
 			if ((input_vector.x != 0 && input_vector.y == 0) || (input_vector.y != 0 && input_vector.x == 0)):
 				player.velocity = player.velocity.move_toward(input_vector * local_speed, player.ACCELERATION)
 			if((input_vector.x > 0 && input_vector.y > 0) || (input_vector.x < 0 && input_vector.y < 0)):
