@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/buildings/village/houses/houses.png" type="Texture" id=1]
 [ext_resource path="res://structures/buildings/village/exterior/Chimney.tscn" type="PackedScene" id=2]
@@ -6,10 +6,87 @@
 [ext_resource path="res://structures/buildings/village/exterior/WallLight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://structures/buildings/village/VillageHouseStaticLong.gd" type="Script" id=5]
 [ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/buildings/village/houses/house_2.png" type="Texture" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 closed = false
-polygon = PoolVector2Array( 94, 35, 93, -34, 95.8795, -33.6018, 96, -38, 93, -39, 68, -65, 66, -65, -30, -113, -59, -100, -84, -73, -84, -1 )
+polygon = PoolVector2Array( 125, 61, 125, -29, 127, -29, 127, -35, 89, -72, -42, -137, -80, -118, -114, -80, -114, 13 )
+
+[sub_resource type="Shader" id=61]
+code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
+// License: MIT
+
+shader_type canvas_item;
+render_mode unshaded;
+
+// Camera FOV
+uniform float fov : hint_range(1, 179) = 90;
+uniform bool cull_back = true;
+uniform float y_rot : hint_range(-180, 180) = 0.0;
+uniform float x_rot : hint_range(-180, 180) = 0.0;
+// At 0, the image retains its size when unrotated.
+// At 1, the image is resized so that it can do a full
+// rotation without clipping inside its rect.
+uniform float inset : hint_range(0, 1) = 0.0;
+// Consider changing this to a uniform and changing it from code
+uniform vec2 rect_size;
+uniform float tang : hint_range(0,1) = 0.0;
+
+varying flat vec2 o;
+varying vec3 p;
+
+const float PI = 3.14159;
+
+// Creates rotation matrix
+void vertex(){
+	float sin_b = sin(y_rot / 180.0 * PI);
+	float cos_b = cos(y_rot / 180.0 * PI);
+	float sin_c = sin(x_rot / 180.0 * PI);
+	float cos_c = cos(x_rot / 180.0 * PI);
+	
+	mat3 inv_rot_mat;
+	inv_rot_mat[0][0] = cos_b;
+	inv_rot_mat[0][1] = 0.0;
+	inv_rot_mat[0][2] = -sin_b;
+	
+	inv_rot_mat[1][0] = sin_b * sin_c;
+	inv_rot_mat[1][1] = cos_c;
+	inv_rot_mat[1][2] = cos_b * sin_c;
+	
+	inv_rot_mat[2][0] = sin_b * cos_c;
+	inv_rot_mat[2][1] = -sin_c;
+	inv_rot_mat[2][2] = cos_b * cos_c;
+	
+	
+	float t = tan(fov / 360.0 * PI);
+	p = inv_rot_mat * vec3((UV - 0.5), 0.5 / t);
+	float v = (0.5 / t) + 0.5;
+	p.xy *= v * inv_rot_mat[2].z;
+	o = v * inv_rot_mat[2].xy;
+	
+	VERTEX += UV * rect_size * tang * (1.0 - inset);
+	//VERTEX += (UV - 0.5) / TEXTURE_PIXEL_SIZE * t * (1.0 - inset);
+}
+
+void fragment() {
+	
+	if (cull_back && p.z <= 0.0) discard;
+	vec2 uv = (p.xy / p.z).xy - o; 
+    COLOR = texture(TEXTURE, uv + 0.5);
+	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
+}"
+
+[sub_resource type="ShaderMaterial" id=62]
+resource_local_to_scene = true
+shader = SubResource( 61 )
+shader_param/fov = 1.0
+shader_param/cull_back = true
+shader_param/y_rot = -2.415
+shader_param/x_rot = -9.663
+shader_param/inset = 0.0
+shader_param/rect_size = Vector2( 50, 50 )
+shader_param/tang = 0.047
 
 [node name="House2" type="Node2D"]
 light_mask = 2
@@ -56,3 +133,12 @@ position = Vector2( -17, -60 )
 [node name="HideOffScreen" parent="." instance=ExtResource( 6 )]
 position = Vector2( -1.99998, -9.99996 )
 scale = Vector2( 1.20002, 1.025 )
+
+[node name="Shadow" parent="." instance=ExtResource( 7 )]
+material = SubResource( 62 )
+position = Vector2( 82.4387, 274.132 )
+scale = Vector2( 2.00637, 1.51721 )
+z_index = -1
+texture = ExtResource( 8 )
+vframes = 4
+frame = 2
