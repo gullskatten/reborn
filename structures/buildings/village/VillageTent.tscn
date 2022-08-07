@@ -190,7 +190,7 @@ vframes = 2
 [node name="Shadow4" parent="." instance=ExtResource( 5 )]
 self_modulate = Color( 1, 1, 1, 0.0431373 )
 material = SubResource( 63 )
-position = Vector2( 29.9999, 59.5975 )
+position = Vector2( 29, 22 )
 scale = Vector2( 1, 0.354732 )
 z_index = -1
 texture = ExtResource( 2 )
