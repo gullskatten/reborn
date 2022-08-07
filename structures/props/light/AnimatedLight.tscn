@@ -5,6 +5,7 @@
 
 [node name="AnimatedLight" type="Light2D"]
 texture = ExtResource( 1 )
+texture_scale = 1.62
 color = Color( 0.870588, 0.827451, 0.592157, 1 )
 energy = 0.87
 script = ExtResource( 2 )

@@ -46370,7 +46370,7 @@ script = ExtResource( 13 )
 
 [node name="Footsteps" type="Particles2D" parent="."]
 visible = false
-position = Vector2( 0, 3 )
+position = Vector2( -3, 0 )
 amount = 2
 lifetime = 0.2
 explosiveness = 0.67

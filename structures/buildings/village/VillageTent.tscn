@@ -158,7 +158,7 @@ shape = SubResource( 1 )
 
 [node name="Shadow" parent="." instance=ExtResource( 5 )]
 material = SubResource( 66 )
-position = Vector2( 25, 126 )
+position = Vector2( 25, 109 )
 rotation = 0.0
 scale = Vector2( -1, 1 )
 z_index = -1
@@ -168,39 +168,30 @@ offset = Vector2( -32, -92.2658 )
 [node name="Shadow2" parent="." instance=ExtResource( 5 )]
 self_modulate = Color( 1, 1, 1, 0.0431373 )
 material = SubResource( 63 )
-position = Vector2( 20, -42.5856 )
+position = Vector2( -5, 18.3315 )
 rotation = 0.0
-scale = Vector2( 1.18182, 0.939562 )
+scale = Vector2( 1.18182, 0.439562 )
 z_index = -1
 texture = ExtResource( 2 )
-vframes = 2
-frame = 1
-
-[node name="Shadow5" parent="." instance=ExtResource( 5 )]
-self_modulate = Color( 1, 1, 1, 0.0431373 )
-material = SubResource( 63 )
-position = Vector2( 65, 18.3703 )
-rotation = 0.0
-scale = Vector2( 1, 0.320734 )
-z_index = -1
-texture = ExtResource( 2 )
+offset = Vector2( -5.84619, -6.62922 )
 vframes = 2
 frame = 1
 
 [node name="Shadow3" parent="." instance=ExtResource( 5 )]
 self_modulate = Color( 1, 1, 1, 0.0431373 )
 material = SubResource( 63 )
-position = Vector2( -1.00003, 97.4555 )
-scale = Vector2( 1, 0.896186 )
+position = Vector2( 18.896, 6.28269 )
+scale = Vector2( 1, 0.310171 )
 z_index = -1
 texture = ExtResource( 2 )
+offset = Vector2( -7.10374, -40 )
 vframes = 2
 
 [node name="Shadow4" parent="." instance=ExtResource( 5 )]
 self_modulate = Color( 1, 1, 1, 0.0431373 )
 material = SubResource( 63 )
-position = Vector2( 30, 114.163 )
-scale = Vector2( 1, 0.891085 )
+position = Vector2( 29.9999, 59.5975 )
+scale = Vector2( 1, 0.354732 )
 z_index = -1
 texture = ExtResource( 2 )
 vframes = 2
