@@ -6,17 +6,25 @@ var is_shifted := false
 
 func _ready():
 	get_material().set_shader_param("x_rot", MAX_X_ROT)
-	move_shadow()
+	animate_shadow()
 
 func _physics_process(delta):
 	pass
 
-func move_shadow():
-	var tween = get_tree().create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(
-		get_material(),"shader_param/x_rot",
-				MAX_X_ROT if is_shifted else MIN_X_ROT,
-				Time.state_transition_duration).as_relative().set_trans(Tween.TRANS_LINEAR)
-	is_shifted = !is_shifted	
-	tween.connect("finished", self, "move_shadow")
+func animate_shadow():
+	var TW = create_tween()
+	TW.set_trans(Tween.EASE_IN)
+	TW.set_ease(Tween.EASE_IN)
+	TW.set_loops()
+	TW.tween_property(
+		get_material(),
+		"shader_param/x_rot",
+				MIN_X_ROT,
+				3).from_current().as_relative()
+
+	TW.set_parallel().tween_property(
+		self, "modulate:a",
+				0.0,
+				3).from_current().as_relative()
+				
+	TW.chain().tween_interval(3)
