@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/buildings/village/houses/exterior/stairs_1.png" type="Texture" id=1]
-[ext_resource path="res://effects/Shadow.gd" type="Script" id=2]
+[ext_resource path="res://assets/props/vegetation/flowers_set_1.png" type="Texture" id=1]
+[ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://structures/props/vegetation/FlowerSet1.gd" type="Script" id=3]
+[ext_resource path="res://assets/shaders/Straw_Sway.tres" type="Material" id=4]
 
 [sub_resource type="Shader" id=61]
 code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
@@ -72,23 +74,29 @@ resource_local_to_scene = true
 shader = SubResource( 61 )
 shader_param/fov = 1.0
 shader_param/cull_back = true
-shader_param/y_rot = 2.417
-shader_param/x_rot = 9.714
+shader_param/y_rot = -4.831
+shader_param/x_rot = -28.289
 shader_param/inset = 0.0
-shader_param/rect_size = Vector2( 50, 50 )
-shader_param/tang = 0.047
+shader_param/rect_size = Vector2( 20, 20 )
+shader_param/tang = 0.06
 
-[node name="Shadow" type="Sprite"]
-modulate = Color( 0, 0, 0, 1 )
-self_modulate = Color( 1, 1, 1, 0.0784314 )
-material = SubResource( 62 )
-position = Vector2( -0.585754, -20.2139 )
-rotation = 3.14159
+[node name="Flower" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 4 )
 texture = ExtResource( 1 )
-centered = false
-offset = Vector2( -31.5861, -42.2136 )
-flip_h = true
-script = ExtResource( 2 )
-day = Vector3( 8, -30, 1 )
-dusk = Vector3( 8, -30, 0.5 )
-night = Vector3( -24, 60, 0 )
+offset = Vector2( 0, -5 )
+hframes = 3
+
+[node name="Shadow" parent="." instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0.5, -0.5 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.52393, -13.1933 )
+hframes = 3
+dawn = Vector3( 0, 0, 1 )
+day = Vector3( 0, -30, 1 )
+dusk = Vector3( 0, -30, 0.5 )
+night = Vector3( -40, 60, 0 )

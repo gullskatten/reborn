@@ -84,7 +84,7 @@ shader = SubResource( 61 )
 shader_param/fov = 1.0
 shader_param/cull_back = true
 shader_param/y_rot = 9.665
-shader_param/x_rot = 12.081
+shader_param/x_rot = 15.645
 shader_param/inset = 0.0
 shader_param/rect_size = Vector2( 50, 50 )
 shader_param/tang = 0.04
@@ -176,9 +176,14 @@ scale = Vector2( 0.833333, 0.566667 )
 
 [node name="Shadow" parent="." instance=ExtResource( 6 )]
 material = SubResource( 62 )
-position = Vector2( -14.6667, 116 )
+position = Vector2( -0.564707, -1.45341 )
 z_index = -1
 texture = ExtResource( 1 )
+offset = Vector2( -13.4171, -56.5611 )
 vframes = 4
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
 
 [editable path="ChangeOpacityArea"]

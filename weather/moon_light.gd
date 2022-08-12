@@ -88,19 +88,19 @@ func _ready():
 		return
 
 	# Connect signals.
-	var current_hour_changed_signal = Time.connect(
+	var current_hour_changed_signal = InTime.connect(
 		"current_hour_changed", self, "_on_current_hour_changed"
 	)
 
-	var current_cycle_changed_signal = Time.connect(
+	var current_cycle_changed_signal = InTime.connect(
 		"current_cycle_changed", self, "_on_current_cycle_changed"
 	)
 
-	var time_manually_changed_signal = Time.connect(
+	var time_manually_changed_signal = InTime.connect(
 		"time_manually_changed", self, "_on_time_manually_changed"
 	)
 
-	var time_freezed_signal = Time.connect("time_freezed", self, "_on_time_freezed")
+	var time_freezed_signal = InTime.connect("time_freezed", self, "_on_time_freezed")
 
 	# Check if signals are connected correctly.
 	if current_hour_changed_signal != OK:
@@ -125,11 +125,11 @@ func _ready():
 	# Sync the speed with in-game time.
 	speed = (
 		path.get_baked_points().size()
-		/ (float(Time.SECONDS_IN_A_DAY) / Time.IN_GAME_SECONDS_PER_REAL_TIME_SECONDS)
+		/ (float(InTime.SECONDS_IN_A_DAY) / InTime.IN_GAME_SECONDS_PER_REAL_TIME_SECONDS)
 	)
 
 	# Divide the path into hours.
-	hour_step = path.get_baked_points().size() / float(Time.HOURS_IN_A_DAY)
+	hour_step = path.get_baked_points().size() / float(InTime.HOURS_IN_A_DAY)
 
 	if move_moon:
 		if cycle_sync_node_path:
@@ -141,7 +141,7 @@ func _ready():
 			# Make it visible in case it's hidden in the editor.
 			visible = true
 
-			moon_position = hour_step * Time.get_current_hour()
+			moon_position = hour_step * InTime.get_current_hour()
 			position = path.get_baked_points()[moon_position]
 		else:
 			printerr("--------------------")
@@ -174,17 +174,17 @@ func _ready():
 			position = path.get_baked_points()[moon_position]
 
 	# Set the current cycle state.
-	match Time.current_cycle:
-		Time.CycleState.NIGHT:
+	match InTime.current_cycle:
+		InTime.CycleState.NIGHT:
 			color = color_night
 			energy = energy_night
-		Time.CycleState.DAWN:
+		InTime.CycleState.DAWN:
 			color = color_dawn
 			energy = energy_dawn
-		Time.CycleState.DAY:
+		InTime.CycleState.DAY:
 			color = color_day
 			energy = energy_day
-		Time.CycleState.DUSK:
+		InTime.CycleState.DUSK:
 			color = color_dusk
 			energy = energy_dusk
 
@@ -206,9 +206,9 @@ func _move_moon(delta):
 # CALLBACKS
 # ---------
 func _on_current_cycle_changed(_c):
-	match Time.current_cycle:
-		Time.CycleState.NIGHT:
-			if not Time.changing_time_manually:
+	match InTime.current_cycle:
+		InTime.CycleState.NIGHT:
+			if not InTime.changing_time_manually:
 				if delay > 0:
 					yield(get_tree().create_timer(delay), "timeout")
 
@@ -217,7 +217,7 @@ func _on_current_cycle_changed(_c):
 					"color",
 					color_dusk,
 					color_night,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -228,7 +228,7 @@ func _on_current_cycle_changed(_c):
 					"energy",
 					energy_dusk,
 					energy_night,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -239,8 +239,8 @@ func _on_current_cycle_changed(_c):
 
 				color = color_night
 				energy = energy_night
-		Time.CycleState.DAWN:
-			if not Time.changing_time_manually:
+		InTime.CycleState.DAWN:
+			if not InTime.changing_time_manually:
 				if delay > 0:
 					yield(get_tree().create_timer(delay), "timeout")
 
@@ -249,7 +249,7 @@ func _on_current_cycle_changed(_c):
 					"color",
 					color_night,
 					color_dawn,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -260,7 +260,7 @@ func _on_current_cycle_changed(_c):
 					"energy",
 					energy_night,
 					energy_dawn,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -271,8 +271,8 @@ func _on_current_cycle_changed(_c):
 
 				color = color_dawn
 				energy = energy_dawn
-		Time.CycleState.DAY:
-			if not Time.changing_time_manually:
+		InTime.CycleState.DAY:
+			if not InTime.changing_time_manually:
 				if delay > 0:
 					yield(get_tree().create_timer(delay), "timeout")
 
@@ -281,7 +281,7 @@ func _on_current_cycle_changed(_c):
 					"color",
 					color_dawn,
 					color_day,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -292,7 +292,7 @@ func _on_current_cycle_changed(_c):
 					"energy",
 					energy_dawn,
 					energy_day,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -303,8 +303,8 @@ func _on_current_cycle_changed(_c):
 
 				color = color_day
 				energy = energy_day
-		Time.CycleState.DUSK:
-			if not Time.changing_time_manually:
+		InTime.CycleState.DUSK:
+			if not InTime.changing_time_manually:
 				if delay > 0:
 					yield(get_tree().create_timer(delay), "timeout")
 
@@ -313,7 +313,7 @@ func _on_current_cycle_changed(_c):
 					"color",
 					color_day,
 					color_dusk,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -324,7 +324,7 @@ func _on_current_cycle_changed(_c):
 					"energy",
 					energy_day,
 					energy_dusk,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -338,16 +338,16 @@ func _on_current_cycle_changed(_c):
 
 
 func _on_current_hour_changed():
-	if Time.changing_time_manually and move_moon:
-		moon_position = hour_step * Time.get_current_hour()
+	if InTime.changing_time_manually and move_moon:
+		moon_position = hour_step * InTime.get_current_hour()
 		position = path.get_baked_points()[moon_position]
 
 
 func _on_time_manually_changed():
-	if not Time.freeze_time and move_moon:
-		set_physics_process(not Time.changing_time_manually)
+	if not InTime.freeze_time and move_moon:
+		set_physics_process(not InTime.changing_time_manually)
 
 
 func _on_time_freezed():
 	if move_moon:
-		set_physics_process(not Time.freeze_time)
+		set_physics_process(not InTime.freeze_time)

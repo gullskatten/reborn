@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/buildings/village/houses/houses.png" type="Texture" id=1]
 [ext_resource path="res://structures/buildings/village/exterior/Chimney.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://structures/buildings/village/VillageHouseStaticLong.gd" type="Script" id=5]
 [ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=6]
 [ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/buildings/village/houses/house_2.png" type="Texture" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 closed = false
@@ -82,9 +81,9 @@ resource_local_to_scene = true
 shader = SubResource( 61 )
 shader_param/fov = 1.0
 shader_param/cull_back = true
-shader_param/y_rot = -2.415
-shader_param/x_rot = -9.663
-shader_param/inset = 0.0
+shader_param/y_rot = 4.199
+shader_param/x_rot = -11.673
+shader_param/inset = 1.0
 shader_param/rect_size = Vector2( 50, 50 )
 shader_param/tang = 0.047
 
@@ -136,9 +135,13 @@ scale = Vector2( 1.20002, 1.025 )
 
 [node name="Shadow" parent="." instance=ExtResource( 7 )]
 material = SubResource( 62 )
-position = Vector2( 82.4387, 274.132 )
-scale = Vector2( 2.00637, 1.51721 )
+position = Vector2( -78.522, 16.5942 )
+rotation = -2.91121
+scale = Vector2( -1.04151, 0.898329 )
 z_index = -1
-texture = ExtResource( 8 )
+texture = ExtResource( 1 )
+offset = Vector2( -43.9719, -164.038 )
 vframes = 4
-frame = 2
+day = Vector3( 8, -5, 1 )
+dusk = Vector3( 8, -5, 0.5 )
+night = Vector3( -24, 10, 0 )

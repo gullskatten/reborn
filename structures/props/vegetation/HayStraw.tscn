@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/buildings/village/houses/exterior/stairs_1.png" type="Texture" id=1]
-[ext_resource path="res://effects/Shadow.gd" type="Script" id=2]
+[ext_resource path="res://assets/props/grass/hay_straws_1.png" type="Texture" id=1]
+[ext_resource path="res://structures/props/vegetation/SingleStraw.gd" type="Script" id=2]
+[ext_resource path="res://assets/shaders/Straw_Sway.tres" type="Material" id=3]
+[ext_resource path="res://assets/music/props/trees/Bush_1.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/music/props/trees/Bush_2.wav" type="AudioStream" id=5]
+[ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
 
 [sub_resource type="Shader" id=61]
 code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
@@ -73,22 +80,46 @@ shader = SubResource( 61 )
 shader_param/fov = 1.0
 shader_param/cull_back = true
 shader_param/y_rot = 2.417
-shader_param/x_rot = 9.714
+shader_param/x_rot = -29.494
 shader_param/inset = 0.0
 shader_param/rect_size = Vector2( 50, 50 )
-shader_param/tang = 0.047
+shader_param/tang = 0.0
 
-[node name="Shadow" type="Sprite"]
-modulate = Color( 0, 0, 0, 1 )
-self_modulate = Color( 1, 1, 1, 0.0784314 )
-material = SubResource( 62 )
-position = Vector2( -0.585754, -20.2139 )
-rotation = 3.14159
-texture = ExtResource( 1 )
-centered = false
-offset = Vector2( -31.5861, -42.2136 )
-flip_h = true
+[node name="HayStraw" type="Node2D"]
 script = ExtResource( 2 )
-day = Vector3( 8, -30, 1 )
-dusk = Vector3( 8, -30, 0.5 )
-night = Vector3( -24, 60, 0 )
+
+[node name="Bush1" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1, -4 )
+stream = ExtResource( 4 )
+max_distance = 200.0
+attenuation = 0.870551
+
+[node name="Bush2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -4 )
+stream = ExtResource( 5 )
+max_distance = 200.0
+attenuation = 0.707107
+
+[node name="SoftCollisions" type="Area2D" parent="."]
+position = Vector2( 0, -7 )
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoftCollisions"]
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )
+
+[node name="Straw" type="Sprite" parent="."]
+material = ExtResource( 3 )
+texture = ExtResource( 1 )
+offset = Vector2( 1, -8 )
+hframes = 3
+
+[node name="Shadow" parent="." instance=ExtResource( 6 )]
+material = SubResource( 62 )
+position = Vector2( 0.941479, 0.106867 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -8.25986, -14.8774 )
+hframes = 3

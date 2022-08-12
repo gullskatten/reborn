@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/buildings/village/houses/houses.png" type="Texture" id=1]
 [ext_resource path="res://assets/buildings/village/houses/props/beer_sign.png" type="Texture" id=2]
@@ -15,86 +15,10 @@
 [ext_resource path="res://assets/music/props/tavern/Tavern_door_open.wav" type="AudioStream" id=13]
 [ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=14]
 [ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/buildings/village/houses/house_2.png" type="Texture" id=16]
 
 [sub_resource type="OccluderPolygon2D" id=60]
 closed = false
 polygon = PoolVector2Array( 123, 50, 123, -42, 126, -42, 126, -47, 87, -86, 53, -102, -44, -151, -83, -131, -117, -96, -117, 2 )
-
-[sub_resource type="Shader" id=61]
-code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
-// License: MIT
-
-shader_type canvas_item;
-render_mode unshaded;
-
-// Camera FOV
-uniform float fov : hint_range(1, 179) = 90;
-uniform bool cull_back = true;
-uniform float y_rot : hint_range(-180, 180) = 0.0;
-uniform float x_rot : hint_range(-180, 180) = 0.0;
-// At 0, the image retains its size when unrotated.
-// At 1, the image is resized so that it can do a full
-// rotation without clipping inside its rect.
-uniform float inset : hint_range(0, 1) = 0.0;
-// Consider changing this to a uniform and changing it from code
-uniform vec2 rect_size;
-uniform float tang : hint_range(0,1) = 0.0;
-
-varying flat vec2 o;
-varying vec3 p;
-
-const float PI = 3.14159;
-
-// Creates rotation matrix
-void vertex(){
-	float sin_b = sin(y_rot / 180.0 * PI);
-	float cos_b = cos(y_rot / 180.0 * PI);
-	float sin_c = sin(x_rot / 180.0 * PI);
-	float cos_c = cos(x_rot / 180.0 * PI);
-	
-	mat3 inv_rot_mat;
-	inv_rot_mat[0][0] = cos_b;
-	inv_rot_mat[0][1] = 0.0;
-	inv_rot_mat[0][2] = -sin_b;
-	
-	inv_rot_mat[1][0] = sin_b * sin_c;
-	inv_rot_mat[1][1] = cos_c;
-	inv_rot_mat[1][2] = cos_b * sin_c;
-	
-	inv_rot_mat[2][0] = sin_b * cos_c;
-	inv_rot_mat[2][1] = -sin_c;
-	inv_rot_mat[2][2] = cos_b * cos_c;
-	
-	
-	float t = tan(fov / 360.0 * PI);
-	p = inv_rot_mat * vec3((UV - 0.5), 0.5 / t);
-	float v = (0.5 / t) + 0.5;
-	p.xy *= v * inv_rot_mat[2].z;
-	o = v * inv_rot_mat[2].xy;
-	
-	VERTEX += UV * rect_size * tang * (1.0 - inset);
-	//VERTEX += (UV - 0.5) / TEXTURE_PIXEL_SIZE * t * (1.0 - inset);
-}
-
-void fragment() {
-	
-	if (cull_back && p.z <= 0.0) discard;
-	vec2 uv = (p.xy / p.z).xy - o; 
-    COLOR = texture(TEXTURE, uv + 0.5);
-	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
-}"
-
-[sub_resource type="ShaderMaterial" id=62]
-resource_local_to_scene = true
-shader = SubResource( 61 )
-shader_param/fov = 1.0
-shader_param/cull_back = true
-shader_param/y_rot = 4.833
-shader_param/x_rot = 19.33
-shader_param/inset = 0.0
-shader_param/rect_size = Vector2( 50, 50 )
-shader_param/tang = 0.047
 
 [sub_resource type="Shader" id=55]
 code = "/*
@@ -412,6 +336,81 @@ height = 30.8926
 
 [sub_resource type="ConvexPolygonShape2D" id=57]
 
+[sub_resource type="Shader" id=63]
+code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
+// License: MIT
+
+shader_type canvas_item;
+render_mode unshaded;
+
+// Camera FOV
+uniform float fov : hint_range(1, 179) = 90;
+uniform bool cull_back = true;
+uniform float y_rot : hint_range(-180, 180) = 0.0;
+uniform float x_rot : hint_range(-180, 180) = 0.0;
+// At 0, the image retains its size when unrotated.
+// At 1, the image is resized so that it can do a full
+// rotation without clipping inside its rect.
+uniform float inset : hint_range(0, 1) = 0.0;
+// Consider changing this to a uniform and changing it from code
+uniform vec2 rect_size;
+uniform float tang : hint_range(0,1) = 0.0;
+
+varying flat vec2 o;
+varying vec3 p;
+
+const float PI = 3.14159;
+
+// Creates rotation matrix
+void vertex(){
+	float sin_b = sin(y_rot / 180.0 * PI);
+	float cos_b = cos(y_rot / 180.0 * PI);
+	float sin_c = sin(x_rot / 180.0 * PI);
+	float cos_c = cos(x_rot / 180.0 * PI);
+	
+	mat3 inv_rot_mat;
+	inv_rot_mat[0][0] = cos_b;
+	inv_rot_mat[0][1] = 0.0;
+	inv_rot_mat[0][2] = -sin_b;
+	
+	inv_rot_mat[1][0] = sin_b * sin_c;
+	inv_rot_mat[1][1] = cos_c;
+	inv_rot_mat[1][2] = cos_b * sin_c;
+	
+	inv_rot_mat[2][0] = sin_b * cos_c;
+	inv_rot_mat[2][1] = -sin_c;
+	inv_rot_mat[2][2] = cos_b * cos_c;
+	
+	
+	float t = tan(fov / 360.0 * PI);
+	p = inv_rot_mat * vec3((UV - 0.5), 0.5 / t);
+	float v = (0.5 / t) + 0.5;
+	p.xy *= v * inv_rot_mat[2].z;
+	o = v * inv_rot_mat[2].xy;
+	
+	VERTEX += UV * rect_size * tang * (1.0 - inset);
+	//VERTEX += (UV - 0.5) / TEXTURE_PIXEL_SIZE * t * (1.0 - inset);
+}
+
+void fragment() {
+	
+	if (cull_back && p.z <= 0.0) discard;
+	vec2 uv = (p.xy / p.z).xy - o; 
+    COLOR = texture(TEXTURE, uv + 0.5);
+	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
+}"
+
+[sub_resource type="ShaderMaterial" id=62]
+resource_local_to_scene = true
+shader = SubResource( 63 )
+shader_param/fov = 1.0
+shader_param/cull_back = true
+shader_param/y_rot = 4.199
+shader_param/x_rot = -11.673
+shader_param/inset = 1.0
+shader_param/rect_size = Vector2( 50, 50 )
+shader_param/tang = 0.047
+
 [node name="VillageTavern" type="Node2D"]
 z_as_relative = false
 script = ExtResource( 7 )
@@ -427,14 +426,6 @@ position = Vector2( -18, 35 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -111, -188 )
-vframes = 4
-
-[node name="Shadow" parent="." instance=ExtResource( 15 )]
-material = SubResource( 62 )
-position = Vector2( 80, 276 )
-scale = Vector2( 1.98845, 1.56698 )
-z_index = -1
-texture = ExtResource( 16 )
 vframes = 4
 
 [node name="Entrance" type="Sprite" parent="."]
@@ -565,6 +556,16 @@ polygon = PoolVector2Array( -86, -2, -88, -17, -89, -84, -34, -118, -4, -108, 10
 stream = ExtResource( 13 )
 
 [node name="HideOffScreen" parent="." instance=ExtResource( 14 )]
+
+[node name="Shadow" parent="." instance=ExtResource( 15 )]
+material = SubResource( 62 )
+position = Vector2( -77.9325, -2.29336 )
+rotation = -2.91121
+scale = Vector2( -1.04151, 1.0103 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -43.9719, -164.038 )
+vframes = 4
 
 [connection signal="action_pressed" from="PlayerEnterActionArea" to="." method="_on_PlayerEnterActionArea_action_pressed"]
 [connection signal="body_entered" from="PlayerEnterActionArea/PlayerHintArea" to="." method="_on_PlayerHintArea_body_entered"]

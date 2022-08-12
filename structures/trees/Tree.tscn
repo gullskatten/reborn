@@ -77,9 +77,9 @@ void fragment() {
 resource_local_to_scene = true
 shader = SubResource( 61 )
 shader_param/fov = 1.0
-shader_param/cull_back = false
+shader_param/cull_back = true
 shader_param/y_rot = -7.247
-shader_param/x_rot = -12.105
+shader_param/x_rot = 23.56
 shader_param/inset = 0.0
 shader_param/rect_size = Vector2( 50, 50 )
 shader_param/tang = 0.0
@@ -105,12 +105,16 @@ script = ExtResource( 2 )
 
 [node name="Shadow" parent="." instance=ExtResource( 1 )]
 material = SubResource( 62 )
-position = Vector2( -1.07906, 31.3854 )
+position = Vector2( -0.656319, 0.0438461 )
 scale = Vector2( 1.07734, 1.05899 )
 texture = ExtResource( 8 )
 centered = true
-offset = Vector2( 0.41902, -0.725342 )
+offset = Vector2( 0.811487, -30.321 )
 hframes = 6
+dawn = Vector3( -10.323, 0, 1 )
+day = Vector3( 30, -30, 1 )
+dusk = Vector3( -20, -30, 0.5 )
+night = Vector3( -20, 60, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

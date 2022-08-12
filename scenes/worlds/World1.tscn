@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/abstract/BaseWorldScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/worlds/world1_areas/TavernDistrict.tscn" type="PackedScene" id=2]
 [ext_resource path="res://npc/neutral/critter/flying/BirdCritter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/worlds/world1_areas/FarmFields.tscn" type="PackedScene" id=4]
 
 [node name="World1" instance=ExtResource( 1 )]
 
@@ -17,6 +18,9 @@ position = Vector2( -6, 586 )
 
 [node name="TavernDistrict4" parent="InnerScenes" index="4" instance=ExtResource( 2 )]
 position = Vector2( 675, 244 )
+
+[node name="FarmField" parent="InnerScenes" index="5" instance=ExtResource( 4 )]
+position = Vector2( -683, -442 )
 
 [node name="Clouds" parent="." index="1"]
 margin_left = -959.0

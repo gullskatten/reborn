@@ -17,7 +17,7 @@ onready var color_transition_tween = $ColorTransitionTween
 
 func _ready():
 	# Connect signals.
-	var current_cycle_changed_signal = Time.connect(
+	var current_cycle_changed_signal = InTime.connect(
 		"current_cycle_changed", self, "_on_current_cycle_changed"
 	)
 
@@ -30,26 +30,26 @@ func _ready():
 		delay = 0
 		push_warning("The 'delay' (%s) in the '%s' node must be >= 0." % [delay, self.name])
 	elif delay > 0:
-		delay /= float(Time.IN_GAME_SECONDS_PER_REAL_TIME_SECONDS)
+		delay /= float(InTime.IN_GAME_SECONDS_PER_REAL_TIME_SECONDS)
 
 	# Set the current cycle state.
-	match Time.current_cycle:
-		Time.CycleState.NIGHT:
+	match InTime.current_cycle:
+		InTime.CycleState.NIGHT:
 			color = color_night
-		Time.CycleState.DAWN:
+		InTime.CycleState.DAWN:
 			color = color_dawn
-		Time.CycleState.DAY:
+		InTime.CycleState.DAY:
 			color = color_day
-		Time.CycleState.DUSK:
+		InTime.CycleState.DUSK:
 			color = color_dusk
 
 
 # CALLBACKS
 # ---------
 func _on_current_cycle_changed(_cycle):
-	match Time.current_cycle:
-		Time.CycleState.NIGHT:
-			if not Time.changing_time_manually:
+	match InTime.current_cycle:
+		InTime.CycleState.NIGHT:
+			if not InTime.changing_time_manually:
 				if delay > 0:
 					yield(get_tree().create_timer(delay), "timeout")
 
@@ -58,7 +58,7 @@ func _on_current_cycle_changed(_cycle):
 					"color",
 					color_dusk,
 					color_night,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -66,8 +66,8 @@ func _on_current_cycle_changed(_cycle):
 			else:
 				color_transition_tween.stop_all()
 				color = color_night
-		Time.CycleState.DAWN:
-			if not Time.changing_time_manually:
+		InTime.CycleState.DAWN:
+			if not InTime.changing_time_manually:
 				if delay > 0:
 					yield(get_tree().create_timer(delay), "timeout")
 
@@ -76,7 +76,7 @@ func _on_current_cycle_changed(_cycle):
 					"color",
 					color_night,
 					color_dawn,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -84,8 +84,8 @@ func _on_current_cycle_changed(_cycle):
 			else:
 				color_transition_tween.stop_all()
 				color = color_dawn
-		Time.CycleState.DAY:
-			if not Time.changing_time_manually:
+		InTime.CycleState.DAY:
+			if not InTime.changing_time_manually:
 				if delay > 0:
 					yield(get_tree().create_timer(delay), "timeout")
 
@@ -94,7 +94,7 @@ func _on_current_cycle_changed(_cycle):
 					"color",
 					color_dawn,
 					color_day,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
@@ -102,8 +102,8 @@ func _on_current_cycle_changed(_cycle):
 			else:
 				color_transition_tween.stop_all()
 				color = color_day
-		Time.CycleState.DUSK:
-			if not Time.changing_time_manually:
+		InTime.CycleState.DUSK:
+			if not InTime.changing_time_manually:
 				if delay > 0:
 					yield(get_tree().create_timer(delay), "timeout")
 
@@ -112,7 +112,7 @@ func _on_current_cycle_changed(_cycle):
 					"color",
 					color_day,
 					color_dusk,
-					Time.state_transition_duration,
+					InTime.state_transition_duration,
 					Tween.TRANS_SINE,
 					Tween.EASE_OUT
 				)
