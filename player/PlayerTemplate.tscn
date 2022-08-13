@@ -46262,7 +46262,7 @@ tracks/76/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=12]
-radius = 3.0
+radius = 3.99999
 height = 4.0
 
 [sub_resource type="AnimationNodeAnimation" id=69]
@@ -46366,6 +46366,7 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=60]
 
 [node name="PlayerBody" type="KinematicBody2D"]
+collision_layer = 546
 script = ExtResource( 13 )
 
 [node name="Footsteps" type="Particles2D" parent="."]

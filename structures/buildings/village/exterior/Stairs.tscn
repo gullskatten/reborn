@@ -97,6 +97,7 @@ polygon = PoolVector2Array( 3.27579, -41.6638, -24.7242, -11.6638, -24.7242, -6.
 
 [node name="Shadow" parent="." instance=ExtResource( 2 )]
 material = SubResource( 62 )
-position = Vector2( 0.579006, 76.7767 )
-scale = Vector2( 0.98441, 0.732747 )
+position = Vector2( -8, 27.5 )
+rotation = 0.0
+scale = Vector2( -1.16123, 0.782926 )
 z_index = -1

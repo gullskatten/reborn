@@ -11,5 +11,7 @@ energy = 0.87
 script = ExtResource( 2 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -1, -1 )
+scale = Vector2( 0.5, 0.5 )
 process_parent = true
 physics_process_parent = true

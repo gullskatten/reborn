@@ -1,14 +1,27 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/props/grass/hay_straws_1.png" type="Texture" id=1]
 [ext_resource path="res://structures/props/vegetation/SingleStraw.gd" type="Script" id=2]
-[ext_resource path="res://assets/shaders/Straw_Sway.tres" type="Material" id=3]
+[ext_resource path="res://assets/shaders/Straw_Sway.shader" type="Shader" id=3]
 [ext_resource path="res://assets/music/props/trees/Bush_1.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/music/props/trees/Bush_2.wav" type="AudioStream" id=5]
 [ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
+
+[sub_resource type="ShaderMaterial" id=63]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
 
 [sub_resource type="Shader" id=61]
 code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
@@ -107,11 +120,12 @@ collision_mask = 32
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoftCollisions"]
+visible = false
 position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="Straw" type="Sprite" parent="."]
-material = ExtResource( 3 )
+material = SubResource( 63 )
 texture = ExtResource( 1 )
 offset = Vector2( 1, -8 )
 hframes = 3

@@ -11,7 +11,7 @@
 position = Vector2( -11, -96 )
 
 [node name="TavernDistrict2" parent="InnerScenes" index="2" instance=ExtResource( 2 )]
-position = Vector2( -689, 246 )
+position = Vector2( -695, 246 )
 
 [node name="TavernDistrict3" parent="InnerScenes" index="3" instance=ExtResource( 2 )]
 position = Vector2( -6, 586 )
@@ -20,7 +20,7 @@ position = Vector2( -6, 586 )
 position = Vector2( 675, 244 )
 
 [node name="FarmField" parent="InnerScenes" index="5" instance=ExtResource( 4 )]
-position = Vector2( -683, -442 )
+position = Vector2( -972, -277 )
 
 [node name="Clouds" parent="." index="1"]
 margin_left = -959.0

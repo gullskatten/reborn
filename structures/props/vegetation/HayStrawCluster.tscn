@@ -35,5 +35,5 @@ material = SubResource( 1 )
 position = Vector2( 14, 6 )
 
 [node name="HideOffScreen" parent="." instance=ExtResource( 3 )]
-position = Vector2( -0.5, 0 )
-scale = Vector2( 2.05, 1 )
+position = Vector2( 1, 1 )
+scale = Vector2( 0.65, 0.375 )

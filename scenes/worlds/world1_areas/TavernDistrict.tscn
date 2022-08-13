@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scenes/abstract/InnerScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/64x32-grass-iso.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://structures/props/vegetation/FlowerSet1.tscn" type="PackedScene" id=24]
 [ext_resource path="res://npc/neutral/critter/Firefly.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/props/light/Light_Tiny.png" type="Texture" id=26]
+[ext_resource path="res://structures/props/vegetation/Bush.tscn" type="PackedScene" id=27]
 
 [sub_resource type="ShaderMaterial" id=60]
 
@@ -826,6 +827,7 @@ position = Vector2( -93, -170 )
 [node name="GrassPatches" type="YSort" parent="Content" index="7"]
 
 [node name="GrassClusterA" parent="Content/GrassPatches" index="0" instance=ExtResource( 16 )]
+position = Vector2( -11, 23 )
 
 [node name="GrassClusterA24" parent="Content/GrassPatches" index="1" instance=ExtResource( 16 )]
 position = Vector2( 119, 194 )
@@ -996,9 +998,42 @@ position = Vector2( 573, -30 )
 [node name="TreasureNode" parent="Content" index="14" instance=ExtResource( 23 )]
 position = Vector2( -104, -47 )
 
+[node name="Bush" parent="Content" index="15" instance=ExtResource( 27 )]
+position = Vector2( 159, -66 )
+
+[node name="Bush2" parent="Content" index="16" instance=ExtResource( 27 )]
+position = Vector2( 383, -35 )
+
+[node name="Bush3" parent="Content" index="17" instance=ExtResource( 27 )]
+position = Vector2( -21, 22 )
+
+[node name="Bush4" parent="Content" index="18" instance=ExtResource( 27 )]
+position = Vector2( -375, -41 )
+
+[node name="Bush5" parent="Content" index="19" instance=ExtResource( 27 )]
+position = Vector2( -269, -181 )
+
+[node name="Bush6" parent="Content" index="20" instance=ExtResource( 27 )]
+position = Vector2( -295, -172 )
+
+[node name="Bush7" parent="Content" index="21" instance=ExtResource( 27 )]
+position = Vector2( 32, -206 )
+
+[node name="Bush8" parent="Content" index="22" instance=ExtResource( 27 )]
+position = Vector2( 53, -215 )
+
+[node name="Bush9" parent="Content" index="23" instance=ExtResource( 27 )]
+position = Vector2( 62, -199 )
+
+[node name="Bush10" parent="Content" index="24" instance=ExtResource( 27 )]
+position = Vector2( 128, 191 )
+
+[node name="Bush11" parent="Content" index="25" instance=ExtResource( 27 )]
+position = Vector2( -74, 231 )
+
 [node name="HideOffScreen" parent="." index="2"]
-position = Vector2( 5, 3.99999 )
-scale = Vector2( 67, 33.5 )
+position = Vector2( 3.50004, 6.49999 )
+scale = Vector2( 67.15, 33.25 )
 
 [node name="LightTiny" type="Sprite" parent="." index="3"]
 modulate = Color( 1, 1, 1, 0.286275 )

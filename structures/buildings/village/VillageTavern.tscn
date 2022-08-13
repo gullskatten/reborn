@@ -334,7 +334,9 @@ tracks/3/keys = {
 radius = 11.0175
 height = 30.8926
 
-[sub_resource type="ConvexPolygonShape2D" id=57]
+[sub_resource type="CapsuleShape2D" id=64]
+radius = 64.8471
+height = 142.21
 
 [sub_resource type="Shader" id=63]
 code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
@@ -546,11 +548,10 @@ polygon = PoolVector2Array( -118, -11, -30, -37, 124, 33, 110, 39, -30, -23, -11
 [node name="ChangeOpacityArea" parent="." instance=ExtResource( 3 )]
 
 [node name="CollisionShape2D" parent="ChangeOpacityArea" index="0"]
-shape = SubResource( 57 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeOpacityArea"]
 visible = false
-polygon = PoolVector2Array( -86, -2, -88, -17, -89, -84, -34, -118, -4, -108, 107, -48, 99, 34, 96, 35, 75, 7 )
+position = Vector2( 1, -57 )
+rotation = -1.09258
+shape = SubResource( 64 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
