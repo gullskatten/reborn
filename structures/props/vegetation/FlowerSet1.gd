@@ -9,7 +9,7 @@ export(bool) var is_random_flower := true
 export(int) var flower_idx := 0
 
 func _ready():
-	var max_frames = sprite.vframes * sprite.hframes-1
+	var max_frames = sprite.vframes * sprite.hframes
 	if is_random_flower:
 		var rand_sprite_frame = rand_range(0, max_frames)
 		sprite.frame = rand_sprite_frame
