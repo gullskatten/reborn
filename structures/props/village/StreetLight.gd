@@ -1,8 +1,6 @@
 extends Node2D
 
 export(bool) var always_on := false
-onready var light_near = preload("res://assets/props/light/Light_Tiny.png")
-onready var light_far = preload("res://assets/props/light/Light_Tiny.png")
 export(bool) var street_sign_NE := false 
 export(bool) var street_sign_E := false 
 export(bool) var street_sign_W := false 
@@ -20,8 +18,8 @@ func _ready():
 	$SignSE.visible = street_sign_SE
 	
 	if !always_on:
-		Time.connect("current_cycle_changed", self, "_set_light_enabled")
-		_set_light_enabled(Time.current_cycle)
+		InTime.connect("current_cycle_changed", self, "_set_light_enabled")
+		_set_light_enabled(InTime.current_cycle)
 	
 func _set_light_enabled(cycle):
-		$Light2D.enabled = cycle == Time.CycleState.NIGHT || cycle == Time.CycleState.DUSK
+		$Light2D.enabled = cycle == InTime.CycleState.NIGHT || cycle == InTime.CycleState.DUSK

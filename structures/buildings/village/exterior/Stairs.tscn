@@ -1,6 +1,82 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/buildings/village/houses/exterior/stairs_1.png" type="Texture" id=1]
+[ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Shader" id=61]
+code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
+// License: MIT
+
+shader_type canvas_item;
+render_mode unshaded;
+
+// Camera FOV
+uniform float fov : hint_range(1, 179) = 90;
+uniform bool cull_back = true;
+uniform float y_rot : hint_range(-180, 180) = 0.0;
+uniform float x_rot : hint_range(-180, 180) = 0.0;
+// At 0, the image retains its size when unrotated.
+// At 1, the image is resized so that it can do a full
+// rotation without clipping inside its rect.
+uniform float inset : hint_range(0, 1) = 0.0;
+// Consider changing this to a uniform and changing it from code
+uniform vec2 rect_size;
+uniform float tang : hint_range(0,1) = 0.0;
+
+varying flat vec2 o;
+varying vec3 p;
+
+const float PI = 3.14159;
+
+// Creates rotation matrix
+void vertex(){
+	float sin_b = sin(y_rot / 180.0 * PI);
+	float cos_b = cos(y_rot / 180.0 * PI);
+	float sin_c = sin(x_rot / 180.0 * PI);
+	float cos_c = cos(x_rot / 180.0 * PI);
+	
+	mat3 inv_rot_mat;
+	inv_rot_mat[0][0] = cos_b;
+	inv_rot_mat[0][1] = 0.0;
+	inv_rot_mat[0][2] = -sin_b;
+	
+	inv_rot_mat[1][0] = sin_b * sin_c;
+	inv_rot_mat[1][1] = cos_c;
+	inv_rot_mat[1][2] = cos_b * sin_c;
+	
+	inv_rot_mat[2][0] = sin_b * cos_c;
+	inv_rot_mat[2][1] = -sin_c;
+	inv_rot_mat[2][2] = cos_b * cos_c;
+	
+	
+	float t = tan(fov / 360.0 * PI);
+	p = inv_rot_mat * vec3((UV - 0.5), 0.5 / t);
+	float v = (0.5 / t) + 0.5;
+	p.xy *= v * inv_rot_mat[2].z;
+	o = v * inv_rot_mat[2].xy;
+	
+	VERTEX += UV * rect_size * tang * (1.0 - inset);
+	//VERTEX += (UV - 0.5) / TEXTURE_PIXEL_SIZE * t * (1.0 - inset);
+}
+
+void fragment() {
+	
+	if (cull_back && p.z <= 0.0) discard;
+	vec2 uv = (p.xy / p.z).xy - o; 
+    COLOR = texture(TEXTURE, uv + 0.5);
+	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
+}"
+
+[sub_resource type="ShaderMaterial" id=62]
+resource_local_to_scene = true
+shader = SubResource( 61 )
+shader_param/fov = 4.584
+shader_param/cull_back = true
+shader_param/y_rot = 9.665
+shader_param/x_rot = 9.665
+shader_param/inset = 0.0
+shader_param/rect_size = Vector2( 50, 50 )
+shader_param/tang = 0.0
 
 [node name="Stairs" type="Sprite"]
 position = Vector2( -16, 18.5 )
@@ -18,3 +94,10 @@ polygon = PoolVector2Array( 29.2758, -29.6638, 25.2758, -29.6638, -6.72421, 1.33
 visible = false
 position = Vector2( -2.27579, 19.1638 )
 polygon = PoolVector2Array( 3.27579, -41.6638, -24.7242, -11.6638, -24.7242, -6.6638, 5.27579, -39.6638 )
+
+[node name="Shadow" parent="." instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( -8, 27.5 )
+rotation = 0.0
+scale = Vector2( -1.16123, 0.782926 )
+z_index = -1

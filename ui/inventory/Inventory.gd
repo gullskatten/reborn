@@ -36,7 +36,7 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				elif slot.item:
 					left_click_not_holding(slot)
 
-func _input(event):
+func _input(_event):
 	var holding_item = root_interface_node.holding_item
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()

@@ -13,9 +13,9 @@ var wanted_iterations := 1
 const MAX_ITERATIONS = 5
 
 func _ready():
-	Time.connect("current_cycle_changed", self, "update_weather")
+	InTime.connect("current_cycle_changed", self, "update_weather")
 	wanted_iterations = int(rand_range(1, MAX_ITERATIONS))
-	update_weather(Time.current_cycle)
+	update_weather(InTime.current_cycle)
 
 func get_random_weather():
 	var next = WeatherType.values()
@@ -50,13 +50,13 @@ func update_weather(cycle):
 			$Fog.visible = true
 			
 	match cycle:
-		Time.CycleState.DAWN:
+		InTime.CycleState.DAWN:
 			pass
-		Time.CycleState.DAY:
+		InTime.CycleState.DAY:
 			pass
-		Time.CycleState.DUSK:
+		InTime.CycleState.DUSK:
 			pass
-		Time.CycleState.NIGHT:
+		InTime.CycleState.NIGHT:
 			pass
 	
 	print(WeatherType.keys()[current_weather])

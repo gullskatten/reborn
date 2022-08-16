@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/shaders/Straw_Sway.shader" type="Shader" id=1]
+[ext_resource path="res://structures/props/vegetation/HayStraw.tscn" type="PackedScene" id=2]
+[ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.06
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 10.0
+shader_param/interval = 0.8
+shader_param/detail = 1.0
+shader_param/distortion = 0.524
+shader_param/heightOffset = 0.281
+shader_param/offset = 2.0
+
+[node name="HayStrawCluster" type="YSort"]
+
+[node name="Sprite" parent="." instance=ExtResource( 2 )]
+material = SubResource( 1 )
+
+[node name="Sprite2" parent="." instance=ExtResource( 2 )]
+material = SubResource( 1 )
+position = Vector2( 10, -3 )
+
+[node name="Sprite3" parent="." instance=ExtResource( 2 )]
+material = SubResource( 1 )
+position = Vector2( -16, 0 )
+
+[node name="Sprite4" parent="." instance=ExtResource( 2 )]
+material = SubResource( 1 )
+position = Vector2( 14, 6 )
+
+[node name="HideOffScreen" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1, 1 )
+scale = Vector2( 0.65, 0.375 )

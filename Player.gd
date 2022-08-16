@@ -6,12 +6,11 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var footsteps = $Footsteps
-onready var mount = $Mount
-
-var select_rect = RectangleShape2D.new()
 
 var velocity : Vector2 = Vector2.ZERO
 var allowed_movement := true
+var is_flipped := false
+
 const ACCELERATION = 20
 const RUN_MAX_SPEED = 90
 const MOUNTED_MAX_SPEED = RUN_MAX_SPEED * 1.5
@@ -46,7 +45,18 @@ func blink():
 	yield(get_tree().create_timer(t/16),"timeout")
 	$Eyes.visible = true
 	$Timer.wait_time = t
-	
+
+func flip_h():
+	if !is_flipped:
+		transform.x *= -1
+		is_flipped = true
+		
+
+func flip_reset():
+	if is_flipped:
+		transform.x *= -1
+		is_flipped = false
+
 func move():
 	velocity = move_and_slide(velocity)
 

@@ -31,4 +31,4 @@ texture = ExtResource( 1 )
 [node name="AnimatedLight" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4, 5 )
 offset = Vector2( 4, -12 )
-energy = 0.5
+energy = 0.8

@@ -14,7 +14,9 @@ func _ready():
 	var texture_list = [autumn_texture, bare_texture, summer_texture, summer_texture]
 	sprite.set_frame(rand)
 	texture_list.shuffle()
-	sprite.texture = texture_list.pop_front()
+	var texture = texture_list.pop_front()
+	sprite.texture = texture
+	$Shadow.texture = texture
 
 func _on_CollectableResource_tree_exiting():
 	queue_free()

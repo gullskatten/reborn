@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://player_items/Treasure.gd" type="Script" id=1]
 [ext_resource path="res://assets/props/chest/chest_1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://overlap/PlayerEnterActionArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/music/props/chest/Unlock.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/music/props/chest/Open.wav" type="AudioStream" id=6]
+[ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.485075 )
@@ -99,6 +100,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Shadow:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
 }
 
 [sub_resource type="Animation" id=58]
@@ -203,6 +216,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Shadow:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
 
 [sub_resource type="Animation" id=59]
 length = 0.001
@@ -290,6 +315,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Shadow:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
 
 [sub_resource type="Animation" id=60]
 resource_name = "Unlock"
@@ -367,6 +404,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Shadow:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Shader" id=64]
@@ -510,6 +559,81 @@ shader_param/hdr = true
 shader_param/seed = 5.0
 shader_param/gradient = SubResource( 63 )
 
+[sub_resource type="Shader" id=66]
+code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
+// License: MIT
+
+shader_type canvas_item;
+render_mode unshaded;
+
+// Camera FOV
+uniform float fov : hint_range(1, 179) = 90;
+uniform bool cull_back = true;
+uniform float y_rot : hint_range(-180, 180) = 0.0;
+uniform float x_rot : hint_range(-180, 180) = 0.0;
+// At 0, the image retains its size when unrotated.
+// At 1, the image is resized so that it can do a full
+// rotation without clipping inside its rect.
+uniform float inset : hint_range(0, 1) = 0.0;
+// Consider changing this to a uniform and changing it from code
+uniform vec2 rect_size;
+uniform float tang : hint_range(0,1) = 0.0;
+
+varying flat vec2 o;
+varying vec3 p;
+
+const float PI = 3.14159;
+
+// Creates rotation matrix
+void vertex(){
+	float sin_b = sin(y_rot / 180.0 * PI);
+	float cos_b = cos(y_rot / 180.0 * PI);
+	float sin_c = sin(x_rot / 180.0 * PI);
+	float cos_c = cos(x_rot / 180.0 * PI);
+	
+	mat3 inv_rot_mat;
+	inv_rot_mat[0][0] = cos_b;
+	inv_rot_mat[0][1] = 0.0;
+	inv_rot_mat[0][2] = -sin_b;
+	
+	inv_rot_mat[1][0] = sin_b * sin_c;
+	inv_rot_mat[1][1] = cos_c;
+	inv_rot_mat[1][2] = cos_b * sin_c;
+	
+	inv_rot_mat[2][0] = sin_b * cos_c;
+	inv_rot_mat[2][1] = -sin_c;
+	inv_rot_mat[2][2] = cos_b * cos_c;
+	
+	
+	float t = tan(fov / 360.0 * PI);
+	p = inv_rot_mat * vec3((UV - 0.5), 0.5 / t);
+	float v = (0.5 / t) + 0.5;
+	p.xy *= v * inv_rot_mat[2].z;
+	o = v * inv_rot_mat[2].xy;
+	
+	VERTEX += UV * rect_size * tang * (1.0 - inset);
+	//VERTEX += (UV - 0.5) / TEXTURE_PIXEL_SIZE * t * (1.0 - inset);
+}
+
+void fragment() {
+	
+	if (cull_back && p.z <= 0.0) discard;
+	vec2 uv = (p.xy / p.z).xy - o; 
+    COLOR = texture(TEXTURE, uv + 0.5);
+	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
+}"
+
+[sub_resource type="ShaderMaterial" id=67]
+resource_local_to_scene = true
+shader = SubResource( 66 )
+shader_param/fov = 1.0
+shader_param/cull_back = true
+shader_param/y_rot = 0.635
+shader_param/x_rot = 0.803
+shader_param/inset = 0.079
+shader_param/rect_size = Vector2( 50, 50 )
+shader_param/tang = 0.047
+
 [node name="TreasureNode" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -552,6 +676,22 @@ material = SubResource( 65 )
 position = Vector2( -2.30933, -21.2199 )
 rotation = 3.41561
 scale = Vector2( 20.5991, 23.9732 )
+
+[node name="Shadow" parent="." instance=ExtResource( 7 )]
+material = SubResource( 67 )
+position = Vector2( -2.82184, -0.0251765 )
+rotation = 0.0
+scale = Vector2( 1.02215, 0.90625 )
+z_index = -1
+texture = ExtResource( 2 )
+offset = Vector2( -13.5861, -13.2136 )
+flip_h = false
+hframes = 3
+frame = 2
+dawn = Vector3( 30, 0, 1 )
+day = Vector3( 30, -5, 1 )
+dusk = Vector3( 30, -5, 0.5 )
+night = Vector3( -90, 10, 0 )
 
 [connection signal="action_pressed" from="PlayerEnterActionArea" to="." method="_on_PlayerEnterActionArea_action_pressed"]
 [connection signal="body_entered" from="PlayerEnterActionArea/PlayerHintArea" to="." method="_on_PlayerHintArea_body_entered"]

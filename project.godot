@@ -219,7 +219,7 @@ SceneTransitionManager="*res://scenes/SceneTransitionManager.tscn"
 ItemsDataCache="*res://data/ItemsDataCache.gd"
 PlayerInventory="*res://ui/inventory/PlayerInventory.gd"
 Logger="*res://system/Logger.tscn"
-Time="*res://time/time.gd"
+InTime="*res://time/time.gd"
 
 [display]
 
@@ -232,6 +232,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
+
+[global]
+
+async=false
 
 [input]
 
@@ -339,5 +343,11 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+batching/lights/scissor_area_threshold=0.038
 batching/precision/uv_contract=true
+gles3/shaders/shader_compilation_mode=2
+quality/subsurface_scattering/quality=0
+environment/default_clear_color=Color( 0.52549, 0.52549, 0.52549, 1 )
 environment/default_environment="res://default_env.tres"
