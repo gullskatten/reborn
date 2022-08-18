@@ -14,7 +14,7 @@ func set_item(new_item, qt):
 	
 func _update_icon():
 	if item && item.icon:
-		$TextureRect.texture = load("res://assets/icons/inventory/" + item.icon)
+		$TextureRect.texture = item.icon
 		var stack_size = int(item.stacksize)
 		$Label.visible = stack_size > 1
 		$Label.text = String(item_quantity)

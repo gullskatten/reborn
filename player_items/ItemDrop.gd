@@ -28,7 +28,7 @@ func update_text():
 
 func update_icon(id):
 	item = ItemsDataCache.get_item(id)
-	$Sprite.texture = load("res://assets/icons/inventory/" + item.icon)
+	$Sprite.texture = item.icon
 
 func _ready():
 	$AudioStreamPlayer.pitch_scale = rand_range(0.9,1.6)

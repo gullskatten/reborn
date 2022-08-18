@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouse_head.png-1695661613b4fd2cfb66eaba2856cc10.stex"
+path="res://.import/shield_1.png-785ad302ff26a564f79f2ec1c4252022.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/inventory/quest/mouse_head.png"
-dest_files=[ "res://.import/mouse_head.png-1695661613b4fd2cfb66eaba2856cc10.stex" ]
+source_file="res://assets/equipment/shields/shield_1.png"
+dest_files=[ "res://.import/shield_1.png-785ad302ff26a564f79f2ec1c4252022.stex" ]
 
 [params]
 

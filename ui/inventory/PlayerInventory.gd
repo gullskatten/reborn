@@ -7,73 +7,7 @@ const NUM_INVENTORY_SLOTS = 36
 var active_item_slot = 0
 
 var inventory = {
-	0: [{
-	"id": "1",
-	"name": "Blunt Sword",
-	"description": "This was given to you as a gift by your two brothers.",
-	"slot": "MAIN_HAND",
-	"icon": "equipment/short_sword_1_icon.png",
-	"rarity": "Common",
-	"item_level": 1,
-	"req_level": 1,
-	"stats": {
-		"speed": 0.7,
-		"damage_min": 1,
-		"damage_max": 5
-	},
-	"stacksize": 1,
-	"sell_price": 12
-	  }, 1],  #--> slot_index: [item_name, item_quantity]
-	1: [{
-	"id": "8",
-	"name": "Worn Battle Axe",
-	"slot": "MAIN_HAND",
-	"icon": "equipment/short_axe_2_icon.png",
-	"rarity": "Common",
-	"item_level": 5,
-	"req_level": 3,
-	"stats": {
-		"speed": 1.0,
-		"damage_min": 4,
-		"damage_max": 8
-	},
-	"stacksize": 1,
-	"sell_price": 25
-	  }, 1],  #--> slot_index: [item_name, item_quantity]
-	2: [{
-	"id": "9",
-	"name": "Hay",
-	"icon": "resources/hay_1.png",
-	"rarity": "Common",
-	"stacksize": 100,
-	"sell_price": 2
-	  }, 98],
-	3: [{
-	"id": "9",
-	"name": "Hay",
-	"icon": "resources/hay_1.png",
-	"rarity": "Common",
-	"stacksize": 100,
-	"sell_price": 2
-	  }, 45],
-	4: [{
-	"id": "6",
-	"name": "Dark Mithril Vestment",
-	"description": "Forged by the Mithril Council of Muurin",
-	"slot": "CHEST",
-	"icon": "equipment/chest_1_icon.png",
-	"rarity": "Epic",
-	"item_level": 100,
-	"req_level": 60,
-	"stats": {
-		"intellect": 55,
-		"strength": 55,
-		"armor": 255,
-		"leech": 15
-	},
-	"stacksize": 1,
-	"sell_price": 825
-	  }, 1]
+
 }
 
 func add_item(new_item, item_quantity) -> bool:
