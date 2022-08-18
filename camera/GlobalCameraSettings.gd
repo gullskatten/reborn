@@ -21,6 +21,10 @@ signal cutscene_start()
 signal cutscene_end()
 signal loading_transition_start()
 signal loading_transition_end()
+signal world_input_disabled_changed(is_disabled)
+
+func set_world_gui_input_disabled(is_disabled):
+	emit_signal("world_input_disabled_changed", is_disabled)
 
 func zoom_out():
 	if is_locked: return
