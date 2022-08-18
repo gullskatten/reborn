@@ -46,7 +46,7 @@ func _input(event):
 	
 
 func _physics_process(delta):
-	var speed = 100 * delta
+	speed = 100 * delta
 	
 	if abs(camera.zoom.x - smooth_zoom) > 0.005:
 		camera.zoom = lerp(camera.zoom, Vector2.ONE * smooth_zoom, delta * zoom_speed)

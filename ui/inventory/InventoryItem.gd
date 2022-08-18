@@ -1,4 +1,5 @@
 extends Node2D
+class_name InventoryItem
 
 var item
 var item_quantity

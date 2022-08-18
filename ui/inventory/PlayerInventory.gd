@@ -1,7 +1,6 @@
 extends Node
 
 const SlotClass = preload("res://ui/inventory/Slot.gd")
-const ItemClass = preload("res://ui/inventory/InventoryItem.gd")
 const NUM_INVENTORY_SLOTS = 36
 
 var active_item_slot = 0
@@ -9,6 +8,9 @@ var active_item_slot = 0
 var inventory = {
 
 }
+
+signal item_placed(idx, item, quantity)
+signal updated_holding_item(item)
 
 func add_item(new_item, item_quantity) -> bool:
 	if new_item == null:
@@ -25,12 +27,12 @@ func add_item(new_item, item_quantity) -> bool:
 			var able_to_add = stack_size - inventory[index][1]
 			if able_to_add >= item_quantity:
 				inventory[index][1] += item_quantity
-				update_slot_visual(index, inventory[index][0], inventory[index][1])
+				emit_signal("item_placed", index, inventory[index][0], inventory[index][1])
 				has_added_to_quantity = true
 				break
 			else:
 				inventory[index][1] += able_to_add
-				update_slot_visual(index, inventory[index][0], inventory[index][1])
+				emit_signal("item_placed", index, inventory[index][0], inventory[index][1])
 				item_quantity = item_quantity - able_to_add
 				
 	if !has_added_to_quantity:
@@ -42,19 +44,12 @@ func add_item(new_item, item_quantity) -> bool:
 		for i in range(NUM_INVENTORY_SLOTS):
 			if inventory.has(i) == false:
 				inventory[i] = [new_item, item_quantity]
-				update_slot_visual(i, inventory[i][0], inventory[i][1])
+				emit_signal("item_placed", i, inventory[i][0], inventory[i][1])
+				
 				return true
 
 	return has_added_to_quantity || false
 
-func update_slot_visual(slot_index, item, new_quantity): 
-	var slot = get_node("/root/World/Main/GUI/Interface/Inventory/MarginContainer/CenterContainer/GridContainer/Slot" + str(slot_index + 1))
-	if slot.item != null:
-		# Updates the internal item in the item class
-		slot.item.set_item(item, new_quantity)
-	else:
-		# Initializes a new instance of item class (visual)
-		slot.initialize_item(item, new_quantity)
 
 func remove_item(slot: SlotClass):
 	match slot.slotType:
@@ -63,7 +58,7 @@ func remove_item(slot: SlotClass):
 		_:
 			print("Unable to remove item!")
 
-func add_item_to_empty_slot(item: ItemClass, slot: SlotClass):
+func add_item_to_empty_slot(item: InventoryItem, slot: SlotClass):
 	match slot.slotType:
 		SlotClass.SlotType.INVENTORY:
 			inventory[slot.slot_index] = [item.item, item.item_quantity]

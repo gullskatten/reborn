@@ -36,9 +36,6 @@ func enable_movement():
 
 func disable_movement():
 	allowed_movement = false
-
-func _physics_process(delta):
-	pass
 	
 func blink():
 	var t = rand_range(1,8)

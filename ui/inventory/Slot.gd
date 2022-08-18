@@ -31,7 +31,6 @@ enum SlotType {
 }
 
 var slotType = null
-var root_interface_node = null
 
 func _ready():
 	default_style = StyleBoxTexture.new()
@@ -42,8 +41,21 @@ func _ready():
 	selected_style.texture = selected_tex
 
 	refresh_style()
-	root_interface_node = get_tree().root.get_node("/root/World/Main/GUI/Interface")
+	
+	PlayerInventory.connect("item_placed", self, "check_item_placement")
+	
 
+func check_item_placement(idx, internal_item, quantity):
+	if slot_index != idx: return
+	
+	if item != null:
+		# Updates the internal item in the item class
+		item.set_item(internal_item, quantity)
+	else:
+		# Initializes a new instance of item class (visual)
+		initialize_item(internal_item, quantity)
+	
+	
 func refresh_style():
 	if slotType == SlotType.HOTBAR and PlayerInventory.active_item_slot == slot_index:
 		set('custom_styles/panel', selected_style)
@@ -54,14 +66,14 @@ func refresh_style():
 	
 func pickFromSlot():
 	remove_child(item)
-	root_interface_node.add_child(item)
+	PlayerInventory.set_holding_item(item)
 	item = null
 	refresh_style()
 	
 func putIntoSlot(new_item):
 	item = new_item
 	item.position = Vector2(0, 0)
-	root_interface_node.remove_child(item)
+	PlayerInventory.set_holding_item(null)
 	add_child(item)
 	refresh_style()
 	

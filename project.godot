@@ -105,6 +105,11 @@ _global_script_classes=[ {
 "path": "res://npc/abstract/Human.gd"
 }, {
 "base": "Node2D",
+"class": "InventoryItem",
+"language": "GDScript",
+"path": "res://ui/inventory/InventoryItem.gd"
+}, {
+"base": "Node2D",
 "class": "IslandTree",
 "language": "GDScript",
 "path": "res://structures/trees/Tree.gd"
@@ -224,6 +229,7 @@ _global_script_class_icons={
 "EquipmentItemStats": "",
 "EquippableItem": "",
 "Human": "",
+"InventoryItem": "",
 "IslandTree": "",
 "Item": "",
 "MoonLight": "",

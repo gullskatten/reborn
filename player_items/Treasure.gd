@@ -29,10 +29,10 @@ func _on_PlayerEnterActionArea_action_pressed():
 			add_child(loot)
 			loot.drop(item)
 
-func _on_PlayerHintArea_body_entered(body):
+func _on_PlayerHintArea_body_entered(_body):
 	if !is_opened:
 		animationPlayer.play("Unlock")
 		
-func _on_PlayerHintArea_body_exited(body):
+func _on_PlayerHintArea_body_exited(_body):
 	if !is_opened:
 		animationPlayer.play("Lock")
