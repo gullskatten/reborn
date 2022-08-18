@@ -1,31 +1,10 @@
 extends Resource
 class_name Item
 
-var id := ""
-var name := ""
-var item_name := ""
-var description := ""
-var slot := ""
-var icon := ""
-var rarity := ""
-var item_level := 0
-var req_level := 1
-var stats : Dictionary = {
-	
-}
-var stacksize := 1
-var sell_price := 1
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+export var id := ""
+export var item_name := ""
+export var description := ""
+export var icon : Texture
+export(int, "Common", "Uncommon", "Rare", "Epic", "Legendary") var rarity
+export var sellable := false
+export var stacksize := 1

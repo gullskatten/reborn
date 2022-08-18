@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://data/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/inventory/equipment/short_sword_1_icon.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+id = "7"
+item_name = "Blunt Sword"
+description = "This was given to you as a gift by your two brothers."
+icon = ExtResource( 2 )
+rarity = 1
+sellable = true
+stacksize = 1
+sell_price = 25
+item_level = 5
+req_level = 1
+min_damage = 2
+max_damage = 4
+attack_speed = 1.0
+slot = 0

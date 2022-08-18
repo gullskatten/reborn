@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://data/QuestItem.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/inventory/quest/mouse_head.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+id = "1"
+item_name = "Captured Rat"
+description = "You can still hear it squeel."
+icon = ExtResource( 2 )
+rarity = 0
+sellable = false
+stacksize = 1
+related_quest_id = 0

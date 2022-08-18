@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://data/Equipment.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/inventory/equipment/head_1_icon.png" type="Texture" id=2]
+[ext_resource path="res://data/EquipmentItemStats.gd" type="Script" id=3]
+[ext_resource path="res://assets/equipment/head/head_1.png" type="Texture" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+intellect = 0.0
+strength = 5.0
+movement_speed = 0.0
+crit = 5.0
+health = 10.0
+
+[resource]
+script = ExtResource( 1 )
+id = "6"
+item_name = "Vilnia Guardian Helm"
+description = "Worn by most guards in Vilnia."
+icon = ExtResource( 2 )
+rarity = 2
+sellable = true
+stacksize = 1
+sell_price = 45
+item_level = 5
+req_level = 10
+stats = SubResource( 1 )
+equipment_texture = ExtResource( 4 )
+slot = 0

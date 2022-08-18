@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://data/SellableItem.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/inventory/resources/stone_1.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+id = "4"
+item_name = "Stone"
+description = ""
+icon = ExtResource( 2 )
+rarity = 0
+sellable = true
+stacksize = 500
+sell_price = 2
