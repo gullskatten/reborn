@@ -11,6 +11,7 @@ script = ExtResource( 1 )
 position = Vector2( 43, 30 )
 offset = Vector2( 10, 10 )
 current = true
+zoom = Vector2( 0.3, 0.3 )
 process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 7.0

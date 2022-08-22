@@ -10,7 +10,7 @@ const still = Vector2(0, 0)
 
 export var speed := 1000.0
 export var zoom_speed := 10.0
-export var smooth_zoom := 1.0 setget set_smooth_zoom
+export var smooth_zoom := 0.3 setget set_smooth_zoom
 onready var cameraPosition = $CameraPosition
 onready var camera = $CameraPosition/Camera
 
