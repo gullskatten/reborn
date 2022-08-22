@@ -43,8 +43,6 @@ func _input(event):
 				
 				Input.action_release("pan_view")
 
-	
-
 func _physics_process(delta):
 	var speed = 100 * delta
 	
@@ -57,7 +55,6 @@ func _physics_process(delta):
 			cameraPosition.translate(-motion.round() * floor(speed))
 			motion = still #Do not forget to reset your frame-time variables!		
 	
-				
 func _on_force_update_position(position):
 	if(cameraPosition != null):	
 		cameraPosition.set_deferred("global_position", position)

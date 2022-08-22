@@ -23,10 +23,11 @@ position = Vector2( 675, 244 )
 position = Vector2( -972, -277 )
 
 [node name="Clouds" parent="." index="1"]
-margin_left = -959.0
-margin_top = -27.0
-margin_right = 3213.0
-margin_bottom = 2493.0
+light_mask = 0
+margin_left = -1607.0
+margin_top = -709.0
+margin_right = 1866.0
+margin_bottom = 1133.0
 
 [node name="BirdCritter" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( -22, 83 )
