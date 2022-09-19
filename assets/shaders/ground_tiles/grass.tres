@@ -2,20 +2,20 @@
 
 [ext_resource path="res://assets/shaders/ground_tiles/grass.shader" type="Shader" id=1]
 
-[sub_resource type="OpenSimplexNoise" id=65]
+[sub_resource type="OpenSimplexNoise" id=74]
 seed = 1
 octaves = 8
 period = 33.4
 persistence = 0.859
 lacunarity = 2.48
 
-[sub_resource type="NoiseTexture" id=66]
+[sub_resource type="NoiseTexture" id=75]
 width = 1080
 height = 24
 seamless = true
-noise = SubResource( 65 )
+noise = SubResource( 74 )
 
 [resource]
 shader = ExtResource( 1 )
 shader_param/pixelSize = 2
-shader_param/noise = SubResource( 66 )
+shader_param/noise = SubResource( 75 )

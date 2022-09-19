@@ -1,0 +1,799 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://structures/props/village/church/Graveyard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/abstract/InnerScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/props/village/church/tomb_stone_large.png" type="Texture" id=3]
+[ext_resource path="res://assets/tiles/64x32-brickroad.png" type="Texture" id=4]
+[ext_resource path="res://assets/tiles/64x32-dirt.png" type="Texture" id=5]
+[ext_resource path="res://assets/tiles/64x32-wooden_floor.png" type="Texture" id=6]
+[ext_resource path="res://assets/tiles/64x32-grass-iso.png" type="Texture" id=7]
+[ext_resource path="res://assets/tiles/64x32-noenter-area.png" type="Texture" id=8]
+[ext_resource path="res://assets/tiles/64x32-brick-floor.png" type="Texture" id=9]
+[ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=10]
+[ext_resource path="res://npc/neutral/critter/Firefly.tscn" type="PackedScene" id=11]
+[ext_resource path="res://structures/props/vegetation/FlowerSet1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://structures/trees/GrandTree.tscn" type="PackedScene" id=13]
+[ext_resource path="res://structures/props/vegetation/Bush.tscn" type="PackedScene" id=14]
+[ext_resource path="res://structures/props/vegetation/StrawClusterA.tscn" type="PackedScene" id=15]
+[ext_resource path="res://structures/trees/PineTree.tscn" type="PackedScene" id=16]
+[ext_resource path="res://structures/buildings/village/MouseHome.tscn" type="PackedScene" id=17]
+[ext_resource path="res://npc/neutral/critter/Mouse.tscn" type="PackedScene" id=18]
+
+[sub_resource type="ShaderMaterial" id=60]
+
+[sub_resource type="TileSet" id=254]
+resource_local_to_scene = true
+0/name = "Grass"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/material = SubResource( 60 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 512, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Dirt"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 512, 128 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 64, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Brickroad"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 512, 128 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 1
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 64, 32 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "WoodenFloor"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 512, 128 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 1
+3/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 64, 32 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "SandyBrickFloor"
+4/texture = ExtResource( 9 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 525, 136 )
+4/tile_mode = 1
+4/autotile/bitmask_mode = 1
+4/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 64, 32 )
+4/autotile/spacing = 0
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "NoEnterArea"
+5/texture = ExtResource( 8 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 512, 128 )
+5/tile_mode = 1
+5/autotile/bitmask_mode = 1
+5/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+5/autotile/icon_coordinate = Vector2( 0, 0 )
+5/autotile/tile_size = Vector2( 64, 32 )
+5/autotile/spacing = 0
+5/autotile/occluder_map = [  ]
+5/autotile/navpoly_map = [  ]
+5/autotile/priority_map = [  ]
+5/autotile/z_index_map = [  ]
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+
+[sub_resource type="ShaderMaterial" id=247]
+
+[sub_resource type="TileSet" id=255]
+resource_local_to_scene = true
+0/name = "Grass"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/material = SubResource( 247 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 512, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Dirt"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 512, 128 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 64, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Brickroad"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 512, 128 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 1
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 64, 32 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "WoodenFloor"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 512, 128 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 1
+3/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 64, 32 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "SandyBrickFloor"
+4/texture = ExtResource( 9 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 525, 136 )
+4/tile_mode = 1
+4/autotile/bitmask_mode = 1
+4/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 64, 32 )
+4/autotile/spacing = 0
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "NoEnterArea"
+5/texture = ExtResource( 8 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 512, 128 )
+5/tile_mode = 1
+5/autotile/bitmask_mode = 1
+5/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+5/autotile/icon_coordinate = Vector2( 0, 0 )
+5/autotile/tile_size = Vector2( 64, 32 )
+5/autotile/spacing = 0
+5/autotile/occluder_map = [  ]
+5/autotile/navpoly_map = [  ]
+5/autotile/priority_map = [  ]
+5/autotile/z_index_map = [  ]
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+
+[sub_resource type="ShaderMaterial" id=249]
+
+[sub_resource type="TileSet" id=256]
+resource_local_to_scene = true
+0/name = "Grass"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/material = SubResource( 249 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 512, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Dirt"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 512, 128 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 64, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Brickroad"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 512, 128 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 1
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 64, 32 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "WoodenFloor"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 512, 128 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 1
+3/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 64, 32 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "SandyBrickFloor"
+4/texture = ExtResource( 9 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 525, 136 )
+4/tile_mode = 1
+4/autotile/bitmask_mode = 1
+4/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 64, 32 )
+4/autotile/spacing = 0
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "NoEnterArea"
+5/texture = ExtResource( 8 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 512, 128 )
+5/tile_mode = 1
+5/autotile/bitmask_mode = 1
+5/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+5/autotile/icon_coordinate = Vector2( 0, 0 )
+5/autotile/tile_size = Vector2( 64, 32 )
+5/autotile/spacing = 0
+5/autotile/occluder_map = [  ]
+5/autotile/navpoly_map = [  ]
+5/autotile/priority_map = [  ]
+5/autotile/z_index_map = [  ]
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+
+[sub_resource type="ShaderMaterial" id=253]
+
+[sub_resource type="TileSet" id=257]
+resource_local_to_scene = true
+0/name = "Grass"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/material = SubResource( 253 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 512, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Dirt"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 512, 128 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 64, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Brickroad"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 512, 128 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 1
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 64, 32 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "WoodenFloor"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 512, 128 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 1
+3/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 64, 32 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "SandyBrickFloor"
+4/texture = ExtResource( 9 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 525, 136 )
+4/tile_mode = 1
+4/autotile/bitmask_mode = 1
+4/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 64, 32 )
+4/autotile/spacing = 0
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "NoEnterArea"
+5/texture = ExtResource( 8 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 512, 128 )
+5/tile_mode = 1
+5/autotile/bitmask_mode = 1
+5/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 63, Vector2( 0, 2 ), 447, Vector2( 0, 3 ), 216, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 216, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 504, Vector2( 2, 2 ), 255, Vector2( 2, 3 ), 54, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 504, Vector2( 3, 2 ), 255, Vector2( 3, 3 ), 54, Vector2( 4, 0 ), 511, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 507, Vector2( 4, 3 ), 432, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 219, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 432, Vector2( 6, 0 ), 511, Vector2( 6, 1 ), 438, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 27, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 510, Vector2( 7, 3 ), 27 ]
+5/autotile/icon_coordinate = Vector2( 0, 0 )
+5/autotile/tile_size = Vector2( 64, 32 )
+5/autotile/spacing = 0
+5/autotile/occluder_map = [  ]
+5/autotile/navpoly_map = [  ]
+5/autotile/priority_map = [  ]
+5/autotile/z_index_map = [  ]
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+
+[sub_resource type="Shader" id=61]
+code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
+// License: MIT
+
+shader_type canvas_item;
+render_mode unshaded;
+
+// Camera FOV
+uniform float fov : hint_range(1, 179) = 90;
+uniform bool cull_back = true;
+uniform float y_rot : hint_range(-180, 180) = 0.0;
+uniform float x_rot : hint_range(-180, 180) = 0.0;
+// At 0, the image retains its size when unrotated.
+// At 1, the image is resized so that it can do a full
+// rotation without clipping inside its rect.
+uniform float inset : hint_range(0, 1) = 0.0;
+// Consider changing this to a uniform and changing it from code
+uniform vec2 rect_size;
+uniform float tang : hint_range(0,1) = 0.0;
+
+varying flat vec2 o;
+varying vec3 p;
+
+const float PI = 3.14159;
+
+// Creates rotation matrix
+void vertex(){
+	float sin_b = sin(y_rot / 180.0 * PI);
+	float cos_b = cos(y_rot / 180.0 * PI);
+	float sin_c = sin(x_rot / 180.0 * PI);
+	float cos_c = cos(x_rot / 180.0 * PI);
+	
+	mat3 inv_rot_mat;
+	inv_rot_mat[0][0] = cos_b;
+	inv_rot_mat[0][1] = 0.0;
+	inv_rot_mat[0][2] = -sin_b;
+	
+	inv_rot_mat[1][0] = sin_b * sin_c;
+	inv_rot_mat[1][1] = cos_c;
+	inv_rot_mat[1][2] = cos_b * sin_c;
+	
+	inv_rot_mat[2][0] = sin_b * cos_c;
+	inv_rot_mat[2][1] = -sin_c;
+	inv_rot_mat[2][2] = cos_b * cos_c;
+	
+	
+	float t = tan(fov / 360.0 * PI);
+	p = inv_rot_mat * vec3((UV - 0.5), 0.5 / t);
+	float v = (0.5 / t) + 0.5;
+	p.xy *= v * inv_rot_mat[2].z;
+	o = v * inv_rot_mat[2].xy;
+	
+	VERTEX += UV * rect_size * tang * (1.0 - inset);
+	//VERTEX += (UV - 0.5) / TEXTURE_PIXEL_SIZE * t * (1.0 - inset);
+}
+
+void fragment() {
+	
+	if (cull_back && p.z <= 0.0) discard;
+	vec2 uv = (p.xy / p.z).xy - o; 
+    COLOR = texture(TEXTURE, uv + 0.5);
+	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
+}"
+
+[sub_resource type="ShaderMaterial" id=258]
+resource_local_to_scene = true
+shader = SubResource( 61 )
+shader_param/fov = 1.0
+shader_param/cull_back = true
+shader_param/y_rot = 2.417
+shader_param/x_rot = 9.714
+shader_param/inset = 0.0
+shader_param/rect_size = Vector2( 50, 50 )
+shader_param/tang = 0.047
+
+[node name="InnerScene" instance=ExtResource( 2 )]
+
+[node name="Road" parent="Tiles" index="1"]
+tile_set = SubResource( 254 )
+
+[node name="Dirt" parent="Tiles" index="2"]
+tile_set = SubResource( 255 )
+
+[node name="WoodenFloor" parent="Tiles" index="3"]
+tile_set = SubResource( 256 )
+
+[node name="Grass" parent="Tiles" index="6"]
+tile_set = SubResource( 257 )
+tile_data = PoolIntArray( -655371, 0, 196612, -655370, 0, 65538, -655369, 0, 65538, -655368, 0, 65538, -655367, 0, 65539, -655366, 0, 65538, -655365, 0, 65539, -655364, 0, 65539, -655363, 0, 65538, -655362, 0, 65538, -655361, 0, 65538, -720896, 0, 65538, -720895, 0, 65539, -720894, 0, 65539, -720893, 0, 65538, -720892, 0, 65538, -720891, 0, 65539, -720890, 0, 65539, -720889, 0, 65538, -720888, 0, 65538, -720887, 0, 65538, -720886, 0, 196608, -589835, 0, 65543, -589834, 0, 1, -589833, 0, 5, -589832, 0, 1, -589831, 0, 2, -589830, 0, 3, -589829, 0, 5, -589828, 0, 6, -589827, 0, 7, -589826, 0, 3, -589825, 0, 7, -655360, 0, 1, -655359, 0, 7, -655358, 0, 1, -655357, 0, 2, -655356, 0, 3, -655355, 0, 3, -655354, 0, 5, -655353, 0, 2, -655352, 0, 2, -655351, 0, 7, -655350, 0, 65540, -524299, 0, 65543, -524298, 0, 7, -524297, 0, 7, -524296, 0, 2, -524295, 0, 1, -524294, 0, 7, -524293, 0, 0, -524292, 0, 0, -524291, 0, 4, -524290, 0, 1, -524289, 0, 7, -589824, 0, 0, -589823, 0, 4, -589822, 0, 7, -589821, 0, 0, -589820, 0, 3, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 4, -589814, 0, 65541, -458763, 0, 65542, -458762, 0, 3, -458761, 0, 1, -458760, 0, 5, -458759, 0, 6, -458758, 0, 5, -458757, 0, 6, -458756, 0, 3, -458755, 0, 3, -458754, 0, 1, -458753, 0, 3, -524288, 0, 0, -524287, 0, 7, -524286, 0, 6, -524285, 0, 0, -524284, 0, 6, -524283, 0, 3, -524282, 0, 6, -524281, 0, 3, -524280, 0, 3, -524279, 0, 0, -524278, 0, 65541, -393227, 0, 65542, -393226, 0, 5, -393225, 0, 1, -393224, 0, 1, -393223, 0, 0, -393222, 0, 1, -393221, 0, 1, -393220, 0, 1, -393219, 0, 7, -393218, 0, 4, -393217, 0, 7, -458752, 0, 7, -458751, 0, 3, -458750, 0, 1, -458749, 0, 6, -458748, 0, 5, -458747, 0, 2, -458746, 0, 6, -458745, 0, 6, -458744, 0, 3, -458743, 0, 1, -458742, 0, 65541, -327691, 0, 65543, -327690, 0, 2, -327689, 0, 5, -327688, 0, 4, -327687, 0, 7, -327686, 0, 1, -327685, 0, 0, -327684, 0, 3, -327683, 0, 3, -327682, 0, 7, -327681, 0, 5, -393216, 0, 2, -393215, 0, 1, -393214, 0, 4, -393213, 0, 0, -393212, 0, 2, -393211, 0, 1, -393210, 0, 7, -393209, 0, 3, -393208, 0, 1, -393207, 0, 5, -393206, 0, 65541, -262155, 0, 65543, -262154, 0, 6, -262153, 0, 2, -262152, 0, 2, -262151, 0, 5, -262150, 0, 4, -262149, 0, 3, -262148, 0, 4, -262147, 0, 1, -262146, 0, 1, -262145, 0, 2, -327680, 0, 5, -327679, 0, 2, -327678, 0, 1, -327677, 0, 2, -327676, 0, 4, -327675, 0, 1, -327674, 0, 2, -327673, 0, 5, -327672, 0, 7, -327671, 0, 3, -327670, 0, 65541, -196619, 0, 65543, -196618, 0, 0, -196617, 0, 3, -196616, 0, 5, -196615, 0, 6, -196614, 0, 5, -196613, 0, 0, -196612, 0, 6, -196611, 0, 0, -196610, 0, 2, -196609, 0, 2, -262144, 0, 6, -262143, 0, 1, -262142, 0, 1, -262141, 0, 7, -262140, 0, 0, -262139, 0, 1, -262138, 0, 0, -262137, 0, 0, -262136, 0, 4, -262135, 0, 4, -262134, 0, 65541, -131083, 0, 65543, -131082, 0, 7, -131081, 0, 2, -131080, 0, 5, -131079, 0, 1, -131078, 0, 5, -131077, 0, 4, -131076, 0, 7, -131075, 0, 0, -131074, 0, 1, -131073, 0, 7, -196608, 0, 6, -196607, 0, 1, -196606, 0, 7, -196605, 0, 0, -196604, 0, 6, -196603, 0, 4, -196602, 0, 5, -196601, 0, 5, -196600, 0, 0, -196599, 0, 6, -196598, 0, 65540, -65547, 0, 65542, -65546, 0, 4, -65545, 0, 5, -65544, 0, 0, -65543, 0, 4, -65542, 0, 7, -65541, 0, 7, -65540, 0, 0, -65539, 0, 1, -65538, 0, 2, -65537, 0, 3, -131072, 0, 5, -131071, 0, 7, -131070, 0, 5, -131069, 0, 3, -131068, 0, 0, -131067, 0, 0, -131066, 0, 6, -131065, 0, 4, -131064, 0, 6, -131063, 0, 4, -131062, 0, 65540, -11, 0, 65542, -10, 0, 5, -9, 0, 1, -8, 0, 1, -7, 0, 7, -6, 0, 5, -5, 0, 1, -4, 0, 1, -3, 0, 6, -2, 0, 6, -1, 0, 4, -65536, 0, 5, -65535, 0, 0, -65534, 0, 3, -65533, 0, 1, -65532, 0, 7, -65531, 0, 7, -65530, 0, 1, -65529, 0, 1, -65528, 0, 2, -65527, 0, 0, -65526, 0, 65541, 65525, 0, 65543, 65526, 0, 7, 65527, 0, 1, 65528, 0, 0, 65529, 0, 7, 65530, 0, 0, 65531, 0, 5, 65532, 0, 0, 65533, 0, 4, 65534, 0, 4, 65535, 0, 6, 0, 0, 2, 1, 0, 6, 2, 0, 2, 3, 0, 5, 4, 0, 5, 5, 0, 2, 6, 0, 3, 7, 0, 0, 8, 0, 7, 9, 0, 0, 10, 0, 65541, 131061, 0, 65543, 131062, 0, 0, 131063, 0, 2, 131064, 0, 0, 131065, 0, 5, 131066, 0, 1, 131067, 0, 1, 131068, 0, 1, 131069, 0, 7, 131070, 0, 5, 131071, 0, 1, 65536, 0, 0, 65537, 0, 4, 65538, 0, 4, 65539, 0, 7, 65540, 0, 7, 65541, 0, 6, 65542, 0, 2, 65543, 0, 6, 65544, 0, 7, 65545, 0, 0, 65546, 0, 65541, 196597, 0, 65542, 196598, 0, 2, 196599, 0, 0, 196600, 0, 1, 196601, 0, 1, 196602, 0, 0, 196603, 0, 0, 196604, 0, 2, 196605, 0, 2, 196606, 0, 4, 196607, 0, 6, 131072, 0, 6, 131073, 0, 1, 131074, 0, 2, 131075, 0, 4, 131076, 0, 4, 131077, 0, 0, 131078, 0, 5, 131079, 0, 0, 131080, 0, 3, 131081, 0, 1, 131082, 0, 65540, 262133, 0, 65542, 262134, 0, 3, 262135, 0, 6, 262136, 0, 6, 262137, 0, 5, 262138, 0, 0, 262139, 0, 2, 262140, 0, 5, 262141, 0, 1, 262142, 0, 6, 262143, 0, 1, 196608, 0, 1, 196609, 0, 5, 196610, 0, 3, 196611, 0, 1, 196612, 0, 3, 196613, 0, 3, 196614, 0, 5, 196615, 0, 2, 196616, 0, 2, 196617, 0, 0, 196618, 0, 65541, 327669, 0, 65543, 327670, 0, 6, 327671, 0, 7, 327672, 0, 3, 327673, 0, 5, 327674, 0, 1, 327675, 0, 1, 327676, 0, 1, 327677, 0, 3, 327678, 0, 6, 327679, 0, 4, 262144, 0, 5, 262145, 0, 4, 262146, 0, 6, 262147, 0, 0, 262148, 0, 0, 262149, 0, 6, 262150, 0, 6, 262151, 0, 0, 262152, 0, 4, 262153, 0, 5, 262154, 0, 65541, 393205, 0, 65542, 393206, 0, 4, 393207, 0, 3, 393208, 0, 7, 393209, 0, 5, 393210, 0, 3, 393211, 0, 7, 393212, 0, 3, 393213, 0, 2, 393214, 0, 3, 393215, 0, 6, 327680, 0, 4, 327681, 0, 1, 327682, 0, 6, 327683, 0, 0, 327684, 0, 3, 327685, 0, 2, 327686, 0, 3, 327687, 0, 0, 327688, 0, 4, 327689, 0, 4, 327690, 0, 65540, 458741, 0, 65543, 458742, 0, 0, 458743, 0, 6, 458744, 0, 1, 458745, 0, 1, 458746, 0, 1, 458747, 0, 2, 458748, 0, 5, 458749, 0, 1, 458750, 0, 7, 458751, 0, 2, 393216, 0, 7, 393217, 0, 7, 393218, 0, 5, 393219, 0, 5, 393220, 0, 2, 393221, 0, 1, 393222, 0, 3, 393223, 0, 4, 393224, 0, 4, 393225, 0, 2, 393226, 0, 65541, 524277, 0, 65543, 524278, 0, 0, 524279, 0, 3, 524280, 0, 4, 524281, 0, 3, 524282, 0, 7, 524283, 0, 7, 524284, 0, 0, 524285, 0, 2, 524286, 0, 5, 524287, 0, 5, 458752, 0, 2, 458753, 0, 0, 458754, 0, 0, 458755, 0, 5, 458756, 0, 2, 458757, 0, 4, 458758, 0, 7, 458759, 0, 5, 458760, 0, 1, 458761, 0, 7, 458762, 0, 65541, 589813, 0, 65543, 589814, 0, 6, 589815, 0, 5, 589816, 0, 6, 589817, 0, 7, 589818, 0, 5, 589819, 0, 3, 589820, 0, 6, 589821, 0, 6, 589822, 0, 4, 589823, 0, 2, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 6, 524292, 0, 5, 524293, 0, 0, 524294, 0, 1, 524295, 0, 0, 524296, 0, 2, 524297, 0, 7, 524298, 0, 65540, 655349, 0, 65542, 655350, 0, 0, 655351, 0, 7, 655352, 0, 4, 655353, 0, 2, 655354, 0, 0, 655355, 0, 1, 655356, 0, 6, 655357, 0, 7, 655358, 0, 2, 655359, 0, 0, 589824, 0, 4, 589825, 0, 2, 589826, 0, 7, 589827, 0, 6, 589828, 0, 3, 589829, 0, 0, 589830, 0, 6, 589831, 0, 7, 589832, 0, 1, 589833, 0, 2, 589834, 0, 65540, 720885, 0, 196610, 720886, 0, 65536, 720887, 0, 65537, 720888, 0, 65536, 720889, 0, 65536, 720890, 0, 65537, 720891, 0, 65536, 720892, 0, 65536, 720893, 0, 65536, 720894, 0, 65537, 720895, 0, 65536, 655360, 0, 65537, 655361, 0, 65536, 655362, 0, 65536, 655363, 0, 65537, 655364, 0, 65537, 655365, 0, 65536, 655366, 0, 65537, 655367, 0, 65536, 655368, 0, 65537, 655369, 0, 65536, 655370, 0, 196614 )
+
+[node name="GrandTree" parent="Content" index="0" instance=ExtResource( 13 )]
+position = Vector2( 297, -32 )
+
+[node name="Graveyard" parent="Content" index="1" instance=ExtResource( 1 )]
+
+[node name="TombStoneLarge3" type="Sprite" parent="Content" index="2"]
+position = Vector2( -87, -111 )
+texture = ExtResource( 3 )
+offset = Vector2( -1, -17 )
+
+[node name="Shadow" parent="Content/TombStoneLarge3" index="0" instance=ExtResource( 10 )]
+material = SubResource( 258 )
+position = Vector2( -7, 5 )
+z_index = -1
+texture = ExtResource( 3 )
+offset = Vector2( -26.3909, -45.52 )
+flip_h = false
+dawn = Vector3( 12, 0, 1 )
+day = Vector3( 12, -30, 1 )
+dusk = Vector3( 12, -30, 0.5 )
+night = Vector3( -36, 60, 0 )
+
+[node name="Firefly" parent="Content" index="3" instance=ExtResource( 11 )]
+position = Vector2( -79, -103 )
+
+[node name="AnimatedLight" parent="Content/Firefly" index="3"]
+position = Vector2( 2, 4 )
+scale = Vector2( 0.876812, 0.847826 )
+texture_scale = 0.69
+energy = 0.47
+
+[node name="Flower" parent="Content" index="4" instance=ExtResource( 12 )]
+position = Vector2( 254, -21 )
+
+[node name="Flower4" parent="Content" index="5" instance=ExtResource( 12 )]
+position = Vector2( 270, -18 )
+
+[node name="Flower5" parent="Content" index="6" instance=ExtResource( 12 )]
+position = Vector2( 260, -15 )
+
+[node name="Flower2" parent="Content" index="7" instance=ExtResource( 12 )]
+position = Vector2( 348, -32 )
+
+[node name="Flower3" parent="Content" index="8" instance=ExtResource( 12 )]
+position = Vector2( 345, -29 )
+
+[node name="Flower6" parent="Content" index="9" instance=ExtResource( 12 )]
+position = Vector2( 158, -16 )
+
+[node name="Flower7" parent="Content" index="10" instance=ExtResource( 12 )]
+position = Vector2( 100, -50 )
+
+[node name="Flower8" parent="Content" index="11" instance=ExtResource( 12 )]
+position = Vector2( 95, -45 )
+
+[node name="Bush" parent="Content" index="12" instance=ExtResource( 14 )]
+position = Vector2( 64, -60 )
+
+[node name="Bush2" parent="Content" index="13" instance=ExtResource( 14 )]
+position = Vector2( 142, -13 )
+
+[node name="Bush3" parent="Content" index="14" instance=ExtResource( 14 )]
+position = Vector2( 117, -22 )
+
+[node name="Bush4" parent="Content" index="15" instance=ExtResource( 14 )]
+position = Vector2( 115, 2 )
+
+[node name="Bush6" parent="Content" index="16" instance=ExtResource( 14 )]
+position = Vector2( 444, -46 )
+
+[node name="Bush5" parent="Content" index="17" instance=ExtResource( 14 )]
+position = Vector2( 97, -13 )
+
+[node name="GrassClusterA" parent="Content" index="18" instance=ExtResource( 15 )]
+position = Vector2( 126, 3 )
+
+[node name="GrassClusterA2" parent="Content" index="19" instance=ExtResource( 15 )]
+position = Vector2( 434, -38 )
+
+[node name="GrassClusterA3" parent="Content" index="20" instance=ExtResource( 15 )]
+position = Vector2( 450, -39 )
+
+[node name="GrassClusterA4" parent="Content" index="21" instance=ExtResource( 15 )]
+position = Vector2( 458, -52 )
+
+[node name="PineTree" parent="Content" index="22" instance=ExtResource( 16 )]
+position = Vector2( 106, -67 )
+
+[node name="PineTree2" parent="Content" index="23" instance=ExtResource( 16 )]
+position = Vector2( 460, -52 )
+
+[node name="PineTree3" parent="Content" index="24" instance=ExtResource( 16 )]
+position = Vector2( -282, 40 )
+
+[node name="PineTree4" parent="Content" index="25" instance=ExtResource( 16 )]
+position = Vector2( -305, 10 )
+
+[node name="Mouse" parent="Content" index="26" instance=ExtResource( 18 )]
+position = Vector2( 220, 37 )
+
+[node name="Mouse2" parent="Content" index="27" instance=ExtResource( 18 )]
+position = Vector2( 319, 19 )
+
+[node name="MouseHome" parent="Content" index="28" instance=ExtResource( 17 )]
+position = Vector2( 298, -31 )
+scale = Vector2( -1, 1 )
+
+[node name="HideOffScreen" parent="." index="2"]
+position = Vector2( -21.5, -35 )
+scale = Vector2( 29.45, 11.8 )
+
+[editable path="Content/Firefly"]

@@ -447,7 +447,6 @@ collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HomeDetectionZone"]
-visible = false
 shape = SubResource( 45 )
 
 [node name="FleeTimer" type="Timer" parent="."]

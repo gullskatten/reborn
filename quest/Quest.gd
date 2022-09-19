@@ -1,12 +1,9 @@
+extends Resource
 class_name Quest
-extends Node
 
-
-
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+export var id := ""
+export var quest_name := ""
+export var description := ""
+export(int, "Common", "Uncommon", "Rare", "Epic", "Legendary") var type
+export var rewards := false
+export var objective := 1

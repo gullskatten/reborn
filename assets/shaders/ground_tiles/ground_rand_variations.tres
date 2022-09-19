@@ -1,0 +1,46 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=73]
+code = "shader_type canvas_item;
+
+uniform sampler2D noise;
+uniform int pixelSize = 2;
+uniform vec4 ground_color : hint_color = vec4(1.0, 0.9, 0.65, 1.0);
+
+void fragment() {
+	ivec2 size = textureSize(TEXTURE, 0);
+	
+	int xRes = size.x;
+	int yRes = size.y;
+	
+	float xFactor = float(xRes) / float(pixelSize);
+	float yFactor = float(yRes) / float(pixelSize);
+	
+	float grid_uv_x = round(UV.x * xFactor) / xFactor;
+	float grid_uv_y = round(UV.y * yFactor) / yFactor;
+	vec4 rand = texture(noise, vec2(grid_uv_x, grid_uv_y)).rgba;
+    vec4 cur_pixel = texture(TEXTURE, UV);
+	vec4 color = mix(vec4(ground_color.r, ground_color.g, ground_color.b, cur_pixel.a), rand, 0.35);
+	
+	COLOR = color;
+	COLOR.a = cur_pixel.a;
+}"
+
+[sub_resource type="OpenSimplexNoise" id=74]
+seed = 1
+octaves = 8
+period = 33.4
+persistence = 0.859
+lacunarity = 2.48
+
+[sub_resource type="NoiseTexture" id=75]
+width = 1080
+height = 24
+seamless = true
+noise = SubResource( 74 )
+
+[resource]
+shader = SubResource( 73 )
+shader_param/pixelSize = 2
+shader_param/ground_color = Color( 0.882353, 0.462745, 0.129412, 1 )
+shader_param/noise = SubResource( 75 )

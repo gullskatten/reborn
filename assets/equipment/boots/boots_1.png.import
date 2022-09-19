@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shield_back_1.png-c25ae2be730af2a141abf1dd1e4a9f13.stex"
+path="res://.import/boots_1.png-c5c03489553564adf5f907684dbfc087.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/equipment/shields/shield_back_1.png"
-dest_files=[ "res://.import/shield_back_1.png-c25ae2be730af2a141abf1dd1e4a9f13.stex" ]
+source_file="res://assets/equipment/boots/boots_1.png"
+dest_files=[ "res://.import/boots_1.png-c5c03489553564adf5f907684dbfc087.stex" ]
 
 [params]
 

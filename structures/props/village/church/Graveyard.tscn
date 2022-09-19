@@ -1,0 +1,489 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/props/village/church/gravestones.png" type="Texture" id=1]
+[ext_resource path="res://effects/Shadow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://structures/props/village/church/Graveyard.gd" type="Script" id=3]
+[ext_resource path="res://effects/HideOffScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://structures/props/vegetation/SingleStraw.tscn" type="PackedScene" id=5]
+[ext_resource path="res://structures/props/village/StoneFences.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Shader" id=61]
+code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
+// License: MIT
+
+shader_type canvas_item;
+render_mode unshaded;
+
+// Camera FOV
+uniform float fov : hint_range(1, 179) = 90;
+uniform bool cull_back = true;
+uniform float y_rot : hint_range(-180, 180) = 0.0;
+uniform float x_rot : hint_range(-180, 180) = 0.0;
+// At 0, the image retains its size when unrotated.
+// At 1, the image is resized so that it can do a full
+// rotation without clipping inside its rect.
+uniform float inset : hint_range(0, 1) = 0.0;
+// Consider changing this to a uniform and changing it from code
+uniform vec2 rect_size;
+uniform float tang : hint_range(0,1) = 0.0;
+
+varying flat vec2 o;
+varying vec3 p;
+
+const float PI = 3.14159;
+
+// Creates rotation matrix
+void vertex(){
+	float sin_b = sin(y_rot / 180.0 * PI);
+	float cos_b = cos(y_rot / 180.0 * PI);
+	float sin_c = sin(x_rot / 180.0 * PI);
+	float cos_c = cos(x_rot / 180.0 * PI);
+	
+	mat3 inv_rot_mat;
+	inv_rot_mat[0][0] = cos_b;
+	inv_rot_mat[0][1] = 0.0;
+	inv_rot_mat[0][2] = -sin_b;
+	
+	inv_rot_mat[1][0] = sin_b * sin_c;
+	inv_rot_mat[1][1] = cos_c;
+	inv_rot_mat[1][2] = cos_b * sin_c;
+	
+	inv_rot_mat[2][0] = sin_b * cos_c;
+	inv_rot_mat[2][1] = -sin_c;
+	inv_rot_mat[2][2] = cos_b * cos_c;
+	
+	
+	float t = tan(fov / 360.0 * PI);
+	p = inv_rot_mat * vec3((UV - 0.5), 0.5 / t);
+	float v = (0.5 / t) + 0.5;
+	p.xy *= v * inv_rot_mat[2].z;
+	o = v * inv_rot_mat[2].xy;
+	
+	VERTEX += UV * rect_size * tang * (1.0 - inset);
+	//VERTEX += (UV - 0.5) / TEXTURE_PIXEL_SIZE * t * (1.0 - inset);
+}
+
+void fragment() {
+	
+	if (cull_back && p.z <= 0.0) discard;
+	vec2 uv = (p.xy / p.z).xy - o; 
+    COLOR = texture(TEXTURE, uv + 0.5);
+	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
+}"
+
+[sub_resource type="ShaderMaterial" id=62]
+resource_local_to_scene = true
+shader = SubResource( 61 )
+shader_param/fov = 1.0
+shader_param/cull_back = true
+shader_param/y_rot = 14.417
+shader_param/x_rot = -2.269
+shader_param/inset = 0.0
+shader_param/rect_size = Vector2( 20, 20 )
+shader_param/tang = 0.0
+
+[node name="Graveyard" type="YSort"]
+script = ExtResource( 3 )
+
+[node name="Stones" type="YSort" parent="."]
+
+[node name="Gravestone" type="Sprite" parent="Stones"]
+position = Vector2( -59, -3 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones/Gravestone" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone2" type="Sprite" parent="Stones"]
+position = Vector2( -82, 9 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones/Gravestone2" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone3" type="Sprite" parent="Stones"]
+position = Vector2( -106, 20 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones/Gravestone3" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone4" type="Sprite" parent="Stones"]
+position = Vector2( -90, -19 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones/Gravestone4" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone5" type="Sprite" parent="Stones"]
+position = Vector2( -113, -7 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones/Gravestone5" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone6" type="Sprite" parent="Stones"]
+position = Vector2( -137, 4 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones/Gravestone6" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="HideOffScreen" parent="Stones" instance=ExtResource( 4 )]
+position = Vector2( -91, -4 )
+scale = Vector2( 4.1, 2.55 )
+
+[node name="Straw" parent="Stones" instance=ExtResource( 5 )]
+position = Vector2( -51, -2 )
+
+[node name="Straw2" parent="Stones" instance=ExtResource( 5 )]
+position = Vector2( -90, 15 )
+
+[node name="Straw3" parent="Stones" instance=ExtResource( 5 )]
+position = Vector2( -174, -1 )
+
+[node name="Straw4" parent="Stones" instance=ExtResource( 5 )]
+position = Vector2( -179, 3 )
+
+[node name="Straw5" parent="Stones" instance=ExtResource( 5 )]
+position = Vector2( -161, 0 )
+
+[node name="Straw6" parent="Stones" instance=ExtResource( 5 )]
+position = Vector2( -153, 5 )
+
+[node name="Stones3" type="YSort" parent="."]
+position = Vector2( -89, -44 )
+
+[node name="Gravestone" type="Sprite" parent="Stones3"]
+position = Vector2( -59, -3 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones3/Gravestone" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone2" type="Sprite" parent="Stones3"]
+position = Vector2( -82, 9 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones3/Gravestone2" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone4" type="Sprite" parent="Stones3"]
+position = Vector2( -90, -19 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones3/Gravestone4" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone5" type="Sprite" parent="Stones3"]
+position = Vector2( -113, -7 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones3/Gravestone5" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone6" type="Sprite" parent="Stones3"]
+position = Vector2( -137, 4 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones3/Gravestone6" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="HideOffScreen" parent="Stones3" instance=ExtResource( 4 )]
+position = Vector2( -91, -4 )
+scale = Vector2( 4.1, 2.55 )
+
+[node name="Straw" parent="Stones3" instance=ExtResource( 5 )]
+position = Vector2( -74, -30 )
+
+[node name="Straw2" parent="Stones3" instance=ExtResource( 5 )]
+position = Vector2( -104, -7 )
+
+[node name="Stones2" type="YSort" parent="."]
+
+[node name="Gravestone" type="Sprite" parent="Stones2"]
+position = Vector2( 38, -49 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones2/Gravestone" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone3" type="Sprite" parent="Stones2"]
+position = Vector2( -9, -26 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones2/Gravestone3" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone5" type="Sprite" parent="Stones2"]
+position = Vector2( -98, -73 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones2/Gravestone5" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone6" type="Sprite" parent="Stones2"]
+position = Vector2( -129, -90 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones2/Gravestone6" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="Gravestone4" type="Sprite" parent="Stones2"]
+position = Vector2( 7, -65 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -7 )
+vframes = 5
+frame = 2
+
+[node name="Shadow" parent="Stones2/Gravestone4" instance=ExtResource( 2 )]
+material = SubResource( 62 )
+position = Vector2( 0, -1 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( -7.99999, -20 )
+flip_h = false
+vframes = 5
+frame = 2
+dawn = Vector3( 4, 0, 1 )
+day = Vector3( 4, -30, 1 )
+dusk = Vector3( 4, -30, 0.5 )
+night = Vector3( -12, 60, 0 )
+
+[node name="HideOffScreen" parent="Stones2" instance=ExtResource( 4 )]
+position = Vector2( 6, -50 )
+scale = Vector2( 4.1, 2.55 )
+
+[node name="Straw" parent="Stones2" instance=ExtResource( 5 )]
+position = Vector2( -9, -82 )
+
+[node name="Straw2" parent="Stones2" instance=ExtResource( 5 )]
+position = Vector2( -6, -35 )
+
+[node name="Straw7" parent="Stones2" instance=ExtResource( 5 )]
+position = Vector2( -137, -86 )
+
+[node name="Straw3" parent="Stones2" instance=ExtResource( 5 )]
+position = Vector2( -77, -47 )
+
+[node name="Straw4" parent="Stones2" instance=ExtResource( 5 )]
+position = Vector2( -20, -78 )
+
+[node name="Straw5" parent="Stones2" instance=ExtResource( 5 )]
+position = Vector2( -2, -81 )
+
+[node name="Straw6" parent="Stones2" instance=ExtResource( 5 )]
+position = Vector2( -51, -48 )
+
+[node name="Fences" parent="." instance=ExtResource( 8 )]
+tile_data = PoolIntArray( -720917, 0, 327680, -720914, 0, 65536, -720911, 0, 0, -720907, 0, 0, -720900, 0, 0, -720899, 0, 0, -589847, 0, 655360, -589837, 0, 524288, -589825, 0, 393216, -393239, 0, 393216, -327681, 0, 524288, -131095, 0, 393216, -131085, 0, 524288, -131073, 0, 393216, -22, 0, 0, -15, 0, 0, -11, 0, 65536, -3, 0, 131072, 131049, 0, 393216, 131059, 0, 393216, 131071, 0, 393216, 393215, 0, 393216, 524275, 0, 458752, 589801, 0, 458752, 655337, 0, 393216, 655347, 0, 393216, 655359, 0, 393216, 786411, 0, 0, 786418, 0, 0, 786421, 0, 0, 786429, 0, 131072 )

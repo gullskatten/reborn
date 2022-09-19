@@ -884,7 +884,7 @@ is_random_flower = false
 position = Vector2( 310, -32 )
 
 [node name="HayStrawCluster2" parent="Content" index="21" instance=ExtResource( 13 )]
-position = Vector2( 142, 30 )
+position = Vector2( 137, 10 )
 
 [node name="HayStrawCluster3" parent="Content" index="22" instance=ExtResource( 13 )]
 position = Vector2( 56, 151 )
