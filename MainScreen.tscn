@@ -329,7 +329,7 @@ color_dusk = Color( 0.403922, 0.262745, 0.372549, 1 )
 
 [node name="BackgroundMusic" parent="ViewportContainer/Viewport" instance=ExtResource( 17 )]
 
-[node name="BaseWorldScene" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
+[node name="World1" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
 environment = ExtResource( 8 )

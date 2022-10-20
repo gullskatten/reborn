@@ -480,7 +480,6 @@ texture = ExtResource( 8 )
 material = SubResource( 62 )
 position = Vector2( -51, 2.38419e-07 )
 rotation = 3.01593
-scale = Vector2( 1, 1 )
 z_index = -1
 texture = ExtResource( 4 )
 offset = Vector2( -139.638, -234.604 )

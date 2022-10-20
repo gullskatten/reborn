@@ -26,7 +26,7 @@ position = Vector2( 675, 244 )
 [node name="FarmField" parent="InnerScenes" index="5" instance=ExtResource( 4 )]
 position = Vector2( -972, -277 )
 
-[node name="InnerScene" parent="InnerScenes" index="6" instance=ExtResource( 5 )]
+[node name="ChurchScene" parent="InnerScenes" index="6" instance=ExtResource( 5 )]
 position = Vector2( -1674, 52 )
 
 [node name="Clouds" parent="." index="1"]

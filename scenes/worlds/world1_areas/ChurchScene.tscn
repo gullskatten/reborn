@@ -771,13 +771,13 @@ position = Vector2( 450, -39 )
 position = Vector2( 458, -52 )
 
 [node name="PineTree" parent="Content" index="22" instance=ExtResource( 16 )]
-position = Vector2( 106, -67 )
+position = Vector2( 35, 39 )
 
 [node name="PineTree2" parent="Content" index="23" instance=ExtResource( 16 )]
 position = Vector2( 460, -52 )
 
 [node name="PineTree3" parent="Content" index="24" instance=ExtResource( 16 )]
-position = Vector2( -282, 40 )
+position = Vector2( -274, 43 )
 
 [node name="PineTree4" parent="Content" index="25" instance=ExtResource( 16 )]
 position = Vector2( -305, 10 )
@@ -793,7 +793,7 @@ position = Vector2( 298, -31 )
 scale = Vector2( -1, 1 )
 
 [node name="HideOffScreen" parent="." index="2"]
-position = Vector2( -21.5, -35 )
-scale = Vector2( 29.45, 11.8 )
+position = Vector2( -51, 27 )
+scale = Vector2( 57.5, 28.4 )
 
 [editable path="Content/Firefly"]

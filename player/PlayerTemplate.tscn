@@ -18122,6 +18122,18 @@ tracks/99/keys = {
 "update": 0,
 "values": [ Vector2( -7, -12 ) ]
 }
+tracks/100/type = "value"
+tracks/100/path = NodePath("BackBufferCopy/PantsFront:offset")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -8, -1 ) ]
+}
 
 [sub_resource type="Animation" id=28]
 resource_name = "Idle_NW"
@@ -35820,7 +35832,7 @@ tracks/18/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -17 ), Vector2( 2, -13 ), Vector2( 2, -20 ) ]
+"values": [ Vector2( 1, -17 ), Vector2( 1, -13 ), Vector2( 1, -20 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("BackBufferCopy/LegFront:offset")
@@ -35856,7 +35868,7 @@ tracks/21/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -6 ), Vector2( 2, -2 ), Vector2( 2, -9 ) ]
+"values": [ Vector2( 1, -6 ), Vector2( 1, -2 ), Vector2( 1, -9 ) ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("BackBufferCopy/FeetBack:offset")
@@ -35880,7 +35892,7 @@ tracks/23/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2, -9 ), Vector2( -2, -10 ), Vector2( -2, -3 ) ]
+"values": [ Vector2( -3, -9 ), Vector2( -3, -10 ), Vector2( -3, -3 ) ]
 }
 tracks/24/type = "value"
 tracks/24/path = NodePath("BackBufferCopy/LegBack:frame")
@@ -35904,7 +35916,7 @@ tracks/25/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -18 ), Vector2( 0, -19 ), Vector2( 0, -12 ) ]
+"values": [ Vector2( -1, -18 ), Vector2( -1, -19 ), Vector2( -1, -12 ) ]
 }
 tracks/26/type = "value"
 tracks/26/path = NodePath("BackBufferCopy/LegBack:offset")
@@ -36566,7 +36578,7 @@ tracks/80/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -18 ), Vector2( 0, -19 ), Vector2( 0, -12 ) ]
+"values": [ Vector2( -1, -18 ), Vector2( -1, -19 ), Vector2( -1, -12 ) ]
 }
 tracks/81/type = "value"
 tracks/81/path = NodePath("BackBufferCopy/PantsFront:frame")
@@ -36590,7 +36602,7 @@ tracks/82/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -16 ), Vector2( 2, -12 ), Vector2( 2, -19 ) ]
+"values": [ Vector2( 1, -16 ), Vector2( 1, -12 ), Vector2( 1, -19 ) ]
 }
 tracks/83/type = "value"
 tracks/83/path = NodePath("BackBufferCopy/PantsFront:offset")
@@ -36650,7 +36662,7 @@ tracks/87/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2, -9 ), Vector2( -2, -10 ), Vector2( -2, -3 ) ]
+"values": [ Vector2( -3, -9 ), Vector2( -3, -10 ), Vector2( -3, -3 ) ]
 }
 tracks/88/type = "value"
 tracks/88/path = NodePath("BackBufferCopy/BootsBack:rotation_degrees")
@@ -36698,7 +36710,7 @@ tracks/91/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -6 ), Vector2( 2, -2 ), Vector2( 2, -9 ) ]
+"values": [ Vector2( 1, -6 ), Vector2( 1, -2 ), Vector2( 1, -9 ) ]
 }
 tracks/92/type = "value"
 tracks/92/path = NodePath("BackBufferCopy/BootsFont:rotation_degrees")
@@ -39384,7 +39396,7 @@ tracks/18/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -16 ), Vector2( 2, -12 ), Vector2( 2, -19 ) ]
+"values": [ Vector2( 1, -16 ), Vector2( 1, -12 ), Vector2( 1, -19 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("BackBufferCopy/LegFront:offset")
@@ -39420,7 +39432,7 @@ tracks/21/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -5 ), Vector2( 2, -1 ), Vector2( 2, -8 ) ]
+"values": [ Vector2( 1, -5 ), Vector2( 1, -1 ), Vector2( 1, -8 ) ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("BackBufferCopy/FeetBack:offset")
@@ -39444,7 +39456,7 @@ tracks/23/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2, -7.5 ), Vector2( -2, -8.5 ), Vector2( -2, -1.5 ) ]
+"values": [ Vector2( -3, -7.5 ), Vector2( -3, -8.5 ), Vector2( -3, -1.5 ) ]
 }
 tracks/24/type = "value"
 tracks/24/path = NodePath("BackBufferCopy/LegBack:frame")
@@ -39468,7 +39480,7 @@ tracks/25/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -17 ), Vector2( 0, -18 ), Vector2( 0, -11 ) ]
+"values": [ Vector2( -1, -17 ), Vector2( -1, -18 ), Vector2( -1, -11 ) ]
 }
 tracks/26/type = "value"
 tracks/26/path = NodePath("BackBufferCopy/LegBack:offset")
@@ -40202,7 +40214,7 @@ tracks/86/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -17 ), Vector2( 0, -18 ), Vector2( 0, -11 ) ]
+"values": [ Vector2( -1, -17 ), Vector2( -1, -18 ), Vector2( -1, -11 ) ]
 }
 tracks/87/type = "value"
 tracks/87/path = NodePath("BackBufferCopy/PantsBack:scale")
@@ -40238,7 +40250,7 @@ tracks/89/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -16 ), Vector2( 2, -12 ), Vector2( 2, -19 ) ]
+"values": [ Vector2( 1, -16 ), Vector2( 1, -12 ), Vector2( 1, -19 ) ]
 }
 tracks/90/type = "value"
 tracks/90/path = NodePath("BackBufferCopy/PantsFront:frame")
@@ -40310,7 +40322,7 @@ tracks/95/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2, -7.5 ), Vector2( -2, -8.5 ), Vector2( -2, -1.5 ) ]
+"values": [ Vector2( -3, -7.5 ), Vector2( -3, -8.5 ), Vector2( -3, -1.5 ) ]
 }
 tracks/96/type = "value"
 tracks/96/path = NodePath("BackBufferCopy/BootsBack:scale")
@@ -40358,7 +40370,7 @@ tracks/99/keys = {
 "times": PoolRealArray( 0, 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -5 ), Vector2( 2, -1 ), Vector2( 2, -8 ) ]
+"values": [ Vector2( 1, -5 ), Vector2( 1, -1 ), Vector2( 1, -8 ) ]
 }
 tracks/100/type = "value"
 tracks/100/path = NodePath("BackBufferCopy/BootsFont:rotation_degrees")
@@ -41508,6 +41520,126 @@ tracks/91/keys = {
 "update": 0,
 "values": [ Vector2( -8, -1 ), Vector2( -8, -1.5 ) ]
 }
+tracks/92/type = "value"
+tracks/92/path = NodePath("BackBufferCopy/BootsBack:rotation_degrees")
+tracks/92/interp = 1
+tracks/92/loop_wrap = true
+tracks/92/imported = false
+tracks/92/enabled = true
+tracks/92/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 63.7, 47.9, -47.2, -23.6, 0.0, 11.3, 22.6, 34.1, 106.2 ]
+}
+tracks/93/type = "value"
+tracks/93/path = NodePath("BackBufferCopy/BootsBack:scale")
+tracks/93/interp = 1
+tracks/93/loop_wrap = true
+tracks/93/imported = false
+tracks/93/enabled = true
+tracks/93/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/94/type = "value"
+tracks/94/path = NodePath("BackBufferCopy/BootsBack:frame")
+tracks/94/interp = 1
+tracks/94/loop_wrap = true
+tracks/94/imported = false
+tracks/94/enabled = true
+tracks/94/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/95/type = "value"
+tracks/95/path = NodePath("BackBufferCopy/BootsBack:position")
+tracks/95/interp = 1
+tracks/95/loop_wrap = true
+tracks/95/imported = false
+tracks/95/enabled = true
+tracks/95/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, -7 ), Vector2( 4, -7 ), Vector2( 7, -5.3 ), Vector2( 3.2, -4 ), Vector2( -0.5, -3.3 ), Vector2( -2, -4 ), Vector2( -4, -5 ), Vector2( -7, -5.5 ), Vector2( -5, -6 ) ]
+}
+tracks/96/type = "value"
+tracks/96/path = NodePath("BackBufferCopy/BootsBack:offset")
+tracks/96/interp = 1
+tracks/96/loop_wrap = true
+tracks/96/imported = false
+tracks/96/enabled = true
+tracks/96/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -12 ) ]
+}
+tracks/97/type = "value"
+tracks/97/path = NodePath("BackBufferCopy/BootsFont:position")
+tracks/97/interp = 1
+tracks/97/loop_wrap = true
+tracks/97/imported = false
+tracks/97/enabled = true
+tracks/97/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.3, 0.35, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3, -4 ), Vector2( -7, -5 ), Vector2( -7, -6 ), Vector2( -7, -6 ), Vector2( -3, -5 ), Vector2( -1, -5 ), Vector2( 5, -5 ), Vector2( 1, -4 ) ]
+}
+tracks/98/type = "value"
+tracks/98/path = NodePath("BackBufferCopy/BootsFont:frame")
+tracks/98/interp = 1
+tracks/98/loop_wrap = true
+tracks/98/imported = false
+tracks/98/enabled = true
+tracks/98/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/99/type = "value"
+tracks/99/path = NodePath("BackBufferCopy/BootsFont:rotation_degrees")
+tracks/99/interp = 1
+tracks/99/loop_wrap = true
+tracks/99/imported = false
+tracks/99/enabled = true
+tracks/99/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.3, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 31.9, 87.4, 103.5, 74.5, 67.7, -41.4 ]
+}
+tracks/100/type = "value"
+tracks/100/path = NodePath("BackBufferCopy/BootsFont:scale")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/101/type = "value"
+tracks/101/path = NodePath("BackBufferCopy/BootsFont:offset")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -12 ) ]
+}
 
 [sub_resource type="Animation" id=46]
 resource_name = "Run_SW"
@@ -42631,6 +42763,126 @@ tracks/92/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -8, -1 ), Vector2( -8, -1.5 ) ]
+}
+tracks/93/type = "value"
+tracks/93/path = NodePath("BackBufferCopy/BootsBack:rotation_degrees")
+tracks/93/interp = 1
+tracks/93/loop_wrap = true
+tracks/93/imported = false
+tracks/93/enabled = true
+tracks/93/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 63.7, 47.9, -47.2, -23.6, 0.0, 11.3, 22.6, 34.1, 106.2 ]
+}
+tracks/94/type = "value"
+tracks/94/path = NodePath("BackBufferCopy/BootsBack:scale")
+tracks/94/interp = 1
+tracks/94/loop_wrap = true
+tracks/94/imported = false
+tracks/94/enabled = true
+tracks/94/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/95/type = "value"
+tracks/95/path = NodePath("BackBufferCopy/BootsBack:frame")
+tracks/95/interp = 1
+tracks/95/loop_wrap = true
+tracks/95/imported = false
+tracks/95/enabled = true
+tracks/95/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/96/type = "value"
+tracks/96/path = NodePath("BackBufferCopy/BootsBack:position")
+tracks/96/interp = 1
+tracks/96/loop_wrap = true
+tracks/96/imported = false
+tracks/96/enabled = true
+tracks/96/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, -7 ), Vector2( 4, -7 ), Vector2( 7, -5.3 ), Vector2( 3.2, -4 ), Vector2( -0.5, -3.3 ), Vector2( -2, -4 ), Vector2( -4, -5 ), Vector2( -7, -5.5 ), Vector2( -5, -6 ) ]
+}
+tracks/97/type = "value"
+tracks/97/path = NodePath("BackBufferCopy/BootsBack:offset")
+tracks/97/interp = 1
+tracks/97/loop_wrap = true
+tracks/97/imported = false
+tracks/97/enabled = true
+tracks/97/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -12 ) ]
+}
+tracks/98/type = "value"
+tracks/98/path = NodePath("BackBufferCopy/BootsFont:position")
+tracks/98/interp = 1
+tracks/98/loop_wrap = true
+tracks/98/imported = false
+tracks/98/enabled = true
+tracks/98/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.3, 0.35, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3, -4 ), Vector2( -7, -5 ), Vector2( -7, -6 ), Vector2( -7, -6 ), Vector2( -3, -5 ), Vector2( -1, -5 ), Vector2( 5, -5 ), Vector2( 1, -4 ) ]
+}
+tracks/99/type = "value"
+tracks/99/path = NodePath("BackBufferCopy/BootsFont:frame")
+tracks/99/interp = 1
+tracks/99/loop_wrap = true
+tracks/99/imported = false
+tracks/99/enabled = true
+tracks/99/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/100/type = "value"
+tracks/100/path = NodePath("BackBufferCopy/BootsFont:rotation_degrees")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.3, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 31.9, 87.4, 103.5, 74.5, 67.7, -41.4 ]
+}
+tracks/101/type = "value"
+tracks/101/path = NodePath("BackBufferCopy/BootsFont:scale")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/102/type = "value"
+tracks/102/path = NodePath("BackBufferCopy/BootsFont:offset")
+tracks/102/interp = 1
+tracks/102/loop_wrap = true
+tracks/102/imported = false
+tracks/102/enabled = true
+tracks/102/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -12 ) ]
 }
 
 [sub_resource type="Animation" id=82]
@@ -55836,7 +56088,6 @@ vframes = 8
 frame = 6
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="."]
-position = Vector2( -1, 0 )
 copy_mode = 2
 
 [node name="FeetBack" type="Sprite" parent="BackBufferCopy"]
@@ -55877,7 +56128,7 @@ centered = false
 offset = Vector2( -7.39595, -2.29193 )
 hframes = 8
 vframes = 2
-frame = 8
+frame = 7
 
 [node name="FeetFront" type="Sprite" parent="BackBufferCopy"]
 light_mask = 513
@@ -55915,7 +56166,7 @@ centered = false
 offset = Vector2( -8, -1 )
 hframes = 8
 vframes = 2
-frame = 8
+frame = 15
 
 [node name="mask" type="Sprite" parent="BackBufferCopy"]
 visible = false
