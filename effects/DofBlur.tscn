@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float limit: hint_range(0.0, 0.5) = 0.2;
+uniform float blur: hint_range(0.0, 5.0) = 2.5;
+uniform float intensity: hint_range(0.0, 1.0) = 0.5;
+const float PI = 3.14159265358979323846;
+
+float circle(vec2 position, float radius, float feather)
+{
+	return smoothstep(radius, radius + feather, length(position - vec2(0.5)));
+}
+
+void fragment() {
+	COLOR = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur);
+	float n = abs(sin(SCREEN_UV.y * PI * intensity) - intensity);
+	float dist = distance(vec2(0.35, 0.35), vec2(mix(0.81, SCREEN_UV.x * 1.7, 3840.0/2160.0), SCREEN_UV.y * 0.2));
+	COLOR.a = smoothstep(-0.01, dist, n);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/limit = 0.2
+shader_param/blur = 1.931
+shader_param/intensity = 1.0
+
+[node name="DofBlur" type="ColorRect"]
+material = SubResource( 2 )
+margin_right = 3840.0
+margin_bottom = 2160.0
