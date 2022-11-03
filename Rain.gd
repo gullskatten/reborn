@@ -6,7 +6,7 @@ onready var close_rain = preload("res://assets/shaders/rain_close.png")
 var should_show := false
 
 func _ready():
-	GlobalCameraSettings.connect("zoom_level_changed", self, "zoom_changed")
+	#GlobalCameraSettings.connect("zoom_level_changed", self, "zoom_changed")
 	zoom_changed(GlobalCameraSettings.zoom_level)
 	
 func zoom_changed(zoom_level):

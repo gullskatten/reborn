@@ -1,15 +1,19 @@
 extends PlayerState
 
 func enter(_msg := {}) -> void:
-	player.animationState.travel("Run")
+	if player.allowed_movement:
+		player.animationState.travel("Run")
 	
 func _physics_process(_delta: float) -> void:
+	
 	if !player.allowed_movement:
 		state_machine.transition_to("Idle")
+	
 	else:
 		var input_vector = Vector2.ZERO
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		print(input_vector)
 		input_vector = input_vector.normalized()
 		
 		var local_speed = player.RUN_MAX_SPEED

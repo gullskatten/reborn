@@ -287,6 +287,8 @@ margin_right = 0.0
 margin_bottom = 0.0
 
 [node name="CinematicEffect" parent="GUI/Interface" instance=ExtResource( 1 )]
+margin_right = 3840.0
+margin_bottom = 2160.0
 
 [node name="Inventory" parent="GUI/Interface" instance=ExtResource( 4 )]
 visible = false
@@ -391,4 +393,4 @@ texture = SubResource( 12 )
 centered = false
 flip_v = true
 
-[node name="ColorRect" parent="Effects" instance=ExtResource( 19 )]
+[node name="Dof" parent="Effects" instance=ExtResource( 19 )]

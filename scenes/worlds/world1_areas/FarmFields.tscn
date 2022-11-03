@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/abstract/InnerScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://structures/props/village/StoneFences.tscn" type="PackedScene" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://npc/neutral/critter/Firefly.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=17]
 [ext_resource path="res://structures/props/village/SkullPole.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/cutscenes/CutScenePlayer.tscn" type="PackedScene" id=19]
+[ext_resource path="res://overlap/CutsceneTriggerArea.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/worlds/world1_areas/FarmFields.gd" type="Script" id=21]
 
 [sub_resource type="ShaderMaterial" id=60]
 
@@ -739,7 +742,12 @@ resource_local_to_scene = true
 5/shapes = [  ]
 5/z_index = 0
 
+[sub_resource type="CapsuleShape2D" id=259]
+radius = 46.7758
+height = 75.4695
+
 [node name="FarmField" instance=ExtResource( 1 )]
+script = ExtResource( 21 )
 
 [node name="Road" parent="Tiles" index="1"]
 tile_set = SubResource( 254 )
@@ -996,3 +1004,16 @@ position = Vector2( 32, -158 )
 [node name="HideOffScreen" parent="." index="2"]
 position = Vector2( 0.49995, 8.00001 )
 scale = Vector2( 57.65, 26.9 )
+
+[node name="CutScene" parent="." index="3" instance=ExtResource( 19 )]
+root_node = NodePath("..")
+
+[node name="CutsceneTriggerArea" parent="." index="4" instance=ExtResource( 20 )]
+position = Vector2( 229, 107 )
+
+[node name="CollisionShape2D" parent="CutsceneTriggerArea" index="0"]
+position = Vector2( -0.999985, 1 )
+rotation = -1.03847
+shape = SubResource( 259 )
+
+[editable path="CutsceneTriggerArea"]

@@ -11,7 +11,7 @@ var camera_position : Vector2 = Vector2(0,0) setget set_camera_position
 var is_inside := false setget set_is_inside
 var is_locked := false
 
-signal zoom_level_changed(val)
+signal forced_zoom_changed(val)
 signal camera_position_changed(pos)
 signal max_zoom_level_changed(is_max)
 signal forced_camera_position_changed(pos)
@@ -68,12 +68,12 @@ func set_is_inside(inside: bool):
 	
 	if is_inside:
 		zoom_level = ZOOM_LEVEL_INSIDE
-		emit_signal("zoom_level_changed", zoom_level)
+		emit_signal("forced_zoom_changed", zoom_level)
 	
 func set_zoom_level(zoom : Vector2):
-	if zoom > Vector2.ZERO && !is_zero_approx(zoom.x) && zoom <= MAX_ZOOM && zoom != zoom_level:
+	if zoom > Vector2.ZERO && !is_zero_approx(zoom.x):
 		zoom_level = zoom
-		emit_signal("zoom_level_changed", zoom)
+		emit_signal("forced_zoom_changed", zoom)
 		
 func set_camera_position(pos):
 	camera_position = pos

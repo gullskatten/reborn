@@ -18,6 +18,7 @@ var motion = Vector2()
 
 func _ready():
 	GlobalCameraSettings.connect("forced_camera_position_changed", self, "_on_force_update_position")
+	GlobalCameraSettings.connect("forced_zoom_changed", self, "_on_force_update_zoom")
 	camera.zoom = Vector2.ONE * smooth_zoom
 	
 func set_smooth_zoom(value: float) -> void:
@@ -56,5 +57,9 @@ func _physics_process(delta):
 			motion = still #Do not forget to reset your frame-time variables!		
 	
 func _on_force_update_position(position):
+	if(cameraPosition != null):	
+		cameraPosition.set_deferred("global_position", position)
+
+func _on_force_update_zoom(zoom):
 	if(cameraPosition != null):	
 		cameraPosition.set_deferred("global_position", position)

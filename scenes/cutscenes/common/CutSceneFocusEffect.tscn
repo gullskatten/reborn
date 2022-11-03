@@ -11,9 +11,8 @@ __meta__ = {
 }
 
 [node name="Top" type="Control" parent="."]
-visible = false
-margin_right = 1920.0
-margin_bottom = 80.0
+margin_right = 3840.0
+margin_bottom = 2160.0
 
 [node name="ColorRect" type="ColorRect" parent="Top"]
 anchor_right = 1.0
@@ -23,17 +22,14 @@ size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )
 
 [node name="Bottom" type="Control" parent="."]
-visible = false
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -1080.0
-margin_right = 1920.0
+margin_right = 3840.0
+margin_bottom = 1080.0
 
 [node name="ColorRect" type="ColorRect" parent="Bottom"]
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -80.0
-margin_right = 1920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )

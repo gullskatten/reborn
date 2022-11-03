@@ -13,7 +13,7 @@ func _ready():
 	InTime.connect("current_cycle_changed", self, "_set_color_fx")
 	_set_color_fx(InTime.current_cycle)
 
-func _transition_colors(color1_from, color1_to, color2_from, color2_to):
+func _transition_colors(color1_to, color1_from, color2_to, color2_from):
 		$TweenColor1.interpolate_property(
 					material,
 					"shader_param/color1",

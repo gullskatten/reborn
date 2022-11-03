@@ -1,6 +1,5 @@
 extends AnimationPlayer
 
-
 func _ready():
 	CutSceneManager.connect("trigger", self, "start_animation")
 
@@ -20,9 +19,11 @@ func _on_CutScene_animation_started(anim_name):
 
 # After an animation has played, remove it from the scene
 # It will however come back if we scene transition, so this is just a temp solution!
+# TODO: Store viewed cutscenes as a data resource
+
 func _on_CutScene_animation_finished(anim_name):
 	GlobalCameraSettings.end_cutscene()
-	GlobalCameraSettings.set_zoom_level(GlobalCameraSettings.MIN_ZOOM)
+	GlobalCameraSettings.set_zoom_level(GlobalCameraSettings.DEFAULT_ZOOM)
 	GlobalCameraSettings.is_locked = false
 	remove_animation(anim_name)
 	
