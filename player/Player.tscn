@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/equipment/chest/chest_3.png" type="Texture" id=2]
@@ -9,8 +9,6 @@
 [ext_resource path="res://player/Move.gd" type="Script" id=7]
 [ext_resource path="res://player/Idle.gd" type="Script" id=8]
 [ext_resource path="res://assets/equipment/weapons/sword1.png" type="Texture" id=9]
-[ext_resource path="res://assets/equipment/shields/shield_front_1.png" type="Texture" id=10]
-[ext_resource path="res://assets/equipment/shields/shield_back_1.png" type="Texture" id=11]
 [ext_resource path="res://assets/npc/human/hair/hair_1.png" type="Texture" id=12]
 [ext_resource path="res://assets/equipment/head/head_1.png" type="Texture" id=13]
 [ext_resource path="res://assets/npc/human/eyes/eyes_1.png" type="Texture" id=14]
@@ -583,7 +581,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 18 ]
+"values": [ 16 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("ArmLeft:frame")
@@ -2545,7 +2543,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 18 ]
+"values": [ 16 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("ArmLeft:frame")
@@ -4945,7 +4943,6 @@ texture = ExtResource( 3 )
 [node name="OffhandW" type="Sprite" parent="."]
 position = Vector2( 3.96777, -16.9637 )
 rotation = 1.90415
-texture = ExtResource( 11 )
 
 [node name="ArmRight" type="Sprite" parent="."]
 modulate = Color( 0.956863, 0.956863, 0.956863, 1 )
@@ -4999,7 +4996,7 @@ texture = ExtResource( 5 )
 centered = false
 hframes = 6
 vframes = 72
-frame = 18
+frame = 16
 
 [node name="ChestBody" type="Sprite" parent="."]
 position = Vector2( -1, -8.97747 )
@@ -5088,7 +5085,6 @@ texture = ExtResource( 9 )
 visible = false
 position = Vector2( -4.01015, -16.9591 )
 rotation = 1.65108
-texture = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/E = SubResource( 3 )

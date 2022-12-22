@@ -1,11 +1,11 @@
 class_name Player
 extends KinematicBody2D
 
-onready var shadow = $Shadow
+onready var shadow = $YSort/Shadow
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-onready var footsteps = $Footsteps
+onready var footsteps = $YSort/Footsteps
 
 var velocity : Vector2 = Vector2.ZERO
 var allowed_movement := true
@@ -43,23 +43,23 @@ func _physics_process(delta):
 func blink():
 	var t = rand_range(1,8)
 	yield(get_tree().create_timer(t/16),"timeout")
-	$Eyes.visible = true
+	$YSort/Eyes.visible = true
 	$Timer.wait_time = t
 
 func flip_h():
 	if !is_flipped:
-		transform.x *= -1
+		$YSort.transform.x *= -1
 		is_flipped = true
 		
 
 func flip_reset():
 	if is_flipped:
-		transform.x *= -1
+		$YSort.transform.x *= -1
 		is_flipped = false
 
 func move():
 	velocity = move_and_slide(velocity)
 
 func _on_Timer_timeout():
-	$Eyes.visible = false
+	$YSort/Eyes.visible = false
 	blink()

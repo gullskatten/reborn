@@ -16,7 +16,7 @@ __meta__ = {
 position = Vector2( 383, 214 )
 
 [node name="PlayerTemplate" parent="InnerScenes" instance=ExtResource( 1 )]
-position = Vector2( -126, -45 )
+position = Vector2( -383, -214 )
 collision_layer = 2
 
 [node name="Clouds" parent="." instance=ExtResource( 5 )]
@@ -27,4 +27,11 @@ margin_right = 3212.0
 margin_bottom = 2495.0
 
 [node name="CameraController" parent="." instance=ExtResource( 6 )]
-position = Vector2( 437, 273 )
+
+[node name="CameraPosition" parent="CameraController" index="0"]
+position = Vector2( 249, -16 )
+
+[node name="Camera" parent="CameraController/CameraPosition" index="0"]
+position = Vector2( 277, 153 )
+
+[editable path="CameraController"]

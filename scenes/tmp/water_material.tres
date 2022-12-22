@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://scenes/noise_water.tres" type="Texture" id=1]
+[ext_resource path="res://assets/textures/water_uv_offset.png" type="Texture" id=2]
+[ext_resource path="res://scenes/tmp/water.tres" type="Shader" id=3]
+
+[resource]
+shader = ExtResource( 3 )
+shader_param/water_color = Color( 0.529412, 0.92549, 1, 1 )
+shader_param/shadow_color = Color( 0.74902, 0.964706, 0.988235, 1 )
+shader_param/uv_offset_scale = Vector2( 0.2, 0.2 )
+shader_param/sine_time_scale = 0.01
+shader_param/sine_offset_scale = Vector2( 0.5, -0.5 )
+shader_param/texture_offset_time_scale = 0.015
+shader_param/texture_offset_scale = Vector2( 0.2, 1 )
+shader_param/tile_factor = 1.0
+shader_param/aspect_ratio = 1.0
+shader_param/PulseRate = 0.7
+shader_param/PulseIntensity = 0.1
+shader_param/Opacity = 1.0
+shader_param/uv_offset_texture = ExtResource( 2 )
+shader_param/uv_texture_crossing = ExtResource( 1 )

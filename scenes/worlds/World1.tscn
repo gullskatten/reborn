@@ -9,7 +9,7 @@
 [node name="World1" instance=ExtResource( 1 )]
 
 [node name="PlayerTemplate" parent="InnerScenes" index="0"]
-position = Vector2( -566, -70 )
+position = Vector2( 87, 158 )
 
 [node name="TavernDistrict" parent="InnerScenes" index="1" instance=ExtResource( 2 )]
 position = Vector2( -11, -96 )
@@ -56,3 +56,5 @@ position = Vector2( 963, 476 )
 
 [node name="BirdCritter7" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 1125, 475 )
+
+[editable path="CameraController"]
