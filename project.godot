@@ -250,6 +250,10 @@ _global_script_class_icons={
 
 config/name="Reborn"
 run/main_scene="res://World.tscn"
+boot_splash/image="res://reborn-title.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.192157, 0.168627, 0.211765, 1 )
 config/icon="res://icon.png"
 
 [autoload]
